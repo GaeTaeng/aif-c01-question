@@ -8,6 +8,13 @@ const PASSWORD_BASE_DATE = {
   day: 14,
 };
 
+const QUESTION_TYPE_LABELS = {
+  "single-choice": "단일 선택형",
+  "multi-select": "복수 선택형",
+  matching: "매칭형",
+  ordering: "순서형",
+};
+
 const appData = window.AWS_AI_QUIZ_DATA || {
   supportedCount: 0,
   source: { totalQuestions: 0 },
@@ -70,7 +77,7 @@ const elements = {
 const state = {
   mode: "random",
   currentQuestionId: null,
-  selectedKey: "",
+  response: null,
   answerChecked: false,
   englishVisible: false,
   started: isQuestionRoute(),
@@ -174,8 +181,8 @@ function requireDailyPassword() {
 
   const message = [
     "비밀번호를 입력하세요.",
-    "기준일: 2026-03-14",
-    "예시 기준: 2026-05-11 -> 26031459",
+    "힌트: 우리가 만난날 + 우리가 만난날로부터 몇일?",
+    "예: 94062623 같은 형태",
     "인증은 Asia/Seoul 기준 오늘 23:59:59까지만 유효합니다.",
   ].join("\n");
   const enteredPassword = window.prompt(message, "");
@@ -199,7 +206,8 @@ function stripBullet(line = "") {
 }
 
 function escapeHtml(value = "") {
-  return value
+  const safe = String(value ?? "");
+  return safe
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -214,6 +222,22 @@ function normalizeText(value = "") {
     .replace(/[\"'()[\],.:;!?*]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function shuffleArray(items) {
+  const next = [...items];
+  for (let index = next.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [next[index], next[swapIndex]] = [next[swapIndex], next[index]];
+  }
+  return next;
+}
+
+function moveItem(items, fromIndex, toIndex) {
+  const next = [...items];
+  const [item] = next.splice(fromIndex, 1);
+  next.splice(toIndex, 0, item);
+  return next;
 }
 
 function getAccuracy() {
@@ -258,7 +282,64 @@ function getCurrentQuestion() {
 }
 
 function getOptionText(question, optionKey) {
-  return question.options.find((option) => option.key === optionKey)?.text || "";
+  return question.options?.find((option) => option.key === optionKey)?.text || "";
+}
+
+function createInitialResponse(question) {
+  if (!question) {
+    return null;
+  }
+
+  if (question.type === "single-choice") {
+    return "";
+  }
+
+  if (question.type === "multi-select") {
+    return [];
+  }
+
+  if (question.type === "matching") {
+    return Object.fromEntries(question.rows.map((row) => [row.id, ""]));
+  }
+
+  if (question.type === "ordering") {
+    return shuffleArray(
+      question.sequenceItems.map((text, index) => ({
+        id: `${question.id}-sequence-${index + 1}`,
+        text,
+      })),
+    );
+  }
+
+  return null;
+}
+
+function getQuestionTypeLabel(question) {
+  return QUESTION_TYPE_LABELS[question?.type] || "문항";
+}
+
+function getQuestionTypeHelper(question) {
+  if (!question) {
+    return "";
+  }
+
+  if (question.type === "single-choice") {
+    return "보기 1개를 선택하세요.";
+  }
+
+  if (question.type === "multi-select") {
+    return `정답 ${question.requiredSelections}개를 선택하세요.`;
+  }
+
+  if (question.type === "matching") {
+    return "각 항목마다 가장 맞는 답을 선택하세요.";
+  }
+
+  if (question.type === "ordering") {
+    return "위아래 버튼으로 올바른 순서를 만드세요.";
+  }
+
+  return "";
 }
 
 function buildHeroStats() {
@@ -306,11 +387,20 @@ function startQuiz() {
 }
 
 function selectQuestion(questionId) {
+  if (!questionId) {
+    state.currentQuestionId = null;
+    state.response = null;
+    state.answerChecked = false;
+    elements.feedbackCard.classList.add("is-hidden");
+    renderQuestion();
+    return;
+  }
+
+  const question = questionById.get(questionId);
   state.currentQuestionId = questionId;
-  state.selectedKey = "";
+  state.response = createInitialResponse(question);
   state.answerChecked = false;
   elements.feedbackCard.classList.add("is-hidden");
-  elements.checkAnswerButton.disabled = true;
   renderQuestion();
 }
 
@@ -319,8 +409,9 @@ function ensureQuestionForMode() {
 
   if (!pool.length) {
     state.currentQuestionId = null;
-    state.selectedKey = "";
+    state.response = null;
     state.answerChecked = false;
+    elements.feedbackCard.classList.add("is-hidden");
     renderQuestion();
     return;
   }
@@ -333,14 +424,100 @@ function ensureQuestionForMode() {
   renderQuestion();
 }
 
-function buildOptionCard(question, option) {
+function isResponseComplete(question, response) {
+  if (!question) {
+    return false;
+  }
+
+  if (question.type === "single-choice") {
+    return Boolean(response);
+  }
+
+  if (question.type === "multi-select") {
+    return Array.isArray(response) && response.length === question.requiredSelections;
+  }
+
+  if (question.type === "matching") {
+    return question.rows.every((row) => Boolean(response?.[row.id]));
+  }
+
+  if (question.type === "ordering") {
+    return Array.isArray(response) && response.length === question.sequenceItems.length;
+  }
+
+  return false;
+}
+
+function isAnswerCorrect(question, response) {
+  if (!question) {
+    return false;
+  }
+
+  if (question.type === "single-choice") {
+    return response === question.answerKey;
+  }
+
+  if (question.type === "multi-select") {
+    const selectedKeys = [...response].sort();
+    const answerKeys = [...question.answerKeys].sort();
+    return (
+      selectedKeys.length === answerKeys.length &&
+      selectedKeys.every((key, index) => key === answerKeys[index])
+    );
+  }
+
+  if (question.type === "matching") {
+    return question.rows.every((row) => response?.[row.id] === row.answer);
+  }
+
+  if (question.type === "ordering") {
+    return response.every((item, index) => item.text === question.sequenceItems[index]);
+  }
+
+  return false;
+}
+
+function getQuestionSubtitle(question) {
+  if (!question) {
+    return `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
+  }
+
+  const prefix =
+    state.mode === "wrong"
+      ? "오답 노트에 저장된 문제입니다."
+      : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
+
+  return `${prefix} · ${getQuestionTypeLabel(question)}`;
+}
+
+function buildChoiceOptionCard(question, option, inputType) {
+  const isMultiSelect = inputType === "checkbox";
+  const isSelected = isMultiSelect
+    ? state.response.includes(option.key)
+    : state.response === option.key;
+  const isCorrectOption =
+    state.answerChecked &&
+    (question.type === "single-choice"
+      ? question.answerKey === option.key
+      : question.answerKeys.includes(option.key));
+  const isWrongOption =
+    state.answerChecked &&
+    isSelected &&
+    (question.type === "single-choice"
+      ? question.answerKey !== option.key
+      : !question.answerKeys.includes(option.key));
+
   return `
-    <label class="option-card" data-option-key="${escapeHtml(option.key)}">
+    <label
+      class="option-card ${isSelected ? "is-selected" : ""} ${isCorrectOption ? "is-correct" : ""} ${isWrongOption ? "is-wrong" : ""}"
+      data-option-key="${escapeHtml(option.key)}"
+    >
       <input
-        type="radio"
+        type="${inputType}"
         name="answer"
         value="${escapeHtml(option.key)}"
-        ${state.selectedKey === option.key ? "checked" : ""}
+        ${isSelected ? "checked" : ""}
+        ${state.answerChecked ? "disabled" : ""}
       />
       <span class="option-card__inner">
         <span class="option-card__key">${escapeHtml(option.key)}</span>
@@ -348,6 +525,134 @@ function buildOptionCard(question, option) {
       </span>
     </label>
   `;
+}
+
+function buildSingleChoiceOptionsMarkup(question) {
+  return `
+    <div class="response-helper">${escapeHtml(getQuestionTypeHelper(question))}</div>
+    ${question.options
+      .map((option) => buildChoiceOptionCard(question, option, "radio"))
+      .join("")}
+  `;
+}
+
+function buildMultiSelectOptionsMarkup(question) {
+  return `
+    <div class="response-helper">${escapeHtml(getQuestionTypeHelper(question))}</div>
+    ${question.options
+      .map((option) => buildChoiceOptionCard(question, option, "checkbox"))
+      .join("")}
+  `;
+}
+
+function buildMatchingMarkup(question) {
+  return `
+    <div class="response-helper">${escapeHtml(getQuestionTypeHelper(question))}</div>
+    <div class="matching-grid">
+      ${question.rows
+        .map((row) => {
+          const selectedValue = state.response?.[row.id] || "";
+          const isCorrectRow = state.answerChecked && selectedValue === row.answer;
+          const isWrongRow = state.answerChecked && selectedValue && selectedValue !== row.answer;
+
+          return `
+            <article class="matching-row ${isCorrectRow ? "is-correct" : ""} ${isWrongRow ? "is-wrong" : ""}">
+              <p class="matching-row__prompt">${escapeHtml(row.prompt)}</p>
+              <label class="matching-row__select">
+                <span>선택</span>
+                <select data-row-id="${escapeHtml(row.id)}" ${state.answerChecked ? "disabled" : ""}>
+                  <option value="">항목 선택</option>
+                  ${question.choicePool
+                    .map(
+                      (choice) => `
+                        <option value="${escapeHtml(choice)}" ${selectedValue === choice ? "selected" : ""}>
+                          ${escapeHtml(choice)}
+                        </option>
+                      `,
+                    )
+                    .join("")}
+                </select>
+              </label>
+              ${
+                state.answerChecked && selectedValue !== row.answer
+                  ? `<p class="matching-row__answer">정답: ${escapeHtml(row.answer)}</p>`
+                  : ""
+              }
+            </article>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function buildOrderingMarkup(question) {
+  return `
+    <div class="response-helper">${escapeHtml(getQuestionTypeHelper(question))}</div>
+    <div class="ordering-list">
+      ${state.response
+        .map((item, index) => {
+          const correctItem = question.sequenceItems[index];
+          const isCorrectPosition = state.answerChecked && item.text === correctItem;
+          const isWrongPosition = state.answerChecked && item.text !== correctItem;
+
+          return `
+            <article class="ordering-item ${isCorrectPosition ? "is-correct" : ""} ${isWrongPosition ? "is-wrong" : ""}">
+              <span class="ordering-item__order">${index + 1}</span>
+              <div class="ordering-item__body">
+                <p class="ordering-item__text">${escapeHtml(item.text)}</p>
+                ${
+                  state.answerChecked && item.text !== correctItem
+                    ? `<p class="ordering-item__answer">이 위치 정답: ${escapeHtml(correctItem)}</p>`
+                    : ""
+                }
+              </div>
+              <div class="ordering-item__controls">
+                <button
+                  class="order-button"
+                  type="button"
+                  data-order-action="up"
+                  data-order-index="${index}"
+                  ${index === 0 || state.answerChecked ? "disabled" : ""}
+                >
+                  위
+                </button>
+                <button
+                  class="order-button"
+                  type="button"
+                  data-order-action="down"
+                  data-order-index="${index}"
+                  ${index === state.response.length - 1 || state.answerChecked ? "disabled" : ""}
+                >
+                  아래
+                </button>
+              </div>
+            </article>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderOptionsMarkup(question) {
+  if (question.type === "single-choice") {
+    return buildSingleChoiceOptionsMarkup(question);
+  }
+
+  if (question.type === "multi-select") {
+    return buildMultiSelectOptionsMarkup(question);
+  }
+
+  if (question.type === "matching") {
+    return buildMatchingMarkup(question);
+  }
+
+  if (question.type === "ordering") {
+    return buildOrderingMarkup(question);
+  }
+
+  return "";
 }
 
 function renderQuestion() {
@@ -359,7 +664,7 @@ function renderQuestion() {
     elements.questionSubtitle.textContent =
       state.mode === "wrong"
         ? "오답 노트에 문제를 하나 이상 쌓으면 여기서 다시 풀 수 있습니다."
-        : `원본 ${appData.source.totalQuestions}문항 중 단일 선택형 ${appData.supportedCount}문항만 추렸습니다.`;
+        : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
     elements.questionPrompt.textContent =
       state.mode === "wrong"
         ? "랜덤 문제에서 틀린 문항이 생기면 자동으로 저장됩니다."
@@ -376,49 +681,39 @@ function renderQuestion() {
   elements.toggleEnglishButton.disabled = false;
   elements.questionId.textContent = `Q ${question.sourceNumber}`;
   elements.questionTitle.textContent = question.title;
-  elements.questionSubtitle.textContent =
-    state.mode === "wrong"
-      ? "오답 노트에 저장된 문제입니다."
-      : `원본 ${appData.source.totalQuestions}문항 중 단일 선택형 ${appData.supportedCount}문항만 제공합니다.`;
+  elements.questionSubtitle.textContent = getQuestionSubtitle(question);
   elements.questionPrompt.textContent = question.promptKo;
   elements.questionPromptEnglish.textContent = question.promptEn || "";
   elements.questionPromptEnglish.classList.toggle("is-hidden", !state.englishVisible);
   elements.toggleEnglishButton.textContent = state.englishVisible ? "영문 숨기기" : "영문 보기";
-  elements.optionsForm.innerHTML = question.options.map((option) => buildOptionCard(question, option)).join("");
-
-  elements.optionsForm.querySelectorAll(".option-card").forEach((card) => {
-    const key = card.dataset.optionKey;
-    const input = card.querySelector("input");
-    const isSelected = key === state.selectedKey;
-
-    card.classList.toggle("is-selected", isSelected);
-    if (state.answerChecked) {
-      card.classList.toggle("is-correct", key === question.answerKey);
-      card.classList.toggle(
-        "is-wrong",
-        key === state.selectedKey && state.selectedKey !== question.answerKey,
-      );
-      input.disabled = true;
-    } else {
-      card.classList.remove("is-correct", "is-wrong");
-      input.disabled = false;
-    }
-  });
-
-  elements.checkAnswerButton.disabled = !state.selectedKey || state.answerChecked;
+  elements.optionsForm.innerHTML = renderOptionsMarkup(question);
+  elements.checkAnswerButton.disabled =
+    !isResponseComplete(question, state.response) || state.answerChecked;
   renderWrongNote();
 }
 
 function parseWrongExplanations(question) {
-  return question.wrongExplanations.map((line) => {
+  return (question.wrongExplanations || []).map((line) => {
     const clean = stripBullet(line);
-    const keyMatch = clean.match(/^([A-E])\s*->\s*([^:]+)(?::\s*(.*))?$/);
+    const arrowMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.+)$/);
 
-    if (keyMatch) {
+    if (arrowMatch) {
+      const body = arrowMatch[2].trim();
+      const bodyMatch = body.match(/^([^:]+):\s*(.*)$/);
       return {
-        key: keyMatch[1],
-        label: keyMatch[2].trim(),
-        description: (keyMatch[3] || "").trim(),
+        keys: arrowMatch[1].split(/\s*,\s*/),
+        label: bodyMatch ? bodyMatch[1].trim() : "",
+        description: bodyMatch ? bodyMatch[2].trim() : body,
+        raw: clean,
+      };
+    }
+
+    const colonKeyMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*:\s*(.*)$/);
+    if (colonKeyMatch) {
+      return {
+        keys: colonKeyMatch[1].split(/\s*,\s*/),
+        label: "",
+        description: colonKeyMatch[2].trim(),
         raw: clean,
       };
     }
@@ -426,7 +721,7 @@ function parseWrongExplanations(question) {
     const namedMatch = clean.match(/^([^:]+):\s*(.*)$/);
     if (namedMatch) {
       return {
-        key: "",
+        keys: [],
         label: namedMatch[1].trim(),
         description: namedMatch[2].trim(),
         raw: clean,
@@ -434,7 +729,7 @@ function parseWrongExplanations(question) {
     }
 
     return {
-      key: "",
+      keys: [],
       label: "",
       description: clean,
       raw: clean,
@@ -442,29 +737,139 @@ function parseWrongExplanations(question) {
   });
 }
 
-function getAnswerReason(question) {
-  return stripBullet(question.explanation[0] || `${getOptionText(question, question.answerKey)}가 문제의 요구사항과 가장 직접적으로 맞습니다.`);
+function findWrongDetailForSelection(question, optionKey, optionText = "") {
+  const wrongDetails = parseWrongExplanations(question);
+  return (
+    wrongDetails.find((item) => item.keys.includes(optionKey)) ||
+    wrongDetails.find((item) => normalizeText(item.label) === normalizeText(optionText)) ||
+    null
+  );
 }
 
-function getWrongReviewLines(question, selectedKey) {
-  const selectedOptionText = getOptionText(question, selectedKey);
-  const wrongDetails = parseWrongExplanations(question);
-  const matched =
-    wrongDetails.find((item) => item.key === selectedKey) ||
-    wrongDetails.find((item) => normalizeText(item.label) === normalizeText(selectedOptionText));
-
-  if (matched) {
-    return [`${selectedOptionText} 선택 시 주의: ${matched.description || matched.raw}`];
+function getCorrectResponseLines(question) {
+  if (question.type === "single-choice") {
+    return [`${question.answerKey}. ${getOptionText(question, question.answerKey)}`];
   }
 
-  if (question.explanation.length > 1) {
-    return question.explanation.slice(1).map(stripBullet);
+  if (question.type === "multi-select") {
+    return question.answerKeys.map((key) => `${key}. ${getOptionText(question, key)}`);
   }
 
-  return [
-    `이 문항의 핵심은 ${getOptionText(question, question.answerKey)}입니다.`,
-    "선택한 보기보다 문제 요구사항과 더 직접적으로 맞는 답을 골라야 합니다.",
-  ];
+  if (question.type === "matching") {
+    return question.rows.map((row) => `${row.prompt} -> ${row.answer}`);
+  }
+
+  if (question.type === "ordering") {
+    return question.sequenceItems.map((item, index) => `${index + 1}. ${item}`);
+  }
+
+  return [];
+}
+
+function getSelectedResponseLines(question, response) {
+  if (question.type === "single-choice") {
+    return response ? [`${response}. ${getOptionText(question, response)}`] : ["선택 안 함"];
+  }
+
+  if (question.type === "multi-select") {
+    return response.length
+      ? response.map((key) => `${key}. ${getOptionText(question, key)}`)
+      : ["선택 안 함"];
+  }
+
+  if (question.type === "matching") {
+    return question.rows.map((row) => `${row.prompt} -> ${response?.[row.id] || "선택 안 함"}`);
+  }
+
+  if (question.type === "ordering") {
+    return response.map((item, index) => `${index + 1}. ${item.text}`);
+  }
+
+  return [];
+}
+
+function getAnswerReason(question) {
+  if (question.explanation.length) {
+    return stripBullet(question.explanation[0]);
+  }
+
+  const firstAnswerLine = getCorrectResponseLines(question)[0];
+  return firstAnswerLine || "문제 요구사항과 가장 직접적으로 맞는 답입니다.";
+}
+
+function getWrongReviewLines(question, response) {
+  if (question.type === "single-choice") {
+    const selectedOptionText = getOptionText(question, response);
+    const matched = findWrongDetailForSelection(question, response, selectedOptionText);
+
+    if (matched) {
+      return [`${selectedOptionText} 선택 시 주의: ${matched.description || matched.raw}`];
+    }
+
+    if (question.explanation.length > 1) {
+      return question.explanation.slice(1).map(stripBullet);
+    }
+
+    return [`이 문항의 핵심은 ${getOptionText(question, question.answerKey)}입니다.`];
+  }
+
+  if (question.type === "multi-select") {
+    const lines = [];
+    const wrongSelections = response.filter((key) => !question.answerKeys.includes(key));
+    const missingSelections = question.answerKeys.filter((key) => !response.includes(key));
+
+    if (wrongSelections.length) {
+      lines.push(
+        `불필요하게 선택한 보기: ${wrongSelections
+          .map((key) => `${key}. ${getOptionText(question, key)}`)
+          .join(", ")}`,
+      );
+    }
+
+    if (missingSelections.length) {
+      lines.push(
+        `빠진 정답: ${missingSelections
+          .map((key) => `${key}. ${getOptionText(question, key)}`)
+          .join(", ")}`,
+      );
+    }
+
+    wrongSelections.forEach((key) => {
+      const matched = findWrongDetailForSelection(question, key, getOptionText(question, key));
+      if (matched?.description) {
+        lines.push(`${getOptionText(question, key)}: ${matched.description}`);
+      }
+    });
+
+    if (lines.length) {
+      return lines;
+    }
+
+    return question.explanation.map(stripBullet);
+  }
+
+  if (question.type === "matching") {
+    return question.rows
+      .filter((row) => response?.[row.id] !== row.answer)
+      .map(
+        (row) =>
+          `${row.prompt}: 선택 ${response?.[row.id] || "선택 안 함"} / 정답 ${row.answer}`,
+      );
+  }
+
+  if (question.type === "ordering") {
+    return response
+      .map((item, index) => {
+        const correctItem = question.sequenceItems[index];
+        if (item.text === correctItem) {
+          return "";
+        }
+        return `${index + 1}단계: 선택 ${item.text} / 정답 ${correctItem}`;
+      })
+      .filter(Boolean);
+  }
+
+  return [];
 }
 
 function getGlossaryLines(question) {
@@ -472,19 +877,22 @@ function getGlossaryLines(question) {
     return question.glossary.map(stripBullet);
   }
 
-  const fallbackTerm = getOptionText(question, question.answerKey);
+  const fallbackTerm = getCorrectResponseLines(question)[0] || "핵심 개념";
   return [`${fallbackTerm}: ${getAnswerReason(question)}`];
 }
 
 function renderFeedback(isCorrect) {
   const question = getCurrentQuestion();
-  const selectedText = getOptionText(question, state.selectedKey);
-  const correctText = getOptionText(question, question.answerKey);
-  const wrongReviewLines = isCorrect ? [] : getWrongReviewLines(question, state.selectedKey);
+  const selectedLines = getSelectedResponseLines(question, state.response);
+  const correctLines = getCorrectResponseLines(question);
+  const wrongReviewLines = isCorrect ? [] : getWrongReviewLines(question, state.response);
   const wrongSummaryLines = parseWrongExplanations(question)
     .filter((item) => item.description)
-    .map((item) => `${item.key ? `${item.key}. ` : ""}${item.label}: ${item.description}`);
-
+    .map((item) => {
+      const keyPrefix = item.keys.length ? `${item.keys.join(", ")}. ` : "";
+      const labelPrefix = item.label ? `${item.label}: ` : "";
+      return `${keyPrefix}${labelPrefix}${item.description}`;
+    });
   const glossaryLines = getGlossaryLines(question);
 
   const feedbackHtml = `
@@ -492,9 +900,21 @@ function renderFeedback(isCorrect) {
       ${isCorrect ? "정답입니다" : "오답입니다"}
     </div>
     <h3 class="feedback-card__title">정답</h3>
-    <p class="feedback-card__line">${escapeHtml(question.answerKey)}. ${escapeHtml(correctText)}</p>
+    <ul class="feedback-list">
+      ${correctLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
+    </ul>
     <h3 class="feedback-card__title">정답 이유</h3>
     <p class="feedback-card__line">${escapeHtml(getAnswerReason(question))}</p>
+    ${
+      !isCorrect
+        ? `
+          <h3 class="feedback-card__title">내 선택</h3>
+          <ul class="feedback-list">
+            ${selectedLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
+          </ul>
+        `
+        : ""
+    }
     <h3 class="feedback-card__title">해설</h3>
     <ul class="feedback-list">
       ${question.explanation.map((line) => `<li>${escapeHtml(stripBullet(line))}</li>`).join("")}
@@ -511,7 +931,6 @@ function renderFeedback(isCorrect) {
           : ""
         : `
           <h3 class="feedback-card__title">오답 풀이</h3>
-          <p class="feedback-card__line">선택한 답: ${escapeHtml(state.selectedKey)}. ${escapeHtml(selectedText)}</p>
           <ul class="feedback-list">
             ${wrongReviewLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
           </ul>
@@ -527,11 +946,16 @@ function renderFeedback(isCorrect) {
   elements.feedbackCard.classList.remove("is-hidden");
 }
 
+function serializeResponseSummary(question, response) {
+  return getSelectedResponseLines(question, response).join(" / ");
+}
+
 function updateWrongBook(question, isCorrect) {
   const existing = state.session.wrongBook[question.id] || {
     wrongCount: 0,
     correctCount: 0,
     lastSelectedKey: "",
+    lastResponseSummary: "",
     lastResult: "",
     updatedAt: "",
   };
@@ -539,7 +963,8 @@ function updateWrongBook(question, isCorrect) {
   if (isCorrect) {
     if (state.session.wrongBook[question.id]) {
       existing.correctCount += 1;
-      existing.lastSelectedKey = state.selectedKey;
+      existing.lastSelectedKey = question.type === "single-choice" ? state.response : "";
+      existing.lastResponseSummary = serializeResponseSummary(question, state.response);
       existing.lastResult = "correct";
       existing.updatedAt = new Date().toISOString();
       state.session.wrongBook[question.id] = existing;
@@ -548,7 +973,8 @@ function updateWrongBook(question, isCorrect) {
   }
 
   existing.wrongCount += 1;
-  existing.lastSelectedKey = state.selectedKey;
+  existing.lastSelectedKey = question.type === "single-choice" ? state.response : "";
+  existing.lastResponseSummary = serializeResponseSummary(question, state.response);
   existing.lastResult = "wrong";
   existing.updatedAt = new Date().toISOString();
   state.session.wrongBook[question.id] = existing;
@@ -556,12 +982,12 @@ function updateWrongBook(question, isCorrect) {
 
 function checkAnswer() {
   const question = getCurrentQuestion();
-  if (!question || !state.selectedKey || state.answerChecked) {
+  if (!question || state.answerChecked || !isResponseComplete(question, state.response)) {
     return;
   }
 
   state.answerChecked = true;
-  const isCorrect = state.selectedKey === question.answerKey;
+  const isCorrect = isAnswerCorrect(question, state.response);
   state.session.totals.solved += 1;
   if (isCorrect) {
     state.session.totals.correct += 1;
@@ -605,6 +1031,9 @@ function renderWrongNote() {
     .map(({ question, record }) => {
       const excerpt = question.promptKo.split("\n")[0];
       const lastResultLabel = record.lastResult === "correct" ? "최근 정답" : "최근 오답";
+      const responseSummary = record.lastResponseSummary
+        ? `<p class="wrong-item__answer">${escapeHtml(record.lastResponseSummary)}</p>`
+        : "";
 
       return `
         <article class="wrong-item">
@@ -616,6 +1045,7 @@ function renderWrongNote() {
             틀린 횟수 ${record.wrongCount}회 · 다시 맞춘 횟수 ${record.correctCount}회
           </div>
           <p class="wrong-item__excerpt">${escapeHtml(excerpt)}</p>
+          ${responseSummary}
           <button class="wrong-item__button" type="button" data-jump-question="${question.id}">
             이 문제 다시 보기
           </button>
@@ -702,7 +1132,7 @@ function renderGlossary() {
               .map(
                 (questionId) => `
                   <button class="glossary-card__link" type="button" data-jump-question="${questionId}">
-                    Q ${questionId}
+                    Q ${questionById.get(questionId)?.sourceNumber || questionId}
                   </button>
                 `,
               )
@@ -760,20 +1190,113 @@ function removeCurrentQuestionFromWrongBook() {
   renderWrongNote();
 }
 
+function updateResponseFromRadio(value) {
+  state.response = value;
+}
+
+function updateResponseFromCheckbox(question, value, checked) {
+  const selectedKeys = new Set(state.response);
+
+  if (checked) {
+    if (selectedKeys.size >= question.requiredSelections) {
+      window.alert(`정답은 ${question.requiredSelections}개까지 선택할 수 있습니다.`);
+      return false;
+    }
+    selectedKeys.add(value);
+  } else {
+    selectedKeys.delete(value);
+  }
+
+  state.response = question.options
+    .map((option) => option.key)
+    .filter((key) => selectedKeys.has(key));
+  return true;
+}
+
+function updateResponseFromSelect(question, rowId, value) {
+  if (!question.allowRepeat && value) {
+    const duplicateRow = question.rows.find(
+      (row) => row.id !== rowId && state.response?.[row.id] === value,
+    );
+
+    if (duplicateRow) {
+      window.alert("같은 항목은 한 번만 선택할 수 있습니다.");
+      return false;
+    }
+  }
+
+  state.response = {
+    ...state.response,
+    [rowId]: value,
+  };
+  return true;
+}
+
+function updateOrdering(question, action, index) {
+  const targetIndex = action === "up" ? index - 1 : index + 1;
+  if (targetIndex < 0 || targetIndex >= question.sequenceItems.length) {
+    return;
+  }
+
+  state.response = moveItem(state.response, index, targetIndex);
+}
+
 function attachEvents() {
-  elements.startButton.addEventListener("click", startQuiz);
+  elements.startButton?.addEventListener("click", startQuiz);
 
   elements.segmentedButtons.forEach((button) => {
     button.addEventListener("click", () => setMode(button.dataset.mode));
   });
 
   elements.optionsForm.addEventListener("change", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLInputElement)) {
+    const question = getCurrentQuestion();
+    if (!question || state.answerChecked) {
       return;
     }
-    state.selectedKey = target.value;
-    elements.checkAnswerButton.disabled = !state.selectedKey || state.answerChecked;
+
+    const target = event.target;
+
+    if (target instanceof HTMLInputElement) {
+      if (question.type === "single-choice" && target.type === "radio") {
+        updateResponseFromRadio(target.value);
+      }
+
+      if (question.type === "multi-select" && target.type === "checkbox") {
+        const changed = updateResponseFromCheckbox(question, target.value, target.checked);
+        if (!changed) {
+          renderQuestion();
+          return;
+        }
+      }
+
+      renderQuestion();
+      return;
+    }
+
+    if (target instanceof HTMLSelectElement && question.type === "matching") {
+      const changed = updateResponseFromSelect(question, target.dataset.rowId, target.value);
+      if (!changed) {
+        renderQuestion();
+        return;
+      }
+
+      renderQuestion();
+    }
+  });
+
+  elements.optionsForm.addEventListener("click", (event) => {
+    const question = getCurrentQuestion();
+    if (!question || question.type !== "ordering" || state.answerChecked) {
+      return;
+    }
+
+    const button = event.target instanceof HTMLElement ? event.target.closest("[data-order-action]") : null;
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const index = Number(button.dataset.orderIndex);
+    updateOrdering(question, button.dataset.orderAction, index);
     renderQuestion();
   });
 
@@ -803,12 +1326,12 @@ function attachEvents() {
       return;
     }
 
-    const jumpQuestionId = target.dataset.jumpQuestion;
-    if (!jumpQuestionId) {
+    const jumpQuestionButton = target.closest("[data-jump-question]");
+    if (!(jumpQuestionButton instanceof HTMLElement)) {
       return;
     }
 
-    const questionId = Number(jumpQuestionId);
+    const questionId = Number(jumpQuestionButton.dataset.jumpQuestion);
     if (!questionById.has(questionId)) {
       return;
     }

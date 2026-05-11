@@ -43,6 +43,17 @@ const SECTION_MAP = {
   "용어 설명": "glossary",
 };
 
+const MULTI_SELECT_QUESTION_IDS = new Set([
+  40, 45, 49, 71, 80, 126, 149, 165, 167, 193, 226, 242,
+]);
+
+const ORDERING_QUESTION_IDS = new Set([114, 309, 313]);
+
+const MATCHING_QUESTION_IDS = new Set([
+  125, 135, 143, 144, 155, 185, 188, 191, 235, 245, 257, 264, 267, 275, 280,
+  283, 311,
+]);
+
 function decodeHtmlEntities(value = "") {
   return value
     .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
@@ -273,6 +284,404 @@ function stripBulletMarker(line = "") {
   return line.replace(/^-\s*/, "").trim();
 }
 
+function uniqueStrings(values) {
+  const seen = new Set();
+  const result = [];
+
+  for (const value of values.map((item) => item.trim()).filter(Boolean)) {
+    const signature = normalizeText(value);
+    if (!signature || seen.has(signature)) {
+      continue;
+    }
+    seen.add(signature);
+    result.push(value);
+  }
+
+  return result;
+}
+
+function splitCsv(value = "") {
+  return value
+    .split(/\s*,\s*/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function extractAnswerOptionKeys(value = "") {
+  const explicitKeys = [
+    ...value.toUpperCase().matchAll(/(?:^|[\s(,])([A-E])\.(?=\s)/g),
+    ...value.toUpperCase().matchAll(/(?:^|[\s(,])([A-E])(?=\s*\()/g),
+  ].map((match) => match[1]);
+
+  const csvMatch =
+    value.match(/정답\s*[:：]?\s*([A-E](?:\s*,\s*[A-E])+)/i) ||
+    value.match(/^([A-E](?:\s*,\s*[A-E])+)\b/i);
+
+  const csvKeys = csvMatch ? splitCsv(csvMatch[1].toUpperCase()) : [];
+  const keys = [...new Set([...explicitKeys, ...csvKeys])];
+
+  if (!keys.length) {
+    return [];
+  }
+
+  return keys;
+}
+
+function parseMultiAnswerKeys(answerLines, answerText = "", answerKey = "") {
+  const candidates = [answerText, ...answerLines];
+  const collectedKeys = new Set(answerKey ? [answerKey] : []);
+
+  for (const candidate of candidates) {
+    const keys = extractAnswerOptionKeys(candidate);
+    keys.forEach((key) => collectedKeys.add(key));
+    if (collectedKeys.size >= 2) {
+      return [...collectedKeys];
+    }
+  }
+
+  return [];
+}
+
+function extractQuestionBullets(lines) {
+  const prompts = [];
+  let collecting = true;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    const clean = stripBulletMarker(line);
+
+    if (/^(Options:|선택지:|Prompt:|요구사항|Requirement|Application Design Action|설계 활동)$/i.test(clean)) {
+      if (/^(Options:|선택지:)$/i.test(clean)) {
+        collecting = false;
+      }
+      continue;
+    }
+
+    if (!collecting) {
+      continue;
+    }
+
+    if (/^-\s*/.test(line) && !clean.includes("->")) {
+      prompts.push(clean);
+    }
+  }
+
+  return prompts;
+}
+
+function extractChoicePool(lines) {
+  const pool = [];
+  let collecting = false;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    const clean = line.replace(/^\|\s*/, "").trim();
+
+    const inlineOptionsMatch = clean.match(/^(Options:|선택지:)\s*(.*)$/i);
+    if (inlineOptionsMatch) {
+      collecting = true;
+      if (inlineOptionsMatch[2]) {
+        pool.push(...splitCsv(inlineOptionsMatch[2]));
+      }
+      continue;
+    }
+
+    if (/^(Options:|선택지:)$/i.test(clean)) {
+      collecting = true;
+      continue;
+    }
+
+    if (/^\|\s*[^|]+,/.test(line)) {
+      pool.push(...splitCsv(clean));
+      continue;
+    }
+
+    if (!collecting) {
+      continue;
+    }
+
+    if (/^-\s*/.test(line)) {
+      pool.push(stripBulletMarker(line));
+      continue;
+    }
+
+    if (line.startsWith("|")) {
+      continue;
+    }
+
+    if (!clean || /->/.test(clean)) {
+      continue;
+    }
+
+    if (/^(문제|정답|해설|용어|설명|각 |회사는 |한 회사가 |모델은 )/.test(clean)) {
+      continue;
+    }
+
+    pool.push(clean);
+  }
+
+  return uniqueStrings(pool);
+}
+
+function resolveChoiceText(target, choicePool) {
+  const normalizedTarget = normalizeText(target);
+  const exact = choicePool.find((choice) => normalizeText(choice) === normalizedTarget);
+  if (exact) {
+    return exact;
+  }
+
+  const fuzzy = choicePool.find((choice) => {
+    const normalizedChoice = normalizeText(choice);
+    return (
+      normalizedChoice.includes(normalizedTarget) ||
+      normalizedTarget.includes(normalizedChoice)
+    );
+  });
+
+  return fuzzy || target;
+}
+
+function parseArrowPairs(lines) {
+  return lines
+    .map((line) => stripBulletMarker(line))
+    .map((line) => line.match(/^(.+?)\s*->\s*(.+)$/))
+    .filter(Boolean)
+    .map((match) => ({
+      left: match[1].trim(),
+      right: match[2].trim(),
+    }));
+}
+
+function parseColonPairs(lines) {
+  return lines
+    .map((line) => stripBulletMarker(line))
+    .filter((line) => line && !/^\(/.test(line))
+    .map((line) => line.match(/^([^:]+?)\s*:\s*(.+)$/))
+    .filter(Boolean)
+    .map((match) => ({
+      left: match[1].trim(),
+      right: match[2].trim(),
+    }));
+}
+
+function parseIndexedPairs(lines, prompts) {
+  return lines
+    .map((line) => stripBulletMarker(line))
+    .map((line) => line.match(/^(\d+)번:\s*([^-]+?)(?:\s*-\s*.*)?$/))
+    .filter(Boolean)
+    .map((match) => ({
+      index: Number(match[1]) - 1,
+      answer: match[2].trim(),
+    }))
+    .filter((item) => prompts[item.index])
+    .map((item) => ({
+      left: prompts[item.index],
+      right: item.answer,
+    }));
+}
+
+function parseTableMappings(lines) {
+  const pairs = [];
+  const pool = [];
+  let currentPrompt = "";
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) {
+      continue;
+    }
+
+    if (!line.startsWith("|")) {
+      const clean = stripBulletMarker(line);
+      if (/^(Requirement|Application Design Action|요구사항|설계 활동)$/i.test(clean)) {
+        currentPrompt = "";
+        continue;
+      }
+      currentPrompt = clean;
+      continue;
+    }
+
+    const clean = line.replace(/^\|\s*/, "").trim();
+    if (!clean || /^정답$/i.test(clean)) {
+      continue;
+    }
+
+    if (/^(Options:|선택지:)/i.test(clean)) {
+      pool.push(...splitCsv(clean.replace(/^(Options:|선택지:)\s*/i, "")));
+      continue;
+    }
+
+    if (clean.includes(",")) {
+      pool.push(...splitCsv(clean));
+      continue;
+    }
+
+    if (currentPrompt) {
+      pairs.push({
+        left: currentPrompt,
+        right: clean,
+      });
+      currentPrompt = "";
+    }
+  }
+
+  return {
+    pairs,
+    pool: uniqueStrings(pool),
+  };
+}
+
+function extractOrderingItems(answerLines, explanationLines) {
+  const preferredLines = answerLines.length ? answerLines : explanationLines;
+  const items = preferredLines
+    .filter((line) => /^-\s*/.test(line))
+    .map((line) => stripBulletMarker(line))
+    .filter(
+      (line) =>
+        line &&
+        !/^정답/.test(line) &&
+        !/->/.test(line) &&
+        !/^오답/.test(line) &&
+        !/^>/.test(line),
+    );
+
+  return uniqueStrings(items);
+}
+
+function buildMatchingQuestion(base, pairs, choicePool, allowRepeat = true) {
+  if (pairs.length < 2) {
+    return null;
+  }
+
+  const resolvedChoicePool = uniqueStrings([
+    ...choicePool,
+    ...pairs.map((pair) => pair.right),
+  ]);
+
+  const rows = pairs.map((pair, index) => ({
+    id: `${base.id}-row-${index + 1}`,
+    prompt: pair.left,
+    answer: resolveChoiceText(pair.right, resolvedChoicePool),
+  }));
+
+  return {
+    ...base,
+    type: "matching",
+    choicePool: resolvedChoicePool,
+    allowRepeat,
+    rows,
+  };
+}
+
+function buildOrderingQuestion(base, items) {
+  if (items.length < 3) {
+    return null;
+  }
+
+  return {
+    ...base,
+    type: "ordering",
+    sequenceItems: items,
+  };
+}
+
+function buildManualStructuredQuestion(questionNumber, base) {
+  const manual = {
+    245: {
+      type: "matching",
+      allowRepeat: false,
+      choicePool: [
+        "공정성 (Fairness)",
+        "투명성 (Transparency)",
+        "책임성 (Accountability)",
+        "신뢰성 (Reliability)",
+        "개인정보 보호 (Privacy)",
+      ],
+      rows: [
+        {
+          prompt: "특정 집단에 불리한 편향이 생기지 않도록 대출 심사를 설계한다",
+          answer: "공정성 (Fairness)",
+        },
+        {
+          prompt: "승인 또는 거절 판단 이유를 설명할 수 있게 만든다",
+          answer: "투명성 (Transparency)",
+        },
+        {
+          prompt: "AI 판단 결과를 검토하고 책임질 절차와 주체를 둔다",
+          answer: "책임성 (Accountability)",
+        },
+        {
+          prompt: "운영 중에도 일관되고 안정적인 판단 품질을 유지한다",
+          answer: "신뢰성 (Reliability)",
+        },
+        {
+          prompt: "대출 신청자의 개인정보와 민감 정보를 보호한다",
+          answer: "개인정보 보호 (Privacy)",
+        },
+      ],
+    },
+    283: {
+      type: "matching",
+      allowRepeat: false,
+      choicePool: [
+        "Supervised learning",
+        "Unsupervised learning",
+        "Generative AI",
+      ],
+      rows: [
+        {
+          prompt: "레이블이 있는 데이터를 사용해 학습한다",
+          answer: "Supervised learning",
+        },
+        {
+          prompt: "레이블 없이 데이터의 패턴을 학습한다",
+          answer: "Unsupervised learning",
+        },
+        {
+          prompt: "새로운 데이터를 생성하는 인공지능이다",
+          answer: "Generative AI",
+        },
+      ],
+    },
+    311: {
+      type: "matching",
+      allowRepeat: false,
+      choicePool: [
+        "Few-shot prompting",
+        "Zero-shot prompting",
+        "Chain-of-thought prompting",
+      ],
+      rows: [
+        {
+          prompt: "예시 없이 바로 작업을 지시하는 프롬프트 방식",
+          answer: "Zero-shot prompting",
+        },
+        {
+          prompt: "몇 개의 예시를 함께 제공해 원하는 패턴을 유도하는 방식",
+          answer: "Few-shot prompting",
+        },
+        {
+          prompt: "단계별로 생각하도록 유도해 추론 과정을 끌어내는 방식",
+          answer: "Chain-of-thought prompting",
+        },
+      ],
+    },
+  }[questionNumber];
+
+  if (!manual) {
+    return null;
+  }
+
+  return {
+    ...base,
+    ...manual,
+    rows: manual.rows.map((row, index) => ({
+      id: `${questionNumber}-manual-${index + 1}`,
+      ...row,
+    })),
+  };
+}
+
 function parseSegment(questionNumber, segment) {
   const lines = textify(segment)
     .split("\n")
@@ -312,12 +721,88 @@ function parseSegment(questionNumber, segment) {
   const { explanationLines, wrongLines: derivedWrongLines } =
     splitExplanationAndWrongLines(explanationCandidates);
   const wrongLines = [...explicitWrongLines, ...derivedWrongLines];
+  const promptKo = korean.question || english.question;
+  const promptEn = english.question || korean.question;
+
+  const base = {
+    id: questionNumber,
+    sourceNumber: questionNumber,
+    title: heading,
+    promptKo,
+    promptEn,
+    explanation: explanationLines,
+    wrongExplanations: wrongLines,
+    glossary: sections.glossary.filter(Boolean),
+  };
 
   let options = korean.options.length ? korean.options : english.options;
   let { answerKey, answerText } = parseAnswer(
     sections.answer,
     sections.explanation,
   );
+  const multiAnswerKeys = parseMultiAnswerKeys(
+    sections.answer,
+    answerText,
+    answerKey,
+  );
+  const isKnownMultiSelect = MULTI_SELECT_QUESTION_IDS.has(questionNumber);
+  const isKnownOrdering = ORDERING_QUESTION_IDS.has(questionNumber);
+  const isKnownMatching = MATCHING_QUESTION_IDS.has(questionNumber);
+
+  if (options.length && isKnownMultiSelect && multiAnswerKeys.length >= 2) {
+    return {
+      ...base,
+      type: "multi-select",
+      options,
+      answerKeys: multiAnswerKeys,
+      requiredSelections: multiAnswerKeys.length,
+    };
+  }
+
+  const promptLinesKo = extractQuestionBullets(sections.korean);
+  const promptLinesEn = extractQuestionBullets(sections.english);
+  const choicePoolKo = extractChoicePool(sections.korean);
+  const choicePoolEn = extractChoicePool(sections.english);
+  const choicePool = choicePoolKo.length ? choicePoolKo : choicePoolEn;
+  const questionText = [heading, promptEn, promptKo].join("\n");
+
+  if (isKnownOrdering || /order|올바른 순서|순서를/i.test(questionText)) {
+    const orderingItems = extractOrderingItems(sections.answer, explanationLines);
+    const orderingQuestion = buildOrderingQuestion(base, orderingItems);
+    if (orderingQuestion) {
+      return orderingQuestion;
+    }
+  }
+
+  const answerArrowPairs = parseArrowPairs(sections.answer);
+  const explanationArrowPairs = parseArrowPairs(explanationLines);
+  const answerColonPairs = parseColonPairs(sections.answer);
+  const tableKo = parseTableMappings(sections.korean);
+  const tableEn = parseTableMappings(sections.english);
+  const indexedPairsKo = parseIndexedPairs(explanationLines, promptLinesKo);
+  const indexedPairsEn = parseIndexedPairs(explanationLines, promptLinesEn);
+  const allowRepeat = /one or more times|하나 이상 선택/i.test(questionText);
+
+  if (isKnownMatching) {
+    const matchingCandidates = [
+      buildMatchingQuestion(base, answerArrowPairs, choicePool, allowRepeat),
+      buildMatchingQuestion(base, explanationArrowPairs, choicePool, allowRepeat),
+      buildMatchingQuestion(base, indexedPairsKo, choicePool, allowRepeat),
+      buildMatchingQuestion(base, indexedPairsEn, choicePool, allowRepeat),
+      buildMatchingQuestion(
+        base,
+        tableKo.pairs.length ? tableKo.pairs : tableEn.pairs,
+        tableKo.pool.length ? tableKo.pool : tableEn.pool,
+        allowRepeat,
+      ),
+      buildMatchingQuestion(base, answerColonPairs, choicePool, allowRepeat),
+      buildManualStructuredQuestion(questionNumber, base),
+    ].filter(Boolean);
+
+    if (matchingCandidates.length) {
+      return matchingCandidates[0];
+    }
+  }
 
   if (!options.length && answerText) {
     options = buildOptionsFromWrongExplanation(
@@ -347,26 +832,19 @@ function parseSegment(questionNumber, segment) {
     answerKey = matchedOption?.key || "";
   }
 
-  const isComplex =
-    /HOTSPOT|Choose two|2개 선택|Choose three|3개 선택|올바른 순서/i.test(
-      [heading, english.question, korean.question].join(" "),
-    ) ||
-    options.length > 5 ||
-    !answerKey;
+  if (options.length >= 2 && options.length <= 5 && answerKey) {
+    return {
+      ...base,
+      type: "single-choice",
+      options,
+      answerKey,
+      answerText,
+    };
+  }
 
   return {
-    id: questionNumber,
-    sourceNumber: questionNumber,
-    type: isComplex ? "unsupported" : "single-choice",
-    title: heading,
-    promptKo: korean.question || english.question,
-    promptEn: english.question || korean.question,
-    options,
-    answerKey,
-    answerText,
-    explanation: explanationLines,
-    wrongExplanations: wrongLines,
-    glossary: sections.glossary.filter(Boolean),
+    ...base,
+    type: "unsupported",
   };
 }
 
@@ -379,11 +857,7 @@ const parsedQuestions = matches.map((match, index) => {
 });
 
 const supportedQuestions = parsedQuestions.filter(
-  (question) =>
-    question.type === "single-choice" &&
-    question.options.length >= 2 &&
-    question.options.length <= 5 &&
-    question.answerKey,
+  (question) => question.type !== "unsupported",
 );
 
 const payload = {
