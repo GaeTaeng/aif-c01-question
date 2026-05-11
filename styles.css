@@ -107,6 +107,25 @@ input {
   margin-top: 16px;
 }
 
+.hero__actions {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero__start-button {
+  width: 100%;
+}
+
+.hero__hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .stat-card {
   padding: 12px 14px;
   border: 1px solid var(--line);
@@ -129,6 +148,10 @@ input {
 
 .main-content {
   margin-top: 16px;
+}
+
+.app-shell--started .main-content {
+  margin-top: 0;
 }
 
 .panel {
@@ -360,6 +383,10 @@ input {
   min-height: 42px;
   padding: 10px 12px;
   white-space: nowrap;
+}
+
+.ghost-button:disabled {
+  opacity: 0.45;
 }
 
 .feedback-card {

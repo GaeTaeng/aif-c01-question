@@ -18,7 +18,11 @@ const questions = appData.questions || [];
 const questionById = new Map(questions.map((question) => [question.id, question]));
 
 const elements = {
+  appShell: document.querySelector(".app-shell"),
+  hero: document.getElementById("hero"),
   heroStats: document.getElementById("hero-stats"),
+  startButton: document.getElementById("start-button"),
+  mainContent: document.getElementById("main-content"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
   quizView: document.getElementById("quiz-view"),
   glossaryView: document.getElementById("glossary-view"),
@@ -48,6 +52,7 @@ const state = {
   selectedKey: "",
   answerChecked: false,
   englishVisible: false,
+  started: false,
   session: loadState(),
 };
 
@@ -266,6 +271,23 @@ function renderMode() {
   if (!isGlossary) {
     elements.modeBadge.textContent = state.mode === "wrong" ? "오답 복습" : "랜덤";
   }
+}
+
+function renderAppPhase() {
+  const hasStarted = state.started;
+  elements.hero.classList.toggle("is-hidden", hasStarted);
+  elements.mainContent.classList.toggle("is-hidden", !hasStarted);
+  elements.appShell.classList.toggle("app-shell--started", hasStarted);
+}
+
+function startQuiz() {
+  if (state.started) {
+    return;
+  }
+
+  state.started = true;
+  renderAppPhase();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function selectQuestion(questionId) {
@@ -542,8 +564,9 @@ function renderWrongNote() {
   const currentQuestion = getCurrentQuestion();
   const isInWrongBook = currentQuestion && state.session.wrongBook[currentQuestion.id];
 
-  elements.wrongNoteSummary.classList.toggle("is-hidden", state.mode !== "wrong" && !wrongIds.length);
+  elements.wrongNoteSummary.classList.toggle("is-hidden", state.mode !== "wrong");
   elements.removeCurrentWrongButton.classList.toggle("is-hidden", !isInWrongBook);
+  elements.clearWrongButton.disabled = !wrongIds.length;
 
   if (!wrongIds.length) {
     elements.wrongNoteList.innerHTML = `
@@ -689,6 +712,15 @@ function setMode(mode) {
 }
 
 function clearWrongBook() {
+  if (!getWrongIds().length) {
+    return;
+  }
+
+  const confirmed = window.confirm("정말 초기화 하시겠습니까?");
+  if (!confirmed) {
+    return;
+  }
+
   state.session.wrongBook = {};
   saveState();
   buildHeroStats();
@@ -714,6 +746,8 @@ function removeCurrentQuestionFromWrongBook() {
 }
 
 function attachEvents() {
+  elements.startButton.addEventListener("click", startQuiz);
+
   elements.segmentedButtons.forEach((button) => {
     button.addEventListener("click", () => setMode(button.dataset.mode));
   });
@@ -777,6 +811,7 @@ function init() {
 
   buildHeroStats();
   attachEvents();
+  renderAppPhase();
   renderMode();
   renderGlossary();
   selectQuestion(pickRandom(getQuestionPool()));

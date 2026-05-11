@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="app-shell">
-      <header class="hero">
+      <header class="hero" id="hero">
         <p class="hero__eyebrow">AWS AI Practitioner</p>
         <h1>랜덤 문제 연습장</h1>
         <p class="hero__copy">
@@ -19,9 +19,17 @@
           있게 구성했습니다.
         </p>
         <div class="hero__stats" id="hero-stats"></div>
+        <div class="hero__actions">
+          <button class="primary-button hero__start-button" id="start-button" type="button">
+            시작하기
+          </button>
+          <p class="hero__hint">
+            시작하면 랜딩 영역은 사라지고 문제 화면만 표시됩니다.
+          </p>
+        </div>
       </header>
 
-      <main class="main-content">
+      <main class="main-content is-hidden" id="main-content">
         <section class="panel panel--quiz is-active" id="quiz-panel">
           <div class="panel__toolbar">
             <div class="segmented" role="tablist" aria-label="문제 모드">
@@ -85,7 +93,7 @@
                     현재 문제 제거
                   </button>
                   <button class="ghost-button" id="clear-wrong-button" type="button">
-                    오답 기록 초기화
+                    초기화
                   </button>
                 </div>
               </div>
