@@ -1,4 +1,12 @@
 const QUIZ_STORAGE_KEY = "aws-ai-practitioner-quiz-state-v1";
+const DAILY_AUTH_STORAGE_KEY = "aws-ai-practitioner-daily-auth-v1";
+const SEOUL_TIMEZONE = "Asia/Seoul";
+const PASSWORD_PREFIX = "260314";
+const PASSWORD_BASE_DATE = {
+  year: 2026,
+  month: 3,
+  day: 14,
+};
 
 const appData = window.AWS_AI_QUIZ_DATA || {
   supportedCount: 0,
@@ -59,6 +67,101 @@ function loadState() {
       wrongBook: {},
     };
   }
+}
+
+function getDatePartsInTimeZone(date = new Date(), timeZone = SEOUL_TIMEZONE) {
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const parts = formatter.formatToParts(date);
+  const year = Number(parts.find((part) => part.type === "year")?.value);
+  const month = Number(parts.find((part) => part.type === "month")?.value);
+  const day = Number(parts.find((part) => part.type === "day")?.value);
+  const monthLabel = String(month).padStart(2, "0");
+  const dayLabel = String(day).padStart(2, "0");
+
+  return {
+    year,
+    month,
+    day,
+    dayKey: `${year}-${monthLabel}-${dayLabel}`,
+  };
+}
+
+function toUtcDayNumber({ year, month, day }) {
+  return Math.floor(Date.UTC(year, month - 1, day) / 86400000);
+}
+
+function getExpectedDailyPassword(date = new Date()) {
+  const today = getDatePartsInTimeZone(date);
+  const baseDayNumber = toUtcDayNumber(PASSWORD_BASE_DATE);
+  const todayDayNumber = toUtcDayNumber(today);
+  const elapsedDays = Math.max(0, todayDayNumber - baseDayNumber + 1);
+
+  return {
+    dayKey: today.dayKey,
+    password: `${PASSWORD_PREFIX}${elapsedDays}`,
+    elapsedDays,
+  };
+}
+
+function loadDailyAuth() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(DAILY_AUTH_STORAGE_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveDailyAuth(dayKey) {
+  localStorage.setItem(
+    DAILY_AUTH_STORAGE_KEY,
+    JSON.stringify({
+      dayKey,
+      verifiedAt: new Date().toISOString(),
+    }),
+  );
+}
+
+function clearDailyAuth() {
+  localStorage.removeItem(DAILY_AUTH_STORAGE_KEY);
+}
+
+function ejectFromPage() {
+  document.body.innerHTML = "";
+  window.location.replace("about:blank");
+}
+
+function requireDailyPassword() {
+  const { dayKey, password } = getExpectedDailyPassword();
+  const savedAuth = loadDailyAuth();
+
+  if (savedAuth.dayKey === dayKey) {
+    return true;
+  }
+
+  clearDailyAuth();
+
+  const message = [
+    "비밀번호를 입력하세요.",
+    "기준일: 2026-03-14",
+    "예시 기준: 2026-05-11 -> 26031459",
+    "인증은 Asia/Seoul 기준 오늘 23:59:59까지만 유효합니다.",
+  ].join("\n");
+  const enteredPassword = window.prompt(message, "");
+
+  if (enteredPassword === password) {
+    saveDailyAuth(dayKey);
+    return true;
+  }
+
+  window.alert("비밀번호가 올바르지 않아 페이지를 종료합니다.");
+  ejectFromPage();
+  return false;
 }
 
 function saveState() {
@@ -668,6 +771,10 @@ function attachEvents() {
 }
 
 function init() {
+  if (!requireDailyPassword()) {
+    return;
+  }
+
   buildHeroStats();
   attachEvents();
   renderMode();
