@@ -17,6 +17,27 @@ const appData = window.AWS_AI_QUIZ_DATA || {
 const questions = appData.questions || [];
 const questionById = new Map(questions.map((question) => [question.id, question]));
 
+function isQuestionRoute() {
+  const normalizedPath = window.location.pathname.replace(/index\.html$/, "");
+  return /\/question\/?$/.test(normalizedPath);
+}
+
+function getQuestionRouteUrl() {
+  const currentUrl = new URL(window.location.href);
+  const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
+
+  if (/\/question\/?$/.test(normalizedPath)) {
+    return currentUrl.toString();
+  }
+
+  currentUrl.pathname = normalizedPath.endsWith("/")
+    ? `${normalizedPath}question/`
+    : `${normalizedPath}/question/`;
+  currentUrl.search = "";
+  currentUrl.hash = "";
+  return currentUrl.toString();
+}
+
 const elements = {
   appShell: document.querySelector(".app-shell"),
   hero: document.getElementById("hero"),
@@ -52,7 +73,7 @@ const state = {
   selectedKey: "",
   answerChecked: false,
   englishVisible: false,
-  started: false,
+  started: isQuestionRoute(),
   session: loadState(),
 };
 
@@ -281,13 +302,7 @@ function renderAppPhase() {
 }
 
 function startQuiz() {
-  if (state.started) {
-    return;
-  }
-
-  state.started = true;
-  renderAppPhase();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.location.href = getQuestionRouteUrl();
 }
 
 function selectQuestion(questionId) {

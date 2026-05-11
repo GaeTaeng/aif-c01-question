@@ -42,6 +42,7 @@ body {
 }
 
 button,
+a,
 input {
   font: inherit;
 }
@@ -117,6 +118,13 @@ input {
 
 .hero__start-button {
   width: 100%;
+}
+
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .hero__hint {

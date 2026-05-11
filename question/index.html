@@ -7,11 +7,11 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>AWS AI Practitioner 랜덤 퀴즈</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="app-shell">
-      <header class="hero" id="hero">
+      <header class="hero is-hidden" id="hero">
         <p class="hero__eyebrow">AWS AI Practitioner</p>
         <h1>랜덤 문제 연습장</h1>
         <p class="hero__copy">
@@ -20,7 +20,7 @@
         </p>
         <div class="hero__stats" id="hero-stats"></div>
         <div class="hero__actions">
-          <a class="primary-button primary-link hero__start-button" id="start-button" href="./question/">
+          <a class="primary-button primary-link hero__start-button" id="start-button" href="../question/">
             시작하기
           </a>
           <p class="hero__hint">
@@ -29,7 +29,7 @@
         </div>
       </header>
 
-      <main class="main-content is-hidden" id="main-content">
+      <main class="main-content" id="main-content">
         <section class="panel panel--quiz is-active" id="quiz-panel">
           <div class="panel__toolbar">
             <div class="segmented" role="tablist" aria-label="문제 모드">
@@ -118,7 +118,7 @@
       </main>
     </div>
 
-    <script src="./questions.js"></script>
-    <script src="./app.js"></script>
+    <script src="../questions.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>
