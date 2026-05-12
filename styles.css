@@ -550,9 +550,14 @@ select {
 }
 
 .ghost-button--floating {
-  min-width: 132px;
-  min-height: 54px;
-  padding: 14px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 63.69px;
+  min-width: 63.69px;
+  height: 47.5px;
+  min-height: 47.5px;
+  padding: 0;
   border-radius: 999px;
   text-decoration: none;
 }
@@ -792,10 +797,6 @@ select {
 
   .floating-actions {
     right: 16px;
-  }
-
-  .ghost-button--floating {
-    min-width: 124px;
   }
 
   .ordering-item {
