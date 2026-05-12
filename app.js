@@ -50,6 +50,7 @@ const elements = {
   hero: document.getElementById("hero"),
   heroStats: document.getElementById("hero-stats"),
   startButton: document.getElementById("start-button"),
+  resetProgressButton: document.getElementById("reset-progress-button"),
   mainContent: document.getElementById("main-content"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
   quizView: document.getElementById("quiz-view"),
@@ -59,8 +60,7 @@ const elements = {
   questionTitle: document.getElementById("question-title"),
   questionSubtitle: document.getElementById("question-subtitle"),
   questionPrompt: document.getElementById("question-prompt"),
-  questionPromptEnglish: document.getElementById("question-prompt-english"),
-  toggleEnglishButton: document.getElementById("toggle-english-button"),
+  questionPromptSecondary: document.getElementById("question-prompt-english"),
   optionsForm: document.getElementById("options-form"),
   checkAnswerButton: document.getElementById("check-answer-button"),
   newRandomButton: document.getElementById("new-random-button"),
@@ -79,7 +79,6 @@ const state = {
   currentQuestionId: null,
   response: null,
   answerChecked: false,
-  englishVisible: false,
   started: isQuestionRoute(),
   session: loadState(),
 };
@@ -93,11 +92,16 @@ function loadState() {
         correct: Number(parsed?.totals?.correct || 0),
       },
       wrongBook: parsed?.wrongBook && typeof parsed.wrongBook === "object" ? parsed.wrongBook : {},
+      completedBook:
+        parsed?.completedBook && typeof parsed.completedBook === "object"
+          ? parsed.completedBook
+          : {},
     };
   } catch (error) {
     return {
       totals: { solved: 0, correct: 0 },
       wrongBook: {},
+      completedBook: {},
     };
   }
 }
@@ -251,6 +255,15 @@ function getAccuracy() {
 function getWrongIds() {
   return Object.keys(state.session.wrongBook)
     .map(Number)
+    .filter(
+      (questionId) =>
+        questionById.has(questionId) && !state.session.completedBook[questionId],
+    );
+}
+
+function getCompletedIds() {
+  return Object.keys(state.session.completedBook)
+    .map(Number)
     .filter((questionId) => questionById.has(questionId));
 }
 
@@ -274,15 +287,50 @@ function getQuestionPool() {
   if (state.mode === "wrong") {
     return getWrongIds();
   }
-  return questions.map((question) => question.id);
+  return questions
+    .map((question) => question.id)
+    .filter((questionId) => !state.session.completedBook[questionId]);
 }
 
 function getCurrentQuestion() {
   return questionById.get(state.currentQuestionId) || null;
 }
 
+function getOption(question, optionKey) {
+  return question.options?.find((option) => option.key === optionKey) || null;
+}
+
+function getOptionPrimaryTextFromOption(option) {
+  return option?.textEn || option?.textKo || option?.text || "";
+}
+
+function getOptionSecondaryTextFromOption(option) {
+  if (!option?.textEn || !option?.textKo) {
+    return "";
+  }
+
+  return normalizeText(option.textEn) === normalizeText(option.textKo) ? "" : option.textKo;
+}
+
 function getOptionText(question, optionKey) {
-  return question.options?.find((option) => option.key === optionKey)?.text || "";
+  return getOptionPrimaryTextFromOption(getOption(question, optionKey));
+}
+
+function getOptionSecondaryText(question, optionKey) {
+  return getOptionSecondaryTextFromOption(getOption(question, optionKey));
+}
+
+function formatOptionLine(question, optionKey) {
+  const primary = getOptionText(question, optionKey);
+  const secondary = getOptionSecondaryText(question, optionKey);
+
+  if (!primary) {
+    return `${optionKey}.`;
+  }
+
+  return secondary
+    ? `${optionKey}. ${primary} / ${secondary}`
+    : `${optionKey}. ${primary}`;
 }
 
 function createInitialResponse(question) {
@@ -506,6 +554,8 @@ function buildChoiceOptionCard(question, option, inputType) {
     (question.type === "single-choice"
       ? question.answerKey !== option.key
       : !question.answerKeys.includes(option.key));
+  const primaryText = getOptionPrimaryTextFromOption(option);
+  const secondaryText = getOptionSecondaryTextFromOption(option);
 
   return `
     <label
@@ -521,7 +571,14 @@ function buildChoiceOptionCard(question, option, inputType) {
       />
       <span class="option-card__inner">
         <span class="option-card__key">${escapeHtml(option.key)}</span>
-        <span class="option-card__text">${escapeHtml(option.text)}</span>
+        <span class="option-card__body">
+          <span class="option-card__text">${escapeHtml(primaryText)}</span>
+          ${
+            secondaryText
+              ? `<span class="option-card__subtext">${escapeHtml(secondaryText)}</span>`
+              : ""
+          }
+        </span>
       </span>
     </label>
   `;
@@ -657,38 +714,62 @@ function renderOptionsMarkup(question) {
 
 function renderQuestion() {
   const question = getCurrentQuestion();
+  const pool = getQuestionPool();
 
   if (!question) {
     elements.questionId.textContent = state.mode === "wrong" ? "오답 없음" : "Q -";
-    elements.questionTitle.textContent = "표시할 문제가 없습니다.";
+    const completedCount = getCompletedIds().length;
+    const solvedAll = state.mode === "random" && completedCount === questions.length;
+
+    elements.questionTitle.textContent = solvedAll
+      ? "모든 문제를 한 번씩 맞췄습니다."
+      : "표시할 문제가 없습니다.";
     elements.questionSubtitle.textContent =
       state.mode === "wrong"
         ? "오답 노트에 문제를 하나 이상 쌓으면 여기서 다시 풀 수 있습니다."
-        : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
+        : solvedAll
+          ? "메인 화면의 '처음부터 다시 풀기'로 기록을 초기화할 수 있습니다."
+          : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
     elements.questionPrompt.textContent =
       state.mode === "wrong"
         ? "랜덤 문제에서 틀린 문항이 생기면 자동으로 저장됩니다."
-        : "랜덤 새로 뽑기를 눌러 문제를 시작하세요.";
-    elements.questionPromptEnglish.textContent = "";
-    elements.optionsForm.innerHTML = "";
+        : solvedAll
+          ? `현재 ${completedCount}문제를 모두 완료했습니다.`
+          : "랜덤 새로 뽑기를 눌러 문제를 시작하세요.";
+    elements.questionPromptSecondary.textContent = "";
+    elements.optionsForm.innerHTML = solvedAll
+      ? `
+        <div class="response-helper">
+          새로 한 바퀴 다시 풀려면 아래 버튼으로 기록을 초기화하세요.
+        </div>
+        <button class="secondary-button" data-reset-progress="true" type="button">
+          처음부터 다시 풀기
+        </button>
+      `
+      : "";
     elements.checkAnswerButton.disabled = true;
-    elements.toggleEnglishButton.disabled = true;
+    elements.newRandomButton.disabled = !pool.length;
+    elements.nextQuestionButton.disabled = !pool.length;
     elements.feedbackCard.classList.add("is-hidden");
     renderWrongNote();
     return;
   }
 
-  elements.toggleEnglishButton.disabled = false;
   elements.questionId.textContent = `Q ${question.sourceNumber}`;
   elements.questionTitle.textContent = question.title;
   elements.questionSubtitle.textContent = getQuestionSubtitle(question);
-  elements.questionPrompt.textContent = question.promptKo;
-  elements.questionPromptEnglish.textContent = question.promptEn || "";
-  elements.questionPromptEnglish.classList.toggle("is-hidden", !state.englishVisible);
-  elements.toggleEnglishButton.textContent = state.englishVisible ? "영문 숨기기" : "영문 보기";
+  elements.questionPrompt.textContent = question.promptEn || question.promptKo;
+  elements.questionPromptSecondary.textContent =
+    question.promptEn && question.promptKo ? question.promptKo : "";
+  elements.questionPromptSecondary.classList.toggle(
+    "is-hidden",
+    !(question.promptEn && question.promptKo),
+  );
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
   elements.checkAnswerButton.disabled =
     !isResponseComplete(question, state.response) || state.answerChecked;
+  elements.newRandomButton.disabled = !pool.length;
+  elements.nextQuestionButton.disabled = !pool.length;
   renderWrongNote();
 }
 
@@ -739,20 +820,22 @@ function parseWrongExplanations(question) {
 
 function findWrongDetailForSelection(question, optionKey, optionText = "") {
   const wrongDetails = parseWrongExplanations(question);
+  const secondaryText = getOptionSecondaryText(question, optionKey);
   return (
     wrongDetails.find((item) => item.keys.includes(optionKey)) ||
     wrongDetails.find((item) => normalizeText(item.label) === normalizeText(optionText)) ||
+    wrongDetails.find((item) => normalizeText(item.label) === normalizeText(secondaryText)) ||
     null
   );
 }
 
 function getCorrectResponseLines(question) {
   if (question.type === "single-choice") {
-    return [`${question.answerKey}. ${getOptionText(question, question.answerKey)}`];
+    return [formatOptionLine(question, question.answerKey)];
   }
 
   if (question.type === "multi-select") {
-    return question.answerKeys.map((key) => `${key}. ${getOptionText(question, key)}`);
+    return question.answerKeys.map((key) => formatOptionLine(question, key));
   }
 
   if (question.type === "matching") {
@@ -768,12 +851,12 @@ function getCorrectResponseLines(question) {
 
 function getSelectedResponseLines(question, response) {
   if (question.type === "single-choice") {
-    return response ? [`${response}. ${getOptionText(question, response)}`] : ["선택 안 함"];
+    return response ? [formatOptionLine(question, response)] : ["선택 안 함"];
   }
 
   if (question.type === "multi-select") {
     return response.length
-      ? response.map((key) => `${key}. ${getOptionText(question, key)}`)
+      ? response.map((key) => formatOptionLine(question, key))
       : ["선택 안 함"];
   }
 
@@ -795,6 +878,59 @@ function getAnswerReason(question) {
 
   const firstAnswerLine = getCorrectResponseLines(question)[0];
   return firstAnswerLine || "문제 요구사항과 가장 직접적으로 맞는 답입니다.";
+}
+
+function parseKeyedExplanationLines(lines = []) {
+  return lines
+    .map((line) => stripBullet(line))
+    .map((clean) => {
+      const match =
+        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*[:：]\s*(.*)$/) ||
+        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.*)$/);
+
+      if (!match) {
+        return null;
+      }
+
+      return {
+        keys: match[1].split(/\s*,\s*/),
+        description: match[2].trim(),
+        raw: clean,
+      };
+    })
+    .filter(Boolean);
+}
+
+function findExplanationDetailForSelection(question, optionKey) {
+  return parseKeyedExplanationLines(question.explanation).find((item) =>
+    item.keys.includes(optionKey),
+  );
+}
+
+function getChoiceOptionReviewLines(question) {
+  if (!["single-choice", "multi-select"].includes(question.type)) {
+    return [];
+  }
+
+  return question.options.map((option) => {
+    const isCorrectOption =
+      question.type === "single-choice"
+        ? option.key === question.answerKey
+        : question.answerKeys.includes(option.key);
+    const wrongDetail = findWrongDetailForSelection(
+      question,
+      option.key,
+      getOptionText(question, option.key),
+    );
+    const explanationDetail = findExplanationDetailForSelection(question, option.key);
+    const summary = isCorrectOption
+      ? explanationDetail?.description || getAnswerReason(question)
+      : wrongDetail?.description ||
+        explanationDetail?.description ||
+        "문제 요구사항과 직접 맞지 않는 보기입니다.";
+
+    return `${formatOptionLine(question, option.key)}: ${summary}`;
+  });
 }
 
 function getWrongReviewLines(question, response) {
@@ -821,7 +957,7 @@ function getWrongReviewLines(question, response) {
     if (wrongSelections.length) {
       lines.push(
         `불필요하게 선택한 보기: ${wrongSelections
-          .map((key) => `${key}. ${getOptionText(question, key)}`)
+          .map((key) => formatOptionLine(question, key))
           .join(", ")}`,
       );
     }
@@ -829,7 +965,7 @@ function getWrongReviewLines(question, response) {
     if (missingSelections.length) {
       lines.push(
         `빠진 정답: ${missingSelections
-          .map((key) => `${key}. ${getOptionText(question, key)}`)
+          .map((key) => formatOptionLine(question, key))
           .join(", ")}`,
       );
     }
@@ -886,13 +1022,16 @@ function renderFeedback(isCorrect) {
   const selectedLines = getSelectedResponseLines(question, state.response);
   const correctLines = getCorrectResponseLines(question);
   const wrongReviewLines = isCorrect ? [] : getWrongReviewLines(question, state.response);
-  const wrongSummaryLines = parseWrongExplanations(question)
-    .filter((item) => item.description)
-    .map((item) => {
-      const keyPrefix = item.keys.length ? `${item.keys.join(", ")}. ` : "";
-      const labelPrefix = item.label ? `${item.label}: ` : "";
-      return `${keyPrefix}${labelPrefix}${item.description}`;
-    });
+  const optionReviewLines = getChoiceOptionReviewLines(question);
+  const wrongSummaryLines = optionReviewLines.length
+    ? []
+    : parseWrongExplanations(question)
+        .filter((item) => item.description)
+        .map((item) => {
+          const keyPrefix = item.keys.length ? `${item.keys.join(", ")}. ` : "";
+          const labelPrefix = item.label ? `${item.label}: ` : "";
+          return `${keyPrefix}${labelPrefix}${item.description}`;
+        });
   const glossaryLines = getGlossaryLines(question);
 
   const feedbackHtml = `
@@ -919,6 +1058,16 @@ function renderFeedback(isCorrect) {
     <ul class="feedback-list">
       ${question.explanation.map((line) => `<li>${escapeHtml(stripBullet(line))}</li>`).join("")}
     </ul>
+    ${
+      optionReviewLines.length
+        ? `
+          <h3 class="feedback-card__title">보기별 해설</h3>
+          <ul class="feedback-list">
+            ${optionReviewLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
+          </ul>
+        `
+        : ""
+    }
     ${
       isCorrect
         ? wrongSummaryLines.length
@@ -961,14 +1110,12 @@ function updateWrongBook(question, isCorrect) {
   };
 
   if (isCorrect) {
-    if (state.session.wrongBook[question.id]) {
-      existing.correctCount += 1;
-      existing.lastSelectedKey = question.type === "single-choice" ? state.response : "";
-      existing.lastResponseSummary = serializeResponseSummary(question, state.response);
-      existing.lastResult = "correct";
-      existing.updatedAt = new Date().toISOString();
-      state.session.wrongBook[question.id] = existing;
-    }
+    const completedAt = new Date().toISOString();
+    state.session.completedBook[question.id] = {
+      completedAt,
+      lastResponseSummary: serializeResponseSummary(question, state.response),
+    };
+    delete state.session.wrongBook[question.id];
     return;
   }
 
@@ -1029,7 +1176,7 @@ function renderWrongNote() {
 
   elements.wrongNoteList.innerHTML = entries
     .map(({ question, record }) => {
-      const excerpt = question.promptKo.split("\n")[0];
+      const excerpt = (question.promptEn || question.promptKo).split("\n")[0];
       const lastResultLabel = record.lastResult === "correct" ? "최근 정답" : "최근 오답";
       const responseSummary = record.lastResponseSummary
         ? `<p class="wrong-item__answer">${escapeHtml(record.lastResponseSummary)}</p>`
@@ -1175,6 +1322,31 @@ function clearWrongBook() {
   renderWrongNote();
 }
 
+function resetProgress() {
+  const confirmed = window.confirm(
+    "정말 처음부터 다시 풀겠습니까?\n정답 기록, 오답 노트, 누적 통계가 모두 초기화됩니다.",
+  );
+  if (!confirmed) {
+    return;
+  }
+
+  state.session = {
+    totals: { solved: 0, correct: 0 },
+    wrongBook: {},
+    completedBook: {},
+  };
+  state.mode = "random";
+  state.currentQuestionId = null;
+  state.response = null;
+  state.answerChecked = false;
+  elements.feedbackCard.classList.add("is-hidden");
+  saveState();
+  buildHeroStats();
+  renderMode();
+  renderGlossary();
+  selectQuestion(pickRandom(getQuestionPool()));
+}
+
 function removeCurrentQuestionFromWrongBook() {
   const question = getCurrentQuestion();
   if (!question) {
@@ -1243,6 +1415,7 @@ function updateOrdering(question, action, index) {
 
 function attachEvents() {
   elements.startButton?.addEventListener("click", startQuiz);
+  elements.resetProgressButton?.addEventListener("click", resetProgress);
 
   elements.segmentedButtons.forEach((button) => {
     button.addEventListener("click", () => setMode(button.dataset.mode));
@@ -1311,11 +1484,6 @@ function attachEvents() {
     selectQuestion(pickRandom(pool));
   });
 
-  elements.toggleEnglishButton.addEventListener("click", () => {
-    state.englishVisible = !state.englishVisible;
-    renderQuestion();
-  });
-
   elements.glossarySearch.addEventListener("input", renderGlossary);
   elements.clearWrongButton.addEventListener("click", clearWrongBook);
   elements.removeCurrentWrongButton.addEventListener("click", removeCurrentQuestionFromWrongBook);
@@ -1323,6 +1491,12 @@ function attachEvents() {
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) {
+      return;
+    }
+
+    const resetButton = target.closest("[data-reset-progress]");
+    if (resetButton) {
+      resetProgress();
       return;
     }
 

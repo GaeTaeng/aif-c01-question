@@ -23,6 +23,14 @@
           <a class="primary-button primary-link hero__start-button" id="start-button" href="../question/">
             시작하기
           </a>
+          <button
+            class="secondary-button hero__reset-button"
+            id="reset-progress-button"
+            data-reset-progress="true"
+            type="button"
+          >
+            처음부터 다시 풀기
+          </button>
           <p class="hero__hint">
             시작하면 랜딩 영역은 사라지고 문제 화면만 표시됩니다.
           </p>
@@ -59,9 +67,6 @@
             <article class="question-card" id="question-card">
               <div class="question-card__header">
                 <h2 id="question-title">문제를 불러오는 중입니다.</h2>
-                <button class="ghost-button" id="toggle-english-button" type="button">
-                  영문 보기
-                </button>
               </div>
               <p class="question-card__subtitle" id="question-subtitle">
                 단일 선택, 복수 선택, 매칭형, 순서형 문제를 제공합니다.

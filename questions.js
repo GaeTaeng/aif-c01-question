@@ -1,5 +1,5 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-11T12:41:22.067Z",
+  "generatedAt": "2026-05-12T00:10:29.000Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -26,19 +26,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 학습 코드"
+          "textEn": "Code for model training",
+          "textKo": "모델 학습 코드",
+          "text": "Code for model training"
         },
         {
           "key": "B",
-          "text": "부분 의존성 플롯(PDPs)"
+          "textEn": "Partial dependence plots (PDPs)",
+          "textKo": "부분 의존성 플롯(PDPs)",
+          "text": "Partial dependence plots (PDPs)"
         },
         {
           "key": "C",
-          "text": "학습용 샘플 데이터"
+          "textEn": "Sample data for training",
+          "textKo": "학습용 샘플 데이터",
+          "text": "Sample data for training"
         },
         {
           "key": "D",
-          "text": "모델 수렴 표"
+          "textEn": "Model convergence tables",
+          "textKo": "모델 수렴 표",
+          "text": "Model convergence tables"
         }
       ],
       "answerKey": "B",
@@ -64,19 +72,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "자동 개체명 인식 시스템 구축"
+          "textEn": "Build an automatic named entity recognition system",
+          "textKo": "자동 개체명 인식 시스템 구축",
+          "text": "Build an automatic named entity recognition system"
         },
         {
           "key": "B",
-          "text": "추천 엔진 생성"
+          "textEn": "Create a recommendation engine",
+          "textKo": "추천 엔진 생성",
+          "text": "Create a recommendation engine"
         },
         {
           "key": "C",
-          "text": "요약 챗봇 개발"
+          "textEn": "Develop a summarization chatbot",
+          "textKo": "요약 챗봇 개발",
+          "text": "Develop a summarization chatbot"
         },
         {
           "key": "D",
-          "text": "다국어 번역 시스템 개발"
+          "textEn": "Develop a multi-language translation system",
+          "textKo": "다국어 번역 시스템 개발",
+          "text": "Develop a multi-language translation system"
         }
       ],
       "answerKey": "C",
@@ -101,19 +117,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "결정 트리"
+          "textEn": "Decision trees",
+          "textKo": "결정 트리",
+          "text": "Decision trees"
         },
         {
           "key": "B",
-          "text": "선형 회귀"
+          "textEn": "Linear regression",
+          "textKo": "선형 회귀",
+          "text": "Linear regression"
         },
         {
           "key": "C",
-          "text": "로지스틱 회귀"
+          "textEn": "Logistic regression",
+          "textKo": "로지스틱 회귀",
+          "text": "Logistic regression"
         },
         {
           "key": "D",
-          "text": "신경망"
+          "textEn": "Neural networks",
+          "textKo": "신경망",
+          "text": "Neural networks"
         }
       ],
       "answerKey": "A",
@@ -138,19 +162,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "결정 계수(R-squared)"
+          "textEn": "R-squared score",
+          "textKo": "결정 계수(R-squared)",
+          "text": "R-squared score"
         },
         {
           "key": "B",
-          "text": "정확도(Accuracy)"
+          "textEn": "Accuracy",
+          "textKo": "정확도(Accuracy)",
+          "text": "Accuracy"
         },
         {
           "key": "C",
-          "text": "평균 제곱근 오차(RMSE)"
+          "textEn": "Root mean squared error (RMSE)",
+          "textKo": "평균 제곱근 오차(RMSE)",
+          "text": "Root mean squared error (RMSE)"
         },
         {
           "key": "D",
-          "text": "학습률"
+          "textEn": "Learning rate",
+          "textKo": "학습률",
+          "text": "Learning rate"
         }
       ],
       "answerKey": "B",
@@ -176,19 +208,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트 조정"
+          "textEn": "Adjust the prompt",
+          "textKo": "프롬프트 조정",
+          "text": "Adjust the prompt"
         },
         {
           "key": "B",
-          "text": "다른 크기의 LLM 선택"
+          "textEn": "Choose an LLM of a different size",
+          "textKo": "다른 크기의 LLM 선택",
+          "text": "Choose an LLM of a different size"
         },
         {
           "key": "C",
-          "text": "온도(temperature) 증가"
+          "textEn": "Increase the temperature",
+          "textKo": "온도(temperature) 증가",
+          "text": "Increase the temperature"
         },
         {
           "key": "D",
-          "text": "Top K 값 증가"
+          "textEn": "Increase the Top K value",
+          "textKo": "Top K 값 증가",
+          "text": "Increase the Top K value"
         }
       ],
       "answerKey": "A",
@@ -214,19 +254,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "실시간 추론(Real-time inference)"
+          "textEn": "Real-time inference",
+          "textKo": "실시간 추론(Real-time inference)",
+          "text": "Real-time inference"
         },
         {
           "key": "B",
-          "text": "서버리스 추론(Serverless inference)"
+          "textEn": "Serverless inference",
+          "textKo": "서버리스 추론(Serverless inference)",
+          "text": "Serverless inference"
         },
         {
           "key": "C",
-          "text": "비동기 추론(Asynchronous inference)"
+          "textEn": "Asynchronous inference",
+          "textKo": "비동기 추론(Asynchronous inference)",
+          "text": "Asynchronous inference"
         },
         {
           "key": "D",
-          "text": "배치 변환(Batch transform)"
+          "textEn": "Batch transform",
+          "textKo": "배치 변환(Batch transform)",
+          "text": "Batch transform"
         }
       ],
       "answerKey": "A",
@@ -251,19 +299,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "에폭 수 증가"
+          "textEn": "Increase the number of epochs",
+          "textKo": "에폭 수 증가",
+          "text": "Increase the number of epochs"
         },
         {
           "key": "B",
-          "text": "전이 학습(Transfer learning) 사용"
+          "textEn": "Use transfer learning",
+          "textKo": "전이 학습(Transfer learning) 사용",
+          "text": "Use transfer learning"
         },
         {
           "key": "C",
-          "text": "에폭 수 감소"
+          "textEn": "Decrease the number of epochs",
+          "textKo": "에폭 수 감소",
+          "text": "Decrease the number of epochs"
         },
         {
           "key": "D",
-          "text": "비지도 학습 사용"
+          "textEn": "Use unsupervised learning",
+          "textKo": "비지도 학습 사용",
+          "text": "Use unsupervised learning"
         }
       ],
       "answerKey": "B",
@@ -288,19 +344,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker Ground Truth Plus를 이용한 Human-in-the-loop 검증"
+          "textEn": "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus",
+          "textKo": "Amazon SageMaker Ground Truth Plus를 이용한 Human-in-the-loop 검증",
+          "text": "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus"
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock 지식 기반을 이용한 데이터 증강"
+          "textEn": "Data augmentation by using an Amazon Bedrock knowledge base",
+          "textKo": "Amazon Bedrock 지식 기반을 이용한 데이터 증강",
+          "text": "Data augmentation by using an Amazon Bedrock knowledge base"
         },
         {
           "key": "C",
-          "text": "Amazon Rekognition을 이용한 이미지 인식"
+          "textEn": "Image recognition by using Amazon Rekognition",
+          "textKo": "Amazon Rekognition을 이용한 이미지 인식",
+          "text": "Image recognition by using Amazon Rekognition"
         },
         {
           "key": "D",
-          "text": "Amazon QuickSight Q를 이용한 데이터 요약"
+          "textEn": "Data summarization by using Amazon QuickSight Q",
+          "textKo": "Amazon QuickSight Q를 이용한 데이터 요약",
+          "text": "Data summarization by using Amazon QuickSight Q"
         }
       ],
       "answerKey": "A",
@@ -326,19 +390,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Bedrock 역할이 올바른 키로 데이터 복호화 권한을 갖도록 설정"
+          "textEn": "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct encryption key",
+          "textKo": "Bedrock 역할이 올바른 키로 데이터 복호화 권한을 갖도록 설정",
+          "text": "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct encryption key"
         },
         {
           "key": "B",
-          "text": "S3 버킷 접근 권한을 공개로 설정"
+          "textEn": "Set the access permissions for the S3 buckets to allow public access to enable access over the internet",
+          "textKo": "S3 버킷 접근 권한을 공개로 설정",
+          "text": "Set the access permissions for the S3 buckets to allow public access to enable access over the internet"
         },
         {
           "key": "C",
-          "text": "프롬프트 엔지니어링으로 모델에게 S3 접근 지시"
+          "textEn": "Use prompt engineering techniques to tell the model to look for information in Amazon S3",
+          "textKo": "프롬프트 엔지니어링으로 모델에게 S3 접근 지시",
+          "text": "Use prompt engineering techniques to tell the model to look for information in Amazon S3"
         },
         {
           "key": "D",
-          "text": "S3 데이터에 민감한 정보가 없도록 보장"
+          "textEn": "Ensure that the S3 data does not contain sensitive information",
+          "textKo": "S3 데이터에 민감한 정보가 없도록 보장",
+          "text": "Ensure that the S3 data does not contain sensitive information"
         }
       ],
       "answerKey": "A",
@@ -363,19 +435,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "최적화된 소형 언어 모델(SLM)을 엣지 디바이스에 배포"
+          "textEn": "Deploy optimized small language models (SLMs) on edge devices",
+          "textKo": "최적화된 소형 언어 모델(SLM)을 엣지 디바이스에 배포",
+          "text": "Deploy optimized small language models (SLMs) on edge devices"
         },
         {
           "key": "B",
-          "text": "최적화된 대형 언어 모델(LLM)을 엣지 디바이스에 배포"
+          "textEn": "Deploy optimized large language models (LLMs) on edge devices",
+          "textKo": "최적화된 대형 언어 모델(LLM)을 엣지 디바이스에 배포",
+          "text": "Deploy optimized large language models (LLMs) on edge devices"
         },
         {
           "key": "C",
-          "text": "중앙 집중형 SLM API로 비동기 통신"
+          "textEn": "Incorporate a centralized small language model (SLM) API for asynchronous communication with edge devices",
+          "textKo": "중앙 집중형 SLM API로 비동기 통신",
+          "text": "Incorporate a centralized small language model (SLM) API for asynchronous communication with edge devices"
         },
         {
           "key": "D",
-          "text": "중앙 집중형 LLM API로 비동기 통신"
+          "textEn": "Incorporate a centralized large language model (LLM) API for asynchronous communication with edge devices",
+          "textKo": "중앙 집중형 LLM API로 비동기 통신",
+          "text": "Incorporate a centralized large language model (LLM) API for asynchronous communication with edge devices"
         }
       ],
       "answerKey": "A",
@@ -404,18 +484,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Feature Store",
+          "textKo": "Amazon SageMaker Feature Store",
           "text": "Amazon SageMaker Feature Store"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Data Wrangler",
+          "textKo": "Amazon SageMaker Data Wrangler",
           "text": "Amazon SageMaker Data Wrangler"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker Model Cards",
           "text": "Amazon SageMaker Model Cards"
         }
       ],
@@ -445,23 +533,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "소프트웨어 코드 스니펫 생성, 참조 추적, 오픈소스 라이선스 관리"
+          "textEn": "Create software snippets, reference tracking, and open source license tracking",
+          "textKo": "소프트웨어 코드 스니펫 생성, 참조 추적, 오픈소스 라이선스 관리",
+          "text": "Create software snippets, reference tracking, and open source license tracking"
         },
         {
           "key": "B",
-          "text": "서버 프로비저닝 없이 애플리케이션 실행"
+          "textEn": "Run an application without provisioning or managing servers",
+          "textKo": "서버 프로비저닝 없이 애플리케이션 실행",
+          "text": "Run an application without provisioning or managing servers"
         },
         {
           "key": "C",
-          "text": "음성 명령을 통한 코딩과 자연어 검색 지원"
+          "textEn": "Enable voice commands for coding and providing natural language search",
+          "textKo": "음성 명령을 통한 코딩과 자연어 검색 지원",
+          "text": "Enable voice commands for coding and providing natural language search"
         },
         {
           "key": "D",
-          "text": "ML 모델을 사용하여 오디오 파일을 텍스트로 변환"
+          "textEn": "Convert audio files to text documents by using ML models",
+          "textKo": "ML 모델을 사용하여 오디오 파일을 텍스트로 변환",
+          "text": "Convert audio files to text documents by using ML models"
         }
       ],
       "answerKey": "A",
-      "answerText": "소프트웨어 코드 스니펫 생성, 참조 추적, 오픈소스 라이선스 관리"
+      "answerText": "Create software snippets, reference tracking, and open source license tracking"
     },
     {
       "id": 13,
@@ -486,18 +582,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS PrivateLink",
+          "textKo": "AWS PrivateLink",
           "text": "AWS PrivateLink"
         },
         {
           "key": "B",
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         },
         {
           "key": "C",
+          "textEn": "Amazon CloudFront",
+          "textKo": "Amazon CloudFront",
           "text": "Amazon CloudFront"
         },
         {
           "key": "D",
+          "textEn": "Internet gateway",
+          "textKo": "Internet gateway",
           "text": "Internet gateway"
         }
       ],
@@ -528,23 +632,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "확률을 예측하는 회귀 모델(supervised learning) 사용"
+          "textEn": "Use supervised learning to create a regression model that will predict probability",
+          "textKo": "확률을 예측하는 회귀 모델(supervised learning) 사용",
+          "text": "Use supervised learning to create a regression model that will predict probability"
         },
         {
           "key": "B",
-          "text": "확률을 반환하도록 강화 학습(reinforcement learning) 사용"
+          "textEn": "Use reinforcement learning to train a model to return the probability",
+          "textKo": "확률을 반환하도록 강화 학습(reinforcement learning) 사용",
+          "text": "Use reinforcement learning to train a model to return the probability"
         },
         {
           "key": "C",
-          "text": "단순한 규칙과 계산을 사용한 코드 작성"
+          "textEn": "Use code that will calculate probability by using simple rules and computations",
+          "textKo": "단순한 규칙과 계산을 사용한 코드 작성",
+          "text": "Use code that will calculate probability by using simple rules and computations"
         },
         {
           "key": "D",
-          "text": "확률 밀도를 추정하는 비지도 학습(unsupervised learning) 사용"
+          "textEn": "Use unsupervised learning to create a model that will estimate probability density",
+          "textKo": "확률 밀도를 추정하는 비지도 학습(unsupervised learning) 사용",
+          "text": "Use unsupervised learning to create a model that will estimate probability density"
         }
       ],
       "answerKey": "C",
-      "answerText": "단순한 규칙과 계산을 사용한 코드 작성"
+      "answerText": "Use code that will calculate probability by using simple rules and computations"
     },
     {
       "id": 15,
@@ -569,23 +681,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "고객 만족도 점수(CSAT)"
+          "textEn": "Customer satisfaction score (CSAT)",
+          "textKo": "고객 만족도 점수(CSAT)",
+          "text": "Customer satisfaction score (CSAT)"
         },
         {
           "key": "B",
-          "text": "학습 시 각 Epoch별 학습 시간"
+          "textEn": "Training time for each epoch",
+          "textKo": "학습 시 각 Epoch별 학습 시간",
+          "text": "Training time for each epoch"
         },
         {
           "key": "C",
-          "text": "평균 응답 시간"
+          "textEn": "Average response time",
+          "textKo": "평균 응답 시간",
+          "text": "Average response time"
         },
         {
           "key": "D",
-          "text": "학습 인스턴스 수"
+          "textEn": "Number of training instances",
+          "textKo": "학습 인스턴스 수",
+          "text": "Number of training instances"
         }
       ],
       "answerKey": "C",
-      "answerText": "평균 응답 시간"
+      "answerText": "Average response time"
     },
     {
       "id": 16,
@@ -610,23 +730,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Lex로 대화형 챗봇 구축"
+          "textEn": "Build a conversational chatbot by using Amazon Lex.",
+          "textKo": "Amazon Lex로 대화형 챗봇 구축",
+          "text": "Build a conversational chatbot by using Amazon Lex."
         },
         {
           "key": "B",
-          "text": "Amazon Transcribe로 통화 녹음 전사"
+          "textEn": "Transcribe call recordings by using Amazon Transcribe.",
+          "textKo": "Amazon Transcribe로 통화 녹음 전사",
+          "text": "Transcribe call recordings by using Amazon Transcribe."
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker Model Monitor로 통화 정보 추출"
+          "textEn": "Extract information from call recordings by using Amazon SageMaker Model Monitor.",
+          "textKo": "Amazon SageMaker Model Monitor로 통화 정보 추출",
+          "text": "Extract information from call recordings by using Amazon SageMaker Model Monitor."
         },
         {
           "key": "D",
-          "text": "Amazon Comprehend로 분류 레이블 생성"
+          "textEn": "Create classification labels by using Amazon Comprehend.",
+          "textKo": "Amazon Comprehend로 분류 레이블 생성",
+          "text": "Create classification labels by using Amazon Comprehend."
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Transcribe로 통화 녹음 전사"
+      "answerText": "Transcribe call recordings by using Amazon Transcribe."
     },
     {
       "id": 17,
@@ -651,23 +779,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "지도 학습"
+          "textEn": "Supervised learning",
+          "textKo": "지도 학습",
+          "text": "Supervised learning"
         },
         {
           "key": "B",
-          "text": "비지도 학습"
+          "textEn": "Unsupervised learning",
+          "textKo": "비지도 학습",
+          "text": "Unsupervised learning"
         },
         {
           "key": "C",
-          "text": "강화 학습"
+          "textEn": "Reinforcement learning",
+          "textKo": "강화 학습",
+          "text": "Reinforcement learning"
         },
         {
           "key": "D",
-          "text": "인간 피드백 기반 강화 학습(RLHF)"
+          "textEn": "Reinforcement learning from human feedback (RLHF)",
+          "textKo": "인간 피드백 기반 강화 학습(RLHF)",
+          "text": "Reinforcement learning from human feedback (RLHF)"
         }
       ],
       "answerKey": "B",
-      "answerText": "비지도 학습"
+      "answerText": "Unsupervised learning"
     },
     {
       "id": 18,
@@ -692,23 +828,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "멀티모달 임베딩 모델"
+          "textEn": "Multi-modal embedding model",
+          "textKo": "멀티모달 임베딩 모델",
+          "text": "Multi-modal embedding model"
         },
         {
           "key": "B",
-          "text": "텍스트 임베딩 모델"
+          "textEn": "Text embedding model",
+          "textKo": "텍스트 임베딩 모델",
+          "text": "Text embedding model"
         },
         {
           "key": "C",
-          "text": "멀티모달 생성 모델"
+          "textEn": "Multi-modal generation model",
+          "textKo": "멀티모달 생성 모델",
+          "text": "Multi-modal generation model"
         },
         {
           "key": "D",
-          "text": "이미지 생성 모델"
+          "textEn": "Image generation model",
+          "textKo": "이미지 생성 모델",
+          "text": "Image generation model"
         }
       ],
       "answerKey": "A",
-      "answerText": "멀티모달 임베딩 모델"
+      "answerText": "Multi-modal embedding model"
     },
     {
       "id": 19,
@@ -734,23 +878,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Prompt 필드와 Completion 필드가 포함된 레이블 데이터 제공"
+          "textEn": "Provide labeled data with the prompt field and the completion field.",
+          "textKo": "Prompt 필드와 Completion 필드가 포함된 레이블 데이터 제공",
+          "text": "Provide labeled data with the prompt field and the completion field."
         },
         {
           "key": "B",
-          "text": ".csv 형식의 여러 줄이 있는 .txt 파일로 학습 데이터셋 준비"
+          "textEn": "Prepare the training dataset by creating a .txt file that contains multiple lines in .csv format.",
+          "textKo": ".csv 형식의 여러 줄이 있는 .txt 파일로 학습 데이터셋 준비",
+          "text": "Prepare the training dataset by creating a .txt file that contains multiple lines in .csv format."
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock용 Provisioned Throughput 구매"
+          "textEn": "Purchase Provisioned Throughput for Amazon Bedrock.",
+          "textKo": "Amazon Bedrock용 Provisioned Throughput 구매",
+          "text": "Purchase Provisioned Throughput for Amazon Bedrock."
         },
         {
           "key": "D",
-          "text": "저널과 교과서를 학습 데이터로 사용"
+          "textEn": "Train the model on journals and textbooks.",
+          "textKo": "저널과 교과서를 학습 데이터로 사용",
+          "text": "Train the model on journals and textbooks."
         }
       ],
       "answerKey": "A",
-      "answerText": "Prompt 필드와 Completion 필드가 포함된 레이블 데이터 제공"
+      "answerText": "Provide labeled data with the prompt field and the completion field."
     },
     {
       "id": 20,
@@ -775,23 +927,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "음성 인식 시스템 구축"
+          "textEn": "Build a speech recognition system.",
+          "textKo": "음성 인식 시스템 구축",
+          "text": "Build a speech recognition system."
         },
         {
           "key": "B",
-          "text": "NLP 기반 Named Entity Recognition 시스템 구축"
+          "textEn": "Create a natural language processing (NLP) named entity recognition system.",
+          "textKo": "NLP 기반 Named Entity Recognition 시스템 구축",
+          "text": "Create a natural language processing (NLP) named entity recognition system."
         },
         {
           "key": "C",
-          "text": "이상 탐지(Anomaly Detection) 시스템 개발"
+          "textEn": "Develop an anomaly detection system.",
+          "textKo": "이상 탐지(Anomaly Detection) 시스템 개발",
+          "text": "Develop an anomaly detection system."
         },
         {
           "key": "D",
-          "text": "사기 예측(Fraud Forecasting) 시스템 구축"
+          "textEn": "Create a fraud forecasting system.",
+          "textKo": "사기 예측(Fraud Forecasting) 시스템 구축",
+          "text": "Create a fraud forecasting system."
         }
       ],
       "answerKey": "C",
-      "answerText": "이상 탐지(Anomaly Detection) 시스템 개발"
+      "answerText": "Develop an anomaly detection system."
     },
     {
       "id": 21,
@@ -816,23 +976,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon S3와 통합된 객체 스토리지"
+          "textEn": "Integration with Amazon S3 for object storage",
+          "textKo": "Amazon S3와 통합된 객체 스토리지",
+          "text": "Integration with Amazon S3 for object storage"
         },
         {
           "key": "B",
-          "text": "지리공간 인덱싱 및 쿼리 지원"
+          "textEn": "Support for geospatial indexing and queries",
+          "textKo": "지리공간 인덱싱 및 쿼리 지원",
+          "text": "Support for geospatial indexing and queries"
         },
         {
           "key": "C",
-          "text": "확장 가능한 인덱스 관리 및 가장 가까운 이웃 검색(NNS) 기능"
+          "textEn": "Scalable index management and nearest neighbor search capability",
+          "textKo": "확장 가능한 인덱스 관리 및 가장 가까운 이웃 검색(NNS) 기능",
+          "text": "Scalable index management and nearest neighbor search capability"
         },
         {
           "key": "D",
-          "text": "스트리밍 데이터 실시간 분석 기능"
+          "textEn": "Ability to perform real-time analysis on streaming data",
+          "textKo": "스트리밍 데이터 실시간 분석 기능",
+          "text": "Ability to perform real-time analysis on streaming data"
         }
       ],
       "answerKey": "C",
-      "answerText": "확장 가능한 인덱스 관리 및 가장 가까운 이웃 검색(NNS) 기능"
+      "answerText": "Scalable index management and nearest neighbor search capability"
     },
     {
       "id": 22,
@@ -857,23 +1025,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "침입 탐지 시스템으로 네트워크 보안 강화"
+          "textEn": "Improving network security by using intrusion detection systems",
+          "textKo": "침입 탐지 시스템으로 네트워크 보안 강화",
+          "text": "Improving network security by using intrusion detection systems"
         },
         {
           "key": "B",
-          "text": "텍스트 설명으로 사실적인 이미지를 생성하여 디지털 마케팅 활용"
+          "textEn": "Creating photorealistic images from text descriptions for digital marketing",
+          "textKo": "텍스트 설명으로 사실적인 이미지를 생성하여 디지털 마케팅 활용",
+          "text": "Creating photorealistic images from text descriptions for digital marketing"
         },
         {
           "key": "C",
-          "text": "최적화된 인덱싱으로 데이터베이스 성능 향상"
+          "textEn": "Enhancing database performance by using optimized indexing",
+          "textKo": "최적화된 인덱싱으로 데이터베이스 성능 향상",
+          "text": "Enhancing database performance by using optimized indexing"
         },
         {
           "key": "D",
-          "text": "금융 데이터를 분석하여 주식 시장 예측"
+          "textEn": "Analyzing financial data to forecast stock market trends",
+          "textKo": "금융 데이터를 분석하여 주식 시장 예측",
+          "text": "Analyzing financial data to forecast stock market trends"
         }
       ],
       "answerKey": "B",
-      "answerText": "텍스트 설명으로 사실적인 이미지를 생성하여 디지털 마케팅 활용"
+      "answerText": "Creating photorealistic images from text descriptions for digital marketing"
     },
     {
       "id": 23,
@@ -898,18 +1074,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Temperature",
+          "textKo": "Temperature",
           "text": "Temperature"
         },
         {
           "key": "B",
+          "textEn": "Context window",
+          "textKo": "Context window",
           "text": "Context window"
         },
         {
           "key": "C",
+          "textEn": "Batch size",
+          "textKo": "Batch size",
           "text": "Batch size"
         },
         {
           "key": "D",
+          "textEn": "Model size",
+          "textKo": "Model size",
           "text": "Model size"
         }
       ],
@@ -938,23 +1122,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "FM 출력 토큰 수 낮게 제한"
+          "textEn": "Set a low limit on the number of tokens the FM can produce.",
+          "textKo": "FM 출력 토큰 수 낮게 제한",
+          "text": "Set a low limit on the number of tokens the FM can produce."
         },
         {
           "key": "B",
-          "text": "배치 추론으로 상세 응답 처리"
+          "textEn": "Use batch inferencing to process detailed responses.",
+          "textKo": "배치 추론으로 상세 응답 처리",
+          "text": "Use batch inferencing to process detailed responses."
         },
         {
           "key": "C",
-          "text": "프롬프트를 실험하고 수정하여 원하는 응답 생성"
+          "textEn": "Experiment and refine the prompt until the FM produces the desired responses.",
+          "textKo": "프롬프트를 실험하고 수정하여 원하는 응답 생성",
+          "text": "Experiment and refine the prompt until the FM produces the desired responses."
         },
         {
           "key": "D",
-          "text": "Temperature 매개변수 높게 설정"
+          "textEn": "Define a higher number for the temperature parameter.",
+          "textKo": "Temperature 매개변수 높게 설정",
+          "text": "Define a higher number for the temperature parameter."
         }
       ],
       "answerKey": "C",
-      "answerText": "프롬프트를 실험하고 수정하여 원하는 응답 생성"
+      "answerText": "Experiment and refine the prompt until the FM produces the desired responses."
     },
     {
       "id": 25,
@@ -978,23 +1170,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "긍정/부정 레이블이 포함된 예시 문단 제공 후 새 문단 분류"
+          "textEn": "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified.",
+          "textKo": "긍정/부정 레이블이 포함된 예시 문단 제공 후 새 문단 분류",
+          "text": "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified."
         },
         {
           "key": "B",
-          "text": "감정 분석 및 LLM 작동 방식 자세히 설명"
+          "textEn": "Provide a detailed explanation of sentiment analysis and how LLMs work in the prompt.",
+          "textKo": "감정 분석 및 LLM 작동 방식 자세히 설명",
+          "text": "Provide a detailed explanation of sentiment analysis and how LLMs work in the prompt."
         },
         {
           "key": "C",
-          "text": "새 문단만 제공, 추가 컨텍스트 없음"
+          "textEn": "Provide the new text passage to be classified without any additional context or examples.",
+          "textKo": "새 문단만 제공, 추가 컨텍스트 없음",
+          "text": "Provide the new text passage to be classified without any additional context or examples."
         },
         {
           "key": "D",
-          "text": "새 문단과 관련 없는 예시 과제 제공"
+          "textEn": "Provide the new text passage with a few examples of unrelated tasks, such as text summarization or question answering.",
+          "textKo": "새 문단과 관련 없는 예시 과제 제공",
+          "text": "Provide the new text passage with a few examples of unrelated tasks, such as text summarization or question answering."
         }
       ],
       "answerKey": "A",
-      "answerText": "긍정/부정 레이블이 포함된 예시 문단 제공 후 새 문단 분류"
+      "answerText": "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified."
     },
     {
       "id": 26,
@@ -1018,18 +1218,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS Audit Manager",
+          "textKo": "AWS Audit Manager",
           "text": "AWS Audit Manager"
         },
         {
           "key": "B",
+          "textEn": "AWS CloudTrail",
+          "textKo": "AWS CloudTrail",
           "text": "AWS CloudTrail"
         },
         {
           "key": "C",
+          "textEn": "Amazon Fraud Detector",
+          "textKo": "Amazon Fraud Detector",
           "text": "Amazon Fraud Detector"
         },
         {
           "key": "D",
+          "textEn": "AWS Trusted Advisor",
+          "textKo": "AWS Trusted Advisor",
           "text": "AWS Trusted Advisor"
         }
       ],
@@ -1058,23 +1266,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker Serverless Inference 사용"
+          "textEn": "Use Amazon SageMaker Serverless Inference to deploy the model.",
+          "textKo": "Amazon SageMaker Serverless Inference 사용",
+          "text": "Use Amazon SageMaker Serverless Inference to deploy the model."
         },
         {
           "key": "B",
-          "text": "Amazon CloudFront 사용"
+          "textEn": "Use Amazon CloudFront to deploy the model.",
+          "textKo": "Amazon CloudFront 사용",
+          "text": "Use Amazon CloudFront to deploy the model."
         },
         {
           "key": "C",
-          "text": "Amazon API Gateway 사용"
+          "textEn": "Use Amazon API Gateway to host the model and serve predictions.",
+          "textKo": "Amazon API Gateway 사용",
+          "text": "Use Amazon API Gateway to host the model and serve predictions."
         },
         {
           "key": "D",
-          "text": "AWS Batch 사용"
+          "textEn": "Use AWS Batch to host the model and serve predictions.",
+          "textKo": "AWS Batch 사용",
+          "text": "Use AWS Batch to host the model and serve predictions."
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Serverless Inference 사용"
+      "answerText": "Use Amazon SageMaker Serverless Inference to deploy the model."
     },
     {
       "id": 28,
@@ -1098,18 +1314,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS Audit Manager",
+          "textKo": "AWS Audit Manager",
           "text": "AWS Audit Manager"
         },
         {
           "key": "B",
+          "textEn": "AWS Artifact",
+          "textKo": "AWS Artifact",
           "text": "AWS Artifact"
         },
         {
           "key": "C",
+          "textEn": "AWS Trusted Advisor",
+          "textKo": "AWS Trusted Advisor",
           "text": "AWS Trusted Advisor"
         },
         {
           "key": "D",
+          "textEn": "AWS Data Exchange",
+          "textKo": "AWS Data Exchange",
           "text": "AWS Data Exchange"
         }
       ],
@@ -1138,23 +1362,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "공격 패턴을 감지하도록 LLM을 학습시키는 프롬프트 템플릿 생성"
+          "textEn": "Create a prompt template that teaches the LLM to detect attack patterns.",
+          "textKo": "공격 패턴을 감지하도록 LLM을 학습시키는 프롬프트 템플릿 생성",
+          "text": "Create a prompt template that teaches the LLM to detect attack patterns."
         },
         {
           "key": "B",
-          "text": "LLM 호출 시 Temperature 값 증가"
+          "textEn": "Increase the temperature parameter on invocation requests to the LLM.",
+          "textKo": "LLM 호출 시 Temperature 값 증가",
+          "text": "Increase the temperature parameter on invocation requests to the LLM."
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker에 없는 LLM 사용 회피"
+          "textEn": "Avoid using LLMs that are not listed in Amazon SageMaker.",
+          "textKo": "Amazon SageMaker에 없는 LLM 사용 회피",
+          "text": "Avoid using LLMs that are not listed in Amazon SageMaker."
         },
         {
           "key": "D",
-          "text": "LLM 호출 시 입력 토큰 수 감소"
+          "textEn": "Decrease the number of input tokens on invocations of the LLM.",
+          "textKo": "LLM 호출 시 입력 토큰 수 감소",
+          "text": "Decrease the number of input tokens on invocations of the LLM."
         }
       ],
       "answerKey": "A",
-      "answerText": "공격 패턴을 감지하도록 LLM을 학습시키는 프롬프트 템플릿 생성"
+      "answerText": "Create a prompt template that teaches the LLM to detect attack patterns."
     },
     {
       "id": 30,
@@ -1178,23 +1410,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "내장 생성형 AI 기능이 있는 서드파티 엔터프라이즈 애플리케이션 사용"
+          "textEn": "Using a third-party enterprise application that has embedded generative AI features.",
+          "textKo": "내장 생성형 AI 기능이 있는 서드파티 엔터프라이즈 애플리케이션 사용",
+          "text": "Using a third-party enterprise application that has embedded generative AI features."
         },
         {
           "key": "B",
-          "text": "기존 서드파티 생성형 AI FM 사용하여 애플리케이션 구축"
+          "textEn": "Building an application by using an existing third-party generative AI foundation model (FM).",
+          "textKo": "기존 서드파티 생성형 AI FM 사용하여 애플리케이션 구축",
+          "text": "Building an application by using an existing third-party generative AI foundation model (FM)."
         },
         {
           "key": "C",
-          "text": "기존 서드파티 FM을 비즈니스 데이터로 파인튜닝하여 개선"
+          "textEn": "Refining an existing third-party generative AI foundation model (FM) by fine-tuning the model by using data specific to the business.",
+          "textKo": "기존 서드파티 FM을 비즈니스 데이터로 파인튜닝하여 개선",
+          "text": "Refining an existing third-party generative AI foundation model (FM) by fine-tuning the model by using data specific to the business."
         },
         {
           "key": "D",
-          "text": "고객 소유 특정 데이터를 사용하여 AI 모델을 처음부터 구축 및 학습"
+          "textEn": "Building and training a generative AI model from scratch by using specific data that a customer owns.",
+          "textKo": "고객 소유 특정 데이터를 사용하여 AI 모델을 처음부터 구축 및 학습",
+          "text": "Building and training a generative AI model from scratch by using specific data that a customer owns."
         }
       ],
       "answerKey": "D",
-      "answerText": "고객 소유 특정 데이터를 사용하여 AI 모델을 처음부터 구축 및 학습"
+      "answerText": "Building and training a generative AI model from scratch by using specific data that a customer owns."
     },
     {
       "id": 31,
@@ -1218,23 +1458,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "객체 탐지 (Object detection)"
+          "textEn": "Object detection",
+          "textKo": "객체 탐지 (Object detection)",
+          "text": "Object detection"
         },
         {
           "key": "B",
-          "text": "이상 탐지 (Anomaly detection)"
+          "textEn": "Anomaly detection",
+          "textKo": "이상 탐지 (Anomaly detection)",
+          "text": "Anomaly detection"
         },
         {
           "key": "C",
-          "text": "개체명 인식 (Named entity recognition)"
+          "textEn": "Named entity recognition",
+          "textKo": "개체명 인식 (Named entity recognition)",
+          "text": "Named entity recognition"
         },
         {
           "key": "D",
-          "text": "이미지 보정 (Inpainting)"
+          "textEn": "Inpainting",
+          "textKo": "이미지 보정 (Inpainting)",
+          "text": "Inpainting"
         }
       ],
       "answerKey": "A",
-      "answerText": "객체 탐지 (Object detection)"
+      "answerText": "Object detection"
     },
     {
       "id": 32,
@@ -1258,23 +1506,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "온디맨드 (On-Demand)"
+          "textEn": "On-Demand",
+          "textKo": "온디맨드 (On-Demand)",
+          "text": "On-Demand"
         },
         {
           "key": "B",
-          "text": "모델 커스터마이제이션 (Model customization)"
+          "textEn": "Model customization",
+          "textKo": "모델 커스터마이제이션 (Model customization)",
+          "text": "Model customization"
         },
         {
           "key": "C",
-          "text": "프로비저닝 처리량 (Provisioned Throughput)"
+          "textEn": "Provisioned Throughput",
+          "textKo": "프로비저닝 처리량 (Provisioned Throughput)",
+          "text": "Provisioned Throughput"
         },
         {
           "key": "D",
-          "text": "스팟 인스턴스 (Spot Instance)"
+          "textEn": "Spot Instance",
+          "textKo": "스팟 인스턴스 (Spot Instance)",
+          "text": "Spot Instance"
         }
       ],
       "answerKey": "A",
-      "answerText": "온디맨드 (On-Demand)"
+      "answerText": "On-Demand"
     },
     {
       "id": 33,
@@ -1298,19 +1554,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "C",
-          "text": "PartyRock (Amazon Bedrock Playground)"
+          "textEn": "PartyRock, an Amazon Bedrock Playground",
+          "textKo": "PartyRock (Amazon Bedrock Playground)",
+          "text": "PartyRock, an Amazon Bedrock Playground"
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker Endpoints"
+          "textEn": "Amazon SageMaker endpoints",
+          "textKo": "Amazon SageMaker Endpoints",
+          "text": "Amazon SageMaker endpoints"
         }
       ],
       "answerKey": "B",
@@ -1337,23 +1601,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "명확하고 구체적인 프롬프트 설계. 최소 권한 원칙으로 IAM 역할과 정책 구성"
+          "textEn": "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access.",
+          "textKo": "명확하고 구체적인 프롬프트 설계. 최소 권한 원칙으로 IAM 역할과 정책 구성",
+          "text": "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access."
         },
         {
           "key": "B",
-          "text": "Audit Manager 활성화하여 자동 모델 평가"
+          "textEn": "Enable AWS Audit Manager for automatic model evaluation jobs.",
+          "textKo": "Audit Manager 활성화하여 자동 모델 평가",
+          "text": "Enable AWS Audit Manager for automatic model evaluation jobs."
         },
         {
           "key": "C",
-          "text": "Bedrock 자동 모델 평가 활성화"
+          "textEn": "Enable Amazon Bedrock automatic model evaluation jobs.",
+          "textKo": "Bedrock 자동 모델 평가 활성화",
+          "text": "Enable Amazon Bedrock automatic model evaluation jobs."
         },
         {
           "key": "D",
-          "text": "CloudWatch Logs를 사용하여 모델 설명 가능하게 하고 편향 모니터링"
+          "textEn": "Use Amazon CloudWatch Logs to make models explainable and to monitor for bias.",
+          "textKo": "CloudWatch Logs를 사용하여 모델 설명 가능하게 하고 편향 모니터링",
+          "text": "Use Amazon CloudWatch Logs to make models explainable and to monitor for bias."
         }
       ],
       "answerKey": "A",
-      "answerText": "명확하고 구체적인 프롬프트 설계. 최소 권한 원칙으로 IAM 역할과 정책 구성"
+      "answerText": "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access."
     },
     {
       "id": 35,
@@ -1378,18 +1650,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Generative pre-trained transformers (GPT)",
+          "textKo": "Generative pre-trained transformers (GPT)",
           "text": "Generative pre-trained transformers (GPT)"
         },
         {
           "key": "B",
+          "textEn": "Residual neural network",
+          "textKo": "Residual neural network",
           "text": "Residual neural network"
         },
         {
           "key": "C",
+          "textEn": "Support vector machine",
+          "textKo": "Support vector machine",
           "text": "Support vector machine"
         },
         {
           "key": "D",
+          "textEn": "WaveNet",
+          "textKo": "WaveNet",
           "text": "WaveNet"
         }
       ],
@@ -1418,23 +1698,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "학습 (Training)"
+          "textEn": "Training",
+          "textKo": "학습 (Training)",
+          "text": "Training"
         },
         {
           "key": "B",
-          "text": "추론 (Inference)"
+          "textEn": "Inference",
+          "textKo": "추론 (Inference)",
+          "text": "Inference"
         },
         {
           "key": "C",
-          "text": "모델 배포 (Model deployment)"
+          "textEn": "Model deployment",
+          "textKo": "모델 배포 (Model deployment)",
+          "text": "Model deployment"
         },
         {
           "key": "D",
-          "text": "편향 보정 (Bias correction)"
+          "textEn": "Bias correction",
+          "textKo": "편향 보정 (Bias correction)",
+          "text": "Bias correction"
         }
       ],
       "answerKey": "B",
-      "answerText": "추론 (Inference)"
+      "answerText": "Inference"
     },
     {
       "id": 37,
@@ -1458,23 +1746,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "불균형 클래스에 대한 데이터 증강"
+          "textEn": "Data augmentation for imbalanced classes",
+          "textKo": "불균형 클래스에 대한 데이터 증강",
+          "text": "Data augmentation for imbalanced classes"
         },
         {
           "key": "B",
-          "text": "클래스 분포 모니터링"
+          "textEn": "Model monitoring for class distribution",
+          "textKo": "클래스 분포 모니터링",
+          "text": "Model monitoring for class distribution"
         },
         {
           "key": "C",
-          "text": "RAG(정보 검색 기반 생성)"
+          "textEn": "Retrieval Augmented Generation (RAG)",
+          "textKo": "RAG(정보 검색 기반 생성)",
+          "text": "Retrieval Augmented Generation (RAG)"
         },
         {
           "key": "D",
-          "text": "이미지 워터마크 감지"
+          "textEn": "Watermark detection for images",
+          "textKo": "이미지 워터마크 감지",
+          "text": "Watermark detection for images"
         }
       ],
       "answerKey": "A",
-      "answerText": "불균형 클래스에 대한 데이터 증강"
+      "answerText": "Data augmentation for imbalanced classes"
     },
     {
       "id": 38,
@@ -1498,23 +1794,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "다른 FM 사용"
+          "textEn": "Use a different FM",
+          "textKo": "다른 FM 사용",
+          "text": "Use a different FM"
         },
         {
           "key": "B",
-          "text": "낮은 온도 값 선택"
+          "textEn": "Choose a lower temperature value",
+          "textKo": "낮은 온도 값 선택",
+          "text": "Choose a lower temperature value"
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock 지식 베이스 생성"
+          "textEn": "Create an Amazon Bedrock knowledge base",
+          "textKo": "Amazon Bedrock 지식 베이스 생성",
+          "text": "Create an Amazon Bedrock knowledge base"
         },
         {
           "key": "D",
-          "text": "모델 호출 로깅 활성화"
+          "textEn": "Enable model invocation logging",
+          "textKo": "모델 호출 로깅 활성화",
+          "text": "Enable model invocation logging"
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Bedrock 지식 베이스 생성"
+      "answerText": "Create an Amazon Bedrock knowledge base"
     },
     {
       "id": 39,
@@ -1538,23 +1842,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Inspector로 보안/컴플라이언스 구성"
+          "textEn": "Configure the security and compliance by using Amazon Inspector",
+          "textKo": "Amazon Inspector로 보안/컴플라이언스 구성",
+          "text": "Configure the security and compliance by using Amazon Inspector"
         },
         {
           "key": "B",
-          "text": "Amazon SageMaker Clarify로 지표, 보고서, 예제 생성"
+          "textEn": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify로 지표, 보고서, 예제 생성",
+          "text": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify"
         },
         {
           "key": "C",
-          "text": "Amazon Macie로 학습 데이터 암호화 및 보호"
+          "textEn": "Encrypt and secure training data by using Amazon Macie",
+          "textKo": "Amazon Macie로 학습 데이터 암호화 및 보호",
+          "text": "Encrypt and secure training data by using Amazon Macie"
         },
         {
           "key": "D",
-          "text": "Amazon Rekognition으로 데이터에 커스텀 라벨 추가"
+          "textEn": "Gather more data. Use Amazon Rekognition to add custom labels to the data",
+          "textKo": "Amazon Rekognition으로 데이터에 커스텀 라벨 추가",
+          "text": "Gather more data. Use Amazon Rekognition to add custom labels to the data"
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon SageMaker Clarify로 지표, 보고서, 예제 생성"
+      "answerText": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify"
     },
     {
       "id": 40,
@@ -1580,23 +1892,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "자동 확장 추론 엔드포인트"
+          "textEn": "Auto scaling inference endpoints",
+          "textKo": "자동 확장 추론 엔드포인트",
+          "text": "Auto scaling inference endpoints"
         },
         {
           "key": "B",
-          "text": "위협 탐지"
+          "textEn": "Threat detection",
+          "textKo": "위협 탐지",
+          "text": "Threat detection"
         },
         {
           "key": "C",
-          "text": "데이터 보호"
+          "textEn": "Data protection",
+          "textKo": "데이터 보호",
+          "text": "Data protection"
         },
         {
           "key": "D",
-          "text": "비용 최적화"
+          "textEn": "Cost optimization",
+          "textKo": "비용 최적화",
+          "text": "Cost optimization"
         },
         {
           "key": "E",
-          "text": "느슨하게 결합된 마이크로서비스"
+          "textEn": "Loosely coupled microservices",
+          "textKo": "느슨하게 결합된 마이크로서비스",
+          "text": "Loosely coupled microservices"
         }
       ],
       "answerKeys": [
@@ -1628,23 +1950,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "배치 크기 감소"
+          "textEn": "Decrease the batch size",
+          "textKo": "배치 크기 감소",
+          "text": "Decrease the batch size"
         },
         {
           "key": "B",
-          "text": "에포크 증가"
+          "textEn": "Increase the epochs",
+          "textKo": "에포크 증가",
+          "text": "Increase the epochs"
         },
         {
           "key": "C",
-          "text": "에포크 감소"
+          "textEn": "Decrease the epochs",
+          "textKo": "에포크 감소",
+          "text": "Decrease the epochs"
         },
         {
           "key": "D",
-          "text": "온도 파라미터 증가"
+          "textEn": "Increase the temperature parameter",
+          "textKo": "온도 파라미터 증가",
+          "text": "Increase the temperature parameter"
         }
       ],
       "answerKey": "B",
-      "answerText": "에포크 증가"
+      "answerText": "Increase the epochs"
     },
     {
       "id": 42,
@@ -1668,23 +1998,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "웹사이트 참여율"
+          "textEn": "Website engagement rate",
+          "textKo": "웹사이트 참여율",
+          "text": "Website engagement rate"
         },
         {
           "key": "B",
-          "text": "평균 통화 시간"
+          "textEn": "Average call duration",
+          "textKo": "평균 통화 시간",
+          "text": "Average call duration"
         },
         {
           "key": "C",
-          "text": "기업의 사회적 책임"
+          "textEn": "Corporate social responsibility",
+          "textKo": "기업의 사회적 책임",
+          "text": "Corporate social responsibility"
         },
         {
           "key": "D",
-          "text": "규제 준수"
+          "textEn": "Regulatory compliance",
+          "textKo": "규제 준수",
+          "text": "Regulatory compliance"
         }
       ],
       "answerKey": "B",
-      "answerText": "평균 통화 시간"
+      "answerText": "Average call duration"
     },
     {
       "id": 43,
@@ -1708,23 +2046,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "RAG 워크플로 통합"
+          "textEn": "Integrates a Retrieval Augmented Generation (RAG) workflow",
+          "textKo": "RAG 워크플로 통합",
+          "text": "Integrates a Retrieval Augmented Generation (RAG) workflow"
         },
         {
           "key": "B",
-          "text": "ML 모델의 운영 품질 모니터링"
+          "textEn": "Monitors the quality of ML models in production",
+          "textKo": "ML 모델의 운영 품질 모니터링",
+          "text": "Monitors the quality of ML models in production"
         },
         {
           "key": "C",
-          "text": "ML 모델의 중요 세부 정보 문서화"
+          "textEn": "Documents critical details about ML models",
+          "textKo": "ML 모델의 중요 세부 정보 문서화",
+          "text": "Documents critical details about ML models"
         },
         {
           "key": "D",
-          "text": "데이터 준비 단계에서 잠재적 편향 식별"
+          "textEn": "Identifies potential bias during data preparation",
+          "textKo": "데이터 준비 단계에서 잠재적 편향 식별",
+          "text": "Identifies potential bias during data preparation"
         }
       ],
       "answerKey": "D",
-      "answerText": "데이터 준비 단계에서 잠재적 편향 식별"
+      "answerText": "Identifies potential bias during data preparation"
     },
     {
       "id": 44,
@@ -1748,23 +2094,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "학습 데이터 양을 줄이기"
+          "textEn": "Reduce the volume of data that is used in training",
+          "textKo": "학습 데이터 양을 줄이기",
+          "text": "Reduce the volume of data that is used in training"
         },
         {
           "key": "B",
-          "text": "모델에 하이퍼파라미터 추가"
+          "textEn": "Add hyperparameters to the model",
+          "textKo": "모델에 하이퍼파라미터 추가",
+          "text": "Add hyperparameters to the model"
         },
         {
           "key": "C",
-          "text": "학습 데이터 양을 늘리기"
+          "textEn": "Increase the volume of data that is used in training",
+          "textKo": "학습 데이터 양을 늘리기",
+          "text": "Increase the volume of data that is used in training"
         },
         {
           "key": "D",
-          "text": "모델 학습 시간 늘리기"
+          "textEn": "Increase the model training time",
+          "textKo": "모델 학습 시간 늘리기",
+          "text": "Increase the model training time"
         }
       ],
       "answerKey": "C",
-      "answerText": "학습 데이터 양을 늘리기"
+      "answerText": "Increase the volume of data that is used in training"
     },
     {
       "id": 45,
@@ -1790,22 +2144,32 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "D",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "E",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         }
       ],
@@ -1838,27 +2202,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트 엔지니어링을 사용하여 단일 PDF를 사용자 프롬프트 컨텍스트로 추가"
+          "textEn": "Use prompt engineering to add one PDF file as context to the user prompt when the prompt is submitted to Amazon Bedrock.",
+          "textKo": "프롬프트 엔지니어링을 사용하여 단일 PDF를 사용자 프롬프트 컨텍스트로 추가",
+          "text": "Use prompt engineering to add one PDF file as context to the user prompt when the prompt is submitted to Amazon Bedrock."
         },
         {
           "key": "B",
-          "text": "프롬프트 엔지니어링을 사용하여 모든 PDF를 사용자 프롬프트 컨텍스트로 추가"
+          "textEn": "Use prompt engineering to add all the PDF files as context to the user prompt when the prompt is submitted to Amazon Bedrock.",
+          "textKo": "프롬프트 엔지니어링을 사용하여 모든 PDF를 사용자 프롬프트 컨텍스트로 추가",
+          "text": "Use prompt engineering to add all the PDF files as context to the user prompt when the prompt is submitted to Amazon Bedrock."
         },
         {
           "key": "C",
-          "text": "모든 PDF로 모델을 파인튜닝 후 프롬프트 처리"
+          "textEn": "Use all the PDF documents to fine-tune a model with Amazon Bedrock. Use the fine-tuned model to process user prompts.",
+          "textKo": "모든 PDF로 모델을 파인튜닝 후 프롬프트 처리",
+          "text": "Use all the PDF documents to fine-tune a model with Amazon Bedrock. Use the fine-tuned model to process user prompts."
         },
         {
           "key": "D",
-          "text": "PDF 문서를 Amazon Bedrock 지식 베이스에 업로드하여 사용자 프롬프트 시 참조"
+          "textEn": "Upload PDF documents to an Amazon Bedrock knowledge base. Use the knowledge base to provide context when users submit prompts to Amazon Bedrock.",
+          "textKo": "PDF 문서를 Amazon Bedrock 지식 베이스에 업로드하여 사용자 프롬프트 시 참조",
+          "text": "Upload PDF documents to an Amazon Bedrock knowledge base. Use the knowledge base to provide context when users submit prompts to Amazon Bedrock."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "PDF 문서를 Amazon Bedrock 지식 베이스에 업로드하여 사용자 프롬프트 시 참조"
+      "answerText": "Upload PDF documents to an Amazon Bedrock knowledge base. Use the knowledge base to provide context when users submit prompts to Amazon Bedrock."
     },
     {
       "id": 47,
@@ -1883,27 +2257,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사용자 생성 콘텐츠"
+          "textEn": "User-generated content",
+          "textKo": "사용자 생성 콘텐츠",
+          "text": "User-generated content"
         },
         {
           "key": "B",
-          "text": "모더레이션 로그"
+          "textEn": "Moderation logs",
+          "textKo": "모더레이션 로그",
+          "text": "Moderation logs"
         },
         {
           "key": "C",
-          "text": "콘텐츠 모더레이션 가이드라인"
+          "textEn": "Content moderation guidelines",
+          "textKo": "콘텐츠 모더레이션 가이드라인",
+          "text": "Content moderation guidelines"
         },
         {
           "key": "D",
-          "text": "벤치마크 데이터셋"
+          "textEn": "Benchmark datasets",
+          "textKo": "벤치마크 데이터셋",
+          "text": "Benchmark datasets"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "벤치마크 데이터셋"
+      "answerText": "Benchmark datasets"
     },
     {
       "id": 48,
@@ -1926,27 +2310,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 아키텍처 및 하이퍼파라미터 최적화"
+          "textEn": "Optimize the model's architecture and hyperparameters to improve the model's overall performance.",
+          "textKo": "모델 아키텍처 및 하이퍼파라미터 최적화",
+          "text": "Optimize the model's architecture and hyperparameters to improve the model's overall performance."
         },
         {
           "key": "B",
-          "text": "모델에 레이어 추가하여 복잡도 증가"
+          "textEn": "Increase the model's complexity by adding more layers to the model's architecture.",
+          "textKo": "모델에 레이어 추가하여 복잡도 증가",
+          "text": "Increase the model's complexity by adding more layers to the model's architecture."
         },
         {
           "key": "C",
-          "text": "명확한 지침과 컨텍스트를 제공하는 효과적인 프롬프트 생성"
+          "textEn": "Create effective prompts that provide clear instructions and context to guide the model's generation.",
+          "textKo": "명확한 지침과 컨텍스트를 제공하는 효과적인 프롬프트 생성",
+          "text": "Create effective prompts that provide clear instructions and context to guide the model's generation."
         },
         {
           "key": "D",
-          "text": "대규모 다양 데이터셋으로 새로운 모델 사전 학습"
+          "textEn": "Select a large, diverse dataset to pre-train a new generative model.",
+          "textKo": "대규모 다양 데이터셋으로 새로운 모델 사전 학습",
+          "text": "Select a large, diverse dataset to pre-train a new generative model."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "C",
-      "answerText": "명확한 지침과 컨텍스트를 제공하는 효과적인 프롬프트 생성"
+      "answerText": "Create effective prompts that provide clear instructions and context to guide the model's generation."
     },
     {
       "id": 49,
@@ -1971,23 +2365,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 불균형/격차 감지"
+          "textEn": "Detect imbalances or disparities in the data.",
+          "textKo": "데이터 불균형/격차 감지",
+          "text": "Detect imbalances or disparities in the data."
         },
         {
           "key": "B",
-          "text": "모델 실행 빈도 증가"
+          "textEn": "Ensure that the model runs frequently.",
+          "textKo": "모델 실행 빈도 증가",
+          "text": "Ensure that the model runs frequently."
         },
         {
           "key": "C",
-          "text": "모델 동작 평가 및 투명성 제공"
+          "textEn": "Evaluate the model's behavior so that the company can provide transparency to stakeholders.",
+          "textKo": "모델 동작 평가 및 투명성 제공",
+          "text": "Evaluate the model's behavior so that the company can provide transparency to stakeholders."
         },
         {
           "key": "D",
-          "text": "ROUGE 기법 사용하여 정확도 100% 보장"
+          "textEn": "Use the Recall-Oriented Understudy for Gisting Evaluation (ROUGE) technique to ensure that the model is 100% accurate.",
+          "textKo": "ROUGE 기법 사용하여 정확도 100% 보장",
+          "text": "Use the Recall-Oriented Understudy for Gisting Evaluation (ROUGE) technique to ensure that the model is 100% accurate."
         },
         {
           "key": "E",
-          "text": "추론 시간 제한 준수"
+          "textEn": "Ensure that the model's inference time is within the accepted limits.",
+          "textKo": "추론 시간 제한 준수",
+          "text": "Ensure that the model's inference time is within the accepted limits."
         }
       ],
       "answerKeys": [
@@ -2018,27 +2422,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Provisioned Throughput 구매"
+          "textEn": "Purchase Provisioned Throughput for the custom model.",
+          "textKo": "Provisioned Throughput 구매",
+          "text": "Purchase Provisioned Throughput for the custom model."
         },
         {
           "key": "B",
-          "text": "SageMaker Endpoint에 배포"
+          "textEn": "Deploy the custom model in an Amazon SageMaker endpoint for real-time inference.",
+          "textKo": "SageMaker Endpoint에 배포",
+          "text": "Deploy the custom model in an Amazon SageMaker endpoint for real-time inference."
         },
         {
           "key": "C",
-          "text": "SageMaker Model Registry 등록"
+          "textEn": "Register the model with the Amazon SageMaker Model Registry.",
+          "textKo": "SageMaker Model Registry 등록",
+          "text": "Register the model with the Amazon SageMaker Model Registry."
         },
         {
           "key": "D",
-          "text": "Bedrock에서 모델 접근 권한 부여"
+          "textEn": "Grant access to the custom model in Amazon Bedrock.",
+          "textKo": "Bedrock에서 모델 접근 권한 부여",
+          "text": "Grant access to the custom model in Amazon Bedrock."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "Bedrock에서 모델 접근 권한 부여"
+      "answerText": "Grant access to the custom model in Amazon Bedrock."
     },
     {
       "id": 51,
@@ -2063,27 +2477,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "내장 프롬프트 데이터셋 사용 평가"
+          "textEn": "Evaluate the models by using built-in prompt datasets.",
+          "textKo": "내장 프롬프트 데이터셋 사용 평가",
+          "text": "Evaluate the models by using built-in prompt datasets."
         },
         {
           "key": "B",
-          "text": "인간 평가자와 커스텀 프롬프트 데이터셋 사용 평가"
+          "textEn": "Evaluate the models by using a human workforce and custom prompt datasets.",
+          "textKo": "인간 평가자와 커스텀 프롬프트 데이터셋 사용 평가",
+          "text": "Evaluate the models by using a human workforce and custom prompt datasets."
         },
         {
           "key": "C",
-          "text": "공개 모델 리더보드 확인"
+          "textEn": "Use public model leaderboards to identify the model.",
+          "textKo": "공개 모델 리더보드 확인",
+          "text": "Use public model leaderboards to identify the model."
         },
         {
           "key": "D",
-          "text": "CloudWatch InvocationLatency 메트릭 사용"
+          "textEn": "Use the model InvocationLatency runtime metrics in Amazon CloudWatch when trying models.",
+          "textKo": "CloudWatch InvocationLatency 메트릭 사용",
+          "text": "Use the model InvocationLatency runtime metrics in Amazon CloudWatch when trying models."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "B",
-      "answerText": "인간 평가자와 커스텀 프롬프트 데이터셋 사용 평가"
+      "answerText": "Evaluate the models by using a human workforce and custom prompt datasets."
     },
     {
       "id": 52,
@@ -2108,27 +2532,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "유해 콘텐츠(Toxicity)"
+          "textEn": "Toxicity",
+          "textKo": "유해 콘텐츠(Toxicity)",
+          "text": "Toxicity"
         },
         {
           "key": "B",
-          "text": "환각(Hallucinations)"
+          "textEn": "Hallucinations",
+          "textKo": "환각(Hallucinations)",
+          "text": "Hallucinations"
         },
         {
           "key": "C",
-          "text": "표절(Plagiarism)"
+          "textEn": "Plagiarism",
+          "textKo": "표절(Plagiarism)",
+          "text": "Plagiarism"
         },
         {
           "key": "D",
-          "text": "개인정보 보호(Privacy)"
+          "textEn": "Privacy",
+          "textKo": "개인정보 보호(Privacy)",
+          "text": "Privacy"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "C",
-      "answerText": "표절(Plagiarism)"
+      "answerText": "Plagiarism"
     },
     {
       "id": 53,
@@ -2150,27 +2584,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "C 시리즈"
+          "textEn": "Amazon EC2 C series",
+          "textKo": "C 시리즈",
+          "text": "Amazon EC2 C series"
         },
         {
           "key": "B",
-          "text": "G 시리즈"
+          "textEn": "Amazon EC2 G series",
+          "textKo": "G 시리즈",
+          "text": "Amazon EC2 G series"
         },
         {
           "key": "C",
-          "text": "P 시리즈"
+          "textEn": "Amazon EC2 P series",
+          "textKo": "P 시리즈",
+          "text": "Amazon EC2 P series"
         },
         {
           "key": "D",
-          "text": "Trn 시리즈"
+          "textEn": "Amazon EC2 Trn series",
+          "textKo": "Trn 시리즈",
+          "text": "Amazon EC2 Trn series"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "Trn 시리즈"
+      "answerText": "Amazon EC2 Trn series"
     },
     {
       "id": 54,
@@ -2195,27 +2639,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Rekognition"
+          "textEn": "Amazon Rekognition",
+          "textKo": "Rekognition",
+          "text": "Amazon Rekognition"
         },
         {
           "key": "B",
-          "text": "Bedrock Playgrounds"
+          "textEn": "Amazon Bedrock playgrounds",
+          "textKo": "Bedrock Playgrounds",
+          "text": "Amazon Bedrock playgrounds"
         },
         {
           "key": "C",
-          "text": "Bedrock Guardrails"
+          "textEn": "Guardrails for Amazon Bedrock",
+          "textKo": "Bedrock Guardrails",
+          "text": "Guardrails for Amazon Bedrock"
         },
         {
           "key": "D",
-          "text": "Bedrock Agents"
+          "textEn": "Agents for Amazon Bedrock",
+          "textKo": "Bedrock Agents",
+          "text": "Agents for Amazon Bedrock"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "C",
-      "answerText": "Bedrock Guardrails"
+      "answerText": "Guardrails for Amazon Bedrock"
     },
     {
       "id": 55,
@@ -2240,27 +2694,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "생성적 적대 신경망(GAN)"
+          "textEn": "Generative adversarial network (GAN)",
+          "textKo": "생성적 적대 신경망(GAN)",
+          "text": "Generative adversarial network (GAN)"
         },
         {
           "key": "B",
+          "textEn": "XGBoost",
+          "textKo": "XGBoost",
           "text": "XGBoost"
         },
         {
           "key": "C",
-          "text": "잔차 신경망(ResNet)"
+          "textEn": "Residual neural network",
+          "textKo": "잔차 신경망(ResNet)",
+          "text": "Residual neural network"
         },
         {
           "key": "D",
+          "textEn": "WaveNet",
+          "textKo": "WaveNet",
           "text": "WaveNet"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "생성적 적대 신경망(GAN)"
+      "answerText": "Generative adversarial network (GAN)"
     },
     {
       "id": 56,
@@ -2284,27 +2748,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "S3에 데이터 저장 후 SageMaker 내장 알고리즘 사용"
+          "textEn": "Store the data in Amazon S3. Create ML models and demand forecast predictions by using Amazon SageMaker built-in algorithms that use the data from Amazon S3.",
+          "textKo": "S3에 데이터 저장 후 SageMaker 내장 알고리즘 사용",
+          "text": "Store the data in Amazon S3. Create ML models and demand forecast predictions by using Amazon SageMaker built-in algorithms that use the data from Amazon S3."
         },
         {
           "key": "B",
-          "text": "SageMaker Data Wrangler로 데이터 가져오기 후 내장 알고리즘 사용"
+          "textEn": "Import the data into Amazon SageMaker Data Wrangler. Create ML models and demand forecast predictions by using SageMaker built-in algorithms.",
+          "textKo": "SageMaker Data Wrangler로 데이터 가져오기 후 내장 알고리즘 사용",
+          "text": "Import the data into Amazon SageMaker Data Wrangler. Create ML models and demand forecast predictions by using SageMaker built-in algorithms."
         },
         {
           "key": "C",
-          "text": "Data Wrangler -> Amazon Personalize Trending-Now 사용"
+          "textEn": "Import the data into Amazon SageMaker Data Wrangler. Build ML models and demand forecast predictions by using an Amazon Personalize Trending-Now recipe.",
+          "textKo": "Data Wrangler -> Amazon Personalize Trending-Now 사용",
+          "text": "Import the data into Amazon SageMaker Data Wrangler. Build ML models and demand forecast predictions by using an Amazon Personalize Trending-Now recipe."
         },
         {
           "key": "D",
-          "text": "SageMaker Canvas -> 데이터 선택하여 모델 구축"
+          "textEn": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas.",
+          "textKo": "SageMaker Canvas -> 데이터 선택하여 모델 구축",
+          "text": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "SageMaker Canvas -> 데이터 선택하여 모델 구축"
+      "answerText": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas."
     },
     {
       "id": 57,
@@ -2329,27 +2803,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "측정 편향"
+          "textEn": "Measurement bias",
+          "textKo": "측정 편향",
+          "text": "Measurement bias"
         },
         {
           "key": "B",
-          "text": "샘플링 편향"
+          "textEn": "Sampling bias",
+          "textKo": "샘플링 편향",
+          "text": "Sampling bias"
         },
         {
           "key": "C",
-          "text": "관찰자 편향"
+          "textEn": "Observer bias",
+          "textKo": "관찰자 편향",
+          "text": "Observer bias"
         },
         {
           "key": "D",
-          "text": "확증 편향"
+          "textEn": "Confirmation bias",
+          "textKo": "확증 편향",
+          "text": "Confirmation bias"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "B",
-      "answerText": "샘플링 편향"
+      "answerText": "Sampling bias"
     },
     {
       "id": 58,
@@ -2373,27 +2857,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "수동으로 구성된 좋은/나쁜 응답 데이터셋으로 지도 학습"
+          "textEn": "Supervised learning with a manually curated dataset of good responses and bad responses",
+          "textKo": "수동으로 구성된 좋은/나쁜 응답 데이터셋으로 지도 학습",
+          "text": "Supervised learning with a manually curated dataset of good responses and bad responses"
         },
         {
           "key": "B",
-          "text": "고객 피드백 기반 보상을 통한 강화 학습"
+          "textEn": "Reinforcement learning with rewards for positive customer feedback",
+          "textKo": "고객 피드백 기반 보상을 통한 강화 학습",
+          "text": "Reinforcement learning with rewards for positive customer feedback"
         },
         {
           "key": "C",
-          "text": "유사 문의 클러스터를 찾는 비지도 학습"
+          "textEn": "Unsupervised learning to find clusters of similar customer inquiries",
+          "textKo": "유사 문의 클러스터를 찾는 비지도 학습",
+          "text": "Unsupervised learning to find clusters of similar customer inquiries"
         },
         {
           "key": "D",
-          "text": "FAQ 데이터베이스 업데이트 기반 지도 학습"
+          "textEn": "Supervised learning with a continuously updated FAQ database",
+          "textKo": "FAQ 데이터베이스 업데이트 기반 지도 학습",
+          "text": "Supervised learning with a continuously updated FAQ database"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "B",
-      "answerText": "고객 피드백 기반 보상을 통한 강화 학습"
+      "answerText": "Reinforcement learning with rewards for positive customer feedback"
     },
     {
       "id": 59,
@@ -2418,27 +2912,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "혼동 행렬"
+          "textEn": "Confusion matrix",
+          "textKo": "혼동 행렬",
+          "text": "Confusion matrix"
         },
         {
           "key": "B",
-          "text": "상관 행렬"
+          "textEn": "Correlation matrix",
+          "textKo": "상관 행렬",
+          "text": "Correlation matrix"
         },
         {
           "key": "C",
-          "text": "R&sup2; 점수"
+          "textEn": "R2 score",
+          "textKo": "R&sup2; 점수",
+          "text": "R2 score"
         },
         {
           "key": "D",
-          "text": "평균 제곱 오차(MSE)"
+          "textEn": "Mean squared error (MSE)",
+          "textKo": "평균 제곱 오차(MSE)",
+          "text": "Mean squared error (MSE)"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "혼동 행렬"
+      "answerText": "Confusion matrix"
     },
     {
       "id": 60,
@@ -2463,27 +2967,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "콘텐츠 모더레이션 API 구현"
+          "textEn": "Implement moderation APIs.",
+          "textKo": "콘텐츠 모더레이션 API 구현",
+          "text": "Implement moderation APIs."
         },
         {
           "key": "B",
-          "text": "일반 공개 데이터셋으로 모델 재학습"
+          "textEn": "Retrain the model with a general public dataset.",
+          "textKo": "일반 공개 데이터셋으로 모델 재학습",
+          "text": "Retrain the model with a general public dataset."
         },
         {
           "key": "C",
-          "text": "모델 검증 수행"
+          "textEn": "Perform model validation.",
+          "textKo": "모델 검증 수행",
+          "text": "Perform model validation."
         },
         {
           "key": "D",
-          "text": "사용자 피드백 자동 통합"
+          "textEn": "Automate user feedback integration.",
+          "textKo": "사용자 피드백 자동 통합",
+          "text": "Automate user feedback integration."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "콘텐츠 모더레이션 API 구현"
+      "answerText": "Implement moderation APIs."
     },
     {
       "id": 61,
@@ -2508,27 +3022,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "CloudTrail을 로그 대상으로 구성"
+          "textEn": "Configure AWS CloudTrail as the logs destination for the model.",
+          "textKo": "CloudTrail을 로그 대상으로 구성",
+          "text": "Configure AWS CloudTrail as the logs destination for the model."
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock에서 호출 로깅 활성화"
+          "textEn": "Enable invocation logging in Amazon Bedrock.",
+          "textKo": "Amazon Bedrock에서 호출 로깅 활성화",
+          "text": "Enable invocation logging in Amazon Bedrock."
         },
         {
           "key": "C",
-          "text": "AWS Audit Manager를 로그 대상으로 구성"
+          "textEn": "Configure AWS Audit Manager as the logs destination for the model.",
+          "textKo": "AWS Audit Manager를 로그 대상으로 구성",
+          "text": "Configure AWS Audit Manager as the logs destination for the model."
         },
         {
           "key": "D",
-          "text": "EventBridge에서 모델 호출 로깅 구성"
+          "textEn": "Configure model invocation logging in Amazon EventBridge.",
+          "textKo": "EventBridge에서 모델 호출 로깅 구성",
+          "text": "Configure model invocation logging in Amazon EventBridge."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Bedrock에서 호출 로깅 활성화"
+      "answerText": "Enable invocation logging in Amazon Bedrock."
     },
     {
       "id": 62,
@@ -2553,27 +3077,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "배치 변환(Batch Transform)"
+          "textEn": "Batch transform",
+          "textKo": "배치 변환(Batch Transform)",
+          "text": "Batch transform"
         },
         {
           "key": "B",
-          "text": "실시간 추론(Real-time inference)"
+          "textEn": "Real-time inference",
+          "textKo": "실시간 추론(Real-time inference)",
+          "text": "Real-time inference"
         },
         {
           "key": "C",
-          "text": "서버리스 추론(Serverless inference)"
+          "textEn": "Serverless inference",
+          "textKo": "서버리스 추론(Serverless inference)",
+          "text": "Serverless inference"
         },
         {
           "key": "D",
-          "text": "비동기 추론(Asynchronous inference)"
+          "textEn": "Asynchronous inference",
+          "textKo": "비동기 추론(Asynchronous inference)",
+          "text": "Asynchronous inference"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "배치 변환(Batch Transform)"
+      "answerText": "Batch transform"
     },
     {
       "id": 63,
@@ -2598,27 +3132,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "임베딩(Embeddings)"
+          "textEn": "Embeddings",
+          "textKo": "임베딩(Embeddings)",
+          "text": "Embeddings"
         },
         {
           "key": "B",
-          "text": "토큰(Tokens)"
+          "textEn": "Tokens",
+          "textKo": "토큰(Tokens)",
+          "text": "Tokens"
         },
         {
           "key": "C",
-          "text": "모델(Models)"
+          "textEn": "Models",
+          "textKo": "모델(Models)",
+          "text": "Models"
         },
         {
           "key": "D",
-          "text": "바이너리(Binaries)"
+          "textEn": "Binaries",
+          "textKo": "바이너리(Binaries)",
+          "text": "Binaries"
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "임베딩(Embeddings)"
+      "answerText": "Embeddings"
     },
     {
       "id": 64,
@@ -2643,27 +3187,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Few-shot 프롬프트 사용"
+          "textEn": "Use few-shot prompting to define how the FM can answer the questions.",
+          "textKo": "Few-shot 프롬프트 사용",
+          "text": "Use few-shot prompting to define how the FM can answer the questions."
         },
         {
           "key": "B",
-          "text": "도메인 적응(Domain adaptation) 파인튜닝"
+          "textEn": "Use domain adaptation fine-tuning to adapt the FM to complex scientific terms.",
+          "textKo": "도메인 적응(Domain adaptation) 파인튜닝",
+          "text": "Use domain adaptation fine-tuning to adapt the FM to complex scientific terms."
         },
         {
           "key": "C",
-          "text": "FM 추론 파라미터 변경"
+          "textEn": "Change the FM inference parameters.",
+          "textKo": "FM 추론 파라미터 변경",
+          "text": "Change the FM inference parameters."
         },
         {
           "key": "D",
-          "text": "연구 데이터에서 복잡한 용어 제거"
+          "textEn": "Clean the research paper data to remove complex scientific terms.",
+          "textKo": "연구 데이터에서 복잡한 용어 제거",
+          "text": "Clean the research paper data to remove complex scientific terms."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "B",
-      "answerText": "도메인 적응(Domain adaptation) 파인튜닝"
+      "answerText": "Use domain adaptation fine-tuning to adapt the FM to complex scientific terms."
     },
     {
       "id": 65,
@@ -2687,27 +3241,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "온도 값 감소"
+          "textEn": "Decrease the temperature value.",
+          "textKo": "온도 값 감소",
+          "text": "Decrease the temperature value."
         },
         {
           "key": "B",
-          "text": "온도 값 증가"
+          "textEn": "Increase the temperature value.",
+          "textKo": "온도 값 증가",
+          "text": "Increase the temperature value."
         },
         {
           "key": "C",
-          "text": "출력 토큰 길이 감소"
+          "textEn": "Decrease the length of output tokens.",
+          "textKo": "출력 토큰 길이 감소",
+          "text": "Decrease the length of output tokens."
         },
         {
           "key": "D",
-          "text": "최대 생성 길이 증가"
+          "textEn": "Increase the maximum generation length.",
+          "textKo": "최대 생성 길이 증가",
+          "text": "Increase the maximum generation length."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "A",
-      "answerText": "온도 값 감소"
+      "answerText": "Decrease the temperature value."
     },
     {
       "id": 66,
@@ -2732,27 +3296,37 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "각 팀별로 Amazon Bedrock 맞춤 서비스 역할 생성, 팀 고객 데이터만 접근 가능"
+          "textEn": "Create an Amazon Bedrock custom service role for each team that has access to only the team's customer data.",
+          "textKo": "각 팀별로 Amazon Bedrock 맞춤 서비스 역할 생성, 팀 고객 데이터만 접근 가능",
+          "text": "Create an Amazon Bedrock custom service role for each team that has access to only the team's customer data."
         },
         {
           "key": "B",
-          "text": "Amazon S3 접근 권한이 있는 단일 맞춤 서비스 역할 생성, Bedrock 요청 시 팀별 고객명 지정"
+          "textEn": "Create a custom service role that has Amazon S3 access. Ask teams to specify the customer name on each Amazon Bedrock request.",
+          "textKo": "Amazon S3 접근 권한이 있는 단일 맞춤 서비스 역할 생성, Bedrock 요청 시 팀별 고객명 지정",
+          "text": "Create a custom service role that has Amazon S3 access. Ask teams to specify the customer name on each Amazon Bedrock request."
         },
         {
           "key": "C",
-          "text": "S3에서 개인정보 삭제, 버킷 정책을 업데이트하여 팀별 데이터 접근 허용"
+          "textEn": "Redact personal data in Amazon S3. Update the S3 bucket policy to allow team access to customer data.",
+          "textKo": "S3에서 개인정보 삭제, 버킷 정책을 업데이트하여 팀별 데이터 접근 허용",
+          "text": "Redact personal data in Amazon S3. Update the S3 bucket policy to allow team access to customer data."
         },
         {
           "key": "D",
-          "text": "Amazon Bedrock 역할 하나 생성 후 전체 S3 접근, 각 팀별 IAM 역할로 팀 폴더만 접근 허용"
+          "textEn": "Create one Amazon Bedrock role that has full Amazon S3 access. Create IAM roles for each team that have access to only each team's customer folders.",
+          "textKo": "Amazon Bedrock 역할 하나 생성 후 전체 S3 접근, 각 팀별 IAM 역할로 팀 폴더만 접근 허용",
+          "text": "Create one Amazon Bedrock role that has full Amazon S3 access. Create IAM roles for each team that have access to only each team's customer folders."
         },
         {
           "key": "E",
-          "text": "해당 없음"
+          "textEn": "None of the above",
+          "textKo": "해당 없음",
+          "text": "None of the above"
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon Bedrock 역할 하나 생성 후 전체 S3 접근, 각 팀별 IAM 역할로 팀 폴더만 접근 허용"
+      "answerText": "Create one Amazon Bedrock role that has full Amazon S3 access. Create IAM roles for each team that have access to only each team's customer folders."
     },
     {
       "id": 67,
@@ -2777,23 +3351,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Macie를 사용하여 모델 출력의 민감 데이터를 스캔하고 잠재적 위반 알림 설정"
+          "textEn": "Use Amazon Macie to scan the model's output for sensitive data and set up alerts for potential violations.",
+          "textKo": "Amazon Macie를 사용하여 모델 출력의 민감 데이터를 스캔하고 잠재적 위반 알림 설정",
+          "text": "Use Amazon Macie to scan the model's output for sensitive data and set up alerts for potential violations."
         },
         {
           "key": "B",
-          "text": "AWS CloudTrail을 구성하여 모델 응답 모니터링 및 개인정보 감지 시 알림 생성"
+          "textEn": "Configure AWS CloudTrail to monitor the model's responses and create alerts for any detected personal information.",
+          "textKo": "AWS CloudTrail을 구성하여 모델 응답 모니터링 및 개인정보 감지 시 알림 생성",
+          "text": "Configure AWS CloudTrail to monitor the model's responses and create alerts for any detected personal information."
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock Guardrails를 사용하여 콘텐츠 필터링, CloudWatch 알람으로 정책 위반 알림"
+          "textEn": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations.",
+          "textKo": "Amazon Bedrock Guardrails를 사용하여 콘텐츠 필터링, CloudWatch 알람으로 정책 위반 알림",
+          "text": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations."
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker Model Monitor를 구현하여 데이터 변화 감지 및 모델 품질 저하 시 알림"
+          "textEn": "Implement Amazon SageMaker Model Monitor to detect data drift and receive alerts when model quality degrades.",
+          "textKo": "Amazon SageMaker Model Monitor를 구현하여 데이터 변화 감지 및 모델 품질 저하 시 알림",
+          "text": "Implement Amazon SageMaker Model Monitor to detect data drift and receive alerts when model quality degrades."
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Bedrock Guardrails를 사용하여 콘텐츠 필터링, CloudWatch 알람으로 정책 위반 알림"
+      "answerText": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations."
     },
     {
       "id": 68,
@@ -2817,18 +3399,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         },
         {
           "key": "B",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "C",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "D",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         }
       ],
@@ -2858,23 +3448,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "다양한 연령대를 대표하는 추가 학습 데이터를 사용하여 모델을 파인튜닝"
+          "textEn": "Fine-tune the model by using additional training data that is representative of the various age ranges that the application will support",
+          "textKo": "다양한 연령대를 대표하는 추가 학습 데이터를 사용하여 모델을 파인튜닝",
+          "text": "Fine-tune the model by using additional training data that is representative of the various age ranges that the application will support"
         },
         {
           "key": "B",
-          "text": "프롬프트 컨텍스트에 역할 설명을 추가하여 응답 대상 연령대를 모델에 지시"
+          "textEn": "Add a role description to the prompt context that instructs the model of the age range that the response should target",
+          "textKo": "프롬프트 컨텍스트에 역할 설명을 추가하여 응답 대상 연령대를 모델에 지시",
+          "text": "Add a role description to the prompt context that instructs the model of the age range that the response should target"
         },
         {
           "key": "C",
-          "text": "체인 오브 사고(chain-of-thought) 추론을 사용하여 사용자에게 적합한 스타일과 복잡성 결정"
+          "textEn": "Use chain-of-thought reasoning to deduce the correct style and complexity for a response suitable for that user",
+          "textKo": "체인 오브 사고(chain-of-thought) 추론을 사용하여 사용자에게 적합한 스타일과 복잡성 결정",
+          "text": "Use chain-of-thought reasoning to deduce the correct style and complexity for a response suitable for that user"
         },
         {
           "key": "D",
-          "text": "연령에 따라 응답 텍스트를 요약하여 어린 사용자에게는 짧은 응답 제공"
+          "textEn": "Summarize the response text depending on the age of the user so that younger users receive shorter responses",
+          "textKo": "연령에 따라 응답 텍스트를 요약하여 어린 사용자에게는 짧은 응답 제공",
+          "text": "Summarize the response text depending on the age of the user so that younger users receive shorter responses"
         }
       ],
       "answerKey": "B",
-      "answerText": "프롬프트 컨텍스트에 역할 설명을 추가하여 응답 대상 연령대를 모델에 지시"
+      "answerText": "Add a role description to the prompt context that instructs the model of the age range that the response should target"
     },
     {
       "id": 70,
@@ -2898,23 +3496,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 사용에 따른 총 리소스 비용 계산"
+          "textEn": "Calculate the total cost of resources used by the model",
+          "textKo": "모델 사용에 따른 총 리소스 비용 계산",
+          "text": "Calculate the total cost of resources used by the model"
         },
         {
           "key": "B",
-          "text": "사전 정의된 벤치마크 데이터셋을 기준으로 모델 정확도 측정"
+          "textEn": "Measure the model's accuracy against a predefined benchmark dataset",
+          "textKo": "사전 정의된 벤치마크 데이터셋을 기준으로 모델 정확도 측정",
+          "text": "Measure the model's accuracy against a predefined benchmark dataset"
         },
         {
           "key": "C",
-          "text": "신경망의 레이어 수 계산"
+          "textEn": "Count the number of layers in the neural network",
+          "textKo": "신경망의 레이어 수 계산",
+          "text": "Count the number of layers in the neural network"
         },
         {
           "key": "D",
-          "text": "모델이 처리한 이미지의 색상 정확도 평가"
+          "textEn": "Assess the color accuracy of images processed by the model",
+          "textKo": "모델이 처리한 이미지의 색상 정확도 평가",
+          "text": "Assess the color accuracy of images processed by the model"
         }
       ],
       "answerKey": "B",
-      "answerText": "사전 정의된 벤치마크 데이터셋을 기준으로 모델 정확도 측정"
+      "answerText": "Measure the model's accuracy against a predefined benchmark dataset"
     },
     {
       "id": 71,
@@ -2939,23 +3545,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 평가를 위한 공정성 지표 포함"
+          "textEn": "Include fairness metrics for model evaluation",
+          "textKo": "모델 평가를 위한 공정성 지표 포함",
+          "text": "Include fairness metrics for model evaluation"
         },
         {
           "key": "B",
-          "text": "모델의 온도 파라미터 조정"
+          "textEn": "Adjust the temperature parameter of the model",
+          "textKo": "모델의 온도 파라미터 조정",
+          "text": "Adjust the temperature parameter of the model"
         },
         {
           "key": "C",
-          "text": "편향 완화를 위해 학습 데이터 수정"
+          "textEn": "Modify the training data to mitigate bias",
+          "textKo": "편향 완화를 위해 학습 데이터 수정",
+          "text": "Modify the training data to mitigate bias"
         },
         {
           "key": "D",
-          "text": "학습 데이터에 대한 과적합 방지"
+          "textEn": "Avoid overfitting on the training data",
+          "textKo": "학습 데이터에 대한 과적합 방지",
+          "text": "Avoid overfitting on the training data"
         },
         {
           "key": "E",
-          "text": "프롬프트 엔지니어링 기법 적용"
+          "textEn": "Apply prompt engineering techniques",
+          "textKo": "프롬프트 엔지니어링 기법 적용",
+          "text": "Apply prompt engineering techniques"
         }
       ],
       "answerKeys": [
@@ -2986,23 +3602,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 전처리"
+          "textEn": "Data pre-processing",
+          "textKo": "데이터 전처리",
+          "text": "Data pre-processing"
         },
         {
           "key": "B",
-          "text": "특성 엔지니어링"
+          "textEn": "Feature engineering",
+          "textKo": "특성 엔지니어링",
+          "text": "Feature engineering"
         },
         {
           "key": "C",
-          "text": "탐색적 데이터 분석"
+          "textEn": "Exploratory data analysis",
+          "textKo": "탐색적 데이터 분석",
+          "text": "Exploratory data analysis"
         },
         {
           "key": "D",
-          "text": "하이퍼파라미터 튜닝"
+          "textEn": "Hyperparameter tuning",
+          "textKo": "하이퍼파라미터 튜닝",
+          "text": "Hyperparameter tuning"
         }
       ],
       "answerKey": "C",
-      "answerText": "탐색적 데이터 분석"
+      "answerText": "Exploratory data analysis"
     },
     {
       "id": 73,
@@ -3026,23 +3650,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "토픽 모델링"
+          "textEn": "Topic modeling",
+          "textKo": "토픽 모델링",
+          "text": "Topic modeling"
         },
         {
           "key": "B",
-          "text": "클러스터링 모델"
+          "textEn": "Clustering models",
+          "textKo": "클러스터링 모델",
+          "text": "Clustering models"
         },
         {
           "key": "C",
-          "text": "처방적 ML 모델"
+          "textEn": "Prescriptive ML models",
+          "textKo": "처방적 ML 모델",
+          "text": "Prescriptive ML models"
         },
         {
           "key": "D",
-          "text": "BERT 기반 모델"
+          "textEn": "BERT-based models",
+          "textKo": "BERT 기반 모델",
+          "text": "BERT-based models"
         }
       ],
       "answerKey": "D",
-      "answerText": "BERT 기반 모델"
+      "answerText": "BERT-based models"
     },
     {
       "id": 74,
@@ -3066,23 +3698,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon EC2 내 Amazon Q"
+          "textEn": "Amazon Q in Amazon EC2",
+          "textKo": "Amazon EC2 내 Amazon Q",
+          "text": "Amazon Q in Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "Amazon Q Developer",
+          "textKo": "Amazon Q Developer",
           "text": "Amazon Q Developer"
         },
         {
           "key": "C",
-          "text": "Amazon QuickSight 내 Amazon Q"
+          "textEn": "Amazon Q in Amazon QuickSight",
+          "textKo": "Amazon QuickSight 내 Amazon Q",
+          "text": "Amazon Q in Amazon QuickSight"
         },
         {
           "key": "D",
-          "text": "AWS Chatbot 내 Amazon Q"
+          "textEn": "Amazon Q in AWS Chatbot",
+          "textKo": "AWS Chatbot 내 Amazon Q",
+          "text": "Amazon Q in AWS Chatbot"
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon QuickSight 내 Amazon Q"
+      "answerText": "Amazon Q in Amazon QuickSight"
     },
     {
       "id": 75,
@@ -3104,23 +3744,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "챗봇 응답과 올바른 사용자 의도 쌍"
+          "textEn": "Pairs of chatbot responses and correct user intents",
+          "textKo": "챗봇 응답과 올바른 사용자 의도 쌍",
+          "text": "Pairs of chatbot responses and correct user intents"
         },
         {
           "key": "B",
-          "text": "사용자 메시지와 올바른 챗봇 응답 쌍"
+          "textEn": "Pairs of user messages and correct chatbot responses",
+          "textKo": "사용자 메시지와 올바른 챗봇 응답 쌍",
+          "text": "Pairs of user messages and correct chatbot responses"
         },
         {
           "key": "C",
-          "text": "사용자 메시지와 올바른 사용자 의도 쌍"
+          "textEn": "Pairs of user messages and correct user intents",
+          "textKo": "사용자 메시지와 올바른 사용자 의도 쌍",
+          "text": "Pairs of user messages and correct user intents"
         },
         {
           "key": "D",
-          "text": "사용자 의도와 올바른 챗봇 응답 쌍"
+          "textEn": "Pairs of user intents and correct chatbot responses",
+          "textKo": "사용자 의도와 올바른 챗봇 응답 쌍",
+          "text": "Pairs of user intents and correct chatbot responses"
         }
       ],
       "answerKey": "C",
-      "answerText": "사용자 메시지와 올바른 사용자 의도 쌍"
+      "answerText": "Pairs of user messages and correct user intents"
     },
     {
       "id": 76,
@@ -3144,23 +3792,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "파인튜닝을 통해 모델 맞춤화"
+          "textEn": "Customize the model by using fine-tuning",
+          "textKo": "파인튜닝을 통해 모델 맞춤화",
+          "text": "Customize the model by using fine-tuning"
         },
         {
           "key": "B",
-          "text": "프롬프트 내 토큰 수 감소"
+          "textEn": "Decrease the number of tokens in the prompt",
+          "textKo": "프롬프트 내 토큰 수 감소",
+          "text": "Decrease the number of tokens in the prompt"
         },
         {
           "key": "C",
-          "text": "프롬프트 내 토큰 수 증가"
+          "textEn": "Increase the number of tokens in the prompt",
+          "textKo": "프롬프트 내 토큰 수 증가",
+          "text": "Increase the number of tokens in the prompt"
         },
         {
           "key": "D",
-          "text": "Provisioned Throughput 사용"
+          "textEn": "Use Provisioned Throughput",
+          "textKo": "Provisioned Throughput 사용",
+          "text": "Use Provisioned Throughput"
         }
       ],
       "answerKey": "B",
-      "answerText": "프롬프트 내 토큰 수 감소"
+      "answerText": "Decrease the number of tokens in the prompt"
     },
     {
       "id": 77,
@@ -3183,23 +3839,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 누출"
+          "textEn": "Data leakage",
+          "textKo": "데이터 누출",
+          "text": "Data leakage"
         },
         {
           "key": "B",
-          "text": "환각(Hallucination)"
+          "textEn": "Hallucination",
+          "textKo": "환각(Hallucination)",
+          "text": "Hallucination"
         },
         {
           "key": "C",
-          "text": "과적합"
+          "textEn": "Overfitting",
+          "textKo": "과적합",
+          "text": "Overfitting"
         },
         {
           "key": "D",
-          "text": "과소적합"
+          "textEn": "Underfitting",
+          "textKo": "과소적합",
+          "text": "Underfitting"
         }
       ],
       "answerKey": "B",
-      "answerText": "환각(Hallucination)"
+      "answerText": "Hallucination"
     },
     {
       "id": 78,
@@ -3221,23 +3885,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "맞춤형 모델 삭제, 학습 데이터에서 기밀 데이터 제거, 모델 재학습"
+          "textEn": "Delete the custom model. Remove the confidential data from the training dataset. Retrain the custom model",
+          "textKo": "맞춤형 모델 삭제, 학습 데이터에서 기밀 데이터 제거, 모델 재학습",
+          "text": "Delete the custom model. Remove the confidential data from the training dataset. Retrain the custom model"
         },
         {
           "key": "B",
-          "text": "동적 데이터 마스킹을 사용하여 추론 응답에서 기밀 데이터 마스킹"
+          "textEn": "Mask the confidential data in the inference responses by using dynamic data masking",
+          "textKo": "동적 데이터 마스킹을 사용하여 추론 응답에서 기밀 데이터 마스킹",
+          "text": "Mask the confidential data in the inference responses by using dynamic data masking"
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker를 사용하여 추론 응답에서 기밀 데이터 암호화"
+          "textEn": "Encrypt the confidential data in the inference responses by using Amazon SageMaker",
+          "textKo": "Amazon SageMaker를 사용하여 추론 응답에서 기밀 데이터 암호화",
+          "text": "Encrypt the confidential data in the inference responses by using Amazon SageMaker"
         },
         {
           "key": "D",
-          "text": "AWS KMS를 사용하여 맞춤형 모델 내 기밀 데이터 암호화"
+          "textEn": "Encrypt the confidential data in the custom model by using AWS Key Management Service (AWS KMS)",
+          "textKo": "AWS KMS를 사용하여 맞춤형 모델 내 기밀 데이터 암호화",
+          "text": "Encrypt the confidential data in the custom model by using AWS Key Management Service (AWS KMS)"
         }
       ],
       "answerKey": "A",
-      "answerText": "맞춤형 모델 삭제, 학습 데이터에서 기밀 데이터 제거, 모델 재학습"
+      "answerText": "Delete the custom model. Remove the confidential data from the training dataset. Retrain the custom model"
     },
     {
       "id": 79,
@@ -3261,23 +3933,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "BLEU"
+          "textEn": "Bilingual Evaluation Understudy (BLEU)",
+          "textKo": "BLEU",
+          "text": "Bilingual Evaluation Understudy (BLEU)"
         },
         {
           "key": "B",
-          "text": "RMSE"
+          "textEn": "Root mean squared error (RMSE)",
+          "textKo": "RMSE",
+          "text": "Root mean squared error (RMSE)"
         },
         {
           "key": "C",
-          "text": "ROUGE"
+          "textEn": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+          "textKo": "ROUGE",
+          "text": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)"
         },
         {
           "key": "D",
-          "text": "F1 점수"
+          "textEn": "F1 score",
+          "textKo": "F1 점수",
+          "text": "F1 score"
         }
       ],
       "answerKey": "A",
-      "answerText": "BLEU"
+      "answerText": "Bilingual Evaluation Understudy (BLEU)"
     },
     {
       "id": 80,
@@ -3301,19 +3981,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "고객 요구 예측을 위한 맞춤형 FM 생성"
+          "textEn": "Generation of custom foundation models (FMs) to predict customer needs",
+          "textKo": "고객 요구 예측을 위한 맞춤형 FM 생성",
+          "text": "Generation of custom foundation models (FMs) to predict customer needs"
         },
         {
           "key": "B",
-          "text": "반복 작업 자동화 및 복잡한 워크플로 조정"
+          "textEn": "Automation of repetitive tasks and orchestration of complex workflows",
+          "textKo": "반복 작업 자동화 및 복잡한 워크플로 조정",
+          "text": "Automation of repetitive tasks and orchestration of complex workflows"
         },
         {
           "key": "C",
-          "text": "여러 FM을 자동 호출하고 결과 통합"
+          "textEn": "Automatically calling multiple foundation models (FMs) and consolidating the results",
+          "textKo": "여러 FM을 자동 호출하고 결과 통합",
+          "text": "Automatically calling multiple foundation models (FMs) and consolidating the results"
         },
         {
           "key": "D",
-          "text": "사전 정의된 기준과 지표에 따라 FM 선택"
+          "textEn": "Selecting the foundation model (FM) based on predefined criteria and metrics",
+          "textKo": "사전 정의된 기준과 지표에 따라 FM 선택",
+          "text": "Selecting the foundation model (FM) based on predefined criteria and metrics"
         }
       ],
       "answerKeys": [
@@ -3343,23 +4031,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 복잡도 감소"
+          "textEn": "Helps decrease the model's complexity",
+          "textKo": "모델 복잡도 감소",
+          "text": "Helps decrease the model's complexity"
         },
         {
           "key": "B",
-          "text": "시간이 지남에 따라 모델 성능 향상"
+          "textEn": "Improves model performance over time",
+          "textKo": "시간이 지남에 따라 모델 성능 향상",
+          "text": "Improves model performance over time"
         },
         {
           "key": "C",
-          "text": "학습 시간 단축"
+          "textEn": "Decreases the training time requirement",
+          "textKo": "학습 시간 단축",
+          "text": "Decreases the training time requirement"
         },
         {
           "key": "D",
-          "text": "모델 추론 시간 최적화"
+          "textEn": "Optimizes model inference time",
+          "textKo": "모델 추론 시간 최적화",
+          "text": "Optimizes model inference time"
         }
       ],
       "answerKey": "B",
-      "answerText": "시간이 지남에 따라 모델 성능 향상"
+      "answerText": "Improves model performance over time"
     },
     {
       "id": 82,
@@ -3383,23 +4079,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "토큰은 단어, 하위 단어, 기타 언어 단위를 나타내며, 생성 AI 모델이 처리하는 입력 및 출력의 기본 단위입니다"
+          "textEn": "Tokens are the basic units of input and output that a generative AI model operates on, representing words, subwords, or other linguistic units.",
+          "textKo": "토큰은 단어, 하위 단어, 기타 언어 단위를 나타내며, 생성 AI 모델이 처리하는 입력 및 출력의 기본 단위입니다",
+          "text": "Tokens are the basic units of input and output that a generative AI model operates on, representing words, subwords, or other linguistic units."
         },
         {
           "key": "B",
-          "text": "토큰은 생성 AI 모델에서 사용되는 단어 또는 개념의 수치적 표현입니다"
+          "textEn": "Tokens are the mathematical representations of words or concepts used in generative AI models.",
+          "textKo": "토큰은 생성 AI 모델에서 사용되는 단어 또는 개념의 수치적 표현입니다",
+          "text": "Tokens are the mathematical representations of words or concepts used in generative AI models."
         },
         {
           "key": "C",
-          "text": "토큰은 특정 작업을 위해 파인튜닝된 생성 AI 모델의 사전 학습된 가중치입니다"
+          "textEn": "Tokens are the pre-trained weights of a generative AI model that are fine-tuned for specific tasks.",
+          "textKo": "토큰은 특정 작업을 위해 파인튜닝된 생성 AI 모델의 사전 학습된 가중치입니다",
+          "text": "Tokens are the pre-trained weights of a generative AI model that are fine-tuned for specific tasks."
         },
         {
           "key": "D",
-          "text": "토큰은 생성 AI 모델에 출력 생성을 지시하는 특정 프롬프트 또는 명령입니다"
+          "textEn": "Tokens are the specific prompts or instructions given to a generative AI model to generate output.",
+          "textKo": "토큰은 생성 AI 모델에 출력 생성을 지시하는 특정 프롬프트 또는 명령입니다",
+          "text": "Tokens are the specific prompts or instructions given to a generative AI model to generate output."
         }
       ],
       "answerKey": "A",
-      "answerText": "토큰은 단어, 하위 단어, 기타 언어 단위를 나타내며, 생성 AI 모델이 처리하는 입력 및 출력의 기본 단위입니다"
+      "answerText": "Tokens are the basic units of input and output that a generative AI model operates on, representing words, subwords, or other linguistic units."
     },
     {
       "id": 83,
@@ -3422,23 +4126,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사용된 토큰 수"
+          "textEn": "Number of tokens consumed",
+          "textKo": "사용된 토큰 수",
+          "text": "Number of tokens consumed"
         },
         {
           "key": "B",
-          "text": "온도(Temperature) 값"
+          "textEn": "Temperature value",
+          "textKo": "온도(Temperature) 값",
+          "text": "Temperature value"
         },
         {
           "key": "C",
-          "text": "LLM 학습에 사용된 데이터 양"
+          "textEn": "Amount of data used to train the LLM",
+          "textKo": "LLM 학습에 사용된 데이터 양",
+          "text": "Amount of data used to train the LLM"
         },
         {
           "key": "D",
-          "text": "총 학습 시간"
+          "textEn": "Total training time",
+          "textKo": "총 학습 시간",
+          "text": "Total training time"
         }
       ],
       "answerKey": "A",
-      "answerText": "사용된 토큰 수"
+      "answerText": "Number of tokens consumed"
     },
     {
       "id": 84,
@@ -3460,23 +4172,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Inspector를 사용하여 SageMaker Studio 모니터링"
+          "textEn": "Use Amazon Inspector to monitor SageMaker Studio",
+          "textKo": "Amazon Inspector를 사용하여 SageMaker Studio 모니터링",
+          "text": "Use Amazon Inspector to monitor SageMaker Studio"
         },
         {
           "key": "B",
-          "text": "Amazon Macie를 사용하여 SageMaker Studio 모니터링"
+          "textEn": "Use Amazon Macie to monitor SageMaker Studio",
+          "textKo": "Amazon Macie를 사용하여 SageMaker Studio 모니터링",
+          "text": "Use Amazon Macie to monitor SageMaker Studio"
         },
         {
           "key": "C",
-          "text": "SageMaker를 VPC 및 S3 엔드포인트와 함께 구성"
+          "textEn": "Configure SageMaker to use a VPC with an S3 endpoint",
+          "textKo": "SageMaker를 VPC 및 S3 엔드포인트와 함께 구성",
+          "text": "Configure SageMaker to use a VPC with an S3 endpoint"
         },
         {
           "key": "D",
-          "text": "SageMaker를 S3 Glacier Deep Archive와 함께 구성"
+          "textEn": "Configure SageMaker to use S3 Glacier Deep Archive",
+          "textKo": "SageMaker를 S3 Glacier Deep Archive와 함께 구성",
+          "text": "Configure SageMaker to use S3 Glacier Deep Archive"
         }
       ],
       "answerKey": "C",
-      "answerText": "SageMaker를 VPC 및 S3 엔드포인트와 함께 구성"
+      "answerText": "Configure SageMaker to use a VPC with an S3 endpoint"
     },
     {
       "id": 85,
@@ -3500,18 +4220,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon S3",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "B",
-          "text": "Amazon EBS"
+          "textEn": "Amazon Elastic Block Store (Amazon EBS)",
+          "textKo": "Amazon EBS",
+          "text": "Amazon Elastic Block Store (Amazon EBS)"
         },
         {
           "key": "C",
-          "text": "Amazon EFS"
+          "textEn": "Amazon Elastic File System (Amazon EFS)",
+          "textKo": "Amazon EFS",
+          "text": "Amazon Elastic File System (Amazon EFS)"
         },
         {
           "key": "D",
+          "textEn": "AWS Snowcone",
+          "textKo": "AWS Snowcone",
           "text": "AWS Snowcone"
         }
       ],
@@ -3540,23 +4268,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트 인물(Persona) 전환"
+          "textEn": "Prompted persona switches",
+          "textKo": "프롬프트 인물(Persona) 전환",
+          "text": "Prompted persona switches"
         },
         {
           "key": "B",
-          "text": "친근함과 신뢰를 악용"
+          "textEn": "Exploiting friendliness and trust",
+          "textKo": "친근함과 신뢰를 악용",
+          "text": "Exploiting friendliness and trust"
         },
         {
           "key": "C",
-          "text": "프롬프트 템플릿 무시"
+          "textEn": "Ignoring the prompt template",
+          "textKo": "프롬프트 템플릿 무시",
+          "text": "Ignoring the prompt template"
         },
         {
           "key": "D",
-          "text": "프롬프트 템플릿 추출"
+          "textEn": "Extracting the prompt template",
+          "textKo": "프롬프트 템플릿 추출",
+          "text": "Extracting the prompt template"
         }
       ],
       "answerKey": "D",
-      "answerText": "프롬프트 템플릿 추출"
+      "answerText": "Extracting the prompt template"
     },
     {
       "id": 87,
@@ -3578,23 +4314,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Bedrock 버전 패치 및 업데이트"
+          "textEn": "Patching and updating the versions of Amazon Bedrock",
+          "textKo": "Amazon Bedrock 버전 패치 및 업데이트",
+          "text": "Patching and updating the versions of Amazon Bedrock"
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock를 호스팅하는 인프라 보호"
+          "textEn": "Protecting the infrastructure that hosts Amazon Bedrock",
+          "textKo": "Amazon Bedrock를 호스팅하는 인프라 보호",
+          "text": "Protecting the infrastructure that hosts Amazon Bedrock"
         },
         {
           "key": "C",
-          "text": "회사 데이터의 전송 중 및 저장 중 보안 확보"
+          "textEn": "Securing the company's data in transit and at rest",
+          "textKo": "회사 데이터의 전송 중 및 저장 중 보안 확보",
+          "text": "Securing the company's data in transit and at rest"
         },
         {
           "key": "D",
-          "text": "회사 네트워크 내 Amazon Bedrock 프로비저닝"
+          "textEn": "Provisioning Amazon Bedrock within the company network",
+          "textKo": "회사 네트워크 내 Amazon Bedrock 프로비저닝",
+          "text": "Provisioning Amazon Bedrock within the company network"
         }
       ],
       "answerKey": "C",
-      "answerText": "회사 데이터의 전송 중 및 저장 중 보안 확보"
+      "answerText": "Securing the company's data in transit and at rest"
     },
     {
       "id": 88,
@@ -3617,23 +4361,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "크라우드 소싱 평가"
+          "textEn": "Crowd-sourced evaluation",
+          "textKo": "크라우드 소싱 평가",
+          "text": "Crowd-sourced evaluation"
         },
         {
           "key": "B",
-          "text": "자동 모델 평가"
+          "textEn": "Automatic model evaluation",
+          "textKo": "자동 모델 평가",
+          "text": "Automatic model evaluation"
         },
         {
           "key": "C",
-          "text": "인간 평가자와 함께 모델 평가"
+          "textEn": "Model evaluation with human workers",
+          "textKo": "인간 평가자와 함께 모델 평가",
+          "text": "Model evaluation with human workers"
         },
         {
           "key": "D",
-          "text": "인간 피드백 기반 강화 학습(RLHF)"
+          "textEn": "Reinforcement learning from human feedback (RLHF)",
+          "textKo": "인간 피드백 기반 강화 학습(RLHF)",
+          "text": "Reinforcement learning from human feedback (RLHF)"
         }
       ],
       "answerKey": "B",
-      "answerText": "자동 모델 평가"
+      "answerText": "Automatic model evaluation"
     },
     {
       "id": 89,
@@ -3656,18 +4408,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "취약점 찾기 위해 학습 데이터 퍼징"
+          "textEn": "Fuzzing training data to find vulnerabilities",
+          "textKo": "취약점 찾기 위해 학습 데이터 퍼징",
+          "text": "Fuzzing training data to find vulnerabilities"
         },
         {
           "key": "B",
-          "text": "서비스 거부(DoS) 공격"
+          "textEn": "Denial of service (DoS)",
+          "textKo": "서비스 거부(DoS) 공격",
+          "text": "Denial of service (DoS)"
         },
         {
           "key": "C",
-          "text": "권한 있는 침투 테스트"
+          "textEn": "Penetration testing with authorization",
+          "textKo": "권한 있는 침투 테스트",
+          "text": "Penetration testing with authorization"
         },
         {
           "key": "D",
+          "textEn": "Jailbreak",
+          "textKo": "Jailbreak",
           "text": "Jailbreak"
         }
       ],
@@ -3696,23 +4456,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "SageMaker Experiments를 사용하여 학습 및 추론 실행"
+          "textEn": "Run SageMaker training and inference by using SageMaker Experiments",
+          "textKo": "SageMaker Experiments를 사용하여 학습 및 추론 실행",
+          "text": "Run SageMaker training and inference by using SageMaker Experiments"
         },
         {
           "key": "B",
-          "text": "네트워크 격리(Network Isolation)를 사용하여 학습 및 추론 실행"
+          "textEn": "Run SageMaker training and Inference by using network Isolation",
+          "textKo": "네트워크 격리(Network Isolation)를 사용하여 학습 및 추론 실행",
+          "text": "Run SageMaker training and Inference by using network Isolation"
         },
         {
           "key": "C",
-          "text": "SageMaker 지리공간 기능 데이터 암호화"
+          "textEn": "Encrypt the data at rest by using encryption for SageMaker geospatial capabilities",
+          "textKo": "SageMaker 지리공간 기능 데이터 암호화",
+          "text": "Encrypt the data at rest by using encryption for SageMaker geospatial capabilities"
         },
         {
           "key": "D",
-          "text": "적절한 IAM 역할을 SageMaker 작업에 연결"
+          "textEn": "Associate appropriate AWS Identity and Access Management (IAM) roles with the SageMaker jobs",
+          "textKo": "적절한 IAM 역할을 SageMaker 작업에 연결",
+          "text": "Associate appropriate AWS Identity and Access Management (IAM) roles with the SageMaker jobs"
         }
       ],
       "answerKey": "B",
-      "answerText": "네트워크 격리(Network Isolation)를 사용하여 학습 및 추론 실행"
+      "answerText": "Run SageMaker training and Inference by using network Isolation"
     },
     {
       "id": 91,
@@ -3736,23 +4504,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "관련 정보를 문서로 작성하고 Amazon S3에 저장"
+          "textEn": "Create documents with the relevant information. Store the documents in Amazon S3.",
+          "textKo": "관련 정보를 문서로 작성하고 Amazon S3에 저장",
+          "text": "Create documents with the relevant information. Store the documents in Amazon S3."
         },
         {
           "key": "B",
-          "text": "AWS AI Service Cards를 사용하여 모델 투명성 확보"
+          "textEn": "Use AWS AI Service Cards for transparency and understanding models.",
+          "textKo": "AWS AI Service Cards를 사용하여 모델 투명성 확보",
+          "text": "Use AWS AI Service Cards for transparency and understanding models."
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker Model Cards를 만들어 의도된 사용과 학습/추론 상세 정보 포함"
+          "textEn": "Create Amazon SageMaker Model Cards with intended uses and training and inference details.",
+          "textKo": "Amazon SageMaker Model Cards를 만들어 의도된 사용과 학습/추론 상세 정보 포함",
+          "text": "Create Amazon SageMaker Model Cards with intended uses and training and inference details."
         },
         {
           "key": "D",
-          "text": "모델 학습 스크립트를 작성하고 Git 저장소에 커밋"
+          "textEn": "Create model training scripts. Commit the model training scripts to a Git repository.",
+          "textKo": "모델 학습 스크립트를 작성하고 Git 저장소에 커밋",
+          "text": "Create model training scripts. Commit the model training scripts to a Git repository."
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon SageMaker Model Cards를 만들어 의도된 사용과 학습/추론 상세 정보 포함"
+      "answerText": "Create Amazon SageMaker Model Cards with intended uses and training and inference details."
     },
     {
       "id": 92,
@@ -3776,23 +4552,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "이진 분류 모델로 코드 리뷰 생성"
+          "textEn": "Use a binary classification model to generate code reviews.",
+          "textKo": "이진 분류 모델로 코드 리뷰 생성",
+          "text": "Use a binary classification model to generate code reviews."
         },
         {
           "key": "B",
-          "text": "회사 개발 도구에 코드 추천 소프트웨어 설치"
+          "textEn": "Install code recommendation software in the company's developer tools.",
+          "textKo": "회사 개발 도구에 코드 추천 소프트웨어 설치",
+          "text": "Install code recommendation software in the company's developer tools."
         },
         {
           "key": "C",
-          "text": "코드 문제를 예측하는 코드 예측 도구 설치"
+          "textEn": "Install a code forecasting tool to predict potential code issues.",
+          "textKo": "코드 문제를 예측하는 코드 예측 도구 설치",
+          "text": "Install a code forecasting tool to predict potential code issues."
         },
         {
           "key": "D",
-          "text": "자연어 처리(NLP) 도구를 사용하여 코드 생성"
+          "textEn": "Use a natural language processing (NLP) tool to generate code.",
+          "textKo": "자연어 처리(NLP) 도구를 사용하여 코드 생성",
+          "text": "Use a natural language processing (NLP) tool to generate code."
         }
       ],
       "answerKey": "B",
-      "answerText": "회사 개발 도구에 코드 추천 소프트웨어 설치"
+      "answerText": "Install code recommendation software in the company's developer tools."
     },
     {
       "id": 93,
@@ -3814,23 +4598,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트 데이터"
+          "textEn": "Text data",
+          "textKo": "텍스트 데이터",
+          "text": "Text data"
         },
         {
           "key": "B",
-          "text": "이미지 데이터"
+          "textEn": "Image data",
+          "textKo": "이미지 데이터",
+          "text": "Image data"
         },
         {
           "key": "C",
-          "text": "시계열 데이터"
+          "textEn": "Time series data",
+          "textKo": "시계열 데이터",
+          "text": "Time series data"
         },
         {
           "key": "D",
-          "text": "이진 데이터"
+          "textEn": "Binary data",
+          "textKo": "이진 데이터",
+          "text": "Binary data"
         }
       ],
       "answerKey": "C",
-      "answerText": "시계열 데이터"
+      "answerText": "Time series data"
     },
     {
       "id": 94,
@@ -3854,23 +4646,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "학습 데이터셋 크기 줄이기"
+          "textEn": "Reduce the size of the training dataset.",
+          "textKo": "학습 데이터셋 크기 줄이기",
+          "text": "Reduce the size of the training dataset."
         },
         {
           "key": "B",
-          "text": "모델 예측을 과거 결과와 일치시키기"
+          "textEn": "Ensure that the ML model predictions are consistent with historical results.",
+          "textKo": "모델 예측을 과거 결과와 일치시키기",
+          "text": "Ensure that the ML model predictions are consistent with historical results."
         },
         {
           "key": "C",
-          "text": "인구 집단별로 다른 ML 모델 생성"
+          "textEn": "Create a different ML model for each demographic group.",
+          "textKo": "인구 집단별로 다른 ML 모델 생성",
+          "text": "Create a different ML model for each demographic group."
         },
         {
           "key": "D",
-          "text": "학습 데이터셋에서 클래스 불균형(class imbalance) 측정 후 학습 과정 조정"
+          "textEn": "Measure class imbalance on the training dataset. Adapt the training process accordingly.",
+          "textKo": "학습 데이터셋에서 클래스 불균형(class imbalance) 측정 후 학습 과정 조정",
+          "text": "Measure class imbalance on the training dataset. Adapt the training process accordingly."
         }
       ],
       "answerKey": "D",
-      "answerText": "학습 데이터셋에서 클래스 불균형(class imbalance) 측정 후 학습 과정 조정"
+      "answerText": "Measure class imbalance on the training dataset. Adapt the training process accordingly."
     },
     {
       "id": 95,
@@ -3893,23 +4693,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "적대적 프롬프트(Adversarial prompting)"
+          "textEn": "Adversarial prompting",
+          "textKo": "적대적 프롬프트(Adversarial prompting)",
+          "text": "Adversarial prompting"
         },
         {
           "key": "B",
-          "text": "제로샷 프롬프트(Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프트(Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "C",
-          "text": "최소-최대 프롬프트(Least-to-most prompting)"
+          "textEn": "Least-to-most prompting",
+          "textKo": "최소-최대 프롬프트(Least-to-most prompting)",
+          "text": "Least-to-most prompting"
         },
         {
           "key": "D",
-          "text": "사고 과정 프롬프트(Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "사고 과정 프롬프트(Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         }
       ],
       "answerKey": "B",
-      "answerText": "제로샷 프롬프트(Zero-shot prompting)"
+      "answerText": "Zero-shot prompting"
     },
     {
       "id": 96,
@@ -3934,23 +4742,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "정밀도(Precision)"
+          "textEn": "Precision",
+          "textKo": "정밀도(Precision)",
+          "text": "Precision"
         },
         {
           "key": "B",
-          "text": "첫 토큰 응답 시간(Time to first token)"
+          "textEn": "Time to first token",
+          "textKo": "첫 토큰 응답 시간(Time to first token)",
+          "text": "Time to first token"
         },
         {
           "key": "C",
-          "text": "F1 점수(F1 score)"
+          "textEn": "F1 score",
+          "textKo": "F1 점수(F1 score)",
+          "text": "F1 score"
         },
         {
           "key": "D",
-          "text": "단어 오류율(Word error rate)"
+          "textEn": "Word error rate",
+          "textKo": "단어 오류율(Word error rate)",
+          "text": "Word error rate"
         }
       ],
       "answerKey": "C",
-      "answerText": "F1 점수(F1 score)"
+      "answerText": "F1 score"
     },
     {
       "id": 97,
@@ -3974,23 +4790,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "생성 단계 수 증가"
+          "textEn": "Increase the number of generation steps.",
+          "textKo": "생성 단계 수 증가",
+          "text": "Increase the number of generation steps."
         },
         {
           "key": "B",
-          "text": "MASK_IMAGE_BLACK 마스크 옵션 사용"
+          "textEn": "Use the MASK_IMAGE_BLACK mask source option.",
+          "textKo": "MASK_IMAGE_BLACK 마스크 옵션 사용",
+          "text": "Use the MASK_IMAGE_BLACK mask source option."
         },
         {
           "key": "C",
-          "text": "Classifier-free guidance (CFG) 스케일 증가"
+          "textEn": "Increase the classifier-free guidance (CFG) scale.",
+          "textKo": "Classifier-free guidance (CFG) 스케일 증가",
+          "text": "Increase the classifier-free guidance (CFG) scale."
         },
         {
           "key": "D",
-          "text": "프롬프트 강도 증가"
+          "textEn": "Increase the prompt strength.",
+          "textKo": "프롬프트 강도 증가",
+          "text": "Increase the prompt strength."
         }
       ],
       "answerKey": "C",
-      "answerText": "Classifier-free guidance (CFG) 스케일 증가"
+      "answerText": "Increase the classifier-free guidance (CFG) scale."
     },
     {
       "id": 98,
@@ -4013,23 +4837,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "회사 정책 데이터로 LLM 재학습(Retrain)"
+          "textEn": "Retrain the LLM on the company policy data.",
+          "textKo": "회사 정책 데이터로 LLM 재학습(Retrain)",
+          "text": "Retrain the LLM on the company policy data."
         },
         {
           "key": "B",
-          "text": "회사 정책 데이터로 LLM 파인튜닝(Fine-tune)"
+          "textEn": "Fine-tune the LLM on the company policy data.",
+          "textKo": "회사 정책 데이터로 LLM 파인튜닝(Fine-tune)",
+          "text": "Fine-tune the LLM on the company policy data."
         },
         {
           "key": "C",
-          "text": "RAG(Retrieval Augmented Generation) 구현"
+          "textEn": "Implement Retrieval Augmented Generation (RAG) for in-context responses.",
+          "textKo": "RAG(Retrieval Augmented Generation) 구현",
+          "text": "Implement Retrieval Augmented Generation (RAG) for in-context responses."
         },
         {
           "key": "D",
-          "text": "회사 정책 데이터로 사전 학습 및 데이터 증강"
+          "textEn": "Use pre-training and data augmentation on the company policy data.",
+          "textKo": "회사 정책 데이터로 사전 학습 및 데이터 증강",
+          "text": "Use pre-training and data augmentation on the company policy data."
         }
       ],
       "answerKey": "C",
-      "answerText": "RAG(Retrieval Augmented Generation) 구현"
+      "answerText": "Implement Retrieval Augmented Generation (RAG) for in-context responses."
     },
     {
       "id": 99,
@@ -4051,18 +4883,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Q Developer",
+          "textKo": "Amazon Q Developer",
           "text": "Amazon Q Developer"
         },
         {
           "key": "B",
+          "textEn": "AWS Config",
+          "textKo": "AWS Config",
           "text": "AWS Config"
         },
         {
           "key": "C",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
@@ -4091,23 +4931,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "공정성(Fairness)"
+          "textEn": "Fairness",
+          "textKo": "공정성(Fairness)",
+          "text": "Fairness"
         },
         {
           "key": "B",
-          "text": "설명 가능성(Explainability)"
+          "textEn": "Explainability",
+          "textKo": "설명 가능성(Explainability)",
+          "text": "Explainability"
         },
         {
           "key": "C",
-          "text": "거버넌스(Governance)"
+          "textEn": "Governance",
+          "textKo": "거버넌스(Governance)",
+          "text": "Governance"
         },
         {
           "key": "D",
-          "text": "투명성(Transparency)"
+          "textEn": "Transparency",
+          "textKo": "투명성(Transparency)",
+          "text": "Transparency"
         }
       ],
       "answerKey": "A",
-      "answerText": "공정성(Fairness)"
+      "answerText": "Fairness"
     },
     {
       "id": 101,
@@ -4130,18 +4978,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Data Wrangler",
+          "textKo": "Amazon SageMaker Data Wrangler",
           "text": "Amazon SageMaker Data Wrangler"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker Model Cards",
           "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "D",
+          "textEn": "AWS AI Service Cards",
+          "textKo": "AWS AI Service Cards",
           "text": "AWS AI Service Cards"
         }
       ],
@@ -4168,19 +5024,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "ROC 곡선 아래 면적 (AUC)"
+          "textEn": "Area Under the ROC Curve (AUC) score",
+          "textKo": "ROC 곡선 아래 면적 (AUC)",
+          "text": "Area Under the ROC Curve (AUC) score"
         },
         {
           "key": "B",
-          "text": "F1 점수"
+          "textEn": "F1 score",
+          "textKo": "F1 점수",
+          "text": "F1 score"
         },
         {
           "key": "C",
+          "textEn": "BERTScore",
+          "textKo": "BERTScore",
           "text": "BERTScore"
         },
         {
           "key": "D",
-          "text": "실제 세계 지식 점수 (RWK)"
+          "textEn": "Real world knowledge (RWK) score",
+          "textKo": "실제 세계 지식 점수 (RWK)",
+          "text": "Real world knowledge (RWK) score"
         }
       ],
       "answerKey": "C",
@@ -4207,23 +5071,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "K-최근접 이웃 (k-NN)"
+          "textEn": "K-nearest neighbors (k-NN)",
+          "textKo": "K-최근접 이웃 (k-NN)",
+          "text": "K-nearest neighbors (k-NN)"
         },
         {
           "key": "B",
-          "text": "K-평균 (K-means)"
+          "textEn": "K-means",
+          "textKo": "K-평균 (K-means)",
+          "text": "K-means"
         },
         {
           "key": "C",
-          "text": "ARIMA"
+          "textEn": "Autoregressive Integrated Moving Average (ARIMA)",
+          "textKo": "ARIMA",
+          "text": "Autoregressive Integrated Moving Average (ARIMA)"
         },
         {
           "key": "D",
-          "text": "선형 회귀"
+          "textEn": "Linear regression",
+          "textKo": "선형 회귀",
+          "text": "Linear regression"
         }
       ],
       "answerKey": "A",
-      "answerText": "K-최근접 이웃 (k-NN)"
+      "answerText": "K-nearest neighbors (k-NN)"
     },
     {
       "id": 104,
@@ -4246,23 +5118,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS KMS"
+          "textEn": "AWS Key Management Service (AWS KMS)",
+          "textKo": "AWS KMS",
+          "text": "AWS Key Management Service (AWS KMS)"
         },
         {
           "key": "B",
+          "textEn": "Amazon Inspector",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         },
         {
           "key": "C",
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         },
         {
           "key": "D",
+          "textEn": "AWS Secrets Manager",
+          "textKo": "AWS Secrets Manager",
           "text": "AWS Secrets Manager"
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS KMS"
+      "answerText": "AWS Key Management Service (AWS KMS)"
     },
     {
       "id": 105,
@@ -4285,23 +5165,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트 요약"
+          "textEn": "Text summarization",
+          "textKo": "텍스트 요약",
+          "text": "Text summarization"
         },
         {
           "key": "B",
-          "text": "텍스트 생성"
+          "textEn": "Text generation",
+          "textKo": "텍스트 생성",
+          "text": "Text generation"
         },
         {
           "key": "C",
-          "text": "텍스트 완성"
+          "textEn": "Text completion",
+          "textKo": "텍스트 완성",
+          "text": "Text completion"
         },
         {
           "key": "D",
-          "text": "텍스트 분류"
+          "textEn": "Text classification",
+          "textKo": "텍스트 분류",
+          "text": "Text classification"
         }
       ],
       "answerKey": "B",
-      "answerText": "텍스트 생성"
+      "answerText": "Text generation"
     },
     {
       "id": 106,
@@ -4324,23 +5212,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "손실 함수 값"
+          "textEn": "Value of the loss function",
+          "textKo": "손실 함수 값",
+          "text": "Value of the loss function"
         },
         {
           "key": "B",
-          "text": "의미적 강건성"
+          "textEn": "Semantic robustness",
+          "textKo": "의미적 강건성",
+          "text": "Semantic robustness"
         },
         {
           "key": "C",
-          "text": "ROUGE 점수"
+          "textEn": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score",
+          "textKo": "ROUGE 점수",
+          "text": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score"
         },
         {
           "key": "D",
-          "text": "텍스트 생성 지연 시간"
+          "textEn": "Latency of the text generation",
+          "textKo": "텍스트 생성 지연 시간",
+          "text": "Latency of the text generation"
         }
       ],
       "answerKey": "C",
-      "answerText": "ROUGE 점수"
+      "answerText": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score"
     },
     {
       "id": 107,
@@ -4363,23 +5259,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "제로샷 프롬프트 사용"
+          "textEn": "Use zero-shot prompts.",
+          "textKo": "제로샷 프롬프트 사용",
+          "text": "Use zero-shot prompts."
         },
         {
           "key": "B",
-          "text": "네거티브 프롬프트 사용"
+          "textEn": "Use negative prompts.",
+          "textKo": "네거티브 프롬프트 사용",
+          "text": "Use negative prompts."
         },
         {
           "key": "C",
-          "text": "포지티브 프롬프트 사용"
+          "textEn": "Use positive prompts.",
+          "textKo": "포지티브 프롬프트 사용",
+          "text": "Use positive prompts."
         },
         {
           "key": "D",
-          "text": "모호한 프롬프트 사용"
+          "textEn": "Use ambiguous prompts.",
+          "textKo": "모호한 프롬프트 사용",
+          "text": "Use ambiguous prompts."
         }
       ],
       "answerKey": "B",
-      "answerText": "네거티브 프롬프트 사용"
+      "answerText": "Use negative prompts."
     },
     {
       "id": 108,
@@ -4402,23 +5306,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "하나의 프롬프트로 모든 제품을 커버하고 결과를 수동 수정"
+          "textEn": "Create one prompt that covers all products. Edit the responses to make the responses more specific, concise, and tailored to each product.",
+          "textKo": "하나의 프롬프트로 모든 제품을 커버하고 결과를 수동 수정",
+          "text": "Create one prompt that covers all products. Edit the responses to make the responses more specific, concise, and tailored to each product."
         },
         {
           "key": "B",
-          "text": "카테고리별 프롬프트 생성, 출력 포맷 및 길이 명시"
+          "textEn": "Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response.",
+          "textKo": "카테고리별 프롬프트 생성, 출력 포맷 및 길이 명시",
+          "text": "Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response."
         },
         {
           "key": "C",
-          "text": "다양한 특징을 포함해 창의적 설명 생성"
+          "textEn": "Include a diverse range of product features in each prompt to generate creative and unique descriptions.",
+          "textKo": "다양한 특징을 포함해 창의적 설명 생성",
+          "text": "Include a diverse range of product features in each prompt to generate creative and unique descriptions."
         },
         {
           "key": "D",
-          "text": "상세하고 제품별 맞춤 프롬프트 작성"
+          "textEn": "Provide detailed, product-specific prompts to ensure precise and customized descriptions.",
+          "textKo": "상세하고 제품별 맞춤 프롬프트 작성",
+          "text": "Provide detailed, product-specific prompts to ensure precise and customized descriptions."
         }
       ],
       "answerKey": "D",
-      "answerText": "상세하고 제품별 맞춤 프롬프트 작성"
+      "answerText": "Provide detailed, product-specific prompts to ensure precise and customized descriptions."
     },
     {
       "id": 109,
@@ -4441,23 +5353,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "정규화 파라미터 감소하여 모델 복잡도 증가"
+          "textEn": "Decrease the regularization parameter to increase model complexity.",
+          "textKo": "정규화 파라미터 감소하여 모델 복잡도 증가",
+          "text": "Decrease the regularization parameter to increase model complexity."
         },
         {
           "key": "B",
-          "text": "정규화 파라미터 증가하여 모델 복잡도 감소"
+          "textEn": "Increase the regularization parameter to decrease model complexity.",
+          "textKo": "정규화 파라미터 증가하여 모델 복잡도 감소",
+          "text": "Increase the regularization parameter to decrease model complexity."
         },
         {
           "key": "C",
-          "text": "입력 데이터에 더 많은 피처 추가"
+          "textEn": "Add more features to the input data.",
+          "textKo": "입력 데이터에 더 많은 피처 추가",
+          "text": "Add more features to the input data."
         },
         {
           "key": "D",
-          "text": "더 많은 에폭으로 모델 학습"
+          "textEn": "Train the model for more epochs.",
+          "textKo": "더 많은 에폭으로 모델 학습",
+          "text": "Train the model for more epochs."
         }
       ],
       "answerKey": "B",
-      "answerText": "정규화 파라미터 증가하여 모델 복잡도 감소"
+      "answerText": "Increase the regularization parameter to decrease model complexity."
     },
     {
       "id": 110,
@@ -4480,18 +5400,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Athena",
+          "textKo": "Amazon Athena",
           "text": "Amazon Athena"
         },
         {
           "key": "B",
+          "textEn": "Amazon Aurora PostgreSQL",
+          "textKo": "Amazon Aurora PostgreSQL",
           "text": "Amazon Aurora PostgreSQL"
         },
         {
           "key": "C",
+          "textEn": "Amazon Redshift",
+          "textKo": "Amazon Redshift",
           "text": "Amazon Redshift"
         },
         {
           "key": "D",
+          "textEn": "Amazon EMR",
+          "textKo": "Amazon EMR",
           "text": "Amazon EMR"
         }
       ],
@@ -4519,23 +5447,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 복잡도"
+          "textEn": "Model complexity",
+          "textKo": "모델 복잡도",
+          "text": "Model complexity"
         },
         {
           "key": "B",
-          "text": "학습 시간"
+          "textEn": "Training time",
+          "textKo": "학습 시간",
+          "text": "Training time"
         },
         {
           "key": "C",
-          "text": "하이퍼파라미터 수"
+          "textEn": "Number of hyperparameters",
+          "textKo": "하이퍼파라미터 수",
+          "text": "Number of hyperparameters"
         },
         {
           "key": "D",
-          "text": "배포 시간"
+          "textEn": "Deployment time",
+          "textKo": "배포 시간",
+          "text": "Deployment time"
         }
       ],
       "answerKey": "A",
-      "answerText": "모델 복잡도"
+      "answerText": "Model complexity"
     },
     {
       "id": 112,
@@ -4558,23 +5494,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Personalize로 시계열 예측 모델 생성"
+          "textEn": "Create a time-series forecasting model to analyze the medication reviews by using Amazon Personalize.",
+          "textKo": "Amazon Personalize로 시계열 예측 모델 생성",
+          "text": "Create a time-series forecasting model to analyze the medication reviews by using Amazon Personalize."
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock LLM을 사용해 리뷰 요약"
+          "textEn": "Create medication review summaries by using Amazon Bedrock large language models (LLMs).",
+          "textKo": "Amazon Bedrock LLM을 사용해 리뷰 요약",
+          "text": "Create medication review summaries by using Amazon Bedrock large language models (LLMs)."
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker로 분류 모델 생성"
+          "textEn": "Create a classification model that categorizes medications into different groups by using Amazon SageMaker.",
+          "textKo": "Amazon SageMaker로 분류 모델 생성",
+          "text": "Create a classification model that categorizes medications into different groups by using Amazon SageMaker."
         },
         {
           "key": "D",
-          "text": "Amazon Rekognition을 사용해 리뷰 요약"
+          "textEn": "Create medication review summaries by using Amazon Rekognition.",
+          "textKo": "Amazon Rekognition을 사용해 리뷰 요약",
+          "text": "Create medication review summaries by using Amazon Rekognition."
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Bedrock LLM을 사용해 리뷰 요약"
+      "answerText": "Create medication review summaries by using Amazon Bedrock large language models (LLMs)."
     },
     {
       "id": 113,
@@ -4596,23 +5540,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "로지스틱 회귀 모델"
+          "textEn": "Logistic regression model",
+          "textKo": "로지스틱 회귀 모델",
+          "text": "Logistic regression model"
         },
         {
           "key": "B",
-          "text": "주성분 기반 딥러닝 모델"
+          "textEn": "Deep learning model built on principal components",
+          "textKo": "주성분 기반 딥러닝 모델",
+          "text": "Deep learning model built on principal components"
         },
         {
           "key": "C",
-          "text": "k-NN 모델"
+          "textEn": "K-nearest neighbors (k-NN) model",
+          "textKo": "k-NN 모델",
+          "text": "K-nearest neighbors (k-NN) model"
         },
         {
           "key": "D",
-          "text": "신경망"
+          "textEn": "Neural network",
+          "textKo": "신경망",
+          "text": "Neural network"
         }
       ],
       "answerKey": "A",
-      "answerText": "로지스틱 회귀 모델"
+      "answerText": "Logistic regression model"
     },
     {
       "id": 114,
@@ -4663,23 +5615,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "벤치마크 데이터셋에서 모델 성능 평가"
+          "textEn": "Evaluate the model's performance on benchmark datasets.",
+          "textKo": "벤치마크 데이터셋에서 모델 성능 평가",
+          "text": "Evaluate the model's performance on benchmark datasets."
         },
         {
           "key": "B",
-          "text": "모델 구조 및 하이퍼파라미터 분석"
+          "textEn": "Analyze the model's architecture and hyperparameters.",
+          "textKo": "모델 구조 및 하이퍼파라미터 분석",
+          "text": "Analyze the model's architecture and hyperparameters."
         },
         {
           "key": "C",
-          "text": "특정 사용 사례와의 정렬 여부 평가"
+          "textEn": "Assess the model's alignment with specific use cases.",
+          "textKo": "특정 사용 사례와의 정렬 여부 평가",
+          "text": "Assess the model's alignment with specific use cases."
         },
         {
           "key": "D",
-          "text": "모델 배포 시 필요한 컴퓨팅 자원 측정"
+          "textEn": "Measure the computational resources required for model deployment.",
+          "textKo": "모델 배포 시 필요한 컴퓨팅 자원 측정",
+          "text": "Measure the computational resources required for model deployment."
         }
       ],
       "answerKey": "C",
-      "answerText": "특정 사용 사례와의 정렬 여부 평가"
+      "answerText": "Assess the model's alignment with specific use cases."
     },
     {
       "id": 116,
@@ -4702,23 +5662,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "지도 학습"
+          "textEn": "Supervised learning",
+          "textKo": "지도 학습",
+          "text": "Supervised learning"
         },
         {
           "key": "B",
-          "text": "비지도 학습"
+          "textEn": "Unsupervised learning",
+          "textKo": "비지도 학습",
+          "text": "Unsupervised learning"
         },
         {
           "key": "C",
-          "text": "강화 학습"
+          "textEn": "Reinforcement learning",
+          "textKo": "강화 학습",
+          "text": "Reinforcement learning"
         },
         {
           "key": "D",
-          "text": "능동 학습"
+          "textEn": "Active learning",
+          "textKo": "능동 학습",
+          "text": "Active learning"
         }
       ],
       "answerKey": "A",
-      "answerText": "지도 학습"
+      "answerText": "Supervised learning"
     },
     {
       "id": 117,
@@ -4741,23 +5709,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "피처 엔지니어링"
+          "textEn": "Feature engineering",
+          "textKo": "피처 엔지니어링",
+          "text": "Feature engineering"
         },
         {
           "key": "B",
-          "text": "모델 학습"
+          "textEn": "Model training",
+          "textKo": "모델 학습",
+          "text": "Model training"
         },
         {
           "key": "C",
-          "text": "데이터 수집"
+          "textEn": "Data collection",
+          "textKo": "데이터 수집",
+          "text": "Data collection"
         },
         {
           "key": "D",
-          "text": "비즈니스 목표 식별"
+          "textEn": "Business goal identification",
+          "textKo": "비즈니스 목표 식별",
+          "text": "Business goal identification"
         }
       ],
       "answerKey": "D",
-      "answerText": "비즈니스 목표 식별"
+      "answerText": "Business goal identification"
     },
     {
       "id": 118,
@@ -4780,23 +5756,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker 사용 및 최신 데이터로 반복 학습"
+          "textEn": "Use Amazon SageMaker and iterate with newer data.",
+          "textKo": "Amazon SageMaker 사용 및 최신 데이터로 반복 학습",
+          "text": "Use Amazon SageMaker and iterate with newer data."
         },
         {
           "key": "B",
-          "text": "Amazon Personalize 사용 및 과거 데이터로 반복"
+          "textEn": "Use Amazon Personalize and iterate with historical data.",
+          "textKo": "Amazon Personalize 사용 및 과거 데이터로 반복",
+          "text": "Use Amazon Personalize and iterate with historical data."
         },
         {
           "key": "C",
-          "text": "Amazon CloudWatch로 주문 데이터 분석"
+          "textEn": "Use Amazon CloudWatch to analyze customer orders.",
+          "textKo": "Amazon CloudWatch로 주문 데이터 분석",
+          "text": "Use Amazon CloudWatch to analyze customer orders."
         },
         {
           "key": "D",
-          "text": "Amazon Rekognition으로 모델 최적화"
+          "textEn": "Use Amazon Rekognition to optimize the model.",
+          "textKo": "Amazon Rekognition으로 모델 최적화",
+          "text": "Use Amazon Rekognition to optimize the model."
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker 사용 및 최신 데이터로 반복 학습"
+      "answerText": "Use Amazon SageMaker and iterate with newer data."
     },
     {
       "id": 119,
@@ -4819,23 +5803,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon EC2 인스턴스에 모델 배포"
+          "textEn": "Deploy the model on an Amazon EC2 instance.",
+          "textKo": "Amazon EC2 인스턴스에 모델 배포",
+          "text": "Deploy the model on an Amazon EC2 instance."
         },
         {
           "key": "B",
-          "text": "Amazon EKS 클러스터에 모델 배포"
+          "textEn": "Deploy the model on an Amazon Elastic Kubernetes Service (Amazon EKS) cluster.",
+          "textKo": "Amazon EKS 클러스터에 모델 배포",
+          "text": "Deploy the model on an Amazon Elastic Kubernetes Service (Amazon EKS) cluster."
         },
         {
           "key": "C",
-          "text": "Amazon CloudFront + S3로 배포"
+          "textEn": "Deploy the model by using Amazon CloudFront with an Amazon S3 integration.",
+          "textKo": "Amazon CloudFront + S3로 배포",
+          "text": "Deploy the model by using Amazon CloudFront with an Amazon S3 integration."
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker 엔드포인트로 배포"
+          "textEn": "Deploy the model by using an Amazon SageMaker endpoint.",
+          "textKo": "Amazon SageMaker 엔드포인트로 배포",
+          "text": "Deploy the model by using an Amazon SageMaker endpoint."
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon SageMaker 엔드포인트로 배포"
+      "answerText": "Deploy the model by using an Amazon SageMaker endpoint."
     },
     {
       "id": 120,
@@ -4858,23 +5850,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Fraud Detector와 Bedrock Agent 사용"
+          "textEn": "Use Agents for Amazon Bedrock with Amazon Fraud Detector to build the application.",
+          "textKo": "Amazon Fraud Detector와 Bedrock Agent 사용",
+          "text": "Use Agents for Amazon Bedrock with Amazon Fraud Detector to build the application."
         },
         {
           "key": "B",
-          "text": "Bedrock Agent와 Bedrock Knowledge Base 사용"
+          "textEn": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application.",
+          "textKo": "Bedrock Agent와 Bedrock Knowledge Base 사용",
+          "text": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application."
         },
         {
           "key": "C",
-          "text": "Personalize와 Bedrock Knowledge Base 사용"
+          "textEn": "Use Amazon Personalize with Amazon Bedrock knowledge bases to build the application.",
+          "textKo": "Personalize와 Bedrock Knowledge Base 사용",
+          "text": "Use Amazon Personalize with Amazon Bedrock knowledge bases to build the application."
         },
         {
           "key": "D",
-          "text": "SageMaker로 새로운 ML 모델 훈련"
+          "textEn": "Use Amazon SageMaker to build the application by training a new ML model.",
+          "textKo": "SageMaker로 새로운 ML 모델 훈련",
+          "text": "Use Amazon SageMaker to build the application by training a new ML model."
         }
       ],
       "answerKey": "B",
-      "answerText": "Bedrock Agent와 Bedrock Knowledge Base 사용"
+      "answerText": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application."
     },
     {
       "id": 121,
@@ -4897,23 +5897,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "추천 시스템"
+          "textEn": "Recommendation system",
+          "textKo": "추천 시스템",
+          "text": "Recommendation system"
         },
         {
           "key": "B",
-          "text": "자연어 처리 (NLP)"
+          "textEn": "Natural language processing (NLP)",
+          "textKo": "자연어 처리 (NLP)",
+          "text": "Natural language processing (NLP)"
         },
         {
           "key": "C",
-          "text": "컴퓨터 비전"
+          "textEn": "Computer vision",
+          "textKo": "컴퓨터 비전",
+          "text": "Computer vision"
         },
         {
           "key": "D",
-          "text": "이미지 처리"
+          "textEn": "Image processing",
+          "textKo": "이미지 처리",
+          "text": "Image processing"
         }
       ],
       "answerKey": "C",
-      "answerText": "컴퓨터 비전"
+      "answerText": "Computer vision"
     },
     {
       "id": 122,
@@ -4936,18 +5944,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker",
+          "textKo": "Amazon SageMaker",
           "text": "Amazon SageMaker"
         },
         {
           "key": "C",
+          "textEn": "Amazon Athena",
+          "textKo": "Amazon Athena",
           "text": "Amazon Athena"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
@@ -4975,23 +5991,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "인간 검토 프로세스(Human-in-the-loop)"
+          "textEn": "Human-in-the-loop",
+          "textKo": "인간 검토 프로세스(Human-in-the-loop)",
+          "text": "Human-in-the-loop"
         },
         {
           "key": "B",
-          "text": "데이터 증강"
+          "textEn": "Data augmentation",
+          "textKo": "데이터 증강",
+          "text": "Data augmentation"
         },
         {
           "key": "C",
-          "text": "피처 엔지니어링"
+          "textEn": "Feature engineering",
+          "textKo": "피처 엔지니어링",
+          "text": "Feature engineering"
         },
         {
           "key": "D",
-          "text": "적대적 학습"
+          "textEn": "Adversarial training",
+          "textKo": "적대적 학습",
+          "text": "Adversarial training"
         }
       ],
       "answerKey": "A",
-      "answerText": "인간 검토 프로세스(Human-in-the-loop)"
+      "answerText": "Human-in-the-loop"
     },
     {
       "id": 124,
@@ -5014,23 +6038,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "다양한 학습 데이터를 추가하고 다시 파인튜닝"
+          "textEn": "Include more diverse training data. Fine-tune the model again by using the new data.",
+          "textKo": "다양한 학습 데이터를 추가하고 다시 파인튜닝",
+          "text": "Include more diverse training data. Fine-tune the model again by using the new data."
         },
         {
           "key": "B",
-          "text": "RAG 사용"
+          "textEn": "Use Retrieval Augmented Generation (RAG) with the fine-tuned model.",
+          "textKo": "RAG 사용",
+          "text": "Use Retrieval Augmented Generation (RAG) with the fine-tuned model."
         },
         {
           "key": "C",
-          "text": "AWS Trusted Advisor 사용"
+          "textEn": "Use AWS Trusted Advisor checks to eliminate bias.",
+          "textKo": "AWS Trusted Advisor 사용",
+          "text": "Use AWS Trusted Advisor checks to eliminate bias."
         },
         {
           "key": "D",
-          "text": "새 LLM을 사전 학습"
+          "textEn": "Pre-train a new LLM with more diverse training data.",
+          "textKo": "새 LLM을 사전 학습",
+          "text": "Pre-train a new LLM with more diverse training data."
         }
       ],
       "answerKey": "A",
-      "answerText": "다양한 학습 데이터를 추가하고 다시 파인튜닝"
+      "answerText": "Include more diverse training data. Fine-tune the model again by using the new data."
     },
     {
       "id": 125,
@@ -5090,22 +6122,32 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS CloudTrail",
+          "textKo": "AWS CloudTrail",
           "text": "AWS CloudTrail"
         },
         {
           "key": "B",
+          "textEn": "Amazon CloudWatch",
+          "textKo": "Amazon CloudWatch",
           "text": "Amazon CloudWatch"
         },
         {
           "key": "C",
+          "textEn": "AWS Audit Manager",
+          "textKo": "AWS Audit Manager",
           "text": "AWS Audit Manager"
         },
         {
           "key": "D",
+          "textEn": "Amazon S3 Intelligent-Tiering",
+          "textKo": "Amazon S3 Intelligent-Tiering",
           "text": "Amazon S3 Intelligent-Tiering"
         },
         {
           "key": "E",
+          "textEn": "Amazon S3 Standard",
+          "textKo": "Amazon S3 Standard",
           "text": "Amazon S3 Standard"
         }
       ],
@@ -5136,18 +6178,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "C",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "D",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         }
       ],
@@ -5175,23 +6225,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 레지던시"
+          "textEn": "Data residency",
+          "textKo": "데이터 레지던시",
+          "text": "Data residency"
         },
         {
           "key": "B",
-          "text": "데이터 품질"
+          "textEn": "Data quality",
+          "textKo": "데이터 품질",
+          "text": "Data quality"
         },
         {
           "key": "C",
-          "text": "데이터 검색 가능성"
+          "textEn": "Data discoverability",
+          "textKo": "데이터 검색 가능성",
+          "text": "Data discoverability"
         },
         {
           "key": "D",
-          "text": "데이터 강화"
+          "textEn": "Data enrichment",
+          "textKo": "데이터 강화",
+          "text": "Data enrichment"
         }
       ],
       "answerKey": "A",
-      "answerText": "데이터 레지던시"
+      "answerText": "Data residency"
     },
     {
       "id": 129,
@@ -5214,18 +6272,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon CloudWatch",
+          "textKo": "Amazon CloudWatch",
           "text": "Amazon CloudWatch"
         },
         {
           "key": "B",
+          "textEn": "AWS CloudTrail",
+          "textKo": "AWS CloudTrail",
           "text": "AWS CloudTrail"
         },
         {
           "key": "C",
+          "textEn": "AWS Trusted Advisor",
+          "textKo": "AWS Trusted Advisor",
           "text": "AWS Trusted Advisor"
         },
         {
           "key": "D",
+          "textEn": "AWS Config",
+          "textKo": "AWS Config",
           "text": "AWS Config"
         }
       ],
@@ -5253,19 +6319,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "Chain-of-thought prompting",
           "text": "Chain-of-thought prompting"
         },
         {
           "key": "B",
-          "text": "프롬프트 인젝션"
+          "textEn": "Prompt injection",
+          "textKo": "프롬프트 인젝션",
+          "text": "Prompt injection"
         },
         {
           "key": "C",
+          "textEn": "Few-shot prompting",
+          "textKo": "Few-shot prompting",
           "text": "Few-shot prompting"
         },
         {
           "key": "D",
-          "text": "프롬프트 템플릿 사용"
+          "textEn": "Prompt templating",
+          "textKo": "프롬프트 템플릿 사용",
+          "text": "Prompt templating"
         }
       ],
       "answerKey": "A",
@@ -5301,18 +6375,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Q Developer",
+          "textKo": "Amazon Q Developer",
           "text": "Amazon Q Developer"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
@@ -5346,19 +6428,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "딥러닝 신경망으로 음성 인식 수행"
+          "textEn": "Use a deep learning neural network to perform speech recognition.",
+          "textKo": "딥러닝 신경망으로 음성 인식 수행",
+          "text": "Use a deep learning neural network to perform speech recognition."
         },
         {
           "key": "B",
-          "text": "수치 데이터 패턴 분석용 ML 모델 구축"
+          "textEn": "Build ML models to search for patterns in numeric data.",
+          "textKo": "수치 데이터 패턴 분석용 ML 모델 구축",
+          "text": "Build ML models to search for patterns in numeric data."
         },
         {
           "key": "C",
-          "text": "생성형 AI 요약으로 사람 같은 텍스트 생성"
+          "textEn": "Use generative AI summarization to generate human-like text.",
+          "textKo": "생성형 AI 요약으로 사람 같은 텍스트 생성",
+          "text": "Use generative AI summarization to generate human-like text."
         },
         {
           "key": "D",
-          "text": "이미지 분류 및 인식을 위한 커스텀 모델 구축"
+          "textEn": "Build custom models for image classification and recognition.",
+          "textKo": "이미지 분류 및 인식을 위한 커스텀 모델 구축",
+          "text": "Build custom models for image classification and recognition."
         }
       ],
       "answerKey": "A",
@@ -5385,19 +6475,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "퓨샷 프롬프트 (Few-shot prompting)"
+          "textEn": "Few-shot prompting",
+          "textKo": "퓨샷 프롬프트 (Few-shot prompting)",
+          "text": "Few-shot prompting"
         },
         {
           "key": "B",
-          "text": "제로샷 프롬프트 (Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프트 (Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "C",
-          "text": "방향성 자극 프롬프트 (Directional stimulus prompting)"
+          "textEn": "Directional stimulus prompting",
+          "textKo": "방향성 자극 프롬프트 (Directional stimulus prompting)",
+          "text": "Directional stimulus prompting"
         },
         {
           "key": "D",
-          "text": "체인 오브 쏘트 프롬프트 (Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "체인 오브 쏘트 프롬프트 (Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         }
       ],
       "answerKey": "D",
@@ -5424,19 +6522,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "배치 학습 (Batch learning)"
+          "textEn": "Batch learning",
+          "textKo": "배치 학습 (Batch learning)",
+          "text": "Batch learning"
         },
         {
           "key": "B",
-          "text": "연속 사전 학습 (Continuous pre-training)"
+          "textEn": "Continuous pre-training",
+          "textKo": "연속 사전 학습 (Continuous pre-training)",
+          "text": "Continuous pre-training"
         },
         {
           "key": "C",
-          "text": "정적 학습 (Static training)"
+          "textEn": "Static training",
+          "textKo": "정적 학습 (Static training)",
+          "text": "Static training"
         },
         {
           "key": "D",
-          "text": "잠재 학습 (Latent training)"
+          "textEn": "Latent training",
+          "textKo": "잠재 학습 (Latent training)",
+          "text": "Latent training"
         }
       ],
       "answerKey": "B",
@@ -5505,19 +6611,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "장기적인 비즈니스 가치를 창출하기 위해 여러 부서에 걸쳐 이니셔티브 확장"
+          "textEn": "Expanding initiatives across business units to create long-term business value",
+          "textKo": "장기적인 비즈니스 가치를 창출하기 위해 여러 부서에 걸쳐 이니셔티브 확장",
+          "text": "Expanding initiatives across business units to create long-term business value"
         },
         {
           "key": "B",
-          "text": "비즈니스 표준, 수익 목표, 이해관계자의 기대치와 정렬 보장"
+          "textEn": "Ensuring alignment with business standards, revenue goals, and stakeholder expectations",
+          "textKo": "비즈니스 표준, 수익 목표, 이해관계자의 기대치와 정렬 보장",
+          "text": "Ensuring alignment with business standards, revenue goals, and stakeholder expectations"
         },
         {
           "key": "C",
-          "text": "도전 과제를 극복하여 비즈니스 혁신과 성장을 주도"
+          "textEn": "Overcoming challenges to drive business transformation and growth",
+          "textKo": "도전 과제를 극복하여 비즈니스 혁신과 성장을 주도",
+          "text": "Overcoming challenges to drive business transformation and growth"
         },
         {
           "key": "D",
-          "text": "데이터, 투명성, 책임 있는 AI, 규정 준수를 위한 정책 및 가이드라인 개발"
+          "textEn": "Developing policies and guidelines for data, transparency, responsible AI, and compliance",
+          "textKo": "데이터, 투명성, 책임 있는 AI, 규정 준수를 위한 정책 및 가이드라인 개발",
+          "text": "Developing policies and guidelines for data, transparency, responsible AI, and compliance"
         }
       ],
       "answerKey": "D",
@@ -5544,19 +6658,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "처리된 고객 문의 수"
+          "textEn": "Number of customer inquiries handled",
+          "textKo": "처리된 고객 문의 수",
+          "text": "Number of customer inquiries handled"
         },
         {
           "key": "B",
-          "text": "AI 모델 학습 비용"
+          "textEn": "Cost of training AI models",
+          "textKo": "AI 모델 학습 비용",
+          "text": "Cost of training AI models"
         },
         {
           "key": "C",
-          "text": "고객 대화 한 건당 비용"
+          "textEn": "Cost for each customer conversation",
+          "textKo": "고객 대화 한 건당 비용",
+          "text": "Cost for each customer conversation"
         },
         {
           "key": "D",
-          "text": "평균 처리 시간 (AHT)"
+          "textEn": "Average handled time (AHT)",
+          "textKo": "평균 처리 시간 (AHT)",
+          "text": "Average handled time (AHT)"
         }
       ],
       "answerKey": "C",
@@ -5583,19 +6705,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "K-최근접 이웃 (K-nearest neighbors, k-NN)"
+          "textEn": "K-nearest neighbors (k-NN)",
+          "textKo": "K-최근접 이웃 (K-nearest neighbors, k-NN)",
+          "text": "K-nearest neighbors (k-NN)"
         },
         {
           "key": "B",
-          "text": "K-평균 군집화 (K-means)"
+          "textEn": "K-means",
+          "textKo": "K-평균 군집화 (K-means)",
+          "text": "K-means"
         },
         {
           "key": "C",
-          "text": "의사결정 트리 (Decision tree)"
+          "textEn": "Decision tree",
+          "textKo": "의사결정 트리 (Decision tree)",
+          "text": "Decision tree"
         },
         {
           "key": "D",
-          "text": "서포트 벡터 머신 (Support vector machine)"
+          "textEn": "Support vector machine",
+          "textKo": "서포트 벡터 머신 (Support vector machine)",
+          "text": "Support vector machine"
         }
       ],
       "answerKey": "B",
@@ -5623,19 +6753,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 학습을 감독하기 위해 Amazon Bedrock의 에이전트를 설정합니다."
+          "textEn": "Set up Agents for Amazon Bedrock to supervise the model training.",
+          "textKo": "모델 학습을 감독하기 위해 Amazon Bedrock의 에이전트를 설정합니다.",
+          "text": "Set up Agents for Amazon Bedrock to supervise the model training."
         },
         {
           "key": "B",
-          "text": "환각을 유발하는 데이터를 제거하기 위해 데이터 전처리를 사용합니다."
+          "textEn": "Use data pre-processing and remove any data that causes hallucinations.",
+          "textKo": "환각을 유발하는 데이터를 제거하기 위해 데이터 전처리를 사용합니다.",
+          "text": "Use data pre-processing and remove any data that causes hallucinations."
         },
         {
           "key": "C",
-          "text": "모델의 추론 파라미터인 temperature 값을 낮춥니다."
+          "textEn": "Decrease the temperature inference parameter for the model.",
+          "textKo": "모델의 추론 파라미터인 temperature 값을 낮춥니다.",
+          "text": "Decrease the temperature inference parameter for the model."
         },
         {
           "key": "D",
-          "text": "환각이 발생하지 않도록 학습된 파운데이션 모델(FM)을 사용합니다."
+          "textEn": "Use a foundation model (FM) that is trained to not hallucinate.",
+          "textKo": "환각이 발생하지 않도록 학습된 파운데이션 모델(FM)을 사용합니다.",
+          "text": "Use a foundation model (FM) that is trained to not hallucinate."
         }
       ],
       "answerKey": "C",
@@ -5663,19 +6801,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "메시지를 수집하기 위해 모델 호출 로깅을 활성화합니다."
+          "textEn": "Turn on model invocation logging to collect messages.",
+          "textKo": "메시지를 수집하기 위해 모델 호출 로깅을 활성화합니다.",
+          "text": "Turn on model invocation logging to collect messages."
         },
         {
           "key": "B",
-          "text": "이전 메시지를 모델 프롬프트에 추가합니다."
+          "textEn": "Add messages to the model prompt.",
+          "textKo": "이전 메시지를 모델 프롬프트에 추가합니다.",
+          "text": "Add messages to the model prompt."
         },
         {
           "key": "C",
-          "text": "Amazon Personalize를 사용하여 대화 내역을 저장합니다."
+          "textEn": "Use Amazon Personalize to save conversation history.",
+          "textKo": "Amazon Personalize를 사용하여 대화 내역을 저장합니다.",
+          "text": "Use Amazon Personalize to save conversation history."
         },
         {
           "key": "D",
-          "text": "LLM에 대해 사전 할당 처리량(Provisioned Throughput)을 사용합니다."
+          "textEn": "Use Provisioned Throughput for the LLM.",
+          "textKo": "LLM에 대해 사전 할당 처리량(Provisioned Throughput)을 사용합니다.",
+          "text": "Use Provisioned Throughput for the LLM."
         }
       ],
       "answerKey": "B",
@@ -5703,19 +6849,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Macie -> 데이터 보안 및 개인정보 보호 서비스"
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie -> 데이터 보안 및 개인정보 보호 서비스",
+          "text": "Amazon Macie"
         },
         {
           "key": "B",
-          "text": "Amazon Transcribe -> 음성을 텍스트로 변환하는 서비스"
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe -> 음성을 텍스트로 변환하는 서비스",
+          "text": "Amazon Transcribe"
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock -> Foundation Model을 API로 활용할 수 있는 서비스"
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock -> Foundation Model을 API로 활용할 수 있는 서비스",
+          "text": "Amazon Bedrock"
         },
         {
           "key": "D",
-          "text": "Amazon Textract -> 문서에서 텍스트를 추출하는 서비스"
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract -> 문서에서 텍스트를 추출하는 서비스",
+          "text": "Amazon Textract"
         }
       ],
       "answerKey": "C",
@@ -5743,19 +6897,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Macie를 구성하여 S3에 업로드된 문서에서 민감 정보 탐지"
+          "textEn": "Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.",
+          "textKo": "Amazon Macie를 구성하여 S3에 업로드된 문서에서 민감 정보 탐지",
+          "text": "Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3."
         },
         {
           "key": "B",
-          "text": "Amazon SageMaker 엔드포인트로 LLM 배포 후 민감 데이터 마스킹"
+          "textEn": "Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data.",
+          "textKo": "Amazon SageMaker 엔드포인트로 LLM 배포 후 민감 데이터 마스킹",
+          "text": "Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data."
         },
         {
           "key": "C",
-          "text": "정규식 패턴을 개발하여 SageMaker 노트북에서 탐지"
+          "textEn": "Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.",
+          "textKo": "정규식 패턴을 개발하여 SageMaker 노트북에서 탐지",
+          "text": "Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook."
         },
         {
           "key": "D",
-          "text": "고객에게 민감 정보를 이메일에 쓰지 말라고 요청"
+          "textEn": "Ask the customers to avoid sharing sensitive information in their email messages.",
+          "textKo": "고객에게 민감 정보를 이메일에 쓰지 말라고 요청",
+          "text": "Ask the customers to avoid sharing sensitive information in their email messages."
         }
       ],
       "answerKey": "A",
@@ -5877,23 +7039,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 기능을 시각적으로 보기 좋게 요약"
+          "textEn": "Providing a visually appealing summary of a model's capabilities.",
+          "textKo": "모델 기능을 시각적으로 보기 좋게 요약",
+          "text": "Providing a visually appealing summary of a model's capabilities."
         },
         {
           "key": "B",
-          "text": "모델 목적, 성능, 한계에 대한 정보를 표준화"
+          "textEn": "Standardizing information about a model's purpose, performance, and limitations.",
+          "textKo": "모델 목적, 성능, 한계에 대한 정보를 표준화",
+          "text": "Standardizing information about a model's purpose, performance, and limitations."
         },
         {
           "key": "C",
-          "text": "모델의 연산 요구량 감소"
+          "textEn": "Reducing the overall computational requirements of a model.",
+          "textKo": "모델의 연산 요구량 감소",
+          "text": "Reducing the overall computational requirements of a model."
         },
         {
           "key": "D",
-          "text": "모델을 물리적으로 보관"
+          "textEn": "Physically storing models for archival purposes.",
+          "textKo": "모델을 물리적으로 보관",
+          "text": "Physically storing models for archival purposes."
         }
       ],
       "answerKey": "B",
-      "answerText": "모델 목적, 성능, 한계에 대한 정보를 표준화"
+      "answerText": "Standardizing information about a model's purpose, performance, and limitations."
     },
     {
       "id": 146,
@@ -5914,23 +7084,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델의 정밀도(precision)와 재현율(recall)"
+          "textEn": "Model precision and recall",
+          "textKo": "모델의 정밀도(precision)와 재현율(recall)",
+          "text": "Model precision and recall"
         },
         {
           "key": "B",
-          "text": "응답 생성 속도"
+          "textEn": "Model speed in generating responses",
+          "textKo": "응답 생성 속도",
+          "text": "Model speed in generating responses"
         },
         {
           "key": "C",
-          "text": "모델 운영 비용"
+          "textEn": "Financial cost of operating the model",
+          "textKo": "모델 운영 비용",
+          "text": "Financial cost of operating the model"
         },
         {
           "key": "D",
-          "text": "연산 에너지 효율"
+          "textEn": "Energy efficiency of the model's computations",
+          "textKo": "연산 에너지 효율",
+          "text": "Energy efficiency of the model's computations"
         }
       ],
       "answerKey": "A",
-      "answerText": "모델의 정밀도(precision)와 재현율(recall)"
+      "answerText": "Model precision and recall"
     },
     {
       "id": 147,
@@ -5951,19 +7129,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델을 주기적으로 파인튜닝"
+          "textEn": "Fine-tune the model regularly.",
+          "textKo": "모델을 주기적으로 파인튜닝",
+          "text": "Fine-tune the model regularly."
         },
         {
           "key": "B",
-          "text": "컨텍스트 데이터를 이용해 모델 학습"
+          "textEn": "Train the model by using context data.",
+          "textKo": "컨텍스트 데이터를 이용해 모델 학습",
+          "text": "Train the model by using context data."
         },
         {
           "key": "C",
-          "text": "컨텍스트 데이터로 사전 학습 및 벤치마킹"
+          "textEn": "Pre-train and benchmark the model by using context data.",
+          "textKo": "컨텍스트 데이터로 사전 학습 및 벤치마킹",
+          "text": "Pre-train and benchmark the model by using context data."
         },
         {
           "key": "D",
-          "text": "검색 기반 RAG + 프롬프트 엔지니어링 사용"
+          "textEn": "Use Retrieval Augmented Generation (RAG) with prompt engineering techniques.",
+          "textKo": "검색 기반 RAG + 프롬프트 엔지니어링 사용",
+          "text": "Use Retrieval Augmented Generation (RAG) with prompt engineering techniques."
         }
       ],
       "answerKey": "D",
@@ -5988,19 +7174,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "공정성 (Fairness)"
+          "textEn": "Fairness",
+          "textKo": "공정성 (Fairness)",
+          "text": "Fairness"
         },
         {
           "key": "B",
-          "text": "설명 가능성 (Explainability)"
+          "textEn": "Explainability",
+          "textKo": "설명 가능성 (Explainability)",
+          "text": "Explainability"
         },
         {
           "key": "C",
-          "text": "개인정보 및 보안 (Privacy and security)"
+          "textEn": "Privacy and security",
+          "textKo": "개인정보 및 보안 (Privacy and security)",
+          "text": "Privacy and security"
         },
         {
           "key": "D",
-          "text": "투명성 (Transparency)"
+          "textEn": "Transparency",
+          "textKo": "투명성 (Transparency)",
+          "text": "Transparency"
         }
       ],
       "answerKey": "A",
@@ -6028,22 +7222,32 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS Audit Manager",
+          "textKo": "AWS Audit Manager",
           "text": "AWS Audit Manager"
         },
         {
           "key": "B",
+          "textEn": "AWS Config",
+          "textKo": "AWS Config",
           "text": "AWS Config"
         },
         {
           "key": "C",
+          "textEn": "Amazon Inspector",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         },
         {
           "key": "D",
+          "textEn": "Amazon CloudWatch",
+          "textKo": "Amazon CloudWatch",
           "text": "Amazon CloudWatch"
         },
         {
           "key": "E",
+          "textEn": "AWS CloudTrail",
+          "textKo": "AWS CloudTrail",
           "text": "AWS CloudTrail"
         }
       ],
@@ -6072,19 +7276,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "FM 파인튜닝"
+          "textEn": "Fine-tune the FM.",
+          "textKo": "FM 파인튜닝",
+          "text": "Fine-tune the FM."
         },
         {
           "key": "B",
-          "text": "FM 재학습"
+          "textEn": "Retrain the FM.",
+          "textKo": "FM 재학습",
+          "text": "Retrain the FM."
         },
         {
           "key": "C",
-          "text": "새 FM 학습"
+          "textEn": "Train a new FM.",
+          "textKo": "새 FM 학습",
+          "text": "Train a new FM."
         },
         {
           "key": "D",
-          "text": "프롬프트 엔지니어링"
+          "textEn": "Use prompt engineering.",
+          "textKo": "프롬프트 엔지니어링",
+          "text": "Use prompt engineering."
         }
       ],
       "answerKey": "D",
@@ -6112,18 +7324,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use Amazon Rekognition moderation.",
+          "textKo": "Use Amazon Rekognition moderation.",
           "text": "Use Amazon Rekognition moderation."
         },
         {
           "key": "B",
+          "textEn": "Use Amazon Comprehend toxicity detection.",
+          "textKo": "Use Amazon Comprehend toxicity detection.",
           "text": "Use Amazon Comprehend toxicity detection."
         },
         {
           "key": "C",
+          "textEn": "Use Amazon SageMaker built-in algorithms to train the model.",
+          "textKo": "Use Amazon SageMaker built-in algorithms to train the model.",
           "text": "Use Amazon SageMaker built-in algorithms to train the model."
         },
         {
           "key": "D",
+          "textEn": "Use Amazon Polly to monitor comments.",
+          "textKo": "Use Amazon Polly to monitor comments.",
           "text": "Use Amazon Polly to monitor comments."
         }
       ],
@@ -6152,18 +7372,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "C",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker Model Monitor",
           "text": "Amazon SageMaker Model Monitor"
         }
       ],
@@ -6191,18 +7419,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker Model Cards",
           "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "B",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "C",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "D",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         }
       ],
@@ -6230,18 +7466,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         },
         {
           "key": "B",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "C",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "D",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         }
       ],
@@ -6311,18 +7555,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker Model Cards",
           "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Debugger",
+          "textKo": "Amazon SageMaker Debugger",
           "text": "Amazon SageMaker Debugger"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker Model Monitor",
           "text": "Amazon SageMaker Model Monitor"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         }
       ],
@@ -6348,19 +7600,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "고객 불만 요약하기"
+          "textEn": "Summarizing customer complaints",
+          "textKo": "고객 불만 요약하기",
+          "text": "Summarizing customer complaints"
         },
         {
           "key": "B",
-          "text": "제품 사용 기반 고객 분류"
+          "textEn": "Classifying customers based on product usage",
+          "textKo": "제품 사용 기반 고객 분류",
+          "text": "Classifying customers based on product usage"
         },
         {
           "key": "C",
-          "text": "투자 유형별 고객 세분화"
+          "textEn": "Segmenting customers based on type of investments",
+          "textKo": "투자 유형별 고객 세분화",
+          "text": "Segmenting customers based on type of investments"
         },
         {
           "key": "D",
-          "text": "특정 제품 매출 예측"
+          "textEn": "Forecasting revenue for certain products",
+          "textKo": "특정 제품 매출 예측",
+          "text": "Forecasting revenue for certain products"
         }
       ],
       "answerKey": "A",
@@ -6387,23 +7647,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Comprehend Medical -> 의료 개체/관계 추출 후 요약"
+          "textEn": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+          "textKo": "Amazon Comprehend Medical -> 의료 개체/관계 추출 후 요약",
+          "text": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries."
         },
         {
           "key": "B",
-          "text": "Amazon Personalize -> 환자 패턴 분석 및 추천"
+          "textEn": "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.",
+          "textKo": "Amazon Personalize -> 환자 패턴 분석 및 추천",
+          "text": "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool."
         },
         {
           "key": "C",
-          "text": "Amazon Textract -> 스캔 문서 텍스트화"
+          "textEn": "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.",
+          "textKo": "Amazon Textract -> 스캔 문서 텍스트화",
+          "text": "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries."
         },
         {
           "key": "D",
-          "text": "Amazon Kendra -> 검색 인덱스 구축"
+          "textEn": "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.",
+          "textKo": "Amazon Kendra -> 검색 인덱스 구축",
+          "text": "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries."
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Comprehend Medical -> 의료 개체/관계 추출 후 요약"
+      "answerText": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries."
     },
     {
       "id": 159,
@@ -6422,23 +7690,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "대규모 데이터셋 압축 방식"
+          "textEn": "A method for compressing large datasets",
+          "textKo": "대규모 데이터셋 압축 방식",
+          "text": "A method for compressing large datasets"
         },
         {
           "key": "B",
-          "text": "민감 데이터 암호화 방식"
+          "textEn": "An encryption method for securing sensitive data",
+          "textKo": "민감 데이터 암호화 방식",
+          "text": "An encryption method for securing sensitive data"
         },
         {
           "key": "C",
-          "text": "고차원 데이터 시각화 기법"
+          "textEn": "A method for visualizing high-dimensional data",
+          "textKo": "고차원 데이터 시각화 기법",
+          "text": "A method for visualizing high-dimensional data"
         },
         {
           "key": "D",
-          "text": "차원 축소된 수치 표현 방식"
+          "textEn": "A numerical method for data representation in a reduced dimensionality space",
+          "textKo": "차원 축소된 수치 표현 방식",
+          "text": "A numerical method for data representation in a reduced dimensionality space"
         }
       ],
       "answerKey": "D",
-      "answerText": "차원 축소된 수치 표현 방식"
+      "answerText": "A numerical method for data representation in a reduced dimensionality space"
     },
     {
       "id": 160,
@@ -6462,23 +7738,31 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Temperature 값이 너무 높음"
+          "textEn": "The temperature is set too high.",
+          "textKo": "Temperature 값이 너무 높음",
+          "text": "The temperature is set too high."
         },
         {
           "key": "B",
-          "text": "선택한 모델이 파인튜닝을 지원하지 않음"
+          "textEn": "The selected model does not support fine-tuning.",
+          "textKo": "선택한 모델이 파인튜닝을 지원하지 않음",
+          "text": "The selected model does not support fine-tuning."
         },
         {
           "key": "C",
-          "text": "Top P 값이 너무 높음"
+          "textEn": "The Top P value is too high.",
+          "textKo": "Top P 값이 너무 높음",
+          "text": "The Top P value is too high."
         },
         {
           "key": "D",
-          "text": "입력 토큰 수가 모델의 context 크기를 초과"
+          "textEn": "The input tokens exceed the model's context size.",
+          "textKo": "입력 토큰 수가 모델의 context 크기를 초과",
+          "text": "The input tokens exceed the model's context size."
         }
       ],
       "answerKey": "D",
-      "answerText": "입력 토큰 수가 모델의 context 크기를 초과"
+      "answerText": "The input tokens exceed the model's context size."
     },
     {
       "id": 161,
@@ -6501,19 +7785,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker Autopilot -> 자동 ML 모델 생성 서비스"
+          "textEn": "Train models on Amazon SageMaker Autopilot",
+          "textKo": "Amazon SageMaker Autopilot -> 자동 ML 모델 생성 서비스",
+          "text": "Train models on Amazon SageMaker Autopilot"
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock의 RAG 에이전트 -> 검색 + 생성 기반 챗봇 구성"
+          "textEn": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock",
+          "textKo": "Amazon Bedrock의 RAG 에이전트 -> 검색 + 생성 기반 챗봇 구성",
+          "text": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock"
         },
         {
           "key": "C",
-          "text": "Amazon Q Developer -> 개발 지원 AI 도구"
+          "textEn": "Create a Python application by using Amazon Q Developer",
+          "textKo": "Amazon Q Developer -> 개발 지원 AI 도구",
+          "text": "Create a Python application by using Amazon Q Developer"
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker JumpStart -> 사전 학습 모델 활용 서비스"
+          "textEn": "Fine-tune models on Amazon SageMaker Jumpstart",
+          "textKo": "Amazon SageMaker JumpStart -> 사전 학습 모델 활용 서비스",
+          "text": "Fine-tune models on Amazon SageMaker Jumpstart"
         }
       ],
       "answerKey": "B",
@@ -6536,19 +7828,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트 데이터를 암호화하기 위해"
+          "textEn": "To encrypt text data",
+          "textKo": "텍스트 데이터를 암호화하기 위해",
+          "text": "To encrypt text data"
         },
         {
           "key": "B",
-          "text": "텍스트 파일을 압축하기 위해"
+          "textEn": "To compress text files",
+          "textKo": "텍스트 파일을 압축하기 위해",
+          "text": "To compress text files"
         },
         {
           "key": "C",
-          "text": "텍스트를 작은 단위로 나누어 처리하기 위해"
+          "textEn": "To break text into smaller units for processing",
+          "textKo": "텍스트를 작은 단위로 나누어 처리하기 위해",
+          "text": "To break text into smaller units for processing"
         },
         {
           "key": "D",
-          "text": "텍스트를 다른 언어로 번역하기 위해"
+          "textEn": "To translate text between languages",
+          "textKo": "텍스트를 다른 언어로 번역하기 위해",
+          "text": "To translate text between languages"
         }
       ],
       "answerKey": "C",
@@ -6596,19 +7896,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "합성곱 층(convolutional layers)을 사용해 입력 전체에 필터 적용"
+          "textEn": "Use convolutional layers to apply filters across an input",
+          "textKo": "합성곱 층(convolutional layers)을 사용해 입력 전체에 필터 적용",
+          "text": "Use convolutional layers to apply filters across an input"
         },
         {
           "key": "B",
-          "text": "텍스트 데이터만 처리 가능"
+          "textEn": "Can process only text data",
+          "textKo": "텍스트 데이터만 처리 가능",
+          "text": "Can process only text data"
         },
         {
           "key": "C",
-          "text": "Self-attention 메커니즘을 사용해 문맥적 관계를 학습"
+          "textEn": "Use self-attention mechanisms to capture contextual relationships",
+          "textKo": "Self-attention 메커니즘을 사용해 문맥적 관계를 학습",
+          "text": "Use self-attention mechanisms to capture contextual relationships"
         },
         {
           "key": "D",
-          "text": "데이터를 순차적으로 한 요소씩 반복(iteration) 처리"
+          "textEn": "Process data sequences one element at a time in cyclic iterations",
+          "textKo": "데이터를 순차적으로 한 요소씩 반복(iteration) 처리",
+          "text": "Process data sequences one element at a time in cyclic iterations"
         }
       ],
       "answerKey": "C",
@@ -6635,19 +7943,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "현지 보건 데이터 보호법"
+          "textEn": "Local health data protection laws",
+          "textKo": "현지 보건 데이터 보호법",
+          "text": "Local health data protection laws"
         },
         {
           "key": "B",
-          "text": "현지 결제 카드 데이터 보호법"
+          "textEn": "Local payment card data protection laws",
+          "textKo": "현지 결제 카드 데이터 보호법",
+          "text": "Local payment card data protection laws"
         },
         {
           "key": "C",
-          "text": "현지 교육 개인정보 보호법"
+          "textEn": "Local education privacy laws",
+          "textKo": "현지 교육 개인정보 보호법",
+          "text": "Local education privacy laws"
         },
         {
           "key": "D",
-          "text": "현지 알고리즘 책임 관련 법률"
+          "textEn": "Local algorithm accountability laws",
+          "textKo": "현지 알고리즘 책임 관련 법률",
+          "text": "Local algorithm accountability laws"
         }
       ],
       "answerKey": "D",
@@ -6672,23 +7988,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "혐오(Hate)"
+          "textEn": "Hate",
+          "textKo": "혐오(Hate)",
+          "text": "Hate"
         },
         {
           "key": "B",
-          "text": "정치(Politics)"
+          "textEn": "Politics",
+          "textKo": "정치(Politics)",
+          "text": "Politics"
         },
         {
           "key": "C",
-          "text": "폭력(Violence)"
+          "textEn": "Violence",
+          "textKo": "폭력(Violence)",
+          "text": "Violence"
         },
         {
           "key": "D",
-          "text": "도박(Gambling)"
+          "textEn": "Gambling",
+          "textKo": "도박(Gambling)",
+          "text": "Gambling"
         },
         {
           "key": "E",
-          "text": "종교(Religion)"
+          "textEn": "Religion",
+          "textKo": "종교(Religion)",
+          "text": "Religion"
         }
       ],
       "answerKeys": [
@@ -6718,19 +8044,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트 엔지니어링은 검증 필요성을 제거한다"
+          "textEn": "Prompt engineering removes need for validation",
+          "textKo": "프롬프트 엔지니어링은 검증 필요성을 제거한다",
+          "text": "Prompt engineering removes need for validation"
         },
         {
           "key": "B",
-          "text": "프롬프트 인젝션 공격에 취약하다"
+          "textEn": "Vulnerability to prompt injection attacks",
+          "textKo": "프롬프트 인젝션 공격에 취약하다",
+          "text": "Vulnerability to prompt injection attacks"
         },
         {
           "key": "C",
-          "text": "올바른 프롬프트는 데이터 포이즈닝을 제거한다"
+          "textEn": "Proper prompts eliminate data poisoning",
+          "textKo": "올바른 프롬프트는 데이터 포이즈닝을 제거한다",
+          "text": "Proper prompts eliminate data poisoning"
         },
         {
           "key": "D",
-          "text": "프롬프트는 항상 신뢰할 수 있는 출력을 생성한다"
+          "textEn": "Prompts always generate reliable output",
+          "textKo": "프롬프트는 항상 신뢰할 수 있는 출력을 생성한다",
+          "text": "Prompts always generate reliable output"
         }
       ],
       "answerKey": "B",
@@ -6753,23 +8087,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "콘텐츠 임베딩 생성"
+          "textEn": "Generation of content embeddings",
+          "textKo": "콘텐츠 임베딩 생성",
+          "text": "Generation of content embeddings"
         },
         {
           "key": "B",
-          "text": "사용자 쿼리 임베딩 생성"
+          "textEn": "Generation of embeddings for user queries",
+          "textKo": "사용자 쿼리 임베딩 생성",
+          "text": "Generation of embeddings for user queries"
         },
         {
           "key": "C",
-          "text": "검색 인덱스 생성"
+          "textEn": "Creation of the search index",
+          "textKo": "검색 인덱스 생성",
+          "text": "Creation of the search index"
         },
         {
           "key": "D",
-          "text": "관련 콘텐츠 검색"
+          "textEn": "Retrieval of relevant content",
+          "textKo": "관련 콘텐츠 검색",
+          "text": "Retrieval of relevant content"
         },
         {
           "key": "E",
-          "text": "사용자 응답 생성"
+          "textEn": "Response generation for the user",
+          "textKo": "사용자 응답 생성",
+          "text": "Response generation for the user"
         }
       ],
       "answerKeys": [
@@ -6795,19 +8139,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "원샷 프롬프트(One-shot prompting)"
+          "textEn": "One-shot prompting",
+          "textKo": "원샷 프롬프트(One-shot prompting)",
+          "text": "One-shot prompting"
         },
         {
           "key": "B",
-          "text": "프롬프트 체이닝(Prompt chaining)"
+          "textEn": "Prompt chaining",
+          "textKo": "프롬프트 체이닝(Prompt chaining)",
+          "text": "Prompt chaining"
         },
         {
           "key": "C",
-          "text": "사고의 나무(Tree of thoughts)"
+          "textEn": "Tree of thoughts",
+          "textKo": "사고의 나무(Tree of thoughts)",
+          "text": "Tree of thoughts"
         },
         {
           "key": "D",
-          "text": "검색 증강 생성(RAG)"
+          "textEn": "RAG",
+          "textKo": "검색 증강 생성(RAG)",
+          "text": "RAG"
         }
       ],
       "answerKey": "B",
@@ -6830,19 +8182,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "전이 학습(Transfer learning)"
+          "textEn": "Transfer learning",
+          "textKo": "전이 학습(Transfer learning)",
+          "text": "Transfer learning"
         },
         {
           "key": "B",
-          "text": "연합 학습(Federated learning)"
+          "textEn": "Federated learning",
+          "textKo": "연합 학습(Federated learning)",
+          "text": "Federated learning"
         },
         {
           "key": "C",
-          "text": "검색 증강 생성(RAG)"
+          "textEn": "Retrieval Augmented Generation (RAG)",
+          "textKo": "검색 증강 생성(RAG)",
+          "text": "Retrieval Augmented Generation (RAG)"
         },
         {
           "key": "D",
-          "text": "원샷 프롬프트(One-shot prompting)"
+          "textEn": "One-shot prompting",
+          "textKo": "원샷 프롬프트(One-shot prompting)",
+          "text": "One-shot prompting"
         }
       ],
       "answerKey": "C",
@@ -6869,19 +8229,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Git -> 코드 버전 관리 시스템"
+          "textEn": "Git",
+          "textKo": "Git -> 코드 버전 관리 시스템",
+          "text": "Git"
         },
         {
           "key": "B",
-          "text": "Amazon Fraud Detector -> 이상 거래 탐지 서비스"
+          "textEn": "Amazon Fraud Detector",
+          "textKo": "Amazon Fraud Detector -> 이상 거래 탐지 서비스",
+          "text": "Amazon Fraud Detector"
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker Model Cards -> 모델 문서화 기능"
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker Model Cards -> 모델 문서화 기능",
+          "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "D",
-          "text": "Amazon Comprehend -> NLP 서비스"
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend -> NLP 서비스",
+          "text": "Amazon Comprehend"
         }
       ],
       "answerKey": "C",
@@ -6906,19 +8274,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker JumpStart -> 사전 학습 모델 제공"
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "Amazon SageMaker JumpStart -> 사전 학습 모델 제공",
+          "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "B",
-          "text": "Amazon SageMaker HyperPod -> 대규모 학습 인프라"
+          "textEn": "Amazon SageMaker HyperPod",
+          "textKo": "Amazon SageMaker HyperPod -> 대규모 학습 인프라",
+          "text": "Amazon SageMaker HyperPod"
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker Data Wrangler -> 데이터 전처리 도구"
+          "textEn": "Amazon SageMaker Data Wrangler",
+          "textKo": "Amazon SageMaker Data Wrangler -> 데이터 전처리 도구",
+          "text": "Amazon SageMaker Data Wrangler"
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker Model Monitor -> 모델 성능 모니터링"
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker Model Monitor -> 모델 성능 모니터링",
+          "text": "Amazon SageMaker Model Monitor"
         }
       ],
       "answerKey": "D",
@@ -6942,19 +8318,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "대형 텍스트 문서의 데이터베이스 저장 한도를 피하기 위해"
+          "textEn": "To avoid database storage limitations for large text documents",
+          "textKo": "대형 텍스트 문서의 데이터베이스 저장 한도를 피하기 위해",
+          "text": "To avoid database storage limitations for large text documents"
         },
         {
           "key": "B",
-          "text": "대규모 텍스트를 임베딩으로 변환할 필요를 줄이기 위해"
+          "textEn": "To improve efficiency by avoiding the need to convert large text into vector embeddings",
+          "textKo": "대규모 텍스트를 임베딩으로 변환할 필요를 줄이기 위해",
+          "text": "To improve efficiency by avoiding the need to convert large text into vector embeddings"
         },
         {
           "key": "C",
-          "text": "벡터 인덱스 검색 결과의 문맥 관련성을 높이기 위해"
+          "textEn": "To improve the contextual relevancy of results retrieved from the vector index",
+          "textKo": "벡터 인덱스 검색 결과의 문맥 관련성을 높이기 위해",
+          "text": "To improve the contextual relevancy of results retrieved from the vector index"
         },
         {
           "key": "D",
-          "text": "텍스트를 분할 저장하여 저장 비용을 줄이기 위해"
+          "textEn": "To decrease the cost of storage by storing parts or chunks of the text",
+          "textKo": "텍스트를 분할 저장하여 저장 비용을 줄이기 위해",
+          "text": "To decrease the cost of storage by storing parts or chunks of the text"
         }
       ],
       "answerKey": "C",
@@ -6979,18 +8363,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "GPU-powered Amazon EC2",
+          "textKo": "GPU-powered Amazon EC2",
           "text": "GPU-powered Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock with Provisioned Throughput",
+          "textKo": "Amazon Bedrock with Provisioned Throughput",
           "text": "Amazon Bedrock with Provisioned Throughput"
         },
         {
           "key": "C",
+          "textEn": "Amazon Bedrock with On-Demand Throughput",
+          "textKo": "Amazon Bedrock with On-Demand Throughput",
           "text": "Amazon Bedrock with On-Demand Throughput"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         }
       ],
@@ -7016,19 +8408,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "단어 필터(Word filters)"
+          "textEn": "Word filters",
+          "textKo": "단어 필터(Word filters)",
+          "text": "Word filters"
         },
         {
           "key": "B",
-          "text": "차단된 주제(Denied topics)"
+          "textEn": "Denied topics",
+          "textKo": "차단된 주제(Denied topics)",
+          "text": "Denied topics"
         },
         {
           "key": "C",
-          "text": "민감 정보 필터(Sensitive information filters)"
+          "textEn": "Sensitive information filters",
+          "textKo": "민감 정보 필터(Sensitive information filters)",
+          "text": "Sensitive information filters"
         },
         {
           "key": "D",
-          "text": "콘텐츠 필터(Content filters)"
+          "textEn": "Content filters",
+          "textKo": "콘텐츠 필터(Content filters)",
+          "text": "Content filters"
         }
       ],
       "answerKey": "B",
@@ -7053,19 +8453,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "재현율(Recall)"
+          "textEn": "Recall",
+          "textKo": "재현율(Recall)",
+          "text": "Recall"
         },
         {
           "key": "B",
-          "text": "정확도(Accuracy)"
+          "textEn": "Accuracy",
+          "textKo": "정확도(Accuracy)",
+          "text": "Accuracy"
         },
         {
           "key": "C",
-          "text": "정밀도(Precision)"
+          "textEn": "Precision",
+          "textKo": "정밀도(Precision)",
+          "text": "Precision"
         },
         {
           "key": "D",
-          "text": "향상도 차트(Lift chart)"
+          "textEn": "Lift chart",
+          "textKo": "향상도 차트(Lift chart)",
+          "text": "Lift chart"
         }
       ],
       "answerKey": "C",
@@ -7090,19 +8498,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "답변에 신뢰도 점수 표시"
+          "textEn": "Write confidence score in answer",
+          "textKo": "답변에 신뢰도 점수 표시",
+          "text": "Write confidence score in answer"
         },
         {
           "key": "B",
-          "text": "제품 매뉴얼 링크 제공"
+          "textEn": "Include links to product manuals",
+          "textKo": "제품 매뉴얼 링크 제공",
+          "text": "Include links to product manuals"
         },
         {
           "key": "C",
-          "text": "컴퓨터 같은 아바타 디자인"
+          "textEn": "Design computer-like avatar",
+          "textKo": "컴퓨터 같은 아바타 디자인",
+          "text": "Design computer-like avatar"
         },
         {
           "key": "D",
-          "text": "회사의 어조를 모방해 답변"
+          "textEn": "Mimic company tone in answers",
+          "textKo": "회사의 어조를 모방해 답변",
+          "text": "Mimic company tone in answers"
         }
       ],
       "answerKey": "B",
@@ -7128,19 +8544,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "설명 가능성(Explainability)"
+          "textEn": "Explainability",
+          "textKo": "설명 가능성(Explainability)",
+          "text": "Explainability"
         },
         {
           "key": "B",
-          "text": "개인정보 보호 및 보안(Privacy and security)"
+          "textEn": "Privacy and security",
+          "textKo": "개인정보 보호 및 보안(Privacy and security)",
+          "text": "Privacy and security"
         },
         {
           "key": "C",
-          "text": "공정성(Fairness)"
+          "textEn": "Fairness",
+          "textKo": "공정성(Fairness)",
+          "text": "Fairness"
         },
         {
           "key": "D",
-          "text": "데이터 거버넌스(Data governance)"
+          "textEn": "Data governance",
+          "textKo": "데이터 거버넌스(Data governance)",
+          "text": "Data governance"
         }
       ],
       "answerKey": "A",
@@ -7168,19 +8592,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "외부 지식을 활용해 더 나은 답변 제공"
+          "textEn": "Uses external knowledge for better answers",
+          "textKo": "외부 지식을 활용해 더 나은 답변 제공",
+          "text": "Uses external knowledge for better answers"
         },
         {
           "key": "B",
-          "text": "모델 학습 속도 향상"
+          "textEn": "Speeds up model training",
+          "textKo": "모델 학습 속도 향상",
+          "text": "Speeds up model training"
         },
         {
           "key": "C",
-          "text": "음성 인식에 사용"
+          "textEn": "For speech recognition",
+          "textKo": "음성 인식에 사용",
+          "text": "For speech recognition"
         },
         {
           "key": "D",
-          "text": "컴퓨터 비전에서 데이터 증강에 사용"
+          "textEn": "For data augmentation in vision",
+          "textKo": "컴퓨터 비전에서 데이터 증강에 사용",
+          "text": "For data augmentation in vision"
         }
       ],
       "answerKey": "A",
@@ -7204,19 +8636,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon EC2",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock 온디맨드(Throughput)"
+          "textEn": "On-demand throughput on Bedrock",
+          "textKo": "Amazon Bedrock 온디맨드(Throughput)",
+          "text": "On-demand throughput on Bedrock"
         },
         {
           "key": "C",
-          "text": "Amazon S3 + AWS Lambda"
+          "textEn": "S3 + Lambda",
+          "textKo": "Amazon S3 + AWS Lambda",
+          "text": "S3 + Lambda"
         },
         {
           "key": "D",
-          "text": "Amazon Bedrock 사전 할당(Provisioned Throughput)"
+          "textEn": "Provisioned Throughput on Bedrock",
+          "textKo": "Amazon Bedrock 사전 할당(Provisioned Throughput)",
+          "text": "Provisioned Throughput on Bedrock"
         }
       ],
       "answerKey": "D",
@@ -7243,19 +8683,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 증강(Data augmentation)"
+          "textEn": "Data augmentation",
+          "textKo": "데이터 증강(Data augmentation)",
+          "text": "Data augmentation"
         },
         {
           "key": "B",
-          "text": "파인튜닝(Fine-tuning)"
+          "textEn": "Fine-tuning",
+          "textKo": "파인튜닝(Fine-tuning)",
+          "text": "Fine-tuning"
         },
         {
           "key": "C",
-          "text": "모델 양자화(Model quantization)"
+          "textEn": "Model quantization",
+          "textKo": "모델 양자화(Model quantization)",
+          "text": "Model quantization"
         },
         {
           "key": "D",
-          "text": "지속적 사전 학습(Continuous pre-training)"
+          "textEn": "Continuous pre-training",
+          "textKo": "지속적 사전 학습(Continuous pre-training)",
+          "text": "Continuous pre-training"
         }
       ],
       "answerKey": "B",
@@ -7282,19 +8730,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "에이전트의 고급 프롬프트를 수정하여 예시 포함"
+          "textEn": "Modify the advanced prompts for the agent to include the examples.",
+          "textKo": "에이전트의 고급 프롬프트를 수정하여 예시 포함",
+          "text": "Modify the advanced prompts for the agent to include the examples."
         },
         {
           "key": "B",
-          "text": "에이전트의 가드레일에 예시 포함"
+          "textEn": "Create a guardrail for the agent that includes the examples.",
+          "textKo": "에이전트의 가드레일에 예시 포함",
+          "text": "Create a guardrail for the agent that includes the examples."
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker Ground Truth를 사용해 예시 라벨링"
+          "textEn": "Use Amazon SageMaker Ground Truth to label the examples.",
+          "textKo": "Amazon SageMaker Ground Truth를 사용해 예시 라벨링",
+          "text": "Use Amazon SageMaker Ground Truth to label the examples."
         },
         {
           "key": "D",
-          "text": "AWS Lambda 스크립트로 학습 데이터셋에 예시 추가"
+          "textEn": "Run a script in AWS Lambda that adds the examples to the training dataset.",
+          "textKo": "AWS Lambda 스크립트로 학습 데이터셋에 예시 추가",
+          "text": "Run a script in AWS Lambda that adds the examples to the training dataset."
         }
       ],
       "answerKey": "A",
@@ -7321,19 +8777,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "하이퍼파라미터 튜닝 필요성을 없앰"
+          "textEn": "IaC eliminates the need for hyperparameter tuning.",
+          "textKo": "하이퍼파라미터 튜닝 필요성을 없앰",
+          "text": "IaC eliminates the need for hyperparameter tuning."
         },
         {
           "key": "B",
-          "text": "항상 강력한 컴퓨팅 인스턴스 제공"
+          "textEn": "IaC always provisions powerful compute instances, contributing to the training of more accurate models.",
+          "textKo": "항상 강력한 컴퓨팅 인스턴스 제공",
+          "text": "IaC always provisions powerful compute instances, contributing to the training of more accurate models."
         },
         {
           "key": "C",
-          "text": "클라우드 환경에서 확장 가능하고 일관된 ML 워크로드 배포"
+          "textEn": "IaC streamlines the deployment of scalable and consistent ML workloads in cloud environments.",
+          "textKo": "클라우드 환경에서 확장 가능하고 일관된 ML 워크로드 배포",
+          "text": "IaC streamlines the deployment of scalable and consistent ML workloads in cloud environments."
         },
         {
           "key": "D",
-          "text": "비용을 최소화하기 위해 저가 인스턴스만 배포"
+          "textEn": "IaC minimizes overall expenses by deploying only low-cost instances.",
+          "textKo": "비용을 최소화하기 위해 저가 인스턴스만 배포",
+          "text": "IaC minimizes overall expenses by deploying only low-cost instances."
         }
       ],
       "answerKey": "C",
@@ -7357,19 +8821,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사내 문서와 업계 자료를 수집하여 단일 파일로 합침"
+          "textEn": "Gather company internal documents and industry-specific materials. Merge the documents and materials into a single file.",
+          "textKo": "사내 문서와 업계 자료를 수집하여 단일 파일로 합침",
+          "text": "Gather company internal documents and industry-specific materials. Merge the documents and materials into a single file."
         },
         {
           "key": "B",
-          "text": "외부 리뷰를 수집하고 긍정/부정 라벨링"
+          "textEn": "Collect external company reviews from various online sources. Manually label each review as either positive or negative.",
+          "textKo": "외부 리뷰를 수집하고 긍정/부정 라벨링",
+          "text": "Collect external company reviews from various online sources. Manually label each review as either positive or negative."
         },
         {
           "key": "C",
-          "text": "도메인 관련 질문-답변 쌍 생성"
+          "textEn": "Create pairs of questions and answers that specifically address topics related to the company's industry domain.",
+          "textKo": "도메인 관련 질문-답변 쌍 생성",
+          "text": "Create pairs of questions and answers that specifically address topics related to the company's industry domain."
         },
         {
           "key": "D",
-          "text": "few-shot 프롬프트 생성"
+          "textEn": "Create few-shot prompts to instruct the model to answer only domain knowledge.",
+          "textKo": "few-shot 프롬프트 생성",
+          "text": "Create few-shot prompts to instruct the model to answer only domain knowledge."
         }
       ],
       "answerKey": "C",
@@ -7396,19 +8868,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "강화 학습"
+          "textEn": "Reinforcement learning",
+          "textKo": "강화 학습",
+          "text": "Reinforcement learning"
         },
         {
           "key": "B",
-          "text": "전이 학습"
+          "textEn": "Transfer learning",
+          "textKo": "전이 학습",
+          "text": "Transfer learning"
         },
         {
           "key": "C",
-          "text": "연합 학습"
+          "textEn": "Federated learning",
+          "textKo": "연합 학습",
+          "text": "Federated learning"
         },
         {
           "key": "D",
-          "text": "비지도 학습"
+          "textEn": "Unsupervised learning",
+          "textKo": "비지도 학습",
+          "text": "Unsupervised learning"
         }
       ],
       "answerKey": "C",
@@ -7477,19 +8957,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "출력의 예측 가능성"
+          "textEn": "Predictability of outputs",
+          "textKo": "출력의 예측 가능성",
+          "text": "Predictability of outputs"
         },
         {
           "key": "B",
-          "text": "적응성"
+          "textEn": "Adaptability",
+          "textKo": "적응성",
+          "text": "Adaptability"
         },
         {
           "key": "C",
-          "text": "입력 변화에 덜 민감함"
+          "textEn": "Less sensitivity to changes in inputs",
+          "textKo": "입력 변화에 덜 민감함",
+          "text": "Less sensitivity to changes in inputs"
         },
         {
           "key": "D",
-          "text": "설명 가능성"
+          "textEn": "Explainability",
+          "textKo": "설명 가능성",
+          "text": "Explainability"
         }
       ],
       "answerKey": "B",
@@ -7515,19 +9003,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "회귀(Regression)"
+          "textEn": "Regression",
+          "textKo": "회귀(Regression)",
+          "text": "Regression"
         },
         {
           "key": "B",
-          "text": "확산(Diffusion)"
+          "textEn": "Diffusion",
+          "textKo": "확산(Diffusion)",
+          "text": "Diffusion"
         },
         {
           "key": "C",
-          "text": "이진 분류(Binary Classification)"
+          "textEn": "Binary classification",
+          "textKo": "이진 분류(Binary Classification)",
+          "text": "Binary classification"
         },
         {
           "key": "D",
-          "text": "다중 클래스 분류(Multi-class Classification)"
+          "textEn": "Multi-class classification",
+          "textKo": "다중 클래스 분류(Multi-class Classification)",
+          "text": "Multi-class classification"
         }
       ],
       "answerKey": "C",
@@ -7593,18 +9089,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Q Developer",
+          "textKo": "Amazon Q Developer",
           "text": "Amazon Q Developer"
         },
         {
           "key": "B",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "C",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "D",
+          "textEn": "AWS HealthScribe",
+          "textKo": "AWS HealthScribe",
           "text": "AWS HealthScribe"
         }
       ],
@@ -7632,19 +9136,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Diffusion -> 생성 모델"
+          "textEn": "Diffusion",
+          "textKo": "Diffusion -> 생성 모델",
+          "text": "Diffusion"
         },
         {
           "key": "B",
-          "text": "Regression -> 회귀 모델"
+          "textEn": "Regression",
+          "textKo": "Regression -> 회귀 모델",
+          "text": "Regression"
         },
         {
           "key": "C",
-          "text": "Transformer -> 구조 유형"
+          "textEn": "Transformer",
+          "textKo": "Transformer -> 구조 유형",
+          "text": "Transformer"
         },
         {
           "key": "D",
-          "text": "Multi-modal -> 여러 데이터 유형 처리"
+          "textEn": "Multi-modal",
+          "textKo": "Multi-modal -> 여러 데이터 유형 처리",
+          "text": "Multi-modal"
         }
       ],
       "answerKey": "B",
@@ -7717,19 +9229,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트를 관리 가능한 데이터 조각으로 분할"
+          "textEn": "Splitting text into manageable pieces of data",
+          "textKo": "텍스트를 관리 가능한 데이터 조각으로 분할",
+          "text": "Splitting text into manageable pieces of data"
         },
         {
           "key": "B",
-          "text": "문자를 하나의 단위로 그룹화"
+          "textEn": "Grouping a set of characters to be treated as a single unit",
+          "textKo": "문자를 하나의 단위로 그룹화",
+          "text": "Grouping a set of characters to be treated as a single unit"
         },
         {
           "key": "C",
-          "text": "텍스트를 수학적으로 비교할 수 있는 능력 제공"
+          "textEn": "Providing the ability to mathematically compare texts",
+          "textKo": "텍스트를 수학적으로 비교할 수 있는 능력 제공",
+          "text": "Providing the ability to mathematically compare texts"
         },
         {
           "key": "D",
-          "text": "입력 텍스트 내 모든 단어 수 제공"
+          "textEn": "Providing the count of every word in the input",
+          "textKo": "입력 텍스트 내 모든 단어 수 제공",
+          "text": "Providing the count of every word in the input"
         }
       ],
       "answerKey": "C",
@@ -7757,23 +9277,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS Outposts 온프레미스 호스팅"
+          "textEn": "Host the model on premises by using AWS Outposts.",
+          "textKo": "AWS Outposts 온프레미스 호스팅",
+          "text": "Host the model on premises by using AWS Outposts."
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock API 사용"
+          "textEn": "Use the Amazon Bedrock API.",
+          "textKo": "Amazon Bedrock API 사용",
+          "text": "Use the Amazon Bedrock API."
         },
         {
           "key": "C",
-          "text": "AWS PrivateLink + VPC 사용"
+          "textEn": "Use AWS PrivateLink and a VPC.",
+          "textKo": "AWS PrivateLink + VPC 사용",
+          "text": "Use AWS PrivateLink and a VPC."
         },
         {
           "key": "D",
-          "text": "Bedrock API 온프레미스 호스팅"
+          "textEn": "Host the Amazon Bedrock API on premises.",
+          "textKo": "Bedrock API 온프레미스 호스팅",
+          "text": "Host the Amazon Bedrock API on premises."
         },
         {
           "key": "E",
-          "text": "CloudWatch 로그 및 메트릭 사용"
+          "textEn": "Use Amazon CloudWatch logs and metrics.",
+          "textKo": "CloudWatch 로그 및 메트릭 사용",
+          "text": "Use Amazon CloudWatch logs and metrics."
         }
       ],
       "answerKeys": [
@@ -7803,19 +9333,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Macie -> 데이터 보안"
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie -> 데이터 보안",
+          "text": "Amazon Macie"
         },
         {
           "key": "B",
-          "text": "AWS Artifact -> 컴플라이언스 보고서"
+          "textEn": "AWS Artifact",
+          "textKo": "AWS Artifact -> 컴플라이언스 보고서",
+          "text": "AWS Artifact"
         },
         {
           "key": "C",
-          "text": "Secrets Manager -> 비밀 정보 관리"
+          "textEn": "AWS Secrets Manager",
+          "textKo": "Secrets Manager -> 비밀 정보 관리",
+          "text": "AWS Secrets Manager"
         },
         {
           "key": "D",
-          "text": "Config -> 리소스 변경 모니터링"
+          "textEn": "AWS Config",
+          "textKo": "Config -> 리소스 변경 모니터링",
+          "text": "AWS Config"
         }
       ],
       "answerKey": "B",
@@ -7842,19 +9380,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Guardrails for Amazon Bedrock -> 출력 제어"
+          "textEn": "Guardrails for Amazon Bedrock",
+          "textKo": "Guardrails for Amazon Bedrock -> 출력 제어",
+          "text": "Guardrails for Amazon Bedrock"
         },
         {
           "key": "B",
-          "text": "Amazon Inspector -> 보안 취약점 검사"
+          "textEn": "Amazon Inspector",
+          "textKo": "Amazon Inspector -> 보안 취약점 검사",
+          "text": "Amazon Inspector"
         },
         {
           "key": "C",
-          "text": "Amazon Rekognition -> 이미지/영상 분석"
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition -> 이미지/영상 분석",
+          "text": "Amazon Rekognition"
         },
         {
           "key": "D",
-          "text": "AWS Trusted Advisor -> 클라우드 최적화"
+          "textEn": "AWS Trusted Advisor",
+          "textKo": "AWS Trusted Advisor -> 클라우드 최적화",
+          "text": "AWS Trusted Advisor"
         }
       ],
       "answerKey": "A",
@@ -7881,18 +9427,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "F1 score",
+          "textKo": "F1 score",
           "text": "F1 score"
         },
         {
           "key": "B",
+          "textEn": "Bilingual Evaluation Understudy (BLEU) score",
+          "textKo": "Bilingual Evaluation Understudy (BLEU) score",
           "text": "Bilingual Evaluation Understudy (BLEU) score"
         },
         {
           "key": "C",
+          "textEn": "Accuracy",
+          "textKo": "Accuracy",
           "text": "Accuracy"
         },
         {
           "key": "D",
+          "textEn": "Mean squared error (MSE)",
+          "textKo": "Mean squared error (MSE)",
           "text": "Mean squared error (MSE)"
         }
       ],
@@ -7920,19 +9474,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 크기/복잡도 감소, 느린 추론"
+          "textEn": "Fine-tuning reduces the FM's size and complexity and enables slower inference.",
+          "textKo": "모델 크기/복잡도 감소, 느린 추론",
+          "text": "Fine-tuning reduces the FM's size and complexity and enables slower inference."
         },
         {
           "key": "B",
-          "text": "특정 데이터로 처음부터 재학습"
+          "textEn": "Fine-tuning uses specific training data to retrain the FM from scratch to adapt to a specific use case.",
+          "textKo": "특정 데이터로 처음부터 재학습",
+          "text": "Fine-tuning uses specific training data to retrain the FM from scratch to adapt to a specific use case."
         },
         {
           "key": "C",
-          "text": "최신 데이터로 사전 학습"
+          "textEn": "Fine-tuning keeps the FM's knowledge up to date by pre-training the FM on more recent data.",
+          "textKo": "최신 데이터로 사전 학습",
+          "text": "Fine-tuning keeps the FM's knowledge up to date by pre-training the FM on more recent data."
         },
         {
           "key": "D",
-          "text": "특정 작업 성능 향상"
+          "textEn": "Fine-tuning improves the performance of the FM on a specific task by further training the FM on new labeled data.",
+          "textKo": "특정 작업 성능 향상",
+          "text": "Fine-tuning improves the performance of the FM on a specific task by further training the FM on new labeled data."
         }
       ],
       "answerKey": "D",
@@ -7960,19 +9522,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Personalize"
+          "textEn": "Use Amazon Personalize to generate responses.",
+          "textKo": "Amazon Personalize",
+          "text": "Use Amazon Personalize to generate responses."
         },
         {
           "key": "B",
-          "text": "SageMaker HyperPod"
+          "textEn": "Create an Amazon SageMaker HyperPod pre-training job.",
+          "textKo": "SageMaker HyperPod",
+          "text": "Create an Amazon SageMaker HyperPod pre-training job."
         },
         {
           "key": "C",
-          "text": "SageMaker + TensorRT"
+          "textEn": "Host the model by using Amazon SageMaker. Use TensorRT for large language model (LLM) deployment.",
+          "textKo": "SageMaker + TensorRT",
+          "text": "Host the model by using Amazon SageMaker. Use TensorRT for large language model (LLM) deployment."
         },
         {
           "key": "D",
-          "text": "Amazon Bedrock fine-tuning"
+          "textEn": "Create an Amazon Bedrock fine-tuning job.",
+          "textKo": "Amazon Bedrock fine-tuning",
+          "text": "Create an Amazon Bedrock fine-tuning job."
         }
       ],
       "answerKey": "D",
@@ -7999,18 +9569,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Data leakage",
+          "textKo": "Data leakage",
           "text": "Data leakage"
         },
         {
           "key": "B",
+          "textEn": "Prompt injection",
+          "textKo": "Prompt injection",
           "text": "Prompt injection"
         },
         {
           "key": "C",
+          "textEn": "Large language model (LLM) hallucinations",
+          "textKo": "Large language model (LLM) hallucinations",
           "text": "Large language model (LLM) hallucinations"
         },
         {
           "key": "D",
+          "textEn": "Concept drift",
+          "textKo": "Concept drift",
           "text": "Concept drift"
         }
       ],
@@ -8038,19 +9616,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사용자 선호 기반 상호작용 제공"
+          "textEn": "Give users the ability to interact based on user preferences.",
+          "textKo": "사용자 선호 기반 상호작용 제공",
+          "text": "Give users the ability to interact based on user preferences."
         },
         {
           "key": "B",
-          "text": "사전 정의된 주제 관련 상호작용 차단"
+          "textEn": "Block interactions related to predefined topics.",
+          "textKo": "사전 정의된 주제 관련 상호작용 차단",
+          "text": "Block interactions related to predefined topics."
         },
         {
           "key": "C",
-          "text": "대화 주제를 사전 정의로 제한"
+          "textEn": "Restrict user conversations to predefined topics.",
+          "textKo": "대화 주제를 사전 정의로 제한",
+          "text": "Restrict user conversations to predefined topics."
         },
         {
           "key": "D",
-          "text": "다양한 응답 제공"
+          "textEn": "Provide a variety of responses to select from for user engagement.",
+          "textKo": "다양한 응답 제공",
+          "text": "Provide a variety of responses to select from for user engagement."
         }
       ],
       "answerKey": "B",
@@ -8073,19 +9659,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "컴퓨터 비전 모델"
+          "textEn": "Computer vision model",
+          "textKo": "컴퓨터 비전 모델",
+          "text": "Computer vision model"
         },
         {
           "key": "B",
-          "text": "대형 멀티모달 언어 모델"
+          "textEn": "Large multi-modal language model",
+          "textKo": "대형 멀티모달 언어 모델",
+          "text": "Large multi-modal language model"
         },
         {
           "key": "C",
-          "text": "디퓨전 모델"
+          "textEn": "Diffusion model",
+          "textKo": "디퓨전 모델",
+          "text": "Diffusion model"
         },
         {
           "key": "D",
-          "text": "텍스트-투-스피치 모델"
+          "textEn": "Text-to-speech model",
+          "textKo": "텍스트-투-스피치 모델",
+          "text": "Text-to-speech model"
         }
       ],
       "answerKey": "B",
@@ -8107,19 +9701,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "배포 단계"
+          "textEn": "Deployment",
+          "textKo": "배포 단계",
+          "text": "Deployment"
         },
         {
           "key": "B",
-          "text": "데이터 선택 단계"
+          "textEn": "Data selection",
+          "textKo": "데이터 선택 단계",
+          "text": "Data selection"
         },
         {
           "key": "C",
-          "text": "파인튜닝 단계"
+          "textEn": "Fine-tuning",
+          "textKo": "파인튜닝 단계",
+          "text": "Fine-tuning"
         },
         {
           "key": "D",
-          "text": "평가 단계"
+          "textEn": "Evaluation",
+          "textKo": "평가 단계",
+          "text": "Evaluation"
         }
       ],
       "answerKey": "D",
@@ -8141,19 +9743,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "임베딩은 데이터를 의미적 관계를 담은 고차원 벡터로 표현합니다."
+          "textEn": "Embeddings represent data as high-dimensional vectors that capture semantic relationships.",
+          "textKo": "임베딩은 데이터를 의미적 관계를 담은 고차원 벡터로 표현합니다.",
+          "text": "Embeddings represent data as high-dimensional vectors that capture semantic relationships."
         },
         {
           "key": "B",
-          "text": "임베딩은 자연어 질문에 답변할 때 가장 유용한 정보를 찾기 위해 데이터를 검색하는 기법입니다."
+          "textEn": "Embeddings is a technique that searches data to find the most helpful information to answer natural language questions.",
+          "textKo": "임베딩은 자연어 질문에 답변할 때 가장 유용한 정보를 찾기 위해 데이터를 검색하는 기법입니다.",
+          "text": "Embeddings is a technique that searches data to find the most helpful information to answer natural language questions."
         },
         {
           "key": "C",
-          "text": "임베딩은 모델의 가중치와 활성화 값에 덜 정밀한 데이터 타입을 사용하여 하드웨어 요구사항을 줄입니다."
+          "textEn": "Embeddings reduce the hardware requirements of a model by using a less precise data type for the weights and activations.",
+          "textKo": "임베딩은 모델의 가중치와 활성화 값에 덜 정밀한 데이터 타입을 사용하여 하드웨어 요구사항을 줄입니다.",
+          "text": "Embeddings reduce the hardware requirements of a model by using a less precise data type for the weights and activations."
         },
         {
           "key": "D",
-          "text": "임베딩은 생성형 AI 애플리케이션에서 데이터를 저장하고 검색할 수 있는 기능을 제공합니다."
+          "textEn": "Embeddings provide the ability to store and retrieve data for generative AI applications.",
+          "textKo": "임베딩은 생성형 AI 애플리케이션에서 데이터를 저장하고 검색할 수 있는 기능을 제공합니다.",
+          "text": "Embeddings provide the ability to store and retrieve data for generative AI applications."
         }
       ],
       "answerKey": "A",
@@ -8175,19 +9785,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트를 LLM에 제출할 때 자동으로 온도(temperature) 파라미터를 0으로 설정"
+          "textEn": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM.",
+          "textKo": "프롬프트를 LLM에 제출할 때 자동으로 온도(temperature) 파라미터를 0으로 설정",
+          "text": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM."
         },
         {
           "key": "B",
-          "text": "프롬프트 끝에 \"make your response deterministic\"를 추가"
+          "textEn": "Configure the application to automatically add \"make your response deterministic\" at the end of the prompt before submitting the prompt to the LLM.",
+          "textKo": "프롬프트 끝에 \"make your response deterministic\"를 추가",
+          "text": "Configure the application to automatically add \"make your response deterministic\" at the end of the prompt before submitting the prompt to the LLM."
         },
         {
           "key": "C",
-          "text": "프롬프트 시작에 \"make your response deterministic\"를 추가"
+          "textEn": "Configure the application to automatically add \"make your response deterministic\" at the beginning of the prompt before submitting the prompt to the LLM.",
+          "textKo": "프롬프트 시작에 \"make your response deterministic\"를 추가",
+          "text": "Configure the application to automatically add \"make your response deterministic\" at the beginning of the prompt before submitting the prompt to the LLM."
         },
         {
           "key": "D",
-          "text": "프롬프트를 LLM에 제출할 때 자동으로 온도(temperature) 파라미터를 1로 설정"
+          "textEn": "Configure the application to automatically set the temperature parameter to 1 when submitting the prompt to the LLM.",
+          "textKo": "프롬프트를 LLM에 제출할 때 자동으로 온도(temperature) 파라미터를 1로 설정",
+          "text": "Configure the application to automatically set the temperature parameter to 1 when submitting the prompt to the LLM."
         }
       ],
       "answerKey": "A",
@@ -8209,19 +9827,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 복잡도"
+          "textEn": "Model complexity",
+          "textKo": "모델 복잡도",
+          "text": "Model complexity"
         },
         {
           "key": "B",
-          "text": "혁신 속도"
+          "textEn": "Innovation speed",
+          "textKo": "혁신 속도",
+          "text": "Innovation speed"
         },
         {
           "key": "C",
-          "text": "추론 속도"
+          "textEn": "Inference speed",
+          "textKo": "추론 속도",
+          "text": "Inference speed"
         },
         {
           "key": "D",
-          "text": "학습 시간"
+          "textEn": "Training time",
+          "textKo": "학습 시간",
+          "text": "Training time"
         }
       ],
       "answerKey": "C",
@@ -8243,19 +9869,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "프롬프트"
+          "textEn": "Prompt",
+          "textKo": "프롬프트",
+          "text": "Prompt"
         },
         {
           "key": "B",
-          "text": "방향(Directions)"
+          "textEn": "Direction",
+          "textKo": "방향(Directions)",
+          "text": "Direction"
         },
         {
           "key": "C",
-          "text": "대화(Dialog)"
+          "textEn": "Dialog",
+          "textKo": "대화(Dialog)",
+          "text": "Dialog"
         },
         {
           "key": "D",
-          "text": "번역(Translation)"
+          "textEn": "Translation",
+          "textKo": "번역(Translation)",
+          "text": "Translation"
         }
       ],
       "answerKey": "A",
@@ -8277,19 +9911,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "전체 고객층과 동일한 인구통계 특성을 가진 고객 데이터만 사용"
+          "textEn": "Use data from only customers who match the demographics of the company's overall customer base.",
+          "textKo": "전체 고객층과 동일한 인구통계 특성을 가진 고객 데이터만 사용",
+          "text": "Use data from only customers who match the demographics of the company's overall customer base."
         },
         {
           "key": "B",
-          "text": "과거 구매 기록이 있는 고객 데이터 수집"
+          "textEn": "Collect data from customers who have a past purchase history.",
+          "textKo": "과거 구매 기록이 있는 고객 데이터 수집",
+          "text": "Collect data from customers who have a past purchase history."
         },
         {
           "key": "C",
-          "text": "데이터가 균형 잡히고 다양한 그룹에서 수집되도록 보장"
+          "textEn": "Ensure that the data is balanced and collected from a diverse group.",
+          "textKo": "데이터가 균형 잡히고 다양한 그룹에서 수집되도록 보장",
+          "text": "Ensure that the data is balanced and collected from a diverse group."
         },
         {
           "key": "D",
-          "text": "공개 데이터셋만 사용"
+          "textEn": "Ensure that the data is from a publicly available dataset.",
+          "textKo": "공개 데이터셋만 사용",
+          "text": "Ensure that the data is from a publicly available dataset."
         }
       ],
       "answerKey": "C",
@@ -8311,19 +9953,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "F1 점수"
+          "textEn": "F1 score",
+          "textKo": "F1 점수",
+          "text": "F1 score"
         },
         {
           "key": "B",
-          "text": "평균 제곱 오차(MSE)"
+          "textEn": "Mean squared error (MSE)",
+          "textKo": "평균 제곱 오차(MSE)",
+          "text": "Mean squared error (MSE)"
         },
         {
           "key": "C",
-          "text": "결정 계수(R&sup2;)"
+          "textEn": "R-squared",
+          "textKo": "결정 계수(R&sup2;)",
+          "text": "R-squared"
         },
         {
           "key": "D",
-          "text": "학습 소요 시간"
+          "textEn": "Time used to train the model",
+          "textKo": "학습 소요 시간",
+          "text": "Time used to train the model"
         }
       ],
       "answerKey": "A",
@@ -8346,19 +9996,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "정확도(Accuracy)"
+          "textEn": "Accuracy",
+          "textKo": "정확도(Accuracy)",
+          "text": "Accuracy"
         },
         {
           "key": "B",
-          "text": "정밀도(Precision)"
+          "textEn": "Precision",
+          "textKo": "정밀도(Precision)",
+          "text": "Precision"
         },
         {
           "key": "C",
-          "text": "F1 점수(F1 score)"
+          "textEn": "F1 score",
+          "textKo": "F1 점수(F1 score)",
+          "text": "F1 score"
         },
         {
           "key": "D",
-          "text": "재현율(Recall)"
+          "textEn": "Recall",
+          "textKo": "재현율(Recall)",
+          "text": "Recall"
         }
       ],
       "answerKey": "A",
@@ -8382,19 +10040,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "배치 추론(Batch inference)"
+          "textEn": "Batch inference",
+          "textKo": "배치 추론(Batch inference)",
+          "text": "Batch inference"
         },
         {
           "key": "B",
-          "text": "비동기 추론(Asynchronous inference)"
+          "textEn": "Asynchronous inference",
+          "textKo": "비동기 추론(Asynchronous inference)",
+          "text": "Asynchronous inference"
         },
         {
           "key": "C",
-          "text": "실시간 추론(Real-time inference)"
+          "textEn": "Real-time inference",
+          "textKo": "실시간 추론(Real-time inference)",
+          "text": "Real-time inference"
         },
         {
           "key": "D",
-          "text": "서버리스 추론(Serverless inference)"
+          "textEn": "Serverless inference",
+          "textKo": "서버리스 추론(Serverless inference)",
+          "text": "Serverless inference"
         }
       ],
       "answerKey": "A",
@@ -8416,19 +10082,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon SageMaker 모델 모니터(Model Monitor)"
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker 모델 모니터(Model Monitor)",
+          "text": "Amazon SageMaker Model Monitor"
         },
         {
           "key": "B",
-          "text": "Amazon SageMaker 클라리파이(Clarify)"
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker 클라리파이(Clarify)",
+          "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "C",
-          "text": "Amazon SageMaker 모델 카드(Model Cards)"
+          "textEn": "Amazon SageMaker Model Cards",
+          "textKo": "Amazon SageMaker 모델 카드(Model Cards)",
+          "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "D",
-          "text": "Amazon SageMaker 특징 저장소(Feature Store)"
+          "textEn": "Amazon SageMaker Feature Store",
+          "textKo": "Amazon SageMaker 특징 저장소(Feature Store)",
+          "text": "Amazon SageMaker Feature Store"
         }
       ],
       "answerKey": "A",
@@ -8450,19 +10124,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS IAM 정책을 사용하여 모델 접근 제한"
+          "textEn": "Use AWS Identity and Access Management (IAM) policies to restrict model access.",
+          "textKo": "AWS IAM 정책을 사용하여 모델 접근 제한",
+          "text": "Use AWS Identity and Access Management (IAM) policies to restrict model access."
         },
         {
           "key": "B",
-          "text": "AWS STS를 사용하여 모델 사용을 위한 임시 자격 증명 생성"
+          "textEn": "Use AWS Security Token Service (AWS STS) to generate temporary credentials for model use.",
+          "textKo": "AWS STS를 사용하여 모델 사용을 위한 임시 자격 증명 생성",
+          "text": "Use AWS Security Token Service (AWS STS) to generate temporary credentials for model use."
         },
         {
           "key": "C",
-          "text": "AWS IAM 서비스 역할을 사용하여 모델 구독 제한"
+          "textEn": "Use AWS Identity and Access Management (IAM) service roles to restrict model subscription.",
+          "textKo": "AWS IAM 서비스 역할을 사용하여 모델 구독 제한",
+          "text": "Use AWS Identity and Access Management (IAM) service roles to restrict model subscription."
         },
         {
           "key": "D",
-          "text": "Amazon Inspector를 사용하여 모델 접근 모니터링"
+          "textEn": "Use Amazon Inspector to monitor model access.",
+          "textKo": "Amazon Inspector를 사용하여 모델 접근 모니터링",
+          "text": "Use Amazon Inspector to monitor model access."
         }
       ],
       "answerKey": "A",
@@ -8484,19 +10166,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "지도 학습(Supervised learning)"
+          "textEn": "Supervised learning",
+          "textKo": "지도 학습(Supervised learning)",
+          "text": "Supervised learning"
         },
         {
           "key": "B",
-          "text": "비지도 학습(Unsupervised learning)"
+          "textEn": "Unsupervised learning",
+          "textKo": "비지도 학습(Unsupervised learning)",
+          "text": "Unsupervised learning"
         },
         {
           "key": "C",
-          "text": "강화 학습(Reinforcement learning)"
+          "textEn": "Reinforcement learning",
+          "textKo": "강화 학습(Reinforcement learning)",
+          "text": "Reinforcement learning"
         },
         {
           "key": "D",
-          "text": "전이 학습(Transfer learning)"
+          "textEn": "Transfer learning",
+          "textKo": "전이 학습(Transfer learning)",
+          "text": "Transfer learning"
         }
       ],
       "answerKey": "A",
@@ -8518,19 +10208,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "최대 토큰(Maximum tokens)"
+          "textEn": "Maximum tokens",
+          "textKo": "최대 토큰(Maximum tokens)",
+          "text": "Maximum tokens"
         },
         {
           "key": "B",
+          "textEn": "Top K",
+          "textKo": "Top K",
           "text": "Top K"
         },
         {
           "key": "C",
-          "text": "온도(Temperature)"
+          "textEn": "Temperature",
+          "textKo": "온도(Temperature)",
+          "text": "Temperature"
         },
         {
           "key": "D",
-          "text": "배치 크기(Batch size)"
+          "textEn": "Batch size",
+          "textKo": "배치 크기(Batch size)",
+          "text": "Batch size"
         }
       ],
       "answerKey": "B",
@@ -8552,19 +10250,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트 완성 모델(Text completion model)"
+          "textEn": "Text completion model",
+          "textKo": "텍스트 완성 모델(Text completion model)",
+          "text": "Text completion model"
         },
         {
           "key": "B",
-          "text": "지시 수행 모델(Instruction following model)"
+          "textEn": "Instruction following model",
+          "textKo": "지시 수행 모델(Instruction following model)",
+          "text": "Instruction following model"
         },
         {
           "key": "C",
-          "text": "텍스트 임베딩 모델(Text embeddings model)"
+          "textEn": "Text embeddings model",
+          "textKo": "텍스트 임베딩 모델(Text embeddings model)",
+          "text": "Text embeddings model"
         },
         {
           "key": "D",
-          "text": "이미지 생성 모델(Image generation model)"
+          "textEn": "Image generation model",
+          "textKo": "이미지 생성 모델(Image generation model)",
+          "text": "Image generation model"
         }
       ],
       "answerKey": "C",
@@ -8585,19 +10291,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "제로샷 프롬프트(Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프트(Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "B",
-          "text": "사고 과정 연쇄 프롬프트(Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "사고 과정 연쇄 프롬프트(Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         },
         {
           "key": "C",
-          "text": "원샷 프롬프트(One-shot prompting)"
+          "textEn": "One-shot prompting",
+          "textKo": "원샷 프롬프트(One-shot prompting)",
+          "text": "One-shot prompting"
         },
         {
           "key": "D",
-          "text": "소수 샷 프롬프트(Few-shot prompting)"
+          "textEn": "Few-shot prompting",
+          "textKo": "소수 샷 프롬프트(Few-shot prompting)",
+          "text": "Few-shot prompting"
         }
       ],
       "answerKey": "D",
@@ -8619,19 +10333,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Bedrock Guardrails 사용"
+          "textEn": "Use Amazon Bedrock Guardrails.",
+          "textKo": "Amazon Bedrock Guardrails 사용",
+          "text": "Use Amazon Bedrock Guardrails."
         },
         {
           "key": "B",
-          "text": "파인튜닝 전에 고객 데이터에서 PII 제거"
+          "textEn": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM.",
+          "textKo": "파인튜닝 전에 고객 데이터에서 PII 제거",
+          "text": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM."
         },
         {
           "key": "C",
-          "text": "LLM의 Top-K 파라미터 증가"
+          "textEn": "Increase the Top-K parameter of the LLM.",
+          "textKo": "LLM의 Top-K 파라미터 증가",
+          "text": "Increase the Top-K parameter of the LLM."
         },
         {
           "key": "D",
-          "text": "S3에 데이터 저장 후 암호화하고 파인튜닝"
+          "textEn": "Store customer data in Amazon S3. Encrypt the data before fine-tuning the LLM.",
+          "textKo": "S3에 데이터 저장 후 암호화하고 파인튜닝",
+          "text": "Store customer data in Amazon S3. Encrypt the data before fine-tuning the LLM."
         }
       ],
       "answerKey": "B",
@@ -8652,19 +10374,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "제로샷 프롬프트"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프트",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "B",
-          "text": "소수 샷 프롬프트"
+          "textEn": "Few-shot prompting",
+          "textKo": "소수 샷 프롬프트",
+          "text": "Few-shot prompting"
         },
         {
           "key": "C",
-          "text": "Least-to-most 프롬프트"
+          "textEn": "Least-to-most prompting",
+          "textKo": "Least-to-most 프롬프트",
+          "text": "Least-to-most prompting"
         },
         {
           "key": "D",
-          "text": "추론 및 행동(ReAct) 프롬프트"
+          "textEn": "Reasoning and acting (ReAct) prompting",
+          "textKo": "추론 및 행동(ReAct) 프롬프트",
+          "text": "Reasoning and acting (ReAct) prompting"
         }
       ],
       "answerKey": "D",
@@ -8686,19 +10416,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사용자 입력 및 모델 출력은 익명화되어 제3자 모델 제공자와 공유"
+          "textEn": "User inputs and model outputs are anonymized and shared with third-party model providers.",
+          "textKo": "사용자 입력 및 모델 출력은 익명화되어 제3자 모델 제공자와 공유",
+          "text": "User inputs and model outputs are anonymized and shared with third-party model providers."
         },
         {
           "key": "B",
-          "text": "사용자 입력 및 모델 출력은 어떤 제3자 모델 제공자와도 공유되지 않음"
+          "textEn": "User inputs and model outputs are not shared with any third-party model providers.",
+          "textKo": "사용자 입력 및 모델 출력은 어떤 제3자 모델 제공자와도 공유되지 않음",
+          "text": "User inputs and model outputs are not shared with any third-party model providers."
         },
         {
           "key": "C",
-          "text": "사용자 입력은 비공개지만 출력은 공유됨"
+          "textEn": "User inputs are kept confidential, but model outputs are shared with third-party model providers.",
+          "textKo": "사용자 입력은 비공개지만 출력은 공유됨",
+          "text": "User inputs are kept confidential, but model outputs are shared with third-party model providers."
         },
         {
           "key": "D",
-          "text": "입력/출력을 공유하기 전에 삭제 후 공유"
+          "textEn": "User inputs and model outputs are redacted before the inputs and outputs are shared with third-party model providers.",
+          "textKo": "입력/출력을 공유하기 전에 삭제 후 공유",
+          "text": "User inputs and model outputs are redacted before the inputs and outputs are shared with third-party model providers."
         }
       ],
       "answerKey": "B",
@@ -8720,18 +10458,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "B",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "C",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "D",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         }
       ],
@@ -8757,19 +10503,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "분류(Classification)"
+          "textEn": "Classification",
+          "textKo": "분류(Classification)",
+          "text": "Classification"
         },
         {
           "key": "B",
-          "text": "클러스터링(Clustering)"
+          "textEn": "Clustering",
+          "textKo": "클러스터링(Clustering)",
+          "text": "Clustering"
         },
         {
           "key": "C",
-          "text": "회귀(Regression)"
+          "textEn": "Regression",
+          "textKo": "회귀(Regression)",
+          "text": "Regression"
         },
         {
           "key": "D",
-          "text": "콘텐츠 생성(Content generation)"
+          "textEn": "Content generation",
+          "textKo": "콘텐츠 생성(Content generation)",
+          "text": "Content generation"
         }
       ],
       "answerKey": "B",
@@ -8794,19 +10548,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS 비용 보고서 분석(AWS Cost Explorer)"
+          "textEn": "Analyze cost and usage reports in AWS Cost Explorer.",
+          "textKo": "AWS 비용 보고서 분석(AWS Cost Explorer)",
+          "text": "Analyze cost and usage reports in AWS Cost Explorer."
         },
         {
           "key": "B",
-          "text": "AWS 보안 및 규정 준수 문서 다운로드(AWS Artifact)"
+          "textEn": "Download AWS security and compliance documents from AWS Artifact.",
+          "textKo": "AWS 보안 및 규정 준수 문서 다운로드(AWS Artifact)",
+          "text": "Download AWS security and compliance documents from AWS Artifact."
         },
         {
           "key": "C",
-          "text": "SageMaker JumpStart 설정으로 접근 가능한 FM 제한"
+          "textEn": "Configure Amazon SageMaker JumpStart to restrict discoverable FMs.",
+          "textKo": "SageMaker JumpStart 설정으로 접근 가능한 FM 제한",
+          "text": "Configure Amazon SageMaker JumpStart to restrict discoverable FMs."
         },
         {
           "key": "D",
-          "text": "Amazon OpenSearch Service를 활용한 하이브리드 검색"
+          "textEn": "Build a hybrid search solution by using Amazon OpenSearch Service.",
+          "textKo": "Amazon OpenSearch Service를 활용한 하이브리드 검색",
+          "text": "Build a hybrid search solution by using Amazon OpenSearch Service."
         }
       ],
       "answerKey": "C",
@@ -8830,19 +10592,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "BLEU 점수로 두 방법의 절대 번역 품질 평가"
+          "textEn": "Use the Bilingual Evaluation Understudy (BLEU) score to estimate the absolute translation quality of the two methods.",
+          "textKo": "BLEU 점수로 두 방법의 절대 번역 품질 평가",
+          "text": "Use the Bilingual Evaluation Understudy (BLEU) score to estimate the absolute translation quality of the two methods."
         },
         {
           "key": "B",
-          "text": "BLEU 점수로 두 방법의 상대적 번역 품질 평가"
+          "textEn": "Use the Bilingual Evaluation Understudy (BLEU) score to estimate the relative translation quality of the two methods.",
+          "textKo": "BLEU 점수로 두 방법의 상대적 번역 품질 평가",
+          "text": "Use the Bilingual Evaluation Understudy (BLEU) score to estimate the relative translation quality of the two methods."
         },
         {
           "key": "C",
-          "text": "BERTScore로 두 방법의 절대 번역 품질 평가"
+          "textEn": "Use the BERTScore to estimate the absolute translation quality of the two methods.",
+          "textKo": "BERTScore로 두 방법의 절대 번역 품질 평가",
+          "text": "Use the BERTScore to estimate the absolute translation quality of the two methods."
         },
         {
           "key": "D",
-          "text": "BERTScore로 두 방법의 상대적 번역 품질 평가"
+          "textEn": "Use the BERTScore to estimate the relative translation quality of the two methods.",
+          "textKo": "BERTScore로 두 방법의 상대적 번역 품질 평가",
+          "text": "Use the BERTScore to estimate the relative translation quality of the two methods."
         }
       ],
       "answerKey": "B",
@@ -8867,19 +10637,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "온도 값 증가"
+          "textEn": "Increase the temperature value.",
+          "textKo": "온도 값 증가",
+          "text": "Increase the temperature value."
         },
         {
           "key": "B",
-          "text": "Top-K 값 감소"
+          "textEn": "Decrease the Top K value.",
+          "textKo": "Top-K 값 감소",
+          "text": "Decrease the Top K value."
         },
         {
           "key": "C",
-          "text": "응답 길이 증가"
+          "textEn": "Increase the response length.",
+          "textKo": "응답 길이 증가",
+          "text": "Increase the response length."
         },
         {
           "key": "D",
-          "text": "프롬프트 길이 감소"
+          "textEn": "Decrease the prompt length.",
+          "textKo": "프롬프트 길이 감소",
+          "text": "Decrease the prompt length."
         }
       ],
       "answerKey": "A",
@@ -8903,18 +10681,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Ground Truth",
+          "textKo": "Amazon SageMaker Ground Truth",
           "text": "Amazon SageMaker Ground Truth"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Canvas",
+          "textKo": "Amazon SageMaker Canvas",
           "text": "Amazon SageMaker Canvas"
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock Playground"
+          "textEn": "Amazon Bedrock playground",
+          "textKo": "Amazon Bedrock Playground",
+          "text": "Amazon Bedrock playground"
         },
         {
           "key": "D",
+          "textEn": "Amazon Bedrock Agents",
+          "textKo": "Amazon Bedrock Agents",
           "text": "Amazon Bedrock Agents"
         }
       ],
@@ -8940,23 +10726,33 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "공정성(Fairness)"
+          "textEn": "Fairness",
+          "textKo": "공정성(Fairness)",
+          "text": "Fairness"
         },
         {
           "key": "B",
-          "text": "관용(Tolerance)"
+          "textEn": "Tolerance",
+          "textKo": "관용(Tolerance)",
+          "text": "Tolerance"
         },
         {
           "key": "C",
-          "text": "유연성(Flexibility)"
+          "textEn": "Flexibility",
+          "textKo": "유연성(Flexibility)",
+          "text": "Flexibility"
         },
         {
           "key": "D",
-          "text": "오픈소스(Open source)"
+          "textEn": "Open source",
+          "textKo": "오픈소스(Open source)",
+          "text": "Open source"
         },
         {
           "key": "E",
-          "text": "투명성(Transparency)"
+          "textEn": "Transparency",
+          "textKo": "투명성(Transparency)",
+          "text": "Transparency"
         }
       ],
       "answerKeys": [
@@ -8984,19 +10780,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "RMSE (Root Mean Squared Error)"
+          "textEn": "Root mean squared error (RMSE)",
+          "textKo": "RMSE (Root Mean Squared Error)",
+          "text": "Root mean squared error (RMSE)"
         },
         {
           "key": "B",
-          "text": "ROI (Return on Investment)"
+          "textEn": "Return on investment (ROI)",
+          "textKo": "ROI (Return on Investment)",
+          "text": "Return on investment (ROI)"
         },
         {
           "key": "C",
-          "text": "F1 점수"
+          "textEn": "F1 score",
+          "textKo": "F1 점수",
+          "text": "F1 score"
         },
         {
           "key": "D",
-          "text": "BLEU 점수"
+          "textEn": "Bilingual Evaluation Understudy (BLEU) score",
+          "textKo": "BLEU 점수",
+          "text": "Bilingual Evaluation Understudy (BLEU) score"
         }
       ],
       "answerKey": "C",
@@ -9021,19 +10825,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Bedrock Knowledge Bases 사용"
+          "textEn": "Use Amazon Bedrock Knowledge Bases.",
+          "textKo": "Amazon Bedrock Knowledge Bases 사용",
+          "text": "Use Amazon Bedrock Knowledge Bases."
         },
         {
           "key": "B",
-          "text": "다른 FM 선택"
+          "textEn": "Choose a different FM on Amazon Bedrock.",
+          "textKo": "다른 FM 선택",
+          "text": "Choose a different FM on Amazon Bedrock."
         },
         {
           "key": "C",
-          "text": "Amazon Bedrock Agents 사용"
+          "textEn": "Use Amazon Bedrock Agents.",
+          "textKo": "Amazon Bedrock Agents 사용",
+          "text": "Use Amazon Bedrock Agents."
         },
         {
           "key": "D",
-          "text": "맞춤형 모델 배포"
+          "textEn": "Deploy a custom model on Amazon Bedrock.",
+          "textKo": "맞춤형 모델 배포",
+          "text": "Deploy a custom model on Amazon Bedrock."
         }
       ],
       "answerKey": "A",
@@ -9068,10 +10880,14 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "SageMaker Clarify",
           "text": "SageMaker Clarify"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "> 정답: SageMaker Model Registry",
           "text": "> 정답: SageMaker Model Registry"
         }
       ],
@@ -9097,19 +10913,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "정확도(Accuracy)"
+          "textEn": "Accuracy",
+          "textKo": "정확도(Accuracy)",
+          "text": "Accuracy"
         },
         {
           "key": "B",
-          "text": "다양성(Diversity)"
+          "textEn": "Diversity",
+          "textKo": "다양성(Diversity)",
+          "text": "Diversity"
         },
         {
           "key": "C",
-          "text": "최신 편향(Recency bias)"
+          "textEn": "Recency bias",
+          "textKo": "최신 편향(Recency bias)",
+          "text": "Recency bias"
         },
         {
           "key": "D",
-          "text": "신뢰도(Reliability)"
+          "textEn": "Reliability",
+          "textKo": "신뢰도(Reliability)",
+          "text": "Reliability"
         }
       ],
       "answerKey": "B",
@@ -9134,19 +10958,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Retrieval Augmented Generation (RAG) 사용"
+          "textEn": "Use Retrieval Augmented Generation (RAG).",
+          "textKo": "Retrieval Augmented Generation (RAG) 사용",
+          "text": "Use Retrieval Augmented Generation (RAG)."
         },
         {
           "key": "B",
-          "text": "Few-shot prompting 사용"
+          "textEn": "Use few-shot prompting.",
+          "textKo": "Few-shot prompting 사용",
+          "text": "Use few-shot prompting."
         },
         {
           "key": "C",
-          "text": "온도 1로 설정"
+          "textEn": "Set the temperature to 1.",
+          "textKo": "온도 1로 설정",
+          "text": "Set the temperature to 1."
         },
         {
           "key": "D",
-          "text": "토큰 크기 감소"
+          "textEn": "Decrease the token size.",
+          "textKo": "토큰 크기 감소",
+          "text": "Decrease the token size."
         }
       ],
       "answerKey": "A",
@@ -9171,19 +11003,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "F1 점수"
+          "textEn": "F1 score",
+          "textKo": "F1 점수",
+          "text": "F1 score"
         },
         {
           "key": "B",
+          "textEn": "BERTScore",
+          "textKo": "BERTScore",
           "text": "BERTScore"
         },
         {
           "key": "C",
-          "text": "ROUGE"
+          "textEn": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+          "textKo": "ROUGE",
+          "text": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)"
         },
         {
           "key": "D",
-          "text": "BLEU"
+          "textEn": "Bilingual Evaluation Understudy (BLEU) score",
+          "textKo": "BLEU",
+          "text": "Bilingual Evaluation Understudy (BLEU) score"
         }
       ],
       "answerKey": "B",
@@ -9208,19 +11048,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "컴퓨터 비전(Computer vision)"
+          "textEn": "Computer vision",
+          "textKo": "컴퓨터 비전(Computer vision)",
+          "text": "Computer vision"
         },
         {
           "key": "B",
-          "text": "자연어 처리(Natural language processing, NLP)"
+          "textEn": "Natural language processing (NLP)",
+          "textKo": "자연어 처리(Natural language processing, NLP)",
+          "text": "Natural language processing (NLP)"
         },
         {
           "key": "C",
-          "text": "추천 시스템(Recommendation systems)"
+          "textEn": "Recommendation systems",
+          "textKo": "추천 시스템(Recommendation systems)",
+          "text": "Recommendation systems"
         },
         {
           "key": "D",
-          "text": "사기 탐지(Fraud detection)"
+          "textEn": "Fraud detection",
+          "textKo": "사기 탐지(Fraud detection)",
+          "text": "Fraud detection"
         }
       ],
       "answerKey": "B",
@@ -9247,19 +11095,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS Config를 사용해 자연어로 규정 메타데이터를 쿼리한다."
+          "textEn": "Use AWS Config to query compliance metadata by using natural language.",
+          "textKo": "AWS Config를 사용해 자연어로 규정 메타데이터를 쿼리한다.",
+          "text": "Use AWS Config to query compliance metadata by using natural language."
         },
         {
           "key": "B",
-          "text": "Amazon Bedrock Guardrails를 구성해 사용자 입력과 모델 응답을 평가한다."
+          "textEn": "Configure Amazon Bedrock Guardrails to evaluate user inputs and model responses.",
+          "textKo": "Amazon Bedrock Guardrails를 구성해 사용자 입력과 모델 응답을 평가한다.",
+          "text": "Configure Amazon Bedrock Guardrails to evaluate user inputs and model responses."
         },
         {
           "key": "C",
-          "text": "Amazon Fraud Detector를 사용해 잠재적 온라인 사기 활동을 탐지한다."
+          "textEn": "Use Amazon Fraud Detector to detect potentially fraudulent online activities.",
+          "textKo": "Amazon Fraud Detector를 사용해 잠재적 온라인 사기 활동을 탐지한다.",
+          "text": "Use Amazon Fraud Detector to detect potentially fraudulent online activities."
         },
         {
           "key": "D",
-          "text": "AWS Audit Manager를 사용해 IT 감사 및 컴플라이언스 보고서를 준비한다."
+          "textEn": "Use AWS Audit Manager to prepare IT audit and compliance reports.",
+          "textKo": "AWS Audit Manager를 사용해 IT 감사 및 컴플라이언스 보고서를 준비한다.",
+          "text": "Use AWS Audit Manager to prepare IT audit and compliance reports."
         }
       ],
       "answerKey": "B",
@@ -9321,18 +11177,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS Audit Manager",
+          "textKo": "",
           "text": "AWS Audit Manager"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "",
           "text": "Amazon SageMaker Model Monitor"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Model Registry",
+          "textKo": "",
           "text": "Amazon SageMaker Model Registry"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Canvas",
+          "textKo": "",
           "text": "Amazon SageMaker Canvas"
         }
       ],
@@ -9360,18 +11224,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Present the model Shapley values.",
+          "textKo": "",
           "text": "Present the model Shapley values."
         },
         {
           "key": "B",
+          "textEn": "Provide the model accuracy measure.",
+          "textKo": "",
           "text": "Provide the model accuracy measure."
         },
         {
           "key": "C",
+          "textEn": "Provide the model confusion matrix.",
+          "textKo": "",
           "text": "Provide the model confusion matrix."
         },
         {
           "key": "D",
+          "textEn": "Provide a secure model inference endpoint.",
+          "textKo": "",
           "text": "Provide a secure model inference endpoint."
         }
       ],
@@ -9399,18 +11271,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Unsupervised learning",
+          "textKo": "",
           "text": "Unsupervised learning"
         },
         {
           "key": "B",
+          "textEn": "Supervised learning",
+          "textKo": "",
           "text": "Supervised learning"
         },
         {
           "key": "C",
+          "textEn": "Reinforcement learning",
+          "textKo": "",
           "text": "Reinforcement learning"
         },
         {
           "key": "D",
+          "textEn": "Semi-supervised learning",
+          "textKo": "",
           "text": "Semi-supervised learning"
         }
       ],
@@ -9438,18 +11318,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Add Amazon Transcribe to the company's website.",
+          "textKo": "",
           "text": "Add Amazon Transcribe to the company's website."
         },
         {
           "key": "B",
+          "textEn": "Use the Amazon Translate real-time translation feature.",
+          "textKo": "",
           "text": "Use the Amazon Translate real-time translation feature."
         },
         {
           "key": "C",
+          "textEn": "Add Amazon Personalize to the company's website.",
+          "textKo": "",
           "text": "Add Amazon Personalize to the company's website."
         },
         {
           "key": "D",
+          "textEn": "Use the Amazon Textract real-time document processing feature.",
+          "textKo": "",
           "text": "Use the Amazon Textract real-time document processing feature."
         }
       ],
@@ -9477,18 +11365,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Complexity-based prompting",
+          "textKo": "",
           "text": "Complexity-based prompting"
         },
         {
           "key": "B",
+          "textEn": "Zero-shot prompting",
+          "textKo": "",
           "text": "Zero-shot prompting"
         },
         {
           "key": "C",
+          "textEn": "Few-shot prompting",
+          "textKo": "",
           "text": "Few-shot prompting"
         },
         {
           "key": "D",
+          "textEn": "Directional stimulus prompting",
+          "textKo": "",
           "text": "Directional stimulus prompting"
         }
       ],
@@ -9516,18 +11412,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Restrict access to Amazon Bedrock by using an AWS Identity and Access Management (IAM) service role.",
+          "textKo": "",
           "text": "Restrict access to Amazon Bedrock by using an AWS Identity and Access Management (IAM) service role."
         },
         {
           "key": "B",
+          "textEn": "Restrict access to Amazon Bedrock by using an AWS Identity and Access Management (IAM) resource policy.",
+          "textKo": "",
           "text": "Restrict access to Amazon Bedrock by using an AWS Identity and Access Management (IAM) resource policy."
         },
         {
           "key": "C",
+          "textEn": "Use AWS PrivateLink to connect the VPC and Amazon Bedrock.",
+          "textKo": "",
           "text": "Use AWS PrivateLink to connect the VPC and Amazon Bedrock."
         },
         {
           "key": "D",
+          "textEn": "Use AWS Key Management Service (AWS KMS) keys to encrypt the data.",
+          "textKo": "",
           "text": "Use AWS Key Management Service (AWS KMS) keys to encrypt the data."
         }
       ],
@@ -9556,22 +11460,32 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use Amazon Transcribe and Amazon Translate to generate subtitles in other languages.",
+          "textKo": "",
           "text": "Use Amazon Transcribe and Amazon Translate to generate subtitles in other languages."
         },
         {
           "key": "B",
+          "textEn": "Use Amazon Textract and Amazon Translate to generate subtitles in other languages.",
+          "textKo": "",
           "text": "Use Amazon Textract and Amazon Translate to generate subtitles in other languages."
         },
         {
           "key": "C",
+          "textEn": "Use Amazon Polly to generate voice-overs in other languages.",
+          "textKo": "",
           "text": "Use Amazon Polly to generate voice-overs in other languages."
         },
         {
           "key": "D",
+          "textEn": "Use Amazon Translate to generate voice-overs in other languages.",
+          "textKo": "",
           "text": "Use Amazon Translate to generate voice-overs in other languages."
         },
         {
           "key": "E",
+          "textEn": "Use Amazon Textract to generate voice-overs in other languages.",
+          "textKo": "",
           "text": "Use Amazon Textract to generate voice-overs in other languages."
         }
       ],
@@ -9602,18 +11516,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Fine-tune an LLM on the company policy text by using Amazon SageMaker.",
+          "textKo": "",
           "text": "Fine-tune an LLM on the company policy text by using Amazon SageMaker."
         },
         {
           "key": "B",
+          "textEn": "Select a foundation model (FM) from Amazon Bedrock to build an application.",
+          "textKo": "",
           "text": "Select a foundation model (FM) from Amazon Bedrock to build an application."
         },
         {
           "key": "C",
+          "textEn": "Create a Retrieval Augmented Generation (RAG) workflow by using Amazon Bedrock Knowledge Bases.",
+          "textKo": "",
           "text": "Create a Retrieval Augmented Generation (RAG) workflow by using Amazon Bedrock Knowledge Bases."
         },
         {
           "key": "D",
+          "textEn": "Use Amazon Q Business to build a custom Q App.",
+          "textKo": "",
           "text": "Use Amazon Q Business to build a custom Q App."
         }
       ],
@@ -9641,18 +11563,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Fine-tuning",
+          "textKo": "",
           "text": "Fine-tuning"
         },
         {
           "key": "B",
+          "textEn": "Data selection",
+          "textKo": "",
           "text": "Data selection"
         },
         {
           "key": "C",
+          "textEn": "Pre-training",
+          "textKo": "",
           "text": "Pre-training"
         },
         {
           "key": "D",
+          "textEn": "Evaluation",
+          "textKo": "",
           "text": "Evaluation"
         }
       ],
@@ -9730,18 +11660,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Samples of only input messages",
+          "textKo": "",
           "text": "Samples of only input messages"
         },
         {
           "key": "B",
+          "textEn": "Samples of only output messages",
+          "textKo": "",
           "text": "Samples of only output messages"
         },
         {
           "key": "C",
+          "textEn": "Samples of pairs of input and output messages",
+          "textKo": "",
           "text": "Samples of pairs of input and output messages"
         },
         {
           "key": "D",
+          "textEn": "Separate samples of input and output messages",
+          "textKo": "",
           "text": "Separate samples of input and output messages"
         }
       ],
@@ -9769,18 +11707,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Gather historical patient readmission data.",
+          "textKo": "",
           "text": "Gather historical patient readmission data."
         },
         {
           "key": "B",
+          "textEn": "Use appropriate metrics and assess model performance.",
+          "textKo": "",
           "text": "Use appropriate metrics and assess model performance."
         },
         {
           "key": "C",
+          "textEn": "Use data to identify patient patterns and correlations.",
+          "textKo": "",
           "text": "Use data to identify patient patterns and correlations."
         },
         {
           "key": "D",
+          "textEn": "Use a trained model to predict patient readmission.",
+          "textKo": "",
           "text": "Use a trained model to predict patient readmission."
         }
       ],
@@ -9808,18 +11754,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon Augmented AI (Amazon A2I)",
+          "textKo": "",
           "text": "Amazon Augmented AI (Amazon A2I)"
         },
         {
           "key": "C",
+          "textEn": "Amazon Inspector",
+          "textKo": "",
           "text": "Amazon Inspector"
         },
         {
           "key": "D",
+          "textEn": "AWS Audit Manager",
+          "textKo": "",
           "text": "AWS Audit Manager"
         }
       ],
@@ -9847,18 +11801,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon Textract",
+          "textKo": "",
           "text": "Amazon Textract"
         },
         {
           "key": "C",
+          "textEn": "Amazon Lex",
+          "textKo": "",
           "text": "Amazon Lex"
         },
         {
           "key": "D",
+          "textEn": "Amazon Q Business",
+          "textKo": "",
           "text": "Amazon Q Business"
         }
       ],
@@ -9886,18 +11848,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Canvas",
+          "textKo": "",
           "text": "Amazon SageMaker Canvas"
         },
         {
           "key": "B",
+          "textEn": "Amazon Rekognition",
+          "textKo": "",
           "text": "Amazon Rekognition"
         },
         {
           "key": "C",
+          "textEn": "AWS DeepRacer",
+          "textKo": "",
           "text": "AWS DeepRacer"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "",
           "text": "Amazon Comprehend"
         }
       ],
@@ -9923,18 +11893,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Model checkpoint",
+          "textKo": "",
           "text": "Model checkpoint"
         },
         {
           "key": "B",
+          "textEn": "Batch size",
+          "textKo": "",
           "text": "Batch size"
         },
         {
           "key": "C",
+          "textEn": "Generation step",
+          "textKo": "",
           "text": "Generation step"
         },
         {
           "key": "D",
+          "textEn": "Token length",
+          "textKo": "",
           "text": "Token length"
         }
       ],
@@ -9960,18 +11938,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS PrivateLink",
+          "textKo": "",
           "text": "AWS PrivateLink"
         },
         {
           "key": "B",
+          "textEn": "Amazon Q",
+          "textKo": "",
           "text": "Amazon Q"
         },
         {
           "key": "C",
+          "textEn": "Amazon CloudFront",
+          "textKo": "",
           "text": "Amazon CloudFront"
         },
         {
           "key": "D",
+          "textEn": "AWS CloudTrail",
+          "textKo": "",
           "text": "AWS CloudTrail"
         }
       ],
@@ -9997,18 +11983,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Bedrock Guardrails",
+          "textKo": "",
           "text": "Amazon Bedrock Guardrails"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock Agents",
+          "textKo": "",
           "text": "Amazon Bedrock Agents"
         },
         {
           "key": "C",
+          "textEn": "Amazon Bedrock inference APIs",
+          "textKo": "",
           "text": "Amazon Bedrock inference APIs"
         },
         {
           "key": "D",
+          "textEn": "Amazon Bedrock custom models",
+          "textKo": "",
           "text": "Amazon Bedrock custom models"
         }
       ],
@@ -10033,18 +12027,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Q Developer",
+          "textKo": "",
           "text": "Amazon Q Developer"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "",
           "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "C",
+          "textEn": "Amazon Bedrock PartyRock",
+          "textKo": "",
           "text": "Amazon Bedrock PartyRock"
         },
         {
           "key": "D",
+          "textEn": "Amazon Q Business",
+          "textKo": "",
           "text": "Amazon Q Business"
         }
       ],
@@ -10070,18 +12072,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Diverse conversations that use relevant terminology",
+          "textKo": "",
           "text": "Diverse conversations that use relevant terminology"
         },
         {
           "key": "B",
+          "textEn": "Time series data of general purpose historical sales",
+          "textKo": "",
           "text": "Time series data of general purpose historical sales"
         },
         {
           "key": "C",
+          "textEn": "Sentiment analysis of news articles",
+          "textKo": "",
           "text": "Sentiment analysis of news articles"
         },
         {
           "key": "D",
+          "textEn": "Unique product IDs and corresponding user IDs",
+          "textKo": "",
           "text": "Unique product IDs and corresponding user IDs"
         }
       ],
@@ -10107,18 +12117,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Review the training data to check for biases. Include data from all demographics in the training data.",
+          "textKo": "",
           "text": "Review the training data to check for biases. Include data from all demographics in the training data."
         },
         {
           "key": "B",
+          "textEn": "Use a deep learning model with many hidden layers.",
+          "textKo": "",
           "text": "Use a deep learning model with many hidden layers."
         },
         {
           "key": "C",
+          "textEn": "Keep the model's decision-making process a secret to protect proprietary algorithms.",
+          "textKo": "",
           "text": "Keep the model's decision-making process a secret to protect proprietary algorithms."
         },
         {
           "key": "D",
+          "textEn": "Continuously monitor the model's performance on a static test dataset",
+          "textKo": "",
           "text": "Continuously monitor the model's performance on a static test dataset"
         }
       ],
@@ -10188,18 +12206,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "SageMaker Canvas",
+          "textKo": "",
           "text": "SageMaker Canvas"
         },
         {
           "key": "B",
+          "textEn": "SageMaker Clarify",
+          "textKo": "",
           "text": "SageMaker Clarify"
         },
         {
           "key": "C",
+          "textEn": "SageMaker Model Monitor",
+          "textKo": "",
           "text": "SageMaker Model Monitor"
         },
         {
           "key": "D",
+          "textEn": "SageMaker Data Wrangler",
+          "textKo": "",
           "text": "SageMaker Data Wrangler"
         }
       ],
@@ -10224,18 +12250,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Training on advanced coding skills",
+          "textKo": "",
           "text": "Training on advanced coding skills"
         },
         {
           "key": "B",
+          "textEn": "Training on data privacy and encryption protocols",
+          "textKo": "",
           "text": "Training on data privacy and encryption protocols"
         },
         {
           "key": "C",
+          "textEn": "Training on bias awareness and responsible AI",
+          "textKo": "",
           "text": "Training on bias awareness and responsible AI"
         },
         {
           "key": "D",
+          "textEn": "Training on advanced ML algorithms",
+          "textKo": "",
           "text": "Training on advanced ML algorithms"
         }
       ],
@@ -10261,18 +12295,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Model interpretability",
+          "textKo": "",
           "text": "Model interpretability"
         },
         {
           "key": "B",
+          "textEn": "Model training",
+          "textKo": "",
           "text": "Model training"
         },
         {
           "key": "C",
+          "textEn": "Model interoperability",
+          "textKo": "",
           "text": "Model interoperability"
         },
         {
           "key": "D",
+          "textEn": "Model performance",
+          "textKo": "",
           "text": "Model performance"
         }
       ],
@@ -10298,18 +12340,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "K-nearest neighbors (k-NN)",
+          "textKo": "",
           "text": "K-nearest neighbors (k-NN)"
         },
         {
           "key": "B",
+          "textEn": "K-means",
+          "textKo": "",
           "text": "K-means"
         },
         {
           "key": "C",
+          "textEn": "Decision tree",
+          "textKo": "",
           "text": "Decision tree"
         },
         {
           "key": "D",
+          "textEn": "Support vector machine",
+          "textKo": "",
           "text": "Support vector machine"
         }
       ],
@@ -10335,18 +12385,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Temperature",
+          "textKo": "",
           "text": "Temperature"
         },
         {
           "key": "B",
+          "textEn": "Batch size",
+          "textKo": "",
           "text": "Batch size"
         },
         {
           "key": "C",
+          "textEn": "Learning rate",
+          "textKo": "",
           "text": "Learning rate"
         },
         {
           "key": "D",
+          "textEn": "Optimizer type",
+          "textKo": "",
           "text": "Optimizer type"
         }
       ],
@@ -10372,18 +12430,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use a higher temperature value.",
+          "textKo": "",
           "text": "Use a higher temperature value."
         },
         {
           "key": "B",
+          "textEn": "Use a more detailed prompt.",
+          "textKo": "",
           "text": "Use a more detailed prompt."
         },
         {
           "key": "C",
+          "textEn": "Use a negative prompt.",
+          "textKo": "",
           "text": "Use a negative prompt."
         },
         {
           "key": "D",
+          "textEn": "Use another foundation model (FM).",
+          "textKo": "",
           "text": "Use another foundation model (FM)."
         }
       ],
@@ -10447,18 +12513,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Data Wrangler",
+          "textKo": "",
           "text": "Amazon SageMaker Data Wrangler"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Ground Truth Plus",
+          "textKo": "",
           "text": "Amazon SageMaker Ground Truth Plus"
         },
         {
           "key": "C",
+          "textEn": "Amazon Transcribe",
+          "textKo": "",
           "text": "Amazon Transcribe"
         },
         {
           "key": "D",
+          "textEn": "Amazon Macie",
+          "textKo": "",
           "text": "Amazon Macie"
         }
       ],
@@ -10484,18 +12558,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Comprehend",
+          "textKo": "",
           "text": "Amazon Comprehend"
         },
         {
           "key": "B",
+          "textEn": "Amazon Personalize",
+          "textKo": "",
           "text": "Amazon Personalize"
         },
         {
           "key": "C",
+          "textEn": "Amazon Polly",
+          "textKo": "",
           "text": "Amazon Polly"
         },
         {
           "key": "D",
+          "textEn": "Amazon OpenSearch Service",
+          "textKo": "",
           "text": "Amazon OpenSearch Service"
         }
       ],
@@ -10565,18 +12647,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Classification",
+          "textKo": "",
           "text": "Classification"
         },
         {
           "key": "B",
+          "textEn": "Continued pre-training",
+          "textKo": "",
           "text": "Continued pre-training"
         },
         {
           "key": "C",
+          "textEn": "Distillation",
+          "textKo": "",
           "text": "Distillation"
         },
         {
           "key": "D",
+          "textEn": "Regression",
+          "textKo": "",
           "text": "Regression"
         }
       ],
@@ -10602,18 +12692,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Restart the SageMaker AI endpoint.",
+          "textKo": "",
           "text": "Restart the SageMaker AI endpoint."
         },
         {
           "key": "B",
+          "textEn": "Adjust the monitoring sensitivity.",
+          "textKo": "",
           "text": "Adjust the monitoring sensitivity."
         },
         {
           "key": "C",
+          "textEn": "Re-train the model with fresh data.",
+          "textKo": "",
           "text": "Re-train the model with fresh data."
         },
         {
           "key": "D",
+          "textEn": "Set up experiments tracking.",
+          "textKo": "",
           "text": "Set up experiments tracking."
         }
       ],
@@ -10639,18 +12737,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use a rule-based system instead of an ML model.",
+          "textKo": "",
           "text": "Use a rule-based system instead of an ML model."
         },
         {
           "key": "B",
+          "textEn": "Apply explainable AI techniques to show customers which factors influenced the model's decision.",
+          "textKo": "",
           "text": "Apply explainable AI techniques to show customers which factors influenced the model's decision."
         },
         {
           "key": "C",
+          "textEn": "Develop an interactive UI for customers and provide clear technical explanations about the system.",
+          "textKo": "",
           "text": "Develop an interactive UI for customers and provide clear technical explanations about the system."
         },
         {
           "key": "D",
+          "textEn": "Increase the accuracy of the model to reduce the need for transparency.",
+          "textKo": "",
           "text": "Increase the accuracy of the model to reduce the need for transparency."
         }
       ],
@@ -10675,18 +12781,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Retrain the model. Monitor model drift by using Amazon SageMaker Clarify.",
+          "textKo": "",
           "text": "Retrain the model. Monitor model drift by using Amazon SageMaker Clarify."
         },
         {
           "key": "B",
+          "textEn": "Retrain the model. Monitor model drift by using Amazon SageMaker Model Monitor.",
+          "textKo": "",
           "text": "Retrain the model. Monitor model drift by using Amazon SageMaker Model Monitor."
         },
         {
           "key": "C",
+          "textEn": "Build a new model. Monitor model drift by using Amazon SageMaker Feature Store.",
+          "textKo": "",
           "text": "Build a new model. Monitor model drift by using Amazon SageMaker Feature Store."
         },
         {
           "key": "D",
+          "textEn": "Build a new model. Monitor model drift by using Amazon SageMaker JumpStart.",
+          "textKo": "",
           "text": "Build a new model. Monitor model drift by using Amazon SageMaker JumpStart."
         }
       ],
@@ -10711,18 +12825,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "A model that groups customers based on their purchase history",
+          "textKo": "",
           "text": "A model that groups customers based on their purchase history"
         },
         {
           "key": "B",
+          "textEn": "A model that classifies images as dogs or cats",
+          "textKo": "",
           "text": "A model that classifies images as dogs or cats"
         },
         {
           "key": "C",
+          "textEn": "A model that predicts a house's price based on various features",
+          "textKo": "",
           "text": "A model that predicts a house's price based on various features"
         },
         {
           "key": "D",
+          "textEn": "A model that learns to play chess by using trial and error",
+          "textKo": "",
           "text": "A model that learns to play chess by using trial and error"
         }
       ],
@@ -10748,18 +12870,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Recall",
+          "textKo": "",
           "text": "Recall"
         },
         {
           "key": "B",
+          "textEn": "Area under the ROC curve (AUC)",
+          "textKo": "",
           "text": "Area under the ROC curve (AUC)"
         },
         {
           "key": "C",
+          "textEn": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+          "textKo": "",
           "text": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)"
         },
         {
           "key": "D",
+          "textEn": "Mean squared error (MSE)",
+          "textKo": "",
           "text": "Mean squared error (MSE)"
         }
       ],
@@ -10785,18 +12915,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use automatic evaluation on Amazon Personalize.",
+          "textKo": "",
           "text": "Use automatic evaluation on Amazon Personalize."
         },
         {
           "key": "B",
+          "textEn": "Use content moderation on Amazon Rekognition.",
+          "textKo": "",
           "text": "Use content moderation on Amazon Rekognition."
         },
         {
           "key": "C",
+          "textEn": "Use model evaluation on Amazon Bedrock.",
+          "textKo": "",
           "text": "Use model evaluation on Amazon Bedrock."
         },
         {
           "key": "D",
+          "textEn": "Use sentiment analysis on Amazon Comprehend.",
+          "textKo": "",
           "text": "Use sentiment analysis on Amazon Comprehend."
         }
       ],
@@ -10854,18 +12992,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon QuickSight",
+          "textKo": "",
           "text": "Amazon QuickSight"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "AWS Trusted Advisor",
+          "textKo": "",
           "text": "AWS Trusted Advisor"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "",
           "text": "Amazon SageMaker Clarify"
         }
       ],
@@ -10891,18 +13037,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Computer vision",
+          "textKo": "",
           "text": "Computer vision"
         },
         {
           "key": "B",
+          "textEn": "Robotics",
+          "textKo": "",
           "text": "Robotics"
         },
         {
           "key": "C",
+          "textEn": "Natural language processing (NLP)",
+          "textKo": "",
           "text": "Natural language processing (NLP)"
         },
         {
           "key": "D",
+          "textEn": "Time series forecasting",
+          "textKo": "",
           "text": "Time series forecasting"
         }
       ],
@@ -10928,18 +13082,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use Amazon CloudFront to restrict access to the company's private content.",
+          "textKo": "",
           "text": "Use Amazon CloudFront to restrict access to the company's private content."
         },
         {
           "key": "B",
+          "textEn": "Use AWS Glue to set up data encryption across the company's data catalog.",
+          "textKo": "",
           "text": "Use AWS Glue to set up data encryption across the company's data catalog."
         },
         {
           "key": "C",
+          "textEn": "Use AWS Lake Formation to manage centralized data governance and cross-account data sharing.",
+          "textKo": "",
           "text": "Use AWS Lake Formation to manage centralized data governance and cross-account data sharing."
         },
         {
           "key": "D",
+          "textEn": "Use AWS PrivateLink to configure a private connection between the company's VPC and Amazon Bedrock.",
+          "textKo": "",
           "text": "Use AWS PrivateLink to configure a private connection between the company's VPC and Amazon Bedrock."
         }
       ],
@@ -10965,18 +13127,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use a large language model (LLM) to perform natural language processing (NLP) for sentiment analysis.",
+          "textKo": "",
           "text": "Use a large language model (LLM) to perform natural language processing (NLP) for sentiment analysis."
         },
         {
           "key": "B",
+          "textEn": "Use a regression algorithm to classify the feedback based on predefined categories. Then, analyze user sentiment.",
+          "textKo": "",
           "text": "Use a regression algorithm to classify the feedback based on predefined categories. Then, analyze user sentiment."
         },
         {
           "key": "C",
+          "textEn": "Use a recommendation engine algorithm to detect user sentiment.",
+          "textKo": "",
           "text": "Use a recommendation engine algorithm to detect user sentiment."
         },
         {
           "key": "D",
+          "textEn": "Use a time series algorithm to predict user sentiment based on past feedback.",
+          "textKo": "",
           "text": "Use a time series algorithm to predict user sentiment based on past feedback."
         }
       ],
@@ -11046,19 +13216,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "지연 시간(Latency)"
+          "textEn": "Latency",
+          "textKo": "지연 시간(Latency)",
+          "text": "Latency"
         },
         {
           "key": "B",
-          "text": "모델 크기(Model size)"
+          "textEn": "Model size",
+          "textKo": "모델 크기(Model size)",
+          "text": "Model size"
         },
         {
           "key": "C",
-          "text": "모델 커스터마이징(Model customization)"
+          "textEn": "Model customization",
+          "textKo": "모델 커스터마이징(Model customization)",
+          "text": "Model customization"
         },
         {
           "key": "D",
-          "text": "모달리티(Modality)"
+          "textEn": "Modality",
+          "textKo": "모달리티(Modality)",
+          "text": "Modality"
         }
       ],
       "answerKey": "D",
@@ -11083,19 +13261,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "개방형 생성(Open-ended generation)"
+          "textEn": "Open-ended generation",
+          "textKo": "개방형 생성(Open-ended generation)",
+          "text": "Open-ended generation"
         },
         {
           "key": "B",
-          "text": "텍스트 요약(Text summarization)"
+          "textEn": "Text summarization",
+          "textKo": "텍스트 요약(Text summarization)",
+          "text": "Text summarization"
         },
         {
           "key": "C",
-          "text": "기계 번역(Machine translation)"
+          "textEn": "Machine translation",
+          "textKo": "기계 번역(Machine translation)",
+          "text": "Machine translation"
         },
         {
           "key": "D",
-          "text": "분류(Classification)"
+          "textEn": "Classification",
+          "textKo": "분류(Classification)",
+          "text": "Classification"
         }
       ],
       "answerKey": "D",
@@ -11162,19 +13348,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 포인트를 유사성에 따라 그룹화하기"
+          "textEn": "Clustering data points into groups based on their similarity",
+          "textKo": "데이터 포인트를 유사성에 따라 그룹화하기",
+          "text": "Clustering data points into groups based on their similarity"
         },
         {
           "key": "B",
-          "text": "동물 이미지를 인식하도록 모델 학습"
+          "textEn": "Training a model to recognize images of animals",
+          "textKo": "동물 이미지를 인식하도록 모델 학습",
+          "text": "Training a model to recognize images of animals"
         },
         {
           "key": "C",
-          "text": "주택 특징을 기반으로 가격 예측"
+          "textEn": "Predicting the price of a house based on the house's features",
+          "textKo": "주택 특징을 기반으로 가격 예측",
+          "text": "Predicting the price of a house based on the house's features"
         },
         {
           "key": "D",
-          "text": "주어진 프롬프트에 따라 인간과 유사한 텍스트 생성"
+          "textEn": "Generating human-like text based on a given prompt",
+          "textKo": "주어진 프롬프트에 따라 인간과 유사한 텍스트 생성",
+          "text": "Generating human-like text based on a given prompt"
         }
       ],
       "answerKey": "A",
@@ -11199,18 +13393,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "B",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         },
         {
           "key": "C",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "D",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         }
       ],
@@ -11236,18 +13438,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon RDS",
           "text": "Amazon RDS"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon VPC",
           "text": "Amazon VPC"
         }
       ],
@@ -11273,18 +13483,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon RDS",
           "text": "Amazon RDS"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         }
       ],
@@ -11310,18 +13528,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon DynamoDB",
           "text": "Amazon DynamoDB"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon RDS",
           "text": "Amazon RDS"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon Redshift",
           "text": "Amazon Redshift"
         }
       ],
@@ -11347,18 +13573,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "AWS Config",
           "text": "AWS Config"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon CloudWatch",
           "text": "Amazon CloudWatch"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS CloudTrail",
           "text": "AWS CloudTrail"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         }
       ],
@@ -11384,18 +13618,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon VPC",
           "text": "Amazon VPC"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         }
       ],
@@ -11421,18 +13663,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon RDS",
           "text": "Amazon RDS"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         }
       ],
@@ -11458,18 +13708,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon CloudFront",
           "text": "Amazon CloudFront"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon Route 53",
           "text": "Amazon Route 53"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         }
       ],
@@ -11495,18 +13753,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon CloudFront",
           "text": "Amazon CloudFront"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon Route 53",
           "text": "Amazon Route 53"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon VPC",
           "text": "Amazon VPC"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         }
       ],
@@ -11532,18 +13798,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS Elastic Beanstalk",
           "text": "AWS Elastic Beanstalk"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         }
       ],
@@ -11569,18 +13843,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS Config",
           "text": "AWS Config"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "AWS CloudFormation",
           "text": "AWS CloudFormation"
         }
       ],
@@ -11606,18 +13888,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "AWS Auto Scaling",
           "text": "AWS Auto Scaling"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS CloudWatch",
           "text": "AWS CloudWatch"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon VPC",
           "text": "Amazon VPC"
         }
       ],
@@ -11643,18 +13933,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon ECS",
           "text": "Amazon ECS"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         }
       ],
@@ -11680,18 +13978,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon ECS",
           "text": "Amazon ECS"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon EKS",
           "text": "Amazon EKS"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         }
       ],
@@ -11717,18 +14023,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon ECS",
           "text": "Amazon ECS"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "Amazon S3",
           "text": "Amazon S3"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "AWS Fargate",
           "text": "AWS Fargate"
         }
       ],
@@ -11754,18 +14068,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "AWS IAM",
           "text": "AWS IAM"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "Amazon Cognito",
           "text": "Amazon Cognito"
         },
         {
           "key": "C",
+          "textEn": "",
+          "textKo": "AWS Organizations",
           "text": "AWS Organizations"
         },
         {
           "key": "D",
+          "textEn": "",
+          "textKo": "Amazon GuardDuty",
           "text": "Amazon GuardDuty"
         }
       ],
@@ -11791,18 +14113,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Bedrock playgrounds",
+          "textKo": "",
           "text": "Amazon Bedrock playgrounds"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "C",
+          "textEn": "Amazon Bedrock Guardrails",
+          "textKo": "",
           "text": "Amazon Bedrock Guardrails"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Jumpstart",
+          "textKo": "",
           "text": "Amazon SageMaker Jumpstart"
         }
       ],
@@ -11828,18 +14158,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Nova Lite",
+          "textKo": "",
           "text": "Nova Lite"
         },
         {
           "key": "B",
+          "textEn": "Nova Pro",
+          "textKo": "",
           "text": "Nova Pro"
         },
         {
           "key": "C",
+          "textEn": "Nova Canvas",
+          "textKo": "",
           "text": "Nova Canvas"
         },
         {
           "key": "D",
+          "textEn": "Nova Reel",
+          "textKo": "",
           "text": "Nova Reel"
         }
       ],
@@ -11865,18 +14203,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Fine-tune the FM to avoid harmful responses.",
+          "textKo": "",
           "text": "Fine-tune the FM to avoid harmful responses."
         },
         {
           "key": "B",
+          "textEn": "Use Amazon Bedrock Guardrails content filters and denied topics.",
+          "textKo": "",
           "text": "Use Amazon Bedrock Guardrails content filters and denied topics."
         },
         {
           "key": "C",
+          "textEn": "Change the FM to a more secure FM.",
+          "textKo": "",
           "text": "Change the FM to a more secure FM."
         },
         {
           "key": "D",
+          "textEn": "Use chain-of-thought prompting to produce secure responses.",
+          "textKo": "",
           "text": "Use chain-of-thought prompting to produce secure responses."
         }
       ],
@@ -11902,18 +14248,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "The process of creating new AI algorithms",
+          "textKo": "",
           "text": "The process of creating new AI algorithms"
         },
         {
           "key": "B",
+          "textEn": "The use of a trained model to make predictions or decisions on unseen data",
+          "textKo": "",
           "text": "The use of a trained model to make predictions or decisions on unseen data"
         },
         {
           "key": "C",
+          "textEn": "The process of combining multiple AI models into one model",
+          "textKo": "",
           "text": "The process of combining multiple AI models into one model"
         },
         {
           "key": "D",
+          "textEn": "The method of collecting training data for AI systems",
+          "textKo": "",
           "text": "The method of collecting training data for AI systems"
         }
       ],
@@ -11939,18 +14293,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Prompt Management",
+          "textKo": "",
           "text": "Prompt Management"
         },
         {
           "key": "B",
+          "textEn": "Response streaming",
+          "textKo": "",
           "text": "Response streaming"
         },
         {
           "key": "C",
+          "textEn": "Knowledge Bases",
+          "textKo": "",
           "text": "Knowledge Bases"
         },
         {
           "key": "D",
+          "textEn": "Agents",
+          "textKo": "",
           "text": "Agents"
         }
       ],
@@ -11976,18 +14338,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Hallucinations",
+          "textKo": "",
           "text": "Hallucinations"
         },
         {
           "key": "B",
+          "textEn": "Nondeterminism",
+          "textKo": "",
           "text": "Nondeterminism"
         },
         {
           "key": "C",
+          "textEn": "Accuracy",
+          "textKo": "",
           "text": "Accuracy"
         },
         {
           "key": "D",
+          "textEn": "Multimodality",
+          "textKo": "",
           "text": "Multimodality"
         }
       ],
@@ -12013,18 +14383,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Use Amazon Bedrock Stable Diffusion 3.5 Large to generate images based on text inputs.",
+          "textKo": "",
           "text": "Use Amazon Bedrock Stable Diffusion 3.5 Large to generate images based on text inputs."
         },
         {
           "key": "B",
+          "textEn": "Use Amazon Polly to create an audiobook based on story texts.",
+          "textKo": "",
           "text": "Use Amazon Polly to create an audiobook based on story texts."
         },
         {
           "key": "C",
+          "textEn": "Use Amazon Rekognition to analyze image contents and detect text attributes.",
+          "textKo": "",
           "text": "Use Amazon Rekognition to analyze image contents and detect text attributes."
         },
         {
           "key": "D",
+          "textEn": "Create a standard prompt template. Use Amazon Q Business to illustrate stories.",
+          "textKo": "",
           "text": "Create a standard prompt template. Use Amazon Q Business to illustrate stories."
         }
       ],
@@ -12050,18 +14428,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Real-time inference",
+          "textKo": "",
           "text": "Real-time inference"
         },
         {
           "key": "B",
+          "textEn": "Batch transform",
+          "textKo": "",
           "text": "Batch transform"
         },
         {
           "key": "C",
+          "textEn": "Serverless inference",
+          "textKo": "",
           "text": "Serverless inference"
         },
         {
           "key": "D",
+          "textEn": "Asynchronous inference",
+          "textKo": "",
           "text": "Asynchronous inference"
         }
       ],
@@ -12106,18 +14492,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "All members of the company are ISO certified.",
+          "textKo": "",
           "text": "All members of the company are ISO certified."
         },
         {
           "key": "B",
+          "textEn": "All AI systems that the company uses are ISO certified.",
+          "textKo": "",
           "text": "All AI systems that the company uses are ISO certified."
         },
         {
           "key": "C",
+          "textEn": "All AI application team members are ISO certified.",
+          "textKo": "",
           "text": "All AI application team members are ISO certified."
         },
         {
           "key": "D",
+          "textEn": "The company's development framework is ISO certified.",
+          "textKo": "",
           "text": "The company's development framework is ISO certified."
         }
       ],
@@ -12178,18 +14572,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Unsupervised learning",
+          "textKo": "",
           "text": "Unsupervised learning"
         },
         {
           "key": "B",
+          "textEn": "Supervised learning",
+          "textKo": "",
           "text": "Supervised learning"
         },
         {
           "key": "C",
+          "textEn": "Reinforcement learning",
+          "textKo": "",
           "text": "Reinforcement learning"
         },
         {
           "key": "D",
+          "textEn": "Semi-supervised learning",
+          "textKo": "",
           "text": "Semi-supervised learning"
         }
       ],
@@ -12236,18 +14638,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Data de-identification",
+          "textKo": "",
           "text": "Data de-identification"
         },
         {
           "key": "B",
+          "textEn": "Data quality standards",
+          "textKo": "",
           "text": "Data quality standards"
         },
         {
           "key": "C",
+          "textEn": "Data retention",
+          "textKo": "",
           "text": "Data retention"
         },
         {
           "key": "D",
+          "textEn": "Log storage",
+          "textKo": "",
           "text": "Log storage"
         }
       ],
@@ -12270,18 +14680,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Create a deep neural network by using the images as input.",
+          "textKo": "",
           "text": "Create a deep neural network by using the images as input."
         },
         {
           "key": "B",
+          "textEn": "Create an AWS Lambda function to perform the transformations.",
+          "textKo": "",
           "text": "Create an AWS Lambda function to perform the transformations."
         },
         {
           "key": "C",
+          "textEn": "Use an Amazon Bedrock large language model (LLM) with a high temperature.",
+          "textKo": "",
           "text": "Use an Amazon Bedrock large language model (LLM) with a high temperature."
         },
         {
           "key": "D",
+          "textEn": "Use AWS Glue Data Quality to make corrections to each image.",
+          "textKo": "",
           "text": "Use AWS Glue Data Quality to make corrections to each image."
         }
       ],
@@ -12304,18 +14722,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Hallucinations",
+          "textKo": "",
           "text": "Hallucinations"
         },
         {
           "key": "B",
+          "textEn": "Nondeterminism",
+          "textKo": "",
           "text": "Nondeterminism"
         },
         {
           "key": "C",
+          "textEn": "Accuracy",
+          "textKo": "",
           "text": "Accuracy"
         },
         {
           "key": "D",
+          "textEn": "Multimodality",
+          "textKo": "",
           "text": "Multimodality"
         }
       ],
@@ -12338,18 +14764,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "A variational autoencoder (VAE) model",
+          "textKo": "",
           "text": "A variational autoencoder (VAE) model"
         },
         {
           "key": "B",
+          "textEn": "A transformer-based model",
+          "textKo": "",
           "text": "A transformer-based model"
         },
         {
           "key": "C",
+          "textEn": "A diffusion model",
+          "textKo": "",
           "text": "A diffusion model"
         },
         {
           "key": "D",
+          "textEn": "A generative adversarial network (GAN) model",
+          "textKo": "",
           "text": "A generative adversarial network (GAN) model"
         }
       ],
@@ -12372,18 +14806,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "The model is underfit.",
+          "textKo": "",
           "text": "The model is underfit."
         },
         {
           "key": "B",
+          "textEn": "The model requires prompt engineering.",
+          "textKo": "",
           "text": "The model requires prompt engineering."
         },
         {
           "key": "C",
+          "textEn": "The model is biased.",
+          "textKo": "",
           "text": "The model is biased."
         },
         {
           "key": "D",
+          "textEn": "The model is overfit.",
+          "textKo": "",
           "text": "The model is overfit."
         }
       ],
@@ -12410,19 +14852,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "딥러닝 모델"
+          "textEn": "Deep learning model",
+          "textKo": "딥러닝 모델",
+          "text": "Deep learning model"
         },
         {
           "key": "B",
-          "text": "로지스틱 회귀 모델"
+          "textEn": "Logistic regression model",
+          "textKo": "로지스틱 회귀 모델",
+          "text": "Logistic regression model"
         },
         {
           "key": "C",
-          "text": "K-평균 알고리즘"
+          "textEn": "K-means algorithm",
+          "textKo": "K-평균 알고리즘",
+          "text": "K-means algorithm"
         },
         {
           "key": "D",
-          "text": "Random cut forest 알고리즘"
+          "textEn": "Random cut forest algorithm",
+          "textKo": "Random cut forest 알고리즘",
+          "text": "Random cut forest algorithm"
         }
       ],
       "answerKey": "B",
@@ -12448,19 +14898,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 마이닝"
+          "textEn": "Data mining",
+          "textKo": "데이터 마이닝",
+          "text": "Data mining"
         },
         {
           "key": "B",
-          "text": "데이터 레지던시"
+          "textEn": "Data residency",
+          "textKo": "데이터 레지던시",
+          "text": "Data residency"
         },
         {
           "key": "C",
-          "text": "사전 학습 편향"
+          "textEn": "Pre-training bias",
+          "textKo": "사전 학습 편향",
+          "text": "Pre-training bias"
         },
         {
           "key": "D",
-          "text": "지리적 라우팅"
+          "textEn": "Geolocation routing",
+          "textKo": "지리적 라우팅",
+          "text": "Geolocation routing"
         }
       ],
       "answerKey": "B",
@@ -12486,19 +14944,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "기존 데이터로 FM 커스텀 학습 즉시 시작"
+          "textEn": "Immediately start training a custom FM",
+          "textKo": "기존 데이터로 FM 커스텀 학습 즉시 시작",
+          "text": "Immediately start training a custom FM"
         },
         {
           "key": "B",
-          "text": "이해관계자 인터뷰 후 유즈케이스 정제 및 측정 가능한 목표 설정"
+          "textEn": "Conduct stakeholder interviews to refine use cases and set measurable goals",
+          "textKo": "이해관계자 인터뷰 후 유즈케이스 정제 및 측정 가능한 목표 설정",
+          "text": "Conduct stakeholder interviews to refine use cases and set measurable goals"
         },
         {
           "key": "C",
-          "text": "사전 구축된 AI 어시스턴트 배포 후 고객 만족도 측정"
+          "textEn": "Implement a prebuilt AI assistant solution and measure its impact on customer satisfaction",
+          "textKo": "사전 구축된 AI 어시스턴트 배포 후 고객 만족도 측정",
+          "text": "Implement a prebuilt AI assistant solution and measure its impact on customer satisfaction"
         },
         {
           "key": "D",
-          "text": "업계 AI 사례 분석 후 성공적 기능 복제"
+          "textEn": "Analyze industry AI implementations and replicate the most successful features",
+          "textKo": "업계 AI 사례 분석 후 성공적 기능 복제",
+          "text": "Analyze industry AI implementations and replicate the most successful features"
         }
       ],
       "answerKey": "B",
@@ -12524,19 +14990,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 수집"
+          "textEn": "Data collection",
+          "textKo": "데이터 수집",
+          "text": "Data collection"
         },
         {
           "key": "B",
-          "text": "데이터 전처리"
+          "textEn": "Data preprocessing",
+          "textKo": "데이터 전처리",
+          "text": "Data preprocessing"
         },
         {
           "key": "C",
-          "text": "특성 추출(Feature engineering)"
+          "textEn": "Feature engineering",
+          "textKo": "특성 추출(Feature engineering)",
+          "text": "Feature engineering"
         },
         {
           "key": "D",
-          "text": "모델 학습"
+          "textEn": "Model training",
+          "textKo": "모델 학습",
+          "text": "Model training"
         }
       ],
       "answerKey": "B",
@@ -12562,19 +15036,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "도메인 예시(Few-shot) 제공"
+          "textEn": "Few-shot prompting with domain-specific context",
+          "textKo": "도메인 예시(Few-shot) 제공",
+          "text": "Few-shot prompting with domain-specific context"
         },
         {
           "key": "B",
-          "text": "논리 과정 숨기기(Chain-of-thought)"
+          "textEn": "Chain-of-thought prompting with hidden reasoning",
+          "textKo": "논리 과정 숨기기(Chain-of-thought)",
+          "text": "Chain-of-thought prompting with hidden reasoning"
         },
         {
           "key": "C",
-          "text": "정형화된 스타일 + 제품 사양 포함"
+          "textEn": "Modify style to formal & include specs",
+          "textKo": "정형화된 스타일 + 제품 사양 포함",
+          "text": "Modify style to formal & include specs"
         },
         {
           "key": "D",
-          "text": "Zero-shot로 DB 검색 강화"
+          "textEn": "Zero-shot prompting to augment retrieval",
+          "textKo": "Zero-shot로 DB 검색 강화",
+          "text": "Zero-shot prompting to augment retrieval"
         }
       ],
       "answerKey": "A",
@@ -12599,19 +15081,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Comprehend"
+          "textEn": "Comprehend",
+          "textKo": "Amazon Comprehend",
+          "text": "Comprehend"
         },
         {
           "key": "B",
-          "text": "Amazon Personalize"
+          "textEn": "Personalize",
+          "textKo": "Amazon Personalize",
+          "text": "Personalize"
         },
         {
           "key": "C",
-          "text": "Amazon Rekognition"
+          "textEn": "Rekognition",
+          "textKo": "Amazon Rekognition",
+          "text": "Rekognition"
         },
         {
           "key": "D",
-          "text": "Amazon Bedrock"
+          "textEn": "Bedrock",
+          "textKo": "Amazon Bedrock",
+          "text": "Bedrock"
         }
       ],
       "answerKey": "D",
@@ -12637,19 +15127,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "전체 학습"
+          "textEn": "Full training",
+          "textKo": "전체 학습",
+          "text": "Full training"
         },
         {
           "key": "B",
-          "text": "지도학습 파인튜닝"
+          "textEn": "Supervised fine-tuning",
+          "textKo": "지도학습 파인튜닝",
+          "text": "Supervised fine-tuning"
         },
         {
           "key": "C",
-          "text": "사전학습 계속(Continued pre-training)"
+          "textEn": "Continued pre-training",
+          "textKo": "사전학습 계속(Continued pre-training)",
+          "text": "Continued pre-training"
         },
         {
           "key": "D",
-          "text": "RAG"
+          "textEn": "Retrieval Augmented Generation (RAG)",
+          "textKo": "RAG",
+          "text": "Retrieval Augmented Generation (RAG)"
         }
       ],
       "answerKey": "C",
@@ -12675,18 +15173,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "전통적 ML 알고리즘"
+          "textEn": "Traditional ML",
+          "textKo": "전통적 ML 알고리즘",
+          "text": "Traditional ML"
         },
         {
           "key": "B",
-          "text": "사전 학습 DL 모델 + 파인튜닝"
+          "textEn": "Pre-trained deep learning + fine-tune",
+          "textKo": "사전 학습 DL 모델 + 파인튜닝",
+          "text": "Pre-trained deep learning + fine-tune"
         },
         {
           "key": "C",
-          "text": "GAN 모델"
+          "textEn": "GAN",
+          "textKo": "GAN 모델",
+          "text": "GAN"
         },
         {
           "key": "D",
+          "textEn": "SVM",
+          "textKo": "SVM",
           "text": "SVM"
         }
       ],
@@ -12712,19 +15218,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "JSON (라벨 포함)"
+          "textEn": "JSON labeled",
+          "textKo": "JSON (라벨 포함)",
+          "text": "JSON labeled"
         },
         {
           "key": "B",
-          "text": "CSV (라벨 없음)"
+          "textEn": "CSV unlabeled",
+          "textKo": "CSV (라벨 없음)",
+          "text": "CSV unlabeled"
         },
         {
           "key": "C",
-          "text": "CSV (테이블형)"
+          "textEn": "CSV tabular",
+          "textKo": "CSV (테이블형)",
+          "text": "CSV tabular"
         },
         {
           "key": "D",
-          "text": "Text (라벨 없음)"
+          "textEn": "Text unlabeled",
+          "textKo": "Text (라벨 없음)",
+          "text": "Text unlabeled"
         }
       ],
       "answerKey": "A",
@@ -12749,10 +15263,14 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "",
+          "textKo": "- Prompt engineering - RAG - Fine-tuning - Full model training",
           "text": "- Prompt engineering - RAG - Fine-tuning - Full model training"
         },
         {
           "key": "B",
+          "textEn": "",
+          "textKo": "순서가 뒤바르면 개발 비용과 시간 예측이 잘못된다.",
           "text": "순서가 뒤바르면 개발 비용과 시간 예측이 잘못된다."
         }
       ],
@@ -12779,19 +15297,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "문법&middot;의미 이해 및 코드 최적화 능력"
+          "textEn": "Syntax, semantic understanding, code optimization capabilities",
+          "textKo": "문법&middot;의미 이해 및 코드 최적화 능력",
+          "text": "Syntax, semantic understanding, code optimization capabilities"
         },
         {
           "key": "B",
-          "text": "코드 생성 속도 및 오류 처리"
+          "textEn": "Code generation speed, error handling",
+          "textKo": "코드 생성 속도 및 오류 처리",
+          "text": "Code generation speed, error handling"
         },
         {
           "key": "C",
-          "text": "창의적 콘텐츠 생성 능력"
+          "textEn": "Ability to generate creative content",
+          "textKo": "창의적 콘텐츠 생성 능력",
+          "text": "Ability to generate creative content"
         },
         {
           "key": "D",
-          "text": "모델 크기와 리소스 요구량"
+          "textEn": "Model size and resources",
+          "textKo": "모델 크기와 리소스 요구량",
+          "text": "Model size and resources"
         }
       ],
       "answerKey": "A",
@@ -12815,19 +15341,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 익명화 (Data anonymization)"
+          "textEn": "Data anonymization",
+          "textKo": "데이터 익명화 (Data anonymization)",
+          "text": "Data anonymization"
         },
         {
           "key": "B",
-          "text": "데이터 암호화 (Data encryption)"
+          "textEn": "Data encryption",
+          "textKo": "데이터 암호화 (Data encryption)",
+          "text": "Data encryption"
         },
         {
           "key": "C",
-          "text": "데이터 압축 (Data compression)"
+          "textEn": "Data compression",
+          "textKo": "데이터 압축 (Data compression)",
+          "text": "Data compression"
         },
         {
           "key": "D",
-          "text": "데이터 복제 (Data duplication)"
+          "textEn": "Data duplication",
+          "textKo": "데이터 복제 (Data duplication)",
+          "text": "Data duplication"
         }
       ],
       "answerKey": "A",
@@ -12850,18 +15384,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker Debugger",
+          "textKo": "Amazon SageMaker Debugger",
           "text": "Amazon SageMaker Debugger"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker Model Monitor",
           "text": "Amazon SageMaker Model Monitor"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Autopilot",
+          "textKo": "Amazon SageMaker Autopilot",
           "text": "Amazon SageMaker Autopilot"
         }
       ],
@@ -12885,19 +15427,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "가드레일 및 콘텐츠 필터링 구현"
+          "textEn": "Implement guardrails and content filtering",
+          "textKo": "가드레일 및 콘텐츠 필터링 구현",
+          "text": "Implement guardrails and content filtering"
         },
         {
           "key": "B",
-          "text": "모델 크기 증대"
+          "textEn": "Increase the model size",
+          "textKo": "모델 크기 증대",
+          "text": "Increase the model size"
         },
         {
           "key": "C",
-          "text": "더 다양한 학습 데이터세트 사용"
+          "textEn": "Use a more diverse training dataset",
+          "textKo": "더 다양한 학습 데이터세트 사용",
+          "text": "Use a more diverse training dataset"
         },
         {
           "key": "D",
-          "text": "모델의 Temperature(온도) 파라미터 감소"
+          "textEn": "Reduce the temperature parameter of the model",
+          "textKo": "모델의 Temperature(온도) 파라미터 감소",
+          "text": "Reduce the temperature parameter of the model"
         }
       ],
       "answerKey": "A",
@@ -12920,18 +15470,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Ground Truth",
+          "textKo": "Amazon SageMaker Ground Truth",
           "text": "Amazon SageMaker Ground Truth"
         },
         {
           "key": "B",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "C",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
@@ -12953,19 +15511,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "텍스트, 이미지, 오디오와 같은 새로운 콘텐츠를 생성합니다."
+          "textEn": "It creates new content such as text, images, or audio.",
+          "textKo": "텍스트, 이미지, 오디오와 같은 새로운 콘텐츠를 생성합니다.",
+          "text": "It creates new content such as text, images, or audio."
         },
         {
           "key": "B",
-          "text": "분류 작업만 수행합니다."
+          "textEn": "It only performs classification tasks.",
+          "textKo": "분류 작업만 수행합니다.",
+          "text": "It only performs classification tasks."
         },
         {
           "key": "C",
-          "text": "모든 유형의 학습에 라벨링된 데이터가 필요합니다."
+          "textEn": "It requires labeled data for all types of learning.",
+          "textKo": "모든 유형의 학습에 라벨링된 데이터가 필요합니다.",
+          "text": "It requires labeled data for all types of learning."
         },
         {
           "key": "D",
-          "text": "지도 학습(Supervised learning)에만 사용됩니다."
+          "textEn": "It is used only for supervised learning.",
+          "textKo": "지도 학습(Supervised learning)에만 사용됩니다.",
+          "text": "It is used only for supervised learning."
         }
       ],
       "answerKey": "A",
@@ -12988,18 +15554,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "B",
+          "textEn": "Amazon SageMaker JumpStart",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "C",
+          "textEn": "AWS Lambda",
+          "textKo": "AWS Lambda",
           "text": "AWS Lambda"
         },
         {
           "key": "D",
+          "textEn": "Amazon EC2",
+          "textKo": "Amazon EC2",
           "text": "Amazon EC2"
         }
       ],
@@ -13023,19 +15597,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "퓨샷 프롬프팅 (Few-shot prompting)"
+          "textEn": "Few-shot prompting",
+          "textKo": "퓨샷 프롬프팅 (Few-shot prompting)",
+          "text": "Few-shot prompting"
         },
         {
           "key": "B",
-          "text": "제로샷 프롬프팅 (Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프팅 (Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "C",
-          "text": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         },
         {
           "key": "D",
-          "text": "미세 조정 (Fine-tuning)"
+          "textEn": "Fine-tuning",
+          "textKo": "미세 조정 (Fine-tuning)",
+          "text": "Fine-tuning"
         }
       ],
       "answerKey": "A",
@@ -13056,19 +15638,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "환각 (Hallucination)"
+          "textEn": "Hallucination",
+          "textKo": "환각 (Hallucination)",
+          "text": "Hallucination"
         },
         {
           "key": "B",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "C",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         },
         {
           "key": "D",
-          "text": "기울기 소실 (Vanishing gradient)"
+          "textEn": "Vanishing gradient",
+          "textKo": "기울기 소실 (Vanishing gradient)",
+          "text": "Vanishing gradient"
         }
       ],
       "answerKey": "A",
@@ -13091,18 +15681,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Amazon Q (구 Amazon Q Business)"
+          "textEn": "Amazon Q (formerly Amazon Q Business)",
+          "textKo": "Amazon Q (구 Amazon Q Business)",
+          "text": "Amazon Q (formerly Amazon Q Business)"
         },
         {
           "key": "B",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "C",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -13125,19 +15723,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "지식 증류 (Knowledge distillation)"
+          "textEn": "Knowledge distillation",
+          "textKo": "지식 증류 (Knowledge distillation)",
+          "text": "Knowledge distillation"
         },
         {
           "key": "B",
-          "text": "양자화 (Quantization)"
+          "textEn": "Quantization",
+          "textKo": "양자화 (Quantization)",
+          "text": "Quantization"
         },
         {
           "key": "C",
-          "text": "가지치기 (Pruning)"
+          "textEn": "Pruning",
+          "textKo": "가지치기 (Pruning)",
+          "text": "Pruning"
         },
         {
           "key": "D",
-          "text": "강화 학습 (Reinforcement learning)"
+          "textEn": "Reinforcement learning",
+          "textKo": "강화 학습 (Reinforcement learning)",
+          "text": "Reinforcement learning"
         }
       ],
       "answerKey": "A",
@@ -13161,19 +15767,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 증강 (Data augmentation)"
+          "textEn": "Data augmentation",
+          "textKo": "데이터 증강 (Data augmentation)",
+          "text": "Data augmentation"
         },
         {
           "key": "B",
-          "text": "데이터 익명화 (Data anonymization)"
+          "textEn": "Data anonymization",
+          "textKo": "데이터 익명화 (Data anonymization)",
+          "text": "Data anonymization"
         },
         {
           "key": "C",
-          "text": "데이터 정규화 (Data normalization)"
+          "textEn": "Data normalization",
+          "textKo": "데이터 정규화 (Data normalization)",
+          "text": "Data normalization"
         },
         {
           "key": "D",
-          "text": "데이터 중복 (Data duplication)"
+          "textEn": "Data duplication",
+          "textKo": "데이터 중복 (Data duplication)",
+          "text": "Data duplication"
         }
       ],
       "answerKey": "B",
@@ -13197,18 +15811,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Guardrails for Amazon Bedrock",
+          "textKo": "Guardrails for Amazon Bedrock",
           "text": "Guardrails for Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Model Monitor",
+          "textKo": "Amazon SageMaker Model Monitor",
           "text": "Amazon SageMaker Model Monitor"
         },
         {
           "key": "D",
+          "textEn": "Amazon Inspector",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         }
       ],
@@ -13233,19 +15855,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "혼동 행렬 (Confusion matrix)"
+          "textEn": "Confusion matrix",
+          "textKo": "혼동 행렬 (Confusion matrix)",
+          "text": "Confusion matrix"
         },
         {
           "key": "B",
-          "text": "ROC 곡선 (Receiver Operating Characteristic curve)"
+          "textEn": "Receiver Operating Characteristic (ROC) curve",
+          "textKo": "ROC 곡선 (Receiver Operating Characteristic curve)",
+          "text": "Receiver Operating Characteristic (ROC) curve"
         },
         {
           "key": "C",
-          "text": "평균 제곱 오차 (Mean Squared Error)"
+          "textEn": "Mean Squared Error (MSE)",
+          "textKo": "평균 제곱 오차 (Mean Squared Error)",
+          "text": "Mean Squared Error (MSE)"
         },
         {
           "key": "D",
-          "text": "엘보우 방법 (Elbow method)"
+          "textEn": "Elbow method",
+          "textKo": "엘보우 방법 (Elbow method)",
+          "text": "Elbow method"
         }
       ],
       "answerKey": "B",
@@ -13268,19 +15898,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 처음부터 학습 (Training from scratch)"
+          "textEn": "Training a model from scratch",
+          "textKo": "모델 처음부터 학습 (Training from scratch)",
+          "text": "Training a model from scratch"
         },
         {
           "key": "B",
-          "text": "프롬프트 엔지니어링 (Prompt engineering)"
+          "textEn": "Prompt engineering",
+          "textKo": "프롬프트 엔지니어링 (Prompt engineering)",
+          "text": "Prompt engineering"
         },
         {
           "key": "C",
-          "text": "검색 증강 생성 (Retrieval-Augmented Generation, RAG)"
+          "textEn": "Retrieval-Augmented Generation (RAG)",
+          "textKo": "검색 증강 생성 (Retrieval-Augmented Generation, RAG)",
+          "text": "Retrieval-Augmented Generation (RAG)"
         },
         {
           "key": "D",
-          "text": "하이퍼파라미터 최적화"
+          "textEn": "Hyperparameter optimization",
+          "textKo": "하이퍼파라미터 최적화",
+          "text": "Hyperparameter optimization"
         }
       ],
       "answerKey": "C",
@@ -13304,19 +15942,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 평가"
+          "textEn": "Model evaluation",
+          "textKo": "모델 평가",
+          "text": "Model evaluation"
         },
         {
           "key": "B",
-          "text": "데이터 전처리 (Data preprocessing)"
+          "textEn": "Data preprocessing",
+          "textKo": "데이터 전처리 (Data preprocessing)",
+          "text": "Data preprocessing"
         },
         {
           "key": "C",
-          "text": "모델 배포"
+          "textEn": "Model deployment",
+          "textKo": "모델 배포",
+          "text": "Model deployment"
         },
         {
           "key": "D",
-          "text": "피처 엔지니어링 (Feature engineering)"
+          "textEn": "Feature engineering",
+          "textKo": "피처 엔지니어링 (Feature engineering)",
+          "text": "Feature engineering"
         }
       ],
       "answerKey": "B",
@@ -13337,19 +15983,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "Bedrock 지식 베이스 (Knowledge Bases)"
+          "textEn": "Bedrock Knowledge Bases",
+          "textKo": "Bedrock 지식 베이스 (Knowledge Bases)",
+          "text": "Bedrock Knowledge Bases"
         },
         {
           "key": "B",
-          "text": "Bedrock 가드레일 (Guardrails)"
+          "textEn": "Bedrock Guardrails",
+          "textKo": "Bedrock 가드레일 (Guardrails)",
+          "text": "Bedrock Guardrails"
         },
         {
           "key": "C",
-          "text": "Bedrock 프로비저닝된 처리량 (Provisioned Throughput)"
+          "textEn": "Bedrock Provisioned Throughput",
+          "textKo": "Bedrock 프로비저닝된 처리량 (Provisioned Throughput)",
+          "text": "Bedrock Provisioned Throughput"
         },
         {
           "key": "D",
-          "text": "Bedrock 모델 맞춤화 (Model Customization)"
+          "textEn": "Bedrock Model Customization",
+          "textKo": "Bedrock 모델 맞춤화 (Model Customization)",
+          "text": "Bedrock Model Customization"
         }
       ],
       "answerKey": "B",
@@ -13372,19 +16026,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델이 예측을 수행하는 속도"
+          "textEn": "The speed at which a model makes predictions",
+          "textKo": "모델이 예측을 수행하는 속도",
+          "text": "The speed at which a model makes predictions"
         },
         {
           "key": "B",
-          "text": "특정 집단에 대한 불공정한 처우로 이어지는 모델의 체계적인 오류"
+          "textEn": "Systematic errors in a model that lead to unfair treatment of certain groups",
+          "textKo": "특정 집단에 대한 불공정한 처우로 이어지는 모델의 체계적인 오류",
+          "text": "Systematic errors in a model that lead to unfair treatment of certain groups"
         },
         {
           "key": "C",
-          "text": "대규모 모델 학습과 관련된 비용"
+          "textEn": "The cost associated with training a large model",
+          "textKo": "대규모 모델 학습과 관련된 비용",
+          "text": "The cost associated with training a large model"
         },
         {
           "key": "D",
-          "text": "학습 데이터를 암호화하는 과정"
+          "textEn": "The process of encrypting training data",
+          "textKo": "학습 데이터를 암호화하는 과정",
+          "text": "The process of encrypting training data"
         }
       ],
       "answerKey": "B",
@@ -13405,18 +16067,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker",
+          "textKo": "Amazon SageMaker",
           "text": "Amazon SageMaker"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "D",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         }
       ],
@@ -13438,19 +16108,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         },
         {
           "key": "B",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "C",
-          "text": "피처 스케일링 (Feature scaling)"
+          "textEn": "Feature scaling",
+          "textKo": "피처 스케일링 (Feature scaling)",
+          "text": "Feature scaling"
         },
         {
           "key": "D",
-          "text": "경사 하강법 (Gradient descent)"
+          "textEn": "Gradient descent",
+          "textKo": "경사 하강법 (Gradient descent)",
+          "text": "Gradient descent"
         }
       ],
       "answerKey": "B",
@@ -13474,19 +16152,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "추론 중 GPU의 물리적 발열을 제어하기 위해"
+          "textEn": "To control the physical heat of the GPU during inference",
+          "textKo": "추론 중 GPU의 물리적 발열을 제어하기 위해",
+          "text": "To control the physical heat of the GPU during inference"
         },
         {
           "key": "B",
-          "text": "모델 출력의 무작위성과 창의성을 조절하기 위해"
+          "textEn": "To adjust the randomness and creativity of the model's output",
+          "textKo": "모델 출력의 무작위성과 창의성을 조절하기 위해",
+          "text": "To adjust the randomness and creativity of the model's output"
         },
         {
           "key": "C",
-          "text": "학습 과정의 속도를 높이기 위해"
+          "textEn": "To increase the speed of the training process",
+          "textKo": "학습 과정의 속도를 높이기 위해",
+          "text": "To increase the speed of the training process"
         },
         {
           "key": "D",
-          "text": "생성되는 최대 토큰 수를 정의하기 위해"
+          "textEn": "To define the maximum number of tokens generated",
+          "textKo": "생성되는 최대 토큰 수를 정의하기 위해",
+          "text": "To define the maximum number of tokens generated"
         }
       ],
       "answerKey": "B",
@@ -13509,18 +16195,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         },
         {
           "key": "D",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         }
       ],
@@ -13544,19 +16238,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "B",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         },
         {
           "key": "C",
-          "text": "모델 편향 (Model bias)"
+          "textEn": "Model bias",
+          "textKo": "모델 편향 (Model bias)",
+          "text": "Model bias"
         },
         {
           "key": "D",
-          "text": "데이터 드리프트 (Data drift)"
+          "textEn": "Data drift",
+          "textKo": "데이터 드리프트 (Data drift)",
+          "text": "Data drift"
         }
       ],
       "answerKey": "C",
@@ -13579,19 +16281,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Top-P",
+          "textKo": "Top-P",
           "text": "Top-P"
         },
         {
           "key": "B",
-          "text": "최대 토큰 (Max tokens)"
+          "textEn": "Max tokens",
+          "textKo": "최대 토큰 (Max tokens)",
+          "text": "Max tokens"
         },
         {
           "key": "C",
-          "text": "온도 (Temperature)"
+          "textEn": "Temperature",
+          "textKo": "온도 (Temperature)",
+          "text": "Temperature"
         },
         {
           "key": "D",
-          "text": "존재 패널티 (Presence penalty)"
+          "textEn": "Presence penalty",
+          "textKo": "존재 패널티 (Presence penalty)",
+          "text": "Presence penalty"
         }
       ],
       "answerKey": "C",
@@ -13612,18 +16322,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "C",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -13645,19 +16363,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "제로샷 프롬프팅 (Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프팅 (Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "B",
-          "text": "퓨샷 프롬프팅 (Few-shot prompting)"
+          "textEn": "Few-shot prompting",
+          "textKo": "퓨샷 프롬프팅 (Few-shot prompting)",
+          "text": "Few-shot prompting"
         },
         {
           "key": "C",
-          "text": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         },
         {
           "key": "D",
-          "text": "미세 조정 (Fine-tuning)"
+          "textEn": "Fine-tuning",
+          "textKo": "미세 조정 (Fine-tuning)",
+          "text": "Fine-tuning"
         }
       ],
       "answerKey": "B",
@@ -13678,18 +16404,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "D",
+          "textEn": "Amazon Forecast",
+          "textKo": "Amazon Forecast",
           "text": "Amazon Forecast"
         }
       ],
@@ -13711,18 +16445,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "C",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "D",
+          "textEn": "Amazon SageMaker Ground Truth",
+          "textKo": "Amazon SageMaker Ground Truth",
           "text": "Amazon SageMaker Ground Truth"
         }
       ],
@@ -13744,19 +16486,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델의 추론 속도를 높입니다."
+          "textEn": "It speeds up the inference time of the model.",
+          "textKo": "모델의 추론 속도를 높입니다.",
+          "text": "It speeds up the inference time of the model."
         },
         {
           "key": "B",
-          "text": "외부의 최신 데이터에 모델을 근거하게 하여 환각(hallucination) 현상을 줄입니다."
+          "textEn": "It reduces hallucinations by grounding the model in external, up-to-date data.",
+          "textKo": "외부의 최신 데이터에 모델을 근거하게 하여 환각(hallucination) 현상을 줄입니다.",
+          "text": "It reduces hallucinations by grounding the model in external, up-to-date data."
         },
         {
           "key": "C",
-          "text": "대규모 언어 모델의 크기를 줄입니다."
+          "textEn": "It reduces the size of the Large Language Model.",
+          "textKo": "대규모 언어 모델의 크기를 줄입니다.",
+          "text": "It reduces the size of the Large Language Model."
         },
         {
           "key": "D",
-          "text": "프롬프트 엔지니어링의 필요성을 완전히 대체합니다."
+          "textEn": "It replaces the need for any prompt engineering.",
+          "textKo": "프롬프트 엔지니어링의 필요성을 완전히 대체합니다.",
+          "text": "It replaces the need for any prompt engineering."
         }
       ],
       "answerKey": "B",
@@ -13777,19 +16527,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "인스턴스 크기 조절을 통해 자원 활용 최적화"
+          "textEn": "Optimizing resource utilization by rightsizing instances",
+          "textKo": "인스턴스 크기 조절을 통해 자원 활용 최적화",
+          "text": "Optimizing resource utilization by rightsizing instances"
         },
         {
           "key": "B",
-          "text": "데이터 센터의 냉각 시스템 관리"
+          "textEn": "Managing the cooling of the data center",
+          "textKo": "데이터 센터의 냉각 시스템 관리",
+          "text": "Managing the cooling of the data center"
         },
         {
           "key": "C",
-          "text": "에너지 효율적인 서버 하드웨어 설계"
+          "textEn": "Designing more energy-efficient server hardware",
+          "textKo": "에너지 효율적인 서버 하드웨어 설계",
+          "text": "Designing more energy-efficient server hardware"
         },
         {
           "key": "D",
-          "text": "폐기된 하드웨어의 책임 있는 처리"
+          "textEn": "Disposing of decommissioned hardware responsibly",
+          "textKo": "폐기된 하드웨어의 책임 있는 처리",
+          "text": "Disposing of decommissioned hardware responsibly"
         }
       ],
       "answerKey": "A",
@@ -13811,18 +16569,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker",
+          "textKo": "Amazon SageMaker",
           "text": "Amazon SageMaker"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "D",
+          "textEn": "Amazon QuickSight",
+          "textKo": "Amazon QuickSight",
           "text": "Amazon QuickSight"
         }
       ],
@@ -13846,19 +16612,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "B",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         },
         {
           "key": "C",
-          "text": "환각 (Hallucination)"
+          "textEn": "Hallucination",
+          "textKo": "환각 (Hallucination)",
+          "text": "Hallucination"
         },
         {
           "key": "D",
-          "text": "편향 (Bias)"
+          "textEn": "Bias",
+          "textKo": "편향 (Bias)",
+          "text": "Bias"
         }
       ],
       "answerKey": "C",
@@ -13879,19 +16653,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "작고 구체적인 데이터 세트에서 학습됩니다."
+          "textEn": "It is trained on a small, specific dataset.",
+          "textKo": "작고 구체적인 데이터 세트에서 학습됩니다.",
+          "text": "It is trained on a small, specific dataset."
         },
         {
           "key": "B",
-          "text": "광범위한 하위 작업(downstream tasks)에 맞게 조정될 수 있습니다."
+          "textEn": "It can be adapted to a wide range of downstream tasks.",
+          "textKo": "광범위한 하위 작업(downstream tasks)에 맞게 조정될 수 있습니다.",
+          "text": "It can be adapted to a wide range of downstream tasks."
         },
         {
           "key": "C",
-          "text": "새로운 작업마다 전체 재학습이 필요합니다."
+          "textEn": "It requires full retraining for every new task.",
+          "textKo": "새로운 작업마다 전체 재학습이 필요합니다.",
+          "text": "It requires full retraining for every new task."
         },
         {
           "key": "D",
-          "text": "구조화된 수치 데이터에서만 작동합니다."
+          "textEn": "It only works with structured numerical data.",
+          "textKo": "구조화된 수치 데이터에서만 작동합니다.",
+          "text": "It only works with structured numerical data."
         }
       ],
       "answerKey": "B",
@@ -13912,19 +16694,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "데이터 증강 (Data augmentation)"
+          "textEn": "Data augmentation",
+          "textKo": "데이터 증강 (Data augmentation)",
+          "text": "Data augmentation"
         },
         {
           "key": "B",
-          "text": "양자화 (Quantization)"
+          "textEn": "Quantization",
+          "textKo": "양자화 (Quantization)",
+          "text": "Quantization"
         },
         {
           "key": "C",
-          "text": "정규화 (Regularization)"
+          "textEn": "Regularization",
+          "textKo": "정규화 (Regularization)",
+          "text": "Regularization"
         },
         {
           "key": "D",
-          "text": "역전파 (Backpropagation)"
+          "textEn": "Backpropagation",
+          "textKo": "역전파 (Backpropagation)",
+          "text": "Backpropagation"
         }
       ],
       "answerKey": "B",
@@ -13945,18 +16735,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -13978,19 +16776,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "보안 (Security)"
+          "textEn": "Security",
+          "textKo": "보안 (Security)",
+          "text": "Security"
         },
         {
           "key": "B",
-          "text": "안정성 (Reliability)"
+          "textEn": "Reliability",
+          "textKo": "안정성 (Reliability)",
+          "text": "Reliability"
         },
         {
           "key": "C",
-          "text": "비용 최적화 (Cost Optimization)"
+          "textEn": "Cost Optimization",
+          "textKo": "비용 최적화 (Cost Optimization)",
+          "text": "Cost Optimization"
         },
         {
           "key": "D",
-          "text": "성능 효율성 (Performance Efficiency)"
+          "textEn": "Performance Efficiency",
+          "textKo": "성능 효율성 (Performance Efficiency)",
+          "text": "Performance Efficiency"
         }
       ],
       "answerKey": "C",
@@ -14011,19 +16817,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "학습 중 학습률(learning rate)을 높이기 위해"
+          "textEn": "To increase the learning rate during training.",
+          "textKo": "학습 중 학습률(learning rate)을 높이기 위해",
+          "text": "To increase the learning rate during training."
         },
         {
           "key": "B",
-          "text": "모델이 입력 시퀀스의 관련 있는 부분에 집중할 수 있도록 하기 위해"
+          "textEn": "To allow the model to focus on relevant parts of the input sequence.",
+          "textKo": "모델이 입력 시퀀스의 관련 있는 부분에 집중할 수 있도록 하기 위해",
+          "text": "To allow the model to focus on relevant parts of the input sequence."
         },
         {
           "key": "C",
-          "text": "프라이버시를 위해 학습 데이터를 암호화하기 위해"
+          "textEn": "To encrypt the training data for privacy.",
+          "textKo": "프라이버시를 위해 학습 데이터를 암호화하기 위해",
+          "text": "To encrypt the training data for privacy."
         },
         {
           "key": "D",
-          "text": "GPU 온도를 모니터링하기 위해"
+          "textEn": "To monitor the GPU temperature.",
+          "textKo": "GPU 온도를 모니터링하기 위해",
+          "text": "To monitor the GPU temperature."
         }
       ],
       "answerKey": "B",
@@ -14044,19 +16858,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         },
         {
           "key": "B",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "C",
-          "text": "피처 스케일링 (Feature scaling)"
+          "textEn": "Feature scaling",
+          "textKo": "피처 스케일링 (Feature scaling)",
+          "text": "Feature scaling"
         },
         {
           "key": "D",
-          "text": "하이퍼파라미터 튜닝 (Hyperparameter tuning)"
+          "textEn": "Hyperparameter tuning",
+          "textKo": "하이퍼파라미터 튜닝 (Hyperparameter tuning)",
+          "text": "Hyperparameter tuning"
         }
       ],
       "answerKey": "B",
@@ -14077,19 +16899,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "문서의 실시간 번역"
+          "textEn": "Real-time translation of documents.",
+          "textKo": "문서의 실시간 번역",
+          "text": "Real-time translation of documents."
         },
         {
           "key": "B",
-          "text": "챗봇을 위한 대화형 인터페이스 구축"
+          "textEn": "Building conversational interfaces for chatbots.",
+          "textKo": "챗봇을 위한 대화형 인터페이스 구축",
+          "text": "Building conversational interfaces for chatbots."
         },
         {
           "key": "C",
-          "text": "금융 거래의 사기 탐지"
+          "textEn": "Detecting fraud in financial transactions.",
+          "textKo": "금융 거래의 사기 탐지",
+          "text": "Detecting fraud in financial transactions."
         },
         {
           "key": "D",
-          "text": "맞춤형 딥러닝 모델 학습"
+          "textEn": "Training custom deep learning models.",
+          "textKo": "맞춤형 딥러닝 모델 학습",
+          "text": "Training custom deep learning models."
         }
       ],
       "answerKey": "B",
@@ -14110,18 +16940,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         },
         {
           "key": "C",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "D",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         }
       ],
@@ -14144,19 +16982,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "고객"
+          "textEn": "The customer",
+          "textKo": "고객",
+          "text": "The customer"
         },
         {
           "key": "B",
+          "textEn": "AWS",
+          "textKo": "AWS",
           "text": "AWS"
         },
         {
           "key": "C",
-          "text": "타사 모델 제공업체"
+          "textEn": "Third-party model providers",
+          "textKo": "타사 모델 제공업체",
+          "text": "Third-party model providers"
         },
         {
           "key": "D",
-          "text": "오픈 소스 커뮤니티"
+          "textEn": "Open-source community",
+          "textKo": "오픈 소스 커뮤니티",
+          "text": "Open-source community"
         }
       ],
       "answerKey": "B",
@@ -14177,19 +17023,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "분류 (Classification)"
+          "textEn": "Classification",
+          "textKo": "분류 (Classification)",
+          "text": "Classification"
         },
         {
           "key": "B",
-          "text": "군집화 (Clustering)"
+          "textEn": "Clustering",
+          "textKo": "군집화 (Clustering)",
+          "text": "Clustering"
         },
         {
           "key": "C",
-          "text": "회귀 (Regression)"
+          "textEn": "Regression",
+          "textKo": "회귀 (Regression)",
+          "text": "Regression"
         },
         {
           "key": "D",
-          "text": "차원 축소 (Dimensionality reduction)"
+          "textEn": "Dimensionality reduction",
+          "textKo": "차원 축소 (Dimensionality reduction)",
+          "text": "Dimensionality reduction"
         }
       ],
       "answerKey": "C",
@@ -14210,18 +17064,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "B",
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         },
         {
           "key": "C",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "D",
+          "textEn": "Amazon GuardDuty",
+          "textKo": "Amazon GuardDuty",
           "text": "Amazon GuardDuty"
         }
       ],
@@ -14243,19 +17105,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "기본 하드웨어에 대한 전체 제어"
+          "textEn": "Full control over the underlying hardware",
+          "textKo": "기본 하드웨어에 대한 전체 제어",
+          "text": "Full control over the underlying hardware"
         },
         {
           "key": "B",
-          "text": "운영 체제 관리 능력"
+          "textEn": "Ability to manage the operating system",
+          "textKo": "운영 체제 관리 능력",
+          "text": "Ability to manage the operating system"
         },
         {
           "key": "C",
-          "text": "자동 확장 및 인프라 관리 불필요"
+          "textEn": "Automatic scaling and no infrastructure management",
+          "textKo": "자동 확장 및 인프라 관리 불필요",
+          "text": "Automatic scaling and no infrastructure management"
         },
         {
           "key": "D",
-          "text": "모든 워크로드에 대해 온프레미스 하드웨어보다 낮은 지연 시간"
+          "textEn": "Lower latency than on-premises hardware for all workloads",
+          "textKo": "모든 워크로드에 대해 온프레미스 하드웨어보다 낮은 지연 시간",
+          "text": "Lower latency than on-premises hardware for all workloads"
         }
       ],
       "answerKey": "C",
@@ -14276,19 +17146,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델의 느린 응답 시간에 대해 불이익을 주기 위해"
+          "textEn": "To penalize the model for slow response times.",
+          "textKo": "모델의 느린 응답 시간에 대해 불이익을 주기 위해",
+          "text": "To penalize the model for slow response times."
         },
         {
           "key": "B",
-          "text": "모델이 출력에 포함하지 말아야 할 내용을 지정하기 위해"
+          "textEn": "To specify what the model should not include in its output.",
+          "textKo": "모델이 출력에 포함하지 말아야 할 내용을 지정하기 위해",
+          "text": "To specify what the model should not include in its output."
         },
         {
           "key": "C",
-          "text": "API 호출 비용을 줄이기 위해"
+          "textEn": "To reduce the cost of API calls.",
+          "textKo": "API 호출 비용을 줄이기 위해",
+          "text": "To reduce the cost of API calls."
         },
         {
           "key": "D",
-          "text": "강화 학습을 사용하여 모델을 학습시키기 위해"
+          "textEn": "To train the model using reinforcement learning.",
+          "textKo": "강화 학습을 사용하여 모델을 학습시키기 위해",
+          "text": "To train the model using reinforcement learning."
         }
       ],
       "answerKey": "B",
@@ -14309,19 +17187,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 투명성"
+          "textEn": "Model Transparency",
+          "textKo": "모델 투명성",
+          "text": "Model Transparency"
         },
         {
           "key": "B",
-          "text": "모델 견고성 (Robustness)"
+          "textEn": "Model Robustness",
+          "textKo": "모델 견고성 (Robustness)",
+          "text": "Model Robustness"
         },
         {
           "key": "C",
-          "text": "모델 설명 가능성"
+          "textEn": "Model Explainability",
+          "textKo": "모델 설명 가능성",
+          "text": "Model Explainability"
         },
         {
           "key": "D",
-          "text": "모델 공정성"
+          "textEn": "Model Fairness",
+          "textKo": "모델 공정성",
+          "text": "Model Fairness"
         }
       ],
       "answerKey": "B",
@@ -14342,18 +17228,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Titan Image Generator",
+          "textKo": "Amazon Titan Image Generator",
           "text": "Amazon Titan Image Generator"
         },
         {
           "key": "B",
+          "textEn": "Anthropic Claude",
+          "textKo": "Anthropic Claude",
           "text": "Anthropic Claude"
         },
         {
           "key": "C",
+          "textEn": "Meta Llama (Llama 2/3)",
+          "textKo": "Meta Llama (Llama 2/3)",
           "text": "Meta Llama (Llama 2/3)"
         },
         {
           "key": "D",
+          "textEn": "Mistral AI",
+          "textKo": "Mistral AI",
           "text": "Mistral AI"
         }
       ],
@@ -14375,19 +17269,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "사전 학습 (Pre-training)"
+          "textEn": "Pre-training",
+          "textKo": "사전 학습 (Pre-training)",
+          "text": "Pre-training"
         },
         {
           "key": "B",
-          "text": "미세 조정 (Fine-tuning)"
+          "textEn": "Fine-tuning",
+          "textKo": "미세 조정 (Fine-tuning)",
+          "text": "Fine-tuning"
         },
         {
           "key": "C",
-          "text": "토큰화 (Tokenization)"
+          "textEn": "Tokenization",
+          "textKo": "토큰화 (Tokenization)",
+          "text": "Tokenization"
         },
         {
           "key": "D",
-          "text": "양자화 (Quantization)"
+          "textEn": "Quantization",
+          "textKo": "양자화 (Quantization)",
+          "text": "Quantization"
         }
       ],
       "answerKey": "B",
@@ -14408,19 +17310,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델이 항상 100% 정확하도록 보장하는 것."
+          "textEn": "Ensuring the model is always 100% accurate.",
+          "textKo": "모델이 항상 100% 정확하도록 보장하는 것.",
+          "text": "Ensuring the model is always 100% accurate."
         },
         {
           "key": "B",
-          "text": "모델의 소스 코드를 공개하는 것."
+          "textEn": "Making sure the model's source code is public.",
+          "textKo": "모델의 소스 코드를 공개하는 것.",
+          "text": "Making sure the model's source code is public."
         },
         {
           "key": "C",
-          "text": "모델이 특정 그룹에 대해 불균형적으로 부정적인 영향을 미치지 않도록 보장하는 것."
+          "textEn": "Ensuring the model does not have a disproportionate adverse impact on specific groups.",
+          "textKo": "모델이 특정 그룹에 대해 불균형적으로 부정적인 영향을 미치지 않도록 보장하는 것.",
+          "text": "Ensuring the model does not have a disproportionate adverse impact on specific groups."
         },
         {
           "key": "D",
-          "text": "추론 속도를 최대화하는 것."
+          "textEn": "Maximizing the speed of inference.",
+          "textKo": "추론 속도를 최대화하는 것.",
+          "text": "Maximizing the speed of inference."
         }
       ],
       "answerKey": "C",
@@ -14441,19 +17351,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "매일 모델을 처음부터 새로 학습시킴."
+          "textEn": "Training a new model from scratch every day.",
+          "textKo": "매일 모델을 처음부터 새로 학습시킴.",
+          "text": "Training a new model from scratch every day."
         },
         {
           "key": "B",
-          "text": "정적 프롬프트를 사용한 프롬프트 엔지니어링."
+          "textEn": "Prompt Engineering with static prompts.",
+          "textKo": "정적 프롬프트를 사용한 프롬프트 엔지니어링.",
+          "text": "Prompt Engineering with static prompts."
         },
         {
           "key": "C",
-          "text": "검색 증강 생성 (RAG)."
+          "textEn": "Retrieval-Augmented Generation (RAG).",
+          "textKo": "검색 증강 생성 (RAG).",
+          "text": "Retrieval-Augmented Generation (RAG)."
         },
         {
           "key": "D",
-          "text": "모델의 온도(Temperature)를 높임."
+          "textEn": "Increasing the Temperature of the model.",
+          "textKo": "모델의 온도(Temperature)를 높임.",
+          "text": "Increasing the Temperature of the model."
         }
       ],
       "answerKey": "C",
@@ -14475,19 +17393,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "역전파 (Backpropagation)"
+          "textEn": "Backpropagation",
+          "textKo": "역전파 (Backpropagation)",
+          "text": "Backpropagation"
         },
         {
           "key": "B",
-          "text": "강화 학습 (Reinforcement Learning)"
+          "textEn": "Reinforcement Learning",
+          "textKo": "강화 학습 (Reinforcement Learning)",
+          "text": "Reinforcement Learning"
         },
         {
           "key": "C",
-          "text": "프롬프트 엔지니어링 (Prompt Engineering)"
+          "textEn": "Prompt Engineering",
+          "textKo": "프롬프트 엔지니어링 (Prompt Engineering)",
+          "text": "Prompt Engineering"
         },
         {
           "key": "D",
-          "text": "하이퍼파라미터 최적화"
+          "textEn": "Hyperparameter Optimization",
+          "textKo": "하이퍼파라미터 최적화",
+          "text": "Hyperparameter Optimization"
         }
       ],
       "answerKey": "C",
@@ -14508,18 +17434,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker",
+          "textKo": "Amazon SageMaker",
           "text": "Amazon SageMaker"
         },
         {
           "key": "B",
+          "textEn": "Amazon Bedrock",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -14541,19 +17475,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "대규모 언어 모델을 처음부터 학습시키기 위해."
+          "textEn": "To train a large language model from scratch.",
+          "textKo": "대규모 언어 모델을 처음부터 학습시키기 위해.",
+          "text": "To train a large language model from scratch."
         },
         {
           "key": "B",
-          "text": "모델의 추론 비용을 줄이기 위해."
+          "textEn": "To reduce the inference cost of a model.",
+          "textKo": "모델의 추론 비용을 줄이기 위해.",
+          "text": "To reduce the inference cost of a model."
         },
         {
           "key": "C",
-          "text": "모델에 최신 정보나 독점 정보에 대한 액세스를 제공하기 위해."
+          "textEn": "To provide the model with access to up-to-date or proprietary information.",
+          "textKo": "모델에 최신 정보나 독점 정보에 대한 액세스를 제공하기 위해.",
+          "text": "To provide the model with access to up-to-date or proprietary information."
         },
         {
           "key": "D",
-          "text": "모델의 파라미터 수를 늘리기 위해."
+          "textEn": "To increase the number of parameters in a model.",
+          "textKo": "모델의 파라미터 수를 늘리기 위해.",
+          "text": "To increase the number of parameters in a model."
         }
       ],
       "answerKey": "C",
@@ -14574,18 +17516,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         },
         {
           "key": "B",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "C",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "D",
+          "textEn": "Amazon Textract",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         }
       ],
@@ -14607,19 +17557,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "학습을 위해 데이터를 수집하는 과정."
+          "textEn": "The process of gathering data for training.",
+          "textKo": "학습을 위해 데이터를 수집하는 과정.",
+          "text": "The process of gathering data for training."
         },
         {
           "key": "B",
-          "text": "학습된 모델을 사용하여 새로운 데이터에 대해 예측을 수행하는 과정."
+          "textEn": "The process of using a trained model to make predictions on new data.",
+          "textKo": "학습된 모델을 사용하여 새로운 데이터에 대해 예측을 수행하는 과정.",
+          "text": "The process of using a trained model to make predictions on new data."
         },
         {
           "key": "C",
-          "text": "모델 하이퍼파라미터를 조정하는 과정."
+          "textEn": "The process of adjusting model hyperparameters.",
+          "textKo": "모델 하이퍼파라미터를 조정하는 과정.",
+          "text": "The process of adjusting model hyperparameters."
         },
         {
           "key": "D",
-          "text": "데이터 세트를 정제하고 라벨링하는 과정."
+          "textEn": "The process of cleaning and labeling the dataset.",
+          "textKo": "데이터 세트를 정제하고 라벨링하는 과정.",
+          "text": "The process of cleaning and labeling the dataset."
         }
       ],
       "answerKey": "B",
@@ -14640,19 +17598,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "AWS",
+          "textKo": "AWS",
           "text": "AWS"
         },
         {
           "key": "B",
-          "text": "고객"
+          "textEn": "The customer",
+          "textKo": "고객",
+          "text": "The customer"
         },
         {
           "key": "C",
-          "text": "모델 제공업체"
+          "textEn": "The model provider",
+          "textKo": "모델 제공업체",
+          "text": "The model provider"
         },
         {
           "key": "D",
-          "text": "제3자 감사관"
+          "textEn": "A third-party auditor",
+          "textKo": "제3자 감사관",
+          "text": "A third-party auditor"
         }
       ],
       "answerKey": "B",
@@ -14673,18 +17639,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "C",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -14706,19 +17680,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델의 물리적 저장 크기를 측정하기 위해."
+          "textEn": "To measure the physical storage size of the model.",
+          "textKo": "모델의 물리적 저장 크기를 측정하기 위해.",
+          "text": "To measure the physical storage size of the model."
         },
         {
           "key": "B",
-          "text": "모델이 처리하는 텍스트의 기본 단위 역할을 하기 위해."
+          "textEn": "To serve as the basic units of text that the model processes.",
+          "textKo": "모델이 처리하는 텍스트의 기본 단위 역할을 하기 위해.",
+          "text": "To serve as the basic units of text that the model processes."
         },
         {
           "key": "C",
-          "text": "사용자와 API 간의 통신을 암호화하기 위해."
+          "textEn": "To encrypt the communication between the user and the API.",
+          "textKo": "사용자와 API 간의 통신을 암호화하기 위해.",
+          "text": "To encrypt the communication between the user and the API."
         },
         {
           "key": "D",
-          "text": "강화 학습에서 보상 시스템을 정의하기 위해."
+          "textEn": "To define the reward system in reinforcement learning.",
+          "textKo": "강화 학습에서 보상 시스템을 정의하기 위해.",
+          "text": "To define the reward system in reinforcement learning."
         }
       ],
       "answerKey": "B",
@@ -14739,19 +17721,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "운영 효율성 증대"
+          "textEn": "Increased operational efficiency",
+          "textKo": "운영 효율성 증대",
+          "text": "Increased operational efficiency"
         },
         {
           "key": "B",
-          "text": "고객 참여 개선"
+          "textEn": "Improved customer engagement",
+          "textKo": "고객 참여 개선",
+          "text": "Improved customer engagement"
         },
         {
           "key": "C",
-          "text": "편향되거나 유해한 콘텐츠 생성"
+          "textEn": "Generation of biased or harmful content",
+          "textKo": "편향되거나 유해한 콘텐츠 생성",
+          "text": "Generation of biased or harmful content"
         },
         {
           "key": "D",
-          "text": "수동 데이터 입력 감소"
+          "textEn": "Reduced manual data entry",
+          "textKo": "수동 데이터 입력 감소",
+          "text": "Reduced manual data entry"
         }
       ],
       "answerKey": "C",
@@ -14772,18 +17762,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "B",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "C",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "D",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         }
       ],
@@ -14805,19 +17803,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "제로샷 프롬프팅 (Zero-shot prompting)"
+          "textEn": "Zero-shot prompting",
+          "textKo": "제로샷 프롬프팅 (Zero-shot prompting)",
+          "text": "Zero-shot prompting"
         },
         {
           "key": "B",
-          "text": "퓨샷 프롬프팅 (Few-shot prompting)"
+          "textEn": "Few-shot prompting",
+          "textKo": "퓨샷 프롬프팅 (Few-shot prompting)",
+          "text": "Few-shot prompting"
         },
         {
           "key": "C",
-          "text": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)"
+          "textEn": "Chain-of-thought prompting",
+          "textKo": "생각의 사슬 프롬프팅 (Chain-of-thought prompting)",
+          "text": "Chain-of-thought prompting"
         },
         {
           "key": "D",
-          "text": "부정적 프롬프팅 (Negative prompting)"
+          "textEn": "Negative prompting",
+          "textKo": "부정적 프롬프팅 (Negative prompting)",
+          "text": "Negative prompting"
         }
       ],
       "answerKey": "C",
@@ -14838,19 +17844,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "미세 조정 (Fine-tuning)"
+          "textEn": "Fine-tuning",
+          "textKo": "미세 조정 (Fine-tuning)",
+          "text": "Fine-tuning"
         },
         {
           "key": "B",
-          "text": "검색 증강 생성 (Retrieval-Augmented Generation, RAG)"
+          "textEn": "Retrieval-Augmented Generation (RAG)",
+          "textKo": "검색 증강 생성 (Retrieval-Augmented Generation, RAG)",
+          "text": "Retrieval-Augmented Generation (RAG)"
         },
         {
           "key": "C",
-          "text": "사전 학습 (Pre-training)"
+          "textEn": "Pre-training",
+          "textKo": "사전 학습 (Pre-training)",
+          "text": "Pre-training"
         },
         {
           "key": "D",
-          "text": "데이터 없는 프롬프트 엔지니어링"
+          "textEn": "Prompt engineering without data",
+          "textKo": "데이터 없는 프롬프트 엔지니어링",
+          "text": "Prompt engineering without data"
         }
       ],
       "answerKey": "B",
@@ -14871,18 +17885,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "B",
+          "textEn": "Guardrails for Amazon Bedrock",
+          "textKo": "Guardrails for Amazon Bedrock",
           "text": "Guardrails for Amazon Bedrock"
         },
         {
           "key": "C",
+          "textEn": "Amazon Rekognition",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "D",
+          "textEn": "AWS HealthImaging",
+          "textKo": "AWS HealthImaging",
           "text": "AWS HealthImaging"
         }
       ],
@@ -14904,19 +17926,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 투명성"
+          "textEn": "Model Transparency",
+          "textKo": "모델 투명성",
+          "text": "Model Transparency"
         },
         {
           "key": "B",
-          "text": "모델 해석 가능성 (Interpretability)"
+          "textEn": "Model Interpretability",
+          "textKo": "모델 해석 가능성 (Interpretability)",
+          "text": "Model Interpretability"
         },
         {
           "key": "C",
-          "text": "모델 견고성"
+          "textEn": "Model Robustness",
+          "textKo": "모델 견고성",
+          "text": "Model Robustness"
         },
         {
           "key": "D",
-          "text": "모델 신뢰성"
+          "textEn": "Model Reliability",
+          "textKo": "모델 신뢰성",
+          "text": "Model Reliability"
         }
       ],
       "answerKey": "B",
@@ -14937,18 +17967,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon SageMaker Clarify",
+          "textKo": "Amazon SageMaker Clarify",
           "text": "Amazon SageMaker Clarify"
         },
         {
           "key": "B",
+          "textEn": "Amazon Inspector",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         },
         {
           "key": "C",
+          "textEn": "AWS Shield",
+          "textKo": "AWS Shield",
           "text": "AWS Shield"
         },
         {
           "key": "D",
+          "textEn": "Amazon Macie",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         }
       ],
@@ -14970,19 +18008,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "네트워크의 계층 수를 정의하기 위해."
+          "textEn": "To define the number of layers in the network.",
+          "textKo": "네트워크의 계층 수를 정의하기 위해.",
+          "text": "To define the number of layers in the network."
         },
         {
           "key": "B",
-          "text": "뉴런 간 연결의 강도를 결정하기 위해."
+          "textEn": "To determine the strength of the connection between neurons.",
+          "textKo": "뉴런 간 연결의 강도를 결정하기 위해.",
+          "text": "To determine the strength of the connection between neurons."
         },
         {
           "key": "C",
-          "text": "학습 데이터를 저장하기 위해."
+          "textEn": "To store the training data.",
+          "textKo": "학습 데이터를 저장하기 위해.",
+          "text": "To store the training data."
         },
         {
           "key": "D",
-          "text": "하드웨어의 물리적 무게를 측정하기 위해."
+          "textEn": "To measure the physical weight of the hardware.",
+          "textKo": "하드웨어의 물리적 무게를 측정하기 위해.",
+          "text": "To measure the physical weight of the hardware."
         }
       ],
       "answerKey": "B",
@@ -15003,18 +18049,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "C",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "D",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         }
       ],
@@ -15036,19 +18090,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "강화 학습 (Reinforcement Learning)"
+          "textEn": "Reinforcement Learning",
+          "textKo": "강화 학습 (Reinforcement Learning)",
+          "text": "Reinforcement Learning"
         },
         {
           "key": "B",
-          "text": "전이 학습 (Transfer Learning)"
+          "textEn": "Transfer Learning",
+          "textKo": "전이 학습 (Transfer Learning)",
+          "text": "Transfer Learning"
         },
         {
           "key": "C",
-          "text": "비지도 학습 (Unsupervised Learning)"
+          "textEn": "Unsupervised Learning",
+          "textKo": "비지도 학습 (Unsupervised Learning)",
+          "text": "Unsupervised Learning"
         },
         {
           "key": "D",
-          "text": "군집화 (Clustering)"
+          "textEn": "Clustering",
+          "textKo": "군집화 (Clustering)",
+          "text": "Clustering"
         }
       ],
       "answerKey": "B",
@@ -15069,19 +18131,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "출력의 최대 길이."
+          "textEn": "The maximum length of the output.",
+          "textKo": "출력의 최대 길이.",
+          "text": "The maximum length of the output."
         },
         {
           "key": "B",
-          "text": "누적 확률이 P를 초과하는 토큰 하위 집합에서 선택하여 출력의 다양성을 제어."
+          "textEn": "The diversity of the output by selecting from a subset of tokens whose cumulative probability exceeds P.",
+          "textKo": "누적 확률이 P를 초과하는 토큰 하위 집합에서 선택하여 출력의 다양성을 제어.",
+          "text": "The diversity of the output by selecting from a subset of tokens whose cumulative probability exceeds P."
         },
         {
           "key": "C",
-          "text": "GPU의 온도."
+          "textEn": "The temperature of the GPU.",
+          "textKo": "GPU의 온도.",
+          "text": "The temperature of the GPU."
         },
         {
           "key": "D",
-          "text": "학습 과정의 속도."
+          "textEn": "The speed of the training process.",
+          "textKo": "학습 과정의 속도.",
+          "text": "The speed of the training process."
         }
       ],
       "answerKey": "B",
@@ -15102,18 +18172,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Translate",
+          "textKo": "Amazon Translate",
           "text": "Amazon Translate"
         },
         {
           "key": "C",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         },
         {
           "key": "D",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         }
       ],
@@ -15135,19 +18213,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "보안 (Security)"
+          "textEn": "Security",
+          "textKo": "보안 (Security)",
+          "text": "Security"
         },
         {
           "key": "B",
-          "text": "안정성 (Reliability)"
+          "textEn": "Reliability",
+          "textKo": "안정성 (Reliability)",
+          "text": "Reliability"
         },
         {
           "key": "C",
-          "text": "운영 우수성 (Operational Excellence)"
+          "textEn": "Operational Excellence",
+          "textKo": "운영 우수성 (Operational Excellence)",
+          "text": "Operational Excellence"
         },
         {
           "key": "D",
-          "text": "성능 효율성 (Performance Efficiency)"
+          "textEn": "Performance Efficiency",
+          "textKo": "성능 효율성 (Performance Efficiency)",
+          "text": "Performance Efficiency"
         }
       ],
       "answerKey": "B",
@@ -15168,19 +18254,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "대규모 언어 모델 (LLM)"
+          "textEn": "Large Language Model (LLM)",
+          "textKo": "대규모 언어 모델 (LLM)",
+          "text": "Large Language Model (LLM)"
         },
         {
           "key": "B",
-          "text": "확산 모델 (Diffusion Model)"
+          "textEn": "Diffusion Model",
+          "textKo": "확산 모델 (Diffusion Model)",
+          "text": "Diffusion Model"
         },
         {
           "key": "C",
-          "text": "시퀀스 투 시퀀스 모델"
+          "textEn": "Sequence-to-Sequence Model",
+          "textKo": "시퀀스 투 시퀀스 모델",
+          "text": "Sequence-to-Sequence Model"
         },
         {
           "key": "D",
-          "text": "자기회귀 모델"
+          "textEn": "Autoregressive Model",
+          "textKo": "자기회귀 모델",
+          "text": "Autoregressive Model"
         }
       ],
       "answerKey": "B",
@@ -15201,19 +18295,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "모델 편향 (Model Bias)"
+          "textEn": "Model Bias",
+          "textKo": "모델 편향 (Model Bias)",
+          "text": "Model Bias"
         },
         {
           "key": "B",
-          "text": "과적합 (Overfitting)"
+          "textEn": "Overfitting",
+          "textKo": "과적합 (Overfitting)",
+          "text": "Overfitting"
         },
         {
           "key": "C",
-          "text": "데이터 드리프트 (Data Drift)"
+          "textEn": "Data Drift",
+          "textKo": "데이터 드리프트 (Data Drift)",
+          "text": "Data Drift"
         },
         {
           "key": "D",
-          "text": "과소적합 (Underfitting)"
+          "textEn": "Underfitting",
+          "textKo": "과소적합 (Underfitting)",
+          "text": "Underfitting"
         }
       ],
       "answerKey": "C",
@@ -15234,19 +18336,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "AWS가 데이터와 맞춤형 모델 모두에 대한 소유권을 가집니다."
+          "textEn": "AWS owns both the data and the customized model.",
+          "textKo": "AWS가 데이터와 맞춤형 모델 모두에 대한 소유권을 가집니다.",
+          "text": "AWS owns both the data and the customized model."
         },
         {
           "key": "B",
-          "text": "타사 모델 제공업체가 맞춤형 모델에 대한 소유권을 가집니다."
+          "textEn": "The third-party model provider owns the customized model.",
+          "textKo": "타사 모델 제공업체가 맞춤형 모델에 대한 소유권을 가집니다.",
+          "text": "The third-party model provider owns the customized model."
         },
         {
           "key": "C",
-          "text": "고객이 자신의 데이터와 맞춤형 모델에 대한 완전한 소유권을 유지합니다."
+          "textEn": "The customer maintains full ownership of their data and the customized model.",
+          "textKo": "고객이 자신의 데이터와 맞춤형 모델에 대한 완전한 소유권을 유지합니다.",
+          "text": "The customer maintains full ownership of their data and the customized model."
         },
         {
           "key": "D",
-          "text": "데이터가 오픈 소스 커뮤니티와 공유됩니다."
+          "textEn": "The data is shared with the open-source community.",
+          "textKo": "데이터가 오픈 소스 커뮤니티와 공유됩니다.",
+          "text": "The data is shared with the open-source community."
         }
       ],
       "answerKey": "C",
@@ -15267,18 +18377,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Polly",
+          "textKo": "Amazon Polly",
           "text": "Amazon Polly"
         },
         {
           "key": "B",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         },
         {
           "key": "C",
+          "textEn": "Amazon Transcribe",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "D",
+          "textEn": "Amazon Comprehend",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
@@ -15300,19 +18418,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "F1 스코어"
+          "textEn": "F1 Score",
+          "textKo": "F1 스코어",
+          "text": "F1 Score"
         },
         {
           "key": "B",
-          "text": "BLEU 스코어 (BLEU Score)"
+          "textEn": "BLEU Score",
+          "textKo": "BLEU 스코어 (BLEU Score)",
+          "text": "BLEU Score"
         },
         {
           "key": "C",
-          "text": "평균 제곱 오차 (MSE)"
+          "textEn": "Mean Squared Error (MSE)",
+          "textKo": "평균 제곱 오차 (MSE)",
+          "text": "Mean Squared Error (MSE)"
         },
         {
           "key": "D",
-          "text": "정확도 (Accuracy)"
+          "textEn": "Accuracy",
+          "textKo": "정확도 (Accuracy)",
+          "text": "Accuracy"
         }
       ],
       "answerKey": "B",
@@ -15333,19 +18459,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "운영 우수성 (Operational Excellence)"
+          "textEn": "Operational Excellence",
+          "textKo": "운영 우수성 (Operational Excellence)",
+          "text": "Operational Excellence"
         },
         {
           "key": "B",
-          "text": "성능 효율성 (Performance Efficiency)"
+          "textEn": "Performance Efficiency",
+          "textKo": "성능 효율성 (Performance Efficiency)",
+          "text": "Performance Efficiency"
         },
         {
           "key": "C",
-          "text": "비용 최적화 (Cost Optimization)"
+          "textEn": "Cost Optimization",
+          "textKo": "비용 최적화 (Cost Optimization)",
+          "text": "Cost Optimization"
         },
         {
           "key": "D",
-          "text": "안정성 (Reliability)"
+          "textEn": "Reliability",
+          "textKo": "안정성 (Reliability)",
+          "text": "Reliability"
         }
       ],
       "answerKey": "A",
@@ -15366,19 +18500,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "최대 토큰 (Max tokens)"
+          "textEn": "Max tokens",
+          "textKo": "최대 토큰 (Max tokens)",
+          "text": "Max tokens"
         },
         {
           "key": "B",
-          "text": "중단 시퀀스 (Stop sequences)"
+          "textEn": "Stop sequences",
+          "textKo": "중단 시퀀스 (Stop sequences)",
+          "text": "Stop sequences"
         },
         {
           "key": "C",
-          "text": "온도 (Temperature)"
+          "textEn": "Temperature",
+          "textKo": "온도 (Temperature)",
+          "text": "Temperature"
         },
         {
           "key": "D",
-          "text": "Top-P를 0으로 설정"
+          "textEn": "Top-P to 0",
+          "textKo": "Top-P를 0으로 설정",
+          "text": "Top-P to 0"
         }
       ],
       "answerKey": "C",
@@ -15399,19 +18541,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "회귀 (Regression)"
+          "textEn": "Regression",
+          "textKo": "회귀 (Regression)",
+          "text": "Regression"
         },
         {
           "key": "B",
-          "text": "이진 분류 (Binary Classification)"
+          "textEn": "Binary Classification",
+          "textKo": "이진 분류 (Binary Classification)",
+          "text": "Binary Classification"
         },
         {
           "key": "C",
-          "text": "군집화 (Clustering)"
+          "textEn": "Clustering",
+          "textKo": "군집화 (Clustering)",
+          "text": "Clustering"
         },
         {
           "key": "D",
-          "text": "비지도 학습 (Unsupervised Learning)"
+          "textEn": "Unsupervised Learning",
+          "textKo": "비지도 학습 (Unsupervised Learning)",
+          "text": "Unsupervised Learning"
         }
       ],
       "answerKey": "B",
@@ -15432,18 +18582,26 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
+          "textEn": "Amazon Kendra",
+          "textKo": "Amazon Kendra",
           "text": "Amazon Kendra"
         },
         {
           "key": "B",
+          "textEn": "Amazon Personalize",
+          "textKo": "Amazon Personalize",
           "text": "Amazon Personalize"
         },
         {
           "key": "C",
+          "textEn": "Amazon SageMaker Ground Truth",
+          "textKo": "Amazon SageMaker Ground Truth",
           "text": "Amazon SageMaker Ground Truth"
         },
         {
           "key": "D",
+          "textEn": "Amazon Lex",
+          "textKo": "Amazon Lex",
           "text": "Amazon Lex"
         }
       ],
@@ -15465,19 +18623,27 @@ window.AWS_AI_QUIZ_DATA = {
       "options": [
         {
           "key": "A",
-          "text": "비공개 데이터를 사용하여 파운데이션 모델을 처음부터 새로 학습시킵니다."
+          "textEn": "It trains a new foundation model from scratch using private data.",
+          "textKo": "비공개 데이터를 사용하여 파운데이션 모델을 처음부터 새로 학습시킵니다.",
+          "text": "It trains a new foundation model from scratch using private data."
         },
         {
           "key": "B",
-          "text": "학습을 위해 구조화되지 않은 데이터에 자동으로 라벨을 지정합니다."
+          "textEn": "It automatically labels unstructured data for training.",
+          "textKo": "학습을 위해 구조화되지 않은 데이터에 자동으로 라벨을 지정합니다.",
+          "text": "It automatically labels unstructured data for training."
         },
         {
           "key": "C",
-          "text": "파운데이션 모델을 내부 데이터 소스에 연결하여 검색 증강 생성(RAG)을 구현합니다."
+          "textEn": "It connects foundation models to internal data sources to implement Retrieval-Augmented Generation (RAG).",
+          "textKo": "파운데이션 모델을 내부 데이터 소스에 연결하여 검색 증강 생성(RAG)을 구현합니다.",
+          "text": "It connects foundation models to internal data sources to implement Retrieval-Augmented Generation (RAG)."
         },
         {
           "key": "D",
-          "text": "로컬 하드 드라이브에 저장된 데이터를 암호화합니다."
+          "textEn": "It encrypts data stored on local hard drives.",
+          "textKo": "로컬 하드 드라이브에 저장된 데이터를 암호화합니다.",
+          "text": "It encrypts data stored on local hard drives."
         }
       ],
       "answerKey": "C",

@@ -127,7 +127,7 @@ function uniqueOptions(options) {
   const result = [];
 
   for (const option of options) {
-    const signature = normalizeText(option.text);
+    const signature = `${option.key}:${normalizeText(option.text)}`;
     if (!signature || seen.has(signature)) {
       continue;
     }
@@ -192,6 +192,35 @@ function parseBody(lines) {
   };
 }
 
+function mergeBilingualOptions(englishOptions = [], koreanOptions = []) {
+  const optionMap = new Map();
+
+  for (const option of englishOptions) {
+    const existing = optionMap.get(option.key) || { key: option.key };
+    existing.textEn = option.text;
+    optionMap.set(option.key, existing);
+  }
+
+  for (const option of koreanOptions) {
+    const existing = optionMap.get(option.key) || { key: option.key };
+    existing.textKo = option.text;
+    optionMap.set(option.key, existing);
+  }
+
+  return [...optionMap.values()]
+    .sort((left, right) => left.key.localeCompare(right.key))
+    .map((option) => ({
+      key: option.key,
+      textEn: option.textEn || "",
+      textKo: option.textKo || "",
+      text: option.textEn || option.textKo || "",
+    }));
+}
+
+function getOptionSearchTexts(option) {
+  return [option.textEn, option.textKo, option.text].filter(Boolean);
+}
+
 function parseAnswer(answerLines, explanationLines) {
   let answerRaw = answerLines.join(" ").trim();
 
@@ -247,6 +276,8 @@ function buildOptionsFromWrongExplanation(questionNumber, answerText, wrongLines
 
   return options.map((text, index) => ({
     key: String.fromCharCode(65 + index),
+    textEn: "",
+    textKo: text,
     text,
   }));
 }
@@ -735,7 +766,7 @@ function parseSegment(questionNumber, segment) {
     glossary: sections.glossary.filter(Boolean),
   };
 
-  let options = korean.options.length ? korean.options : english.options;
+  let options = mergeBilingualOptions(english.options, korean.options);
   let { answerKey, answerText } = parseAnswer(
     sections.answer,
     sections.explanation,
@@ -814,19 +845,21 @@ function parseSegment(questionNumber, segment) {
 
   if (!answerText && answerKey && options.length) {
     const matchedOption = options.find((option) => option.key === answerKey);
-    answerText = matchedOption?.text || "";
+    answerText = matchedOption?.textEn || matchedOption?.textKo || matchedOption?.text || "";
   }
 
   if (!answerKey && answerText && options.length) {
     const matchedOption = options.find((option) => {
-      const optionText = normalizeText(option.text);
       const normalizedAnswer = normalizeText(answerText);
 
-      return (
-        optionText === normalizedAnswer ||
-        optionText.includes(normalizedAnswer) ||
-        normalizedAnswer.includes(optionText)
-      );
+      return getOptionSearchTexts(option).some((candidate) => {
+        const optionText = normalizeText(candidate);
+        return (
+          optionText === normalizedAnswer ||
+          optionText.includes(normalizedAnswer) ||
+          normalizedAnswer.includes(optionText)
+        );
+      });
     });
 
     answerKey = matchedOption?.key || "";

@@ -121,6 +121,10 @@ select {
   width: 100%;
 }
 
+.hero__reset-button {
+  width: 100%;
+}
+
 .primary-link {
   display: inline-flex;
   align-items: center;
@@ -336,9 +340,20 @@ select {
   font-weight: 800;
 }
 
+.option-card__body {
+  display: grid;
+  gap: 6px;
+}
+
 .option-card__text {
   margin: 0;
   line-height: 1.55;
+}
+
+.option-card__subtext {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .option-card:hover .option-card__inner,
