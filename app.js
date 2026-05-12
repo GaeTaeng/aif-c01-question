@@ -15,6 +15,12 @@ const QUESTION_TYPE_LABELS = {
   ordering: "순서형",
 };
 
+const ORDER_MODE_LABELS = {
+  random: "랜덤",
+  sequence: "순서",
+  reverse: "역순",
+};
+
 const appData = window.AWS_AI_QUIZ_DATA || {
   supportedCount: 0,
   source: { totalQuestions: 0 },
@@ -29,11 +35,24 @@ function isQuestionRoute() {
   return /\/question\/?$/.test(normalizedPath);
 }
 
-function getQuestionRouteUrl() {
+function normalizeOrderMode(value = "") {
+  if (value === "sequence" || value === "reverse" || value === "random") {
+    return value;
+  }
+  return "random";
+}
+
+function getOrderModeFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  return normalizeOrderMode(currentUrl.searchParams.get("order") || "");
+}
+
+function getQuestionRouteUrl(orderMode = "random") {
   const currentUrl = new URL(window.location.href);
   const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
 
   if (/\/question\/?$/.test(normalizedPath)) {
+    currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
     return currentUrl.toString();
   }
 
@@ -41,6 +60,7 @@ function getQuestionRouteUrl() {
     ? `${normalizedPath}question/`
     : `${normalizedPath}/question/`;
   currentUrl.search = "";
+  currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
   currentUrl.hash = "";
   return currentUrl.toString();
 }
@@ -49,7 +69,6 @@ const elements = {
   appShell: document.querySelector(".app-shell"),
   hero: document.getElementById("hero"),
   heroStats: document.getElementById("hero-stats"),
-  startButton: document.getElementById("start-button"),
   resetProgressButton: document.getElementById("reset-progress-button"),
   mainContent: document.getElementById("main-content"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
@@ -63,7 +82,6 @@ const elements = {
   questionPromptSecondary: document.getElementById("question-prompt-english"),
   optionsForm: document.getElementById("options-form"),
   checkAnswerButton: document.getElementById("check-answer-button"),
-  newRandomButton: document.getElementById("new-random-button"),
   nextQuestionButton: document.getElementById("next-question-button"),
   feedbackCard: document.getElementById("feedback-card"),
   wrongNoteSummary: document.getElementById("wrong-note-summary"),
@@ -76,6 +94,7 @@ const elements = {
 
 const state = {
   mode: "random",
+  orderMode: getOrderModeFromUrl(),
   currentQuestionId: null,
   response: null,
   answerChecked: false,
@@ -283,13 +302,66 @@ function pickRandom(list) {
   return next;
 }
 
-function getQuestionPool() {
-  if (state.mode === "wrong") {
-    return getWrongIds();
+function sortQuestionIdsByOrder(questionIds) {
+  const sorted = [...questionIds].sort((left, right) => left - right);
+  return state.orderMode === "reverse" ? sorted.reverse() : sorted;
+}
+
+function getNextQuestionId(pool, currentQuestionId = state.currentQuestionId) {
+  if (!pool.length) {
+    return null;
   }
-  return questions
-    .map((question) => question.id)
-    .filter((questionId) => !state.session.completedBook[questionId]);
+
+  if (state.orderMode === "random") {
+    return pickRandom(pool);
+  }
+
+  const orderedPool = sortQuestionIdsByOrder(pool);
+
+  if (!currentQuestionId) {
+    return orderedPool[0];
+  }
+
+  if (state.orderMode === "sequence") {
+    return orderedPool.find((questionId) => questionId > currentQuestionId) || orderedPool[0];
+  }
+
+  return orderedPool.find((questionId) => questionId < currentQuestionId) || orderedPool[0];
+}
+
+function getQuestionPool() {
+  const basePool =
+    state.mode === "wrong"
+      ? getWrongIds()
+      : questions
+          .map((question) => question.id)
+          .filter((questionId) => !state.session.completedBook[questionId]);
+
+  if (state.orderMode === "random") {
+    return basePool;
+  }
+
+  return sortQuestionIdsByOrder(basePool);
+}
+
+function getOrderModeDescription() {
+  if (state.orderMode === "sequence") {
+    return "낮은 번호부터 순서대로 풉니다.";
+  }
+
+  if (state.orderMode === "reverse") {
+    return "높은 번호부터 역순으로 풉니다.";
+  }
+
+  return "남은 문제를 랜덤으로 보여줍니다.";
+}
+
+function getModeBadgeLabel() {
+  if (state.mode === "wrong") {
+    return `오답 · ${ORDER_MODE_LABELS[state.orderMode]}`;
+  }
+
+  return ORDER_MODE_LABELS[state.orderMode];
 }
 
 function getCurrentQuestion() {
@@ -413,13 +485,14 @@ function renderMode() {
   const isGlossary = state.mode === "glossary";
   elements.quizView.classList.toggle("is-hidden", isGlossary);
   elements.glossaryView.classList.toggle("is-hidden", !isGlossary);
+  elements.nextQuestionButton.classList.toggle("is-hidden", isGlossary);
 
   elements.segmentedButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.mode === state.mode);
   });
 
   if (!isGlossary) {
-    elements.modeBadge.textContent = state.mode === "wrong" ? "오답 복습" : "랜덤";
+    elements.modeBadge.textContent = getModeBadgeLabel();
   }
 }
 
@@ -431,7 +504,7 @@ function renderAppPhase() {
 }
 
 function startQuiz() {
-  window.location.href = getQuestionRouteUrl();
+  window.location.href = getQuestionRouteUrl(state.orderMode);
 }
 
 function selectQuestion(questionId) {
@@ -465,7 +538,7 @@ function ensureQuestionForMode() {
   }
 
   if (!pool.includes(state.currentQuestionId)) {
-    selectQuestion(pickRandom(pool));
+    selectQuestion(getNextQuestionId(pool));
     return;
   }
 
@@ -535,7 +608,7 @@ function getQuestionSubtitle(question) {
       ? "오답 노트에 저장된 문제입니다."
       : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
 
-  return `${prefix} · ${getQuestionTypeLabel(question)}`;
+  return `${prefix} · ${getQuestionTypeLabel(question)} · ${getOrderModeDescription()}`;
 }
 
 function buildChoiceOptionCard(question, option, inputType) {
@@ -732,10 +805,10 @@ function renderQuestion() {
           : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
     elements.questionPrompt.textContent =
       state.mode === "wrong"
-        ? "랜덤 문제에서 틀린 문항이 생기면 자동으로 저장됩니다."
+        ? "문제를 틀리면 이곳에 자동으로 저장됩니다."
         : solvedAll
           ? `현재 ${completedCount}문제를 모두 완료했습니다.`
-          : "랜덤 새로 뽑기를 눌러 문제를 시작하세요.";
+          : "고정된 '다음 문제' 버튼으로 계속 진행할 수 있습니다.";
     elements.questionPromptSecondary.textContent = "";
     elements.optionsForm.innerHTML = solvedAll
       ? `
@@ -748,7 +821,6 @@ function renderQuestion() {
       `
       : "";
     elements.checkAnswerButton.disabled = true;
-    elements.newRandomButton.disabled = !pool.length;
     elements.nextQuestionButton.disabled = !pool.length;
     elements.feedbackCard.classList.add("is-hidden");
     renderWrongNote();
@@ -768,7 +840,6 @@ function renderQuestion() {
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
   elements.checkAnswerButton.disabled =
     !isResponseComplete(question, state.response) || state.answerChecked;
-  elements.newRandomButton.disabled = !pool.length;
   elements.nextQuestionButton.disabled = !pool.length;
   renderWrongNote();
 }
@@ -1344,7 +1415,7 @@ function resetProgress() {
   buildHeroStats();
   renderMode();
   renderGlossary();
-  selectQuestion(pickRandom(getQuestionPool()));
+  selectQuestion(getNextQuestionId(getQuestionPool(), null));
 }
 
 function removeCurrentQuestionFromWrongBook() {
@@ -1414,7 +1485,6 @@ function updateOrdering(question, action, index) {
 }
 
 function attachEvents() {
-  elements.startButton?.addEventListener("click", startQuiz);
   elements.resetProgressButton?.addEventListener("click", resetProgress);
 
   elements.segmentedButtons.forEach((button) => {
@@ -1475,13 +1545,9 @@ function attachEvents() {
 
   elements.checkAnswerButton.addEventListener("click", checkAnswer);
 
-  elements.newRandomButton.addEventListener("click", () => {
-    selectQuestion(pickRandom(getQuestionPool()));
-  });
-
   elements.nextQuestionButton.addEventListener("click", () => {
     const pool = getQuestionPool();
-    selectQuestion(pickRandom(pool));
+    selectQuestion(getNextQuestionId(pool));
   });
 
   elements.glossarySearch.addEventListener("input", renderGlossary);
@@ -1526,7 +1592,7 @@ function init() {
   renderAppPhase();
   renderMode();
   renderGlossary();
-  selectQuestion(pickRandom(getQuestionPool()));
+  selectQuestion(getNextQuestionId(getQuestionPool(), null));
 }
 
 init();

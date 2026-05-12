@@ -6,23 +6,31 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>AWS AI Practitioner 랜덤 퀴즈</title>
+    <title>AWS AI Practitioner 문제 연습장</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <header class="hero" id="hero">
         <p class="hero__eyebrow">AWS AI Practitioner</p>
-        <h1>랜덤 문제 연습장</h1>
+        <h1>문제 연습장</h1>
         <p class="hero__copy">
           모바일에서 빠르게 문제를 풀고, 정답 이유와 오답 포인트를 바로 확인할 수
           있게 구성했습니다.
         </p>
         <div class="hero__stats" id="hero-stats"></div>
         <div class="hero__actions">
-          <a class="primary-button primary-link hero__start-button" id="start-button" href="./question/">
-            시작하기
-          </a>
+          <div class="start-mode-group" aria-label="시작 방식 선택">
+            <a class="primary-button primary-link hero__start-button" href="./question/?order=random">
+              랜덤 시작
+            </a>
+            <a class="secondary-button primary-link hero__start-button" href="./question/?order=sequence">
+              순서대로 시작
+            </a>
+            <a class="secondary-button primary-link hero__start-button" href="./question/?order=reverse">
+              역순 시작
+            </a>
+          </div>
           <button
             class="secondary-button hero__reset-button"
             id="reset-progress-button"
@@ -42,7 +50,7 @@
           <div class="panel__toolbar">
             <div class="segmented" role="tablist" aria-label="문제 모드">
               <button class="segmented__button is-active" data-mode="random" type="button">
-                랜덤 문제
+                문제 풀이
               </button>
               <button class="segmented__button" data-mode="wrong" type="button">
                 오답 다시 풀기
@@ -56,10 +64,10 @@
           <section class="quiz-view" id="quiz-view">
             <div class="quiz-meta">
               <div class="quiz-meta__badges">
-                <span class="pill" id="mode-badge">랜덤</span>
+                <span class="pill" id="mode-badge">문제 풀이</span>
                 <span class="pill pill--muted" id="question-id">Q 1</span>
               </div>
-              <button class="ghost-button" id="next-question-button" type="button">
+              <button class="ghost-button ghost-button--floating" id="next-question-button" type="button">
                 다음 문제
               </button>
             </div>
@@ -82,9 +90,6 @@
             <div class="action-row">
               <button class="primary-button" id="check-answer-button" type="button" disabled>
                 정답 확인
-              </button>
-              <button class="secondary-button" id="new-random-button" type="button">
-                랜덤 새로 뽑기
               </button>
             </div>
 

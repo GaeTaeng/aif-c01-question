@@ -54,6 +54,10 @@ select {
   padding: 20px 16px calc(32px + env(safe-area-inset-bottom));
 }
 
+.app-shell--started {
+  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -115,6 +119,11 @@ select {
   display: grid;
   gap: 10px;
   margin-top: 18px;
+}
+
+.start-mode-group {
+  display: grid;
+  gap: 8px;
 }
 
 .hero__start-button {
@@ -530,6 +539,25 @@ select {
   opacity: 0.45;
 }
 
+.ghost-button--floating {
+  position: fixed;
+  right: max(16px, calc((100vw - 760px) / 2 + 16px));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 40;
+  min-width: 132px;
+  min-height: 54px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #ff9454);
+  color: white;
+  box-shadow: 0 18px 36px rgba(255, 107, 44, 0.28);
+}
+
+.ghost-button--floating:disabled {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
 .feedback-card {
   white-space: pre-line;
 }
@@ -718,6 +746,10 @@ select {
     padding: 22px;
   }
 
+  .start-mode-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .glossary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -739,6 +771,12 @@ select {
   .wrong-item__top {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .ghost-button--floating {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    min-width: 124px;
   }
 
   .ordering-item {
