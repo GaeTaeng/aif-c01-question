@@ -542,7 +542,7 @@ select {
 .floating-actions {
   position: fixed;
   right: 16px;
-  bottom: calc(16px + env(safe-area-inset-bottom));
+  bottom: max(92px, calc(16px + env(safe-area-inset-bottom)));
   z-index: 40;
   display: grid;
   gap: 10px;
@@ -792,7 +792,6 @@ select {
 
   .floating-actions {
     right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
   }
 
   .ghost-button--floating {
