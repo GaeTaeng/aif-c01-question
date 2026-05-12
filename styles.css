@@ -539,15 +539,32 @@ select {
   opacity: 0.45;
 }
 
-.ghost-button--floating {
+.floating-actions {
   position: fixed;
   right: max(16px, calc((100vw - 760px) / 2 + 16px));
   bottom: calc(16px + env(safe-area-inset-bottom));
   z-index: 40;
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+
+.ghost-button--floating {
   min-width: 132px;
   min-height: 54px;
   padding: 14px 18px;
   border-radius: 999px;
+  text-decoration: none;
+}
+
+.ghost-button--floating-secondary {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  border: 1px solid rgba(92, 64, 25, 0.08);
+  box-shadow: 0 12px 28px rgba(92, 64, 25, 0.14);
+}
+
+.ghost-button--floating:not(.ghost-button--floating-secondary) {
   background: linear-gradient(135deg, var(--accent), #ff9454);
   color: white;
   box-shadow: 0 18px 36px rgba(255, 107, 44, 0.28);
@@ -773,9 +790,12 @@ select {
     align-items: flex-start;
   }
 
-  .ghost-button--floating {
+  .floating-actions {
     right: 16px;
     bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+
+  .ghost-button--floating {
     min-width: 124px;
   }
 
