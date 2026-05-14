@@ -67,6 +67,9 @@
                 <span class="pill" id="mode-badge">문제 풀이</span>
                 <span class="pill pill--muted" id="question-id">Q 1</span>
               </div>
+              <button class="ghost-button quiz-meta__list-button" id="open-question-sheet-button" type="button">
+                목록
+              </button>
             </div>
 
             <article class="question-card" id="question-card">
@@ -132,6 +135,22 @@
           </button>
         </div>
       </main>
+
+      <div class="sheet-backdrop is-hidden" id="question-sheet-backdrop"></div>
+      <section class="question-sheet is-hidden" id="question-sheet" aria-hidden="true">
+        <div class="question-sheet__grabber"></div>
+        <div class="question-sheet__header">
+          <div>
+            <p class="question-sheet__eyebrow">문제 목록</p>
+            <h2>전체 진행 현황</h2>
+          </div>
+          <button class="ghost-button" id="close-question-sheet-button" type="button">
+            닫기
+          </button>
+        </div>
+        <div class="question-status-summary" id="question-status-summary-sheet"></div>
+        <div class="question-palette" id="question-palette-sheet"></div>
+      </section>
     </div>
 
     <script src="../questions.js"></script>

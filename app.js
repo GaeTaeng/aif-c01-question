@@ -47,12 +47,23 @@ function getOrderModeFromUrl() {
   return normalizeOrderMode(currentUrl.searchParams.get("order") || "");
 }
 
-function getQuestionRouteUrl(orderMode = "random") {
+function getRequestedQuestionIdFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  const questionId = Number(currentUrl.searchParams.get("q") || 0);
+  return questionById.has(questionId) ? questionId : null;
+}
+
+function getQuestionRouteUrl(orderMode = "random", questionId = null) {
   const currentUrl = new URL(window.location.href);
   const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
 
   if (/\/question\/?$/.test(normalizedPath)) {
     currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+    if (questionId && questionById.has(questionId)) {
+      currentUrl.searchParams.set("q", String(questionId));
+    } else {
+      currentUrl.searchParams.delete("q");
+    }
     return currentUrl.toString();
   }
 
@@ -61,14 +72,35 @@ function getQuestionRouteUrl(orderMode = "random") {
     : `${normalizedPath}/question/`;
   currentUrl.search = "";
   currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+  if (questionId && questionById.has(questionId)) {
+    currentUrl.searchParams.set("q", String(questionId));
+  }
   currentUrl.hash = "";
   return currentUrl.toString();
 }
 
+function syncQuestionIdToUrl(questionId) {
+  if (!isQuestionRoute()) {
+    return;
+  }
+
+  const currentUrl = new URL(window.location.href);
+  if (questionId && questionById.has(questionId)) {
+    currentUrl.searchParams.set("q", String(questionId));
+  } else {
+    currentUrl.searchParams.delete("q");
+  }
+  window.history.replaceState({}, "", currentUrl.toString());
+}
+
 const elements = {
+  body: document.body,
   appShell: document.querySelector(".app-shell"),
   hero: document.getElementById("hero"),
   heroStats: document.getElementById("hero-stats"),
+  overviewBoard: document.getElementById("overview-board"),
+  questionStatusSummaryOverview: document.getElementById("question-status-summary-overview"),
+  questionPaletteOverview: document.getElementById("question-palette-overview"),
   resetProgressButton: document.getElementById("reset-progress-button"),
   mainContent: document.getElementById("main-content"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
@@ -76,6 +108,12 @@ const elements = {
   glossaryView: document.getElementById("glossary-view"),
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
+  openQuestionSheetButton: document.getElementById("open-question-sheet-button"),
+  closeQuestionSheetButton: document.getElementById("close-question-sheet-button"),
+  questionSheetBackdrop: document.getElementById("question-sheet-backdrop"),
+  questionSheet: document.getElementById("question-sheet"),
+  questionStatusSummarySheet: document.getElementById("question-status-summary-sheet"),
+  questionPaletteSheet: document.getElementById("question-palette-sheet"),
   questionTitle: document.getElementById("question-title"),
   questionSubtitle: document.getElementById("question-subtitle"),
   questionPrompt: document.getElementById("question-prompt"),
@@ -95,9 +133,11 @@ const elements = {
 const state = {
   mode: "random",
   orderMode: getOrderModeFromUrl(),
+  requestedQuestionId: getRequestedQuestionIdFromUrl(),
   currentQuestionId: null,
   response: null,
   answerChecked: false,
+  questionSheetOpen: false,
   started: isQuestionRoute(),
   session: loadState(),
 };
@@ -284,6 +324,45 @@ function getCompletedIds() {
   return Object.keys(state.session.completedBook)
     .map(Number)
     .filter((questionId) => questionById.has(questionId));
+}
+
+function getQuestionStatus(questionId) {
+  if (state.session.completedBook[questionId]) {
+    return "correct";
+  }
+
+  if (state.session.wrongBook[questionId]) {
+    return "wrong";
+  }
+
+  return "pending";
+}
+
+function getQuestionStatusCounts() {
+  return questions.reduce(
+    (counts, question) => {
+      const status = getQuestionStatus(question.id);
+      counts[status] += 1;
+      return counts;
+    },
+    {
+      pending: 0,
+      correct: 0,
+      wrong: 0,
+    },
+  );
+}
+
+function getQuestionStatusLabel(status) {
+  if (status === "correct") {
+    return "정답";
+  }
+
+  if (status === "wrong") {
+    return "오답";
+  }
+
+  return "미풀이";
 }
 
 function pickRandom(list) {
@@ -481,6 +560,103 @@ function buildHeroStats() {
     .join("");
 }
 
+function buildQuestionStatusSummaryMarkup() {
+  const counts = getQuestionStatusCounts();
+  const entries = [
+    { key: "pending", label: "미풀이", value: counts.pending },
+    { key: "correct", label: "정답", value: counts.correct },
+    { key: "wrong", label: "오답", value: counts.wrong },
+  ];
+
+  return entries
+    .map(
+      (entry) => `
+        <article class="status-card status-card--${entry.key}">
+          <span class="status-card__label">${escapeHtml(entry.label)}</span>
+          <strong class="status-card__value">${entry.value}</strong>
+        </article>
+      `,
+    )
+    .join("");
+}
+
+function buildQuestionPaletteMarkup(kind = "sheet") {
+  return questions
+    .map((question) => {
+      const status = getQuestionStatus(question.id);
+      const isCurrent = kind === "sheet" && question.id === state.currentQuestionId;
+      const classes = [
+        "question-palette__item",
+        `question-palette__item--${status}`,
+        isCurrent ? "is-current" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
+      const label = `Q ${question.sourceNumber}`;
+      const ariaLabel = `문제 ${question.sourceNumber}, ${getQuestionStatusLabel(status)}`;
+
+      if (kind === "overview") {
+        return `
+          <a
+            class="${classes}"
+            href="${escapeHtml(getQuestionRouteUrl(state.orderMode, question.id))}"
+            aria-label="${escapeHtml(ariaLabel)}"
+          >
+            ${escapeHtml(label)}
+          </a>
+        `;
+      }
+
+      return `
+        <button
+          class="${classes}"
+          type="button"
+          data-jump-question="${question.id}"
+          data-close-sheet="true"
+          aria-label="${escapeHtml(ariaLabel)}"
+        >
+          ${escapeHtml(label)}
+        </button>
+      `;
+    })
+    .join("");
+}
+
+function renderQuestionStatusViews() {
+  if (elements.questionStatusSummaryOverview) {
+    elements.questionStatusSummaryOverview.innerHTML = buildQuestionStatusSummaryMarkup();
+  }
+
+  if (elements.questionPaletteOverview) {
+    elements.questionPaletteOverview.innerHTML = buildQuestionPaletteMarkup("overview");
+  }
+
+  if (elements.questionStatusSummarySheet) {
+    elements.questionStatusSummarySheet.innerHTML = buildQuestionStatusSummaryMarkup();
+  }
+
+  if (elements.questionPaletteSheet) {
+    elements.questionPaletteSheet.innerHTML = buildQuestionPaletteMarkup("sheet");
+  }
+}
+
+function setQuestionSheetOpen(isOpen) {
+  state.questionSheetOpen = isOpen;
+
+  if (!elements.questionSheet || !elements.questionSheetBackdrop) {
+    return;
+  }
+
+  if (isOpen) {
+    renderQuestionStatusViews();
+  }
+
+  elements.questionSheet.classList.toggle("is-hidden", !isOpen);
+  elements.questionSheetBackdrop.classList.toggle("is-hidden", !isOpen);
+  elements.questionSheet.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  elements.body.classList.toggle("is-sheet-open", isOpen);
+}
+
 function renderMode() {
   const isGlossary = state.mode === "glossary";
   elements.quizView.classList.toggle("is-hidden", isGlossary);
@@ -512,6 +688,7 @@ function selectQuestion(questionId) {
     state.currentQuestionId = null;
     state.response = null;
     state.answerChecked = false;
+    syncQuestionIdToUrl(null);
     elements.feedbackCard.classList.add("is-hidden");
     renderQuestion();
     return;
@@ -521,12 +698,20 @@ function selectQuestion(questionId) {
   state.currentQuestionId = questionId;
   state.response = createInitialResponse(question);
   state.answerChecked = false;
+  syncQuestionIdToUrl(questionId);
   elements.feedbackCard.classList.add("is-hidden");
   renderQuestion();
 }
 
 function ensureQuestionForMode() {
   const pool = getQuestionPool();
+
+  if (state.requestedQuestionId && questionById.has(state.requestedQuestionId)) {
+    const requestedId = state.requestedQuestionId;
+    state.requestedQuestionId = null;
+    selectQuestion(requestedId);
+    return;
+  }
 
   if (!pool.length) {
     state.currentQuestionId = null;
@@ -824,6 +1009,7 @@ function renderQuestion() {
     elements.nextQuestionButton.disabled = !pool.length;
     elements.feedbackCard.classList.add("is-hidden");
     renderWrongNote();
+    renderQuestionStatusViews();
     return;
   }
 
@@ -842,6 +1028,7 @@ function renderQuestion() {
     !isResponseComplete(question, state.response) || state.answerChecked;
   elements.nextQuestionButton.disabled = !pool.length;
   renderWrongNote();
+  renderQuestionStatusViews();
 }
 
 function parseWrongExplanations(question) {
@@ -1391,6 +1578,7 @@ function clearWrongBook() {
     ensureQuestionForMode();
   }
   renderWrongNote();
+  renderQuestionStatusViews();
 }
 
 function resetProgress() {
@@ -1407,9 +1595,11 @@ function resetProgress() {
     completedBook: {},
   };
   state.mode = "random";
+  state.requestedQuestionId = null;
   state.currentQuestionId = null;
   state.response = null;
   state.answerChecked = false;
+  setQuestionSheetOpen(false);
   elements.feedbackCard.classList.add("is-hidden");
   saveState();
   buildHeroStats();
@@ -1431,6 +1621,7 @@ function removeCurrentQuestionFromWrongBook() {
     ensureQuestionForMode();
   }
   renderWrongNote();
+  renderQuestionStatusViews();
 }
 
 function updateResponseFromRadio(value) {
@@ -1486,6 +1677,9 @@ function updateOrdering(question, action, index) {
 
 function attachEvents() {
   elements.resetProgressButton?.addEventListener("click", resetProgress);
+  elements.openQuestionSheetButton?.addEventListener("click", () => setQuestionSheetOpen(true));
+  elements.closeQuestionSheetButton?.addEventListener("click", () => setQuestionSheetOpen(false));
+  elements.questionSheetBackdrop?.addEventListener("click", () => setQuestionSheetOpen(false));
 
   elements.segmentedButtons.forEach((button) => {
     button.addEventListener("click", () => setMode(button.dataset.mode));
@@ -1576,9 +1770,19 @@ function attachEvents() {
       return;
     }
 
+    if (jumpQuestionButton.dataset.closeSheet === "true") {
+      setQuestionSheetOpen(false);
+    }
+
     state.mode = getWrongIds().includes(questionId) ? "wrong" : "random";
     renderMode();
     selectQuestion(questionId);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.questionSheetOpen) {
+      setQuestionSheetOpen(false);
+    }
   });
 }
 
@@ -1592,7 +1796,7 @@ function init() {
   renderAppPhase();
   renderMode();
   renderGlossary();
-  selectQuestion(getNextQuestionId(getQuestionPool(), null));
+  ensureQuestionForMode();
 }
 
 init();

@@ -41,6 +41,10 @@ body {
   font-family: var(--font-sans);
 }
 
+body.is-sheet-open {
+  overflow: hidden;
+}
+
 button,
 a,
 input,
@@ -148,6 +152,138 @@ select {
   line-height: 1.5;
 }
 
+.overview-board {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 28px;
+  background: rgba(255, 250, 242, 0.84);
+  box-shadow: var(--shadow);
+}
+
+.overview-board__header,
+.question-sheet__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.overview-board__eyebrow,
+.question-sheet__eyebrow {
+  margin: 0 0 4px;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.overview-board h2,
+.question-sheet h2 {
+  margin: 0;
+  font-size: 1.24rem;
+}
+
+.overview-board__copy {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-size: 0.94rem;
+}
+
+.question-status-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.status-card {
+  padding: 12px 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.status-card--pending {
+  background: rgba(31, 41, 55, 0.05);
+}
+
+.status-card--correct {
+  background: var(--success-wash);
+  border-color: rgba(31, 138, 82, 0.24);
+}
+
+.status-card--wrong {
+  background: var(--danger-wash);
+  border-color: rgba(207, 62, 54, 0.2);
+}
+
+.status-card__label {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.status-card__value {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
+.question-palette {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.question-palette--overview {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.question-palette__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.question-palette__item--pending {
+  background: rgba(31, 41, 55, 0.06);
+  color: var(--ink-soft);
+}
+
+.question-palette__item--correct {
+  background: var(--success-wash);
+  color: var(--success);
+}
+
+.question-palette__item--wrong {
+  background: var(--danger-wash);
+  color: var(--danger);
+}
+
+.question-palette__item.is-current {
+  border-color: rgba(255, 107, 44, 0.44);
+  box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.14);
+}
+
 .stat-card {
   padding: 12px 14px;
   border: 1px solid var(--line);
@@ -239,6 +375,10 @@ select {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+}
+
+.quiz-meta__list-button {
+  flex: 0 0 auto;
 }
 
 .pill {
@@ -580,6 +720,36 @@ select {
   box-shadow: none;
 }
 
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(15, 23, 42, 0.34);
+}
+
+.question-sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 71;
+  width: min(100%, 760px);
+  max-height: min(78vh, 760px);
+  padding: 14px 16px calc(18px + env(safe-area-inset-bottom));
+  border-radius: 28px 28px 0 0;
+  background: rgba(255, 249, 240, 0.98);
+  box-shadow: 0 -18px 42px rgba(15, 23, 42, 0.16);
+  overflow-y: auto;
+  transform: translateX(-50%);
+}
+
+.question-sheet__grabber {
+  width: 52px;
+  height: 5px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  background: rgba(31, 41, 55, 0.14);
+}
+
 .feedback-card {
   white-space: pre-line;
 }
@@ -775,6 +945,10 @@ select {
   .glossary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .question-palette {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 520px) {
@@ -782,6 +956,8 @@ select {
     grid-template-columns: 1fr;
   }
 
+  .overview-board__header,
+  .question-sheet__header,
   .action-row,
   .question-card__header,
   .wrong-note__header,
