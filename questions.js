@@ -1,5 +1,5 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-12T00:10:29.000Z",
+  "generatedAt": "2026-05-14T04:18:36.810Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -9648,8 +9648,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 201",
       "promptKo": "한 교육 회사가 애플리케이션을 개발하려고 합니다.\n사용자는 질문을 텍스트로 입력하거나 질문 이미지를 제공할 수 있으며, 애플리케이션은 서면 답변과 그 답변에 대한 설명을 제공합니다.\n어떤 모델 유형이 이러한 요구사항을 충족할까요?",
       "promptEn": "An education company wants to build an application. The application will give users the ability to enter text or provide a picture of a question. The application will respond with a written answer and an explanation of the written answer.\nWhich model type meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "멀티모달 모델은 텍스트와 이미지를 동시에 이해하고 처리할 수 있으며, 질문에 대한 답변과 설명을 생성할 수 있습니다."
+      ],
+      "wrongExplanations": [
+        "- A. Computer vision model -> 이미지 인식 전용, 텍스트 이해/생성 불가",
+        "- C. Diffusion model -> 이미지 생성 전용, 질문 답변 불가",
+        "- D. Text-to-speech model -> 텍스트를 음성으로 변환하는 모델, 질문 이해&middot;답변 불가"
+      ],
       "glossary": [
         "- 멀티모달 LLM: 텍스트, 이미지 등 여러 형태의 입력을 이해하고 처리하는 대형 언어 모델",
         "- Diffusion Model: 주로 이미지나 영상을 생성하는 생성형 AI 모델",
@@ -9683,7 +9689,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Large multi-modal language model 이유: 멀티모달 모델은 텍스트와 이미지를 동시에 이해하고 처리할 수 있으며, 질문에 대한 답변과 설명을 생성할 수 있습니다. - 오답 풀이: - A. Computer vision model -> 이미지 인식 전용, 텍스트 이해/생성 불가 - C. Diffusion model -> 이미지 생성 전용, 질문 답변 불가 - D. Text-to-speech model -> 텍스트를 음성으로 변환하는 모델, 질문 이해&middot;답변 불가"
+      "answerText": "Large multi-modal language model"
     },
     {
       "id": 202,
@@ -9691,8 +9697,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 202",
       "promptKo": "생성형 AI 모델 라이프사이클에서 모델 정확도를 평가하기 위한 테스트는 어느 단계에서 수행되나요?",
       "promptEn": "In which stage of the generative AI model lifecycle are tests performed to examine the model's accuracy?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "모델의 정확도, 성능 등을 확인하기 위해 테스트를 수행하는 단계는 **평가 단계(Evaluation)**입니다."
+      ],
+      "wrongExplanations": [
+        "- A. Deployment -> 모델을 실제 환경에 배포하는 단계, 테스트 목적과 다름",
+        "- B. Data selection -> 학습 데이터 선택 단계, 평가와 무관",
+        "- C. Fine-tuning -> 모델 성능을 향상시키기 위한 학습 단계"
+      ],
       "glossary": [
         "- Evaluation 단계: 모델의 정확도, 성능, 효율성 등을 테스트하는 단계",
         "- Deployment 단계: 학습 완료 후 모델을 실제 환경에 적용하는 단계"
@@ -9725,7 +9737,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Evaluation 이유: 모델의 정확도, 성능 등을 확인하기 위해 테스트를 수행하는 단계는 **평가 단계(Evaluation)**입니다. - 오답 풀이: - A. Deployment -> 모델을 실제 환경에 배포하는 단계, 테스트 목적과 다름 - B. Data selection -> 학습 데이터 선택 단계, 평가와 무관 - C. Fine-tuning -> 모델 성능을 향상시키기 위한 학습 단계"
+      "answerText": "Evaluation"
     },
     {
       "id": 203,
@@ -9733,8 +9745,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 203",
       "promptKo": "생성형 AI에서 임베딩(embeddings)을 올바르게 설명한 것은 무엇인가요?",
       "promptEn": "Which statement correctly describes embeddings in generative AI?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "임베딩은 데이터를 의미적 관계가 반영된 벡터 공간으로 변환하여 AI 모델이 문장, 단어, 이미지 간 유사성을 이해하도록 돕습니다."
+      ],
+      "wrongExplanations": [
+        "- B -> 임베딩은 검색 자체가 아니라 벡터 표현 방식",
+        "- C -> 임베딩은 정밀도 감소와 관련 없음",
+        "- D -> 임베딩 자체는 저장/검색 기능을 의미하지 않음"
+      ],
       "glossary": [
         "- Embedding: 데이터를 고차원 벡터로 변환하여 의미적 유사성을 반영하는 표현",
         "- Semantic Relationships: 데이터 간 의미상의 관계"
@@ -9767,7 +9785,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Embeddings represent data as high-dimensional vectors that capture semantic relationships. 이유: 임베딩은 데이터를 의미적 관계가 반영된 벡터 공간으로 변환하여 AI 모델이 문장, 단어, 이미지 간 유사성을 이해하도록 돕습니다. - 오답 풀이: - B -> 임베딩은 검색 자체가 아니라 벡터 표현 방식 - C -> 임베딩은 정밀도 감소와 관련 없음 - D -> 임베딩 자체는 저장/검색 기능을 의미하지 않음"
+      "answerText": "Embeddings represent data as high-dimensional vectors that capture semantic relationships."
     },
     {
       "id": 204,
@@ -9775,8 +9793,13 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 204",
       "promptKo": "회사는 대형 언어 모델(LLM)을 애플리케이션에 통합하여 생성형 AI 기능을 추가하려고 합니다.\nLLM의 응답은 최대한 **결정적(deterministic)**이고 안정적이어야 합니다.\n어떤 솔루션이 이러한 요구사항을 충족할까요?",
       "promptEn": "A company wants to add generative AI functionality to its application by integrating a large language model (LLM). The responses from the LLM must be as deterministic and as stable as possible.\nWhich solution meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "LLM에서 temperature 값이 0이면 모델의 생성 결과가 결정적(deterministic)으로 나오며, 같은 입력에 대해 항상 동일한 출력 생성"
+      ],
+      "wrongExplanations": [
+        "- B/C -> 단순 문장 추가만으로는 결정적 응답을 보장하지 못함",
+        "- D -> temperature 1은 랜덤성을 높여 결정성을 낮춤"
+      ],
       "glossary": [
         "- Temperature: 언어 모델 생성 시 확률적 다양성을 조절하는 파라미터 (0 -> 결정적, 1 -> 다양성 높음)",
         "- Deterministic: 동일한 입력에 대해 항상 동일한 결과를 내는 특성"
@@ -9809,7 +9832,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM. 이유: LLM에서 temperature 값이 0이면 모델의 생성 결과가 결정적(deterministic)으로 나오며, 같은 입력에 대해 항상 동일한 출력 생성 - 오답 풀이: - B/C -> 단순 문장 추가만으로는 결정적 응답을 보장하지 못함 - D -> temperature 1은 랜덤성을 높여 결정성을 낮춤"
+      "answerText": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM."
     },
     {
       "id": 205,
@@ -9817,8 +9840,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 205",
       "promptKo": "회사는 애플리케이션을 구축하기 위해 생성형 AI 모델을 선택해야 합니다.\n애플리케이션은 사용자에게 실시간으로 응답을 제공해야 합니다.\n이 요구사항을 충족하기 위해 고려해야 하는 모델 특성은 무엇인가요?",
       "promptEn": "A company needs to select a generative AI model to build an application. The application must provide responses to users in real time.\nWhich model characteristic should the company consider to meet these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "실시간 응답을 위해서는 **추론 속도(Inference speed)**가 빠른 모델이 필요합니다."
+      ],
+      "wrongExplanations": [
+        "- A -> 모델 복잡도가 낮으면 속도가 빨라질 수 있으나, 직접적인 고려 기준은 아님",
+        "- B -> 혁신 속도는 모델 성능 향상과 관련, 실시간 응답과 직접적 관련 없음",
+        "- D -> 학습 시간은 모델 구축 단계와 관련, 배포 후 실시간 응답과 관련 없음"
+      ],
       "glossary": [
         "- Inference speed: 학습된 모델이 입력 데이터를 처리하고 결과를 반환하는 속도",
         "- Real-time response: 지연 없이 즉시 응답이 이루어지는 시스템 특성"
@@ -9851,7 +9880,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Inference speed 이유: 실시간 응답을 위해서는 **추론 속도(Inference speed)**가 빠른 모델이 필요합니다. - 오답 풀이: - A -> 모델 복잡도가 낮으면 속도가 빨라질 수 있으나, 직접적인 고려 기준은 아님 - B -> 혁신 속도는 모델 성능 향상과 관련, 실시간 응답과 직접적 관련 없음 - D -> 학습 시간은 모델 구축 단계와 관련, 배포 후 실시간 응답과 관련 없음"
+      "answerText": "Inference speed"
     },
     {
       "id": 206,
@@ -9859,8 +9888,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 206",
       "promptKo": "파운데이션 모델(FM)에 주어지는 질문에 대한 정확한 응답을 제공하도록 하는 지침을 무엇이라고 하나요?",
       "promptEn": "Which term refers to the instructions given to foundation models (FMs) so that the FMs provide a more accurate response to a question?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "프롬프트는 모델에게 원하는 답변을 얻기 위해 주어지는 지침이나 입력 문장입니다."
+      ],
+      "wrongExplanations": [
+        "- B -> 단순 방향이나 지침 의미, 모델 입력 용어로는 부적절",
+        "- C -> Dialog는 대화 형식, 프롬프트와 다름",
+        "- D -> Translation은 언어 변환, 질문 지침과 관련 없음"
+      ],
       "glossary": [
         "- Prompt: 모델에게 특정 작업을 수행하도록 지시하는 입력",
         "- Foundation Model(FM): 대규모 데이터로 사전 학습된 범용 AI 모델"
@@ -9893,7 +9928,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Prompt 이유: 프롬프트는 모델에게 원하는 답변을 얻기 위해 주어지는 지침이나 입력 문장입니다. - 오답 풀이: - B -> 단순 방향이나 지침 의미, 모델 입력 용어로는 부적절 - C -> Dialog는 대화 형식, 프롬프트와 다름 - D -> Translation은 언어 변환, 질문 지침과 관련 없음"
+      "answerText": "Prompt"
     },
     {
       "id": 207,
@@ -9901,8 +9936,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 207",
       "promptKo": "한 소매 회사가 고객에게 제품을 추천하는 ML 모델을 만들고자 합니다.\n회사는 책임 있는 AI 관행에 기반하여 모델을 구축하려고 합니다.\n모델 편향(Bias)을 줄이기 위해 데이터 수집 시 어떤 방법을 적용해야 할까요?",
       "promptEn": "A retail company wants to build an ML model to recommend products to customers. The company wants to build the model based on responsible practices.\nWhich practice should the company apply when collecting data to decrease model bias?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "다양한 데이터 확보가 모델의 편향을 줄이는 핵심 방법입니다."
+      ],
+      "wrongExplanations": [
+        "- A -> 특정 인구집단만 사용하면 편향이 발생",
+        "- B -> 구매 기록에 기반하면 특정 행동 패턴에 치우침",
+        "- D -> 공개 데이터만 사용하는 것은 편향 해결과 직접 관련 없음"
+      ],
       "glossary": [
         "- Bias: 모델이 특정 그룹에 대해 편향되게 예측하는 현상",
         "- Responsible AI: 편향, 공정성, 투명성을 고려한 AI 설계"
@@ -9935,7 +9976,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Ensure that the data is balanced and collected from a diverse group. 이유: 다양한 데이터 확보가 모델의 편향을 줄이는 핵심 방법입니다. - 오답 풀이: - A -> 특정 인구집단만 사용하면 편향이 발생 - B -> 구매 기록에 기반하면 특정 행동 패턴에 치우침 - D -> 공개 데이터만 사용하는 것은 편향 해결과 직접 관련 없음"
+      "answerText": "Ensure that the data is balanced and collected from a diverse group."
     },
     {
       "id": 208,
@@ -9943,8 +9984,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 208",
       "promptKo": "한 회사가 고객 이탈(Churn)을 예측하는 ML 모델을 개발하고 있습니다.\n이진 분류(Binary Classification) 문제, 예를 들어 이탈 예측,에 대한 성능 평가에 적합한 지표는 무엇인가요?",
       "promptEn": "A company is developing an ML model to predict customer churn.\nWhich evaluation metric will assess the model's performance on a binary classification task such as predicting churn?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "F1 점수는 이진 분류 문제에서 Precision과 Recall을 종합한 지표로, 불균형 데이터에도 유용"
+      ],
+      "wrongExplanations": [
+        "- B -> MSE는 회귀 문제용",
+        "- C -> R&sup2; 역시 회귀 평가 지표",
+        "- D -> 학습 시간은 모델 성능 평가 지표가 아님"
+      ],
       "glossary": [
         "- F1 Score: Precision과 Recall의 조화 평균",
         "- Binary Classification: 두 가지 클래스(예: 이탈/비이탈)로 나누는 분류 문제"
@@ -9977,7 +10024,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "F1 score 이유: F1 점수는 이진 분류 문제에서 Precision과 Recall을 종합한 지표로, 불균형 데이터에도 유용 - 오답 풀이: - B -> MSE는 회귀 문제용 - C -> R&sup2; 역시 회귀 평가 지표 - D -> 학습 시간은 모델 성능 평가 지표가 아님"
+      "answerText": "F1 score"
     },
     {
       "id": 209,
@@ -9985,8 +10032,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 209",
       "promptKo": "AI 실무자가 Amazon SageMaker 모델 성능을 평가하고 있습니다.\n선택할 지표는 정확히 분류된 항목 수 / 전체 항목 수 비율을 보여야 합니다.\n어떤 지표가 이 조건에 맞을까요?",
       "promptEn": "An AI practitioner is evaluating the performance of an Amazon SageMaker model. The AI practitioner must choose a performance metric. The metric must show the ratio of the number of correctly classified items to the total number of correctly and incorrectly classified items.\nWhich metric meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "Accuracy는 전체 예측 중에서 올바르게 예측된 비율을 의미합니다."
+      ],
+      "wrongExplanations": [
+        "- B -> Precision: 양성 예측 중 올바른 비율",
+        "- C -> F1 score: Precision과 Recall의 조화 평균",
+        "- D -> Recall: 실제 양성 중 올바르게 예측된 비율"
+      ],
       "glossary": [
         "- Accuracy: 전체 데이터에서 맞춘 비율",
         "- Precision: 양성 예측의 정확도",
@@ -10020,7 +10073,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Accuracy 이유: Accuracy는 전체 예측 중에서 올바르게 예측된 비율을 의미합니다. - 오답 풀이: - B -> Precision: 양성 예측 중 올바른 비율 - C -> F1 score: Precision과 Recall의 조화 평균 - D -> Recall: 실제 양성 중 올바르게 예측된 비율"
+      "answerText": "Accuracy"
     },
     {
       "id": 210,
@@ -10028,8 +10081,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 210",
       "promptKo": "한 전자상거래 회사가 매일 수 기가바이트의 고객 데이터를 받습니다.\n회사는 이를 이용해 향후 제품 수요를 예측하는 ML 모델을 학습합니다.\n하루에 한 번 추론(Inference)을 수행할 수 있는 솔루션이 필요합니다.\n어떤 추론 유형이 적합할까요?",
       "promptEn": "An ecommerce company receives multiple gigabytes of customer data daily. The company uses the data to train an ML model to forecast future product demand. The company needs a solution to perform inferences once each day.\nWhich inference type meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "하루에 한 번 대량 데이터를 처리할 경우 배치 추론이 적합하며, 데이터가 모여 있는 상태에서 한 번에 처리"
+      ],
+      "wrongExplanations": [
+        "- B -> 비동기 추론은 실시간 요청과 연계, 배치 처리 목적과 다름",
+        "- C -> 실시간 추론은 즉시 응답이 필요할 때 사용",
+        "- D -> 서버리스는 배포 방식/인프라 형태, 배치 처리와 직접적 관련 없음"
+      ],
       "glossary": [
         "- Batch Inference: 일정량 데이터를 모아 한 번에 처리하는 추론 방식",
         "- Real-time Inference: 입력 즉시 추론 수행",
@@ -10064,7 +10123,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Batch inference 이유: 하루에 한 번 대량 데이터를 처리할 경우 배치 추론이 적합하며, 데이터가 모여 있는 상태에서 한 번에 처리 - 오답 풀이: - B -> 비동기 추론은 실시간 요청과 연계, 배치 처리 목적과 다름 - C -> 실시간 추론은 즉시 응답이 필요할 때 사용 - D -> 서버리스는 배포 방식/인프라 형태, 배치 처리와 직접적 관련 없음"
+      "answerText": "Batch inference"
     },
     {
       "id": 211,
@@ -10072,8 +10131,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 211",
       "promptKo": "모델이 회사의 프로덕션 환경에 오래 배포되어 있습니다.\n최근 모델 응답에서 일부 불일치가 발견되었습니다.\n회사는 모델 편향(Bias)과 드리프트(Drift)를 평가하고자 합니다.\n이 요구사항을 충족하는 AWS 서비스 또는 기능은 무엇인가요?",
       "promptEn": "The model has been deployed in the company's production environment for a long time. The company recently noticed some inconsistency in the model's responses. The company wants to evaluate model bias and drift.\nWhich AWS service or feature meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "Model Monitor는 배포된 모델의 입력/출력 데이터를 지속적으로 모니터링하며, 편향(Bias)과 데이터/모델 드리프트(Drift)를 감지합니다."
+      ],
+      "wrongExplanations": [
+        "- B -> Clarify는 주로 모델 학습 단계에서 편향과 공정성을 평가",
+        "- C -> Model Cards는 모델 설명 문서 제공, 모니터링 기능 아님",
+        "- D -> Feature Store는 피처 저장과 재사용용, 편향/드리프트 모니터링과 관련 없음"
+      ],
       "glossary": [
         "- Model Drift: 모델 성능이 시간이 지나면서 변하는 현상",
         "- Bias: 특정 그룹에 대해 편향된 예측"
@@ -10106,7 +10171,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Model Monitor 이유: Model Monitor는 배포된 모델의 입력/출력 데이터를 지속적으로 모니터링하며, 편향(Bias)과 데이터/모델 드리프트(Drift)를 감지합니다. - 오답 풀이: - B -> Clarify는 주로 모델 학습 단계에서 편향과 공정성을 평가 - C -> Model Cards는 모델 설명 문서 제공, 모니터링 기능 아님 - D -> Feature Store는 피처 저장과 재사용용, 편향/드리프트 모니터링과 관련 없음"
+      "answerText": "Amazon SageMaker Model Monitor"
     },
     {
       "id": 212,
@@ -10114,8 +10179,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 212",
       "promptKo": "회사는 Amazon Bedrock에 가입하여 애플리케이션을 구축하려 합니다.\n직원이 Amazon Bedrock에서 특정 모델에만 접근하도록 제한하고자 합니다.\n어떤 솔루션이 이 요구사항을 충족할까요?",
       "promptEn": "A company has signed up for Amazon Bedrock access to build applications. The company wants to restrict employee access to specific models available on Amazon Bedrock.\nWhich solution meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "IAM 정책을 통해 특정 사용자/그룹이 접근 가능한 리소스를 제어할 수 있습니다."
+      ],
+      "wrongExplanations": [
+        "- B -> 임시 자격 증명은 주로 일시적 권한 부여, 접근 제한 관리와 직접적 관련 없음",
+        "- C -> 서비스 역할은 특정 서비스가 다른 AWS 리소스 접근 시 사용, 사용자 접근 제한 목적과 다름",
+        "- D -> Inspector는 보안 취약점 진단 서비스, 접근 제어 기능 아님"
+      ],
       "glossary": [
         "- IAM Policy: 사용자/그룹/역할이 AWS 리소스에 접근할 수 있는 권한 규칙",
         "- Amazon Bedrock: 관리형 AI 서비스로 여러 파운데이션 모델(FM)을 사용할 수 있음"
@@ -10148,7 +10219,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use AWS Identity and Access Management (IAM) policies to restrict model access 이유: IAM 정책을 통해 특정 사용자/그룹이 접근 가능한 리소스를 제어할 수 있습니다. - 오답 풀이: - B -> 임시 자격 증명은 주로 일시적 권한 부여, 접근 제한 관리와 직접적 관련 없음 - C -> 서비스 역할은 특정 서비스가 다른 AWS 리소스 접근 시 사용, 사용자 접근 제한 목적과 다름 - D -> Inspector는 보안 취약점 진단 서비스, 접근 제어 기능 아님"
+      "answerText": "Use AWS Identity and Access Management (IAM) policies to restrict model access"
     },
     {
       "id": 213,
@@ -10156,8 +10227,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 213",
       "promptKo": "어떤 ML 기법이 정답 값(Label)이 포함된 학습 데이터를 사용하나요?",
       "promptEn": "Which ML technique uses training data that is labeled with the correct output values?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "지도 학습은 입력과 정답을 함께 제공하며 모델이 올바른 출력 예측을 학습하도록 합니다."
+      ],
+      "wrongExplanations": [
+        "- B -> 비지도 학습은 레이블 없는 데이터에서 패턴 발견",
+        "- C -> 강화 학습은 행동과 보상 기반 학습",
+        "- D -> 전이 학습은 이미 학습된 모델 지식을 다른 작업에 적용"
+      ],
       "glossary": [
         "- Supervised Learning: 입력과 정답 레이블을 사용하여 모델 학습",
         "- Unsupervised Learning: 클러스터링, 차원 축소 등 레이블 없는 데이터 학습"
@@ -10190,7 +10267,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Supervised learning 이유: 지도 학습은 입력과 정답을 함께 제공하며 모델이 올바른 출력 예측을 학습하도록 합니다. - 오답 풀이: - B -> 비지도 학습은 레이블 없는 데이터에서 패턴 발견 - C -> 강화 학습은 행동과 보상 기반 학습 - D -> 전이 학습은 이미 학습된 모델 지식을 다른 작업에 적용"
+      "answerText": "Supervised learning"
     },
     {
       "id": 214,
@@ -10198,8 +10275,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 214",
       "promptKo": "텍스트 생성 과정에서 각 단계에서 고려할 수 있는 다음 단어/토큰 수를 제어하는 LLM 파라미터는 무엇인가요?",
       "promptEn": "Which large language model (LLM) parameter controls the number of possible next words or tokens considered at each step of the text generation process?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "Top-K는 모델이 다음 토큰을 선택할 때 고려할 상위 K개의 후보를 의미합니다."
+      ],
+      "wrongExplanations": [
+        "- A -> Maximum tokens는 생성될 전체 토큰 수 제한",
+        "- C -> Temperature는 출력 확률 분포의 무작위성 조절",
+        "- D -> Batch size는 학습 또는 추론 시 처리하는 샘플 수"
+      ],
       "glossary": [
         "- Top-K sampling: 다음 토큰 후보를 상위 K개로 제한 후 샘플링",
         "- Temperature: 낮으면 결정적, 높으면 다양성 증가"
@@ -10232,7 +10315,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Top K 이유: Top-K는 모델이 다음 토큰을 선택할 때 고려할 상위 K개의 후보를 의미합니다. - 오답 풀이: - A -> Maximum tokens는 생성될 전체 토큰 수 제한 - C -> Temperature는 출력 확률 분포의 무작위성 조절 - D -> Batch size는 학습 또는 추론 시 처리하는 샘플 수"
+      "answerText": "Top K"
     },
     {
       "id": 215,
@@ -10240,8 +10323,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 215",
       "promptKo": "회사는 챗봇을 개발 중입니다.\n챗봇은 Amazon Lex와 OpenSearch Service를 사용하며, 회사의 프라이빗 데이터를 활용하여 질문에 답합니다.\n데이터를 데이터베이스에 저장하기 전에 **벡터 표현(Vector representation)**으로 변환해야 합니다.\n어떤 파운데이션 모델(FM)이 적합할까요?",
       "promptEn": "A company is making a chatbot. The chatbot uses Amazon Lex and Amazon OpenSearch Service. The chatbot uses the company's private data to answer questions. The company needs to convert the data into a vector representation before storing the data in a database.\nWhich type of foundation model (FM) meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "임베딩 모델은 텍스트를 벡터 공간에 매핑하여 검색, 추천, 유사도 계산에 사용됩니다."
+      ],
+      "wrongExplanations": [
+        "- A -> Text completion은 문장 생성용",
+        "B -> Instruction following은 지시 수행용",
+        "- D -> 이미지 생성 모델은 텍스트 벡터화와 무관"
+      ],
       "glossary": [
         "- Text Embeddings: 텍스트를 고차원 벡터로 변환한 표현",
         "- Vector Database: 벡터 기반 검색 및 유사도 계산에 사용"
@@ -10274,7 +10363,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Text embeddings model 이유: 임베딩 모델은 텍스트를 벡터 공간에 매핑하여 검색, 추천, 유사도 계산에 사용됩니다. 오답 풀이: - A -> Text completion은 문장 생성용 B -> Instruction following은 지시 수행용 - D -> 이미지 생성 모델은 텍스트 벡터화와 무관"
+      "answerText": "Text embeddings model"
     },
     {
       "id": 216,
@@ -10282,8 +10371,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 216",
       "promptKo": "회사는 LLM을 사용해 제품 설명을 생성하고자 합니다.\n모델에 특정 형식을 따르는 예제 설명을 제공하려고 합니다.\n어떤 프롬프트 기법이 형식에 맞는 설명을 생성하는 데 적합할까요?",
       "promptEn": "A company wants to use a large language model (LLM) to generate product descriptions. The company wants to give the model example descriptions that follow a format.\nWhich prompt engineering technique will generate descriptions that match the format?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "소수 샷 프롬프트는 모델에 몇 가지 예제를 제공하여 원하는 형식/스타일에 맞춰 결과를 생성합니다."
+      ],
+      "wrongExplanations": [
+        "- A -> Zero-shot은 예제 없이 수행",
+        "- B -> Chain-of-thought는 복잡한 추론 과정 안내용",
+        "- C -> One-shot은 단 하나의 예제만 제공, 형식 학습에는 불충분"
+      ],
       "glossary": [
         "- Few-shot prompting: 모델에게 여러 예제를 보여주어 학습 없이 특정 형식/스타일에 맞춘 출력 생성"
       ],
@@ -10315,7 +10410,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Few-shot prompting 이유: 소수 샷 프롬프트는 모델에 몇 가지 예제를 제공하여 원하는 형식/스타일에 맞춰 결과를 생성합니다. - 오답 풀이: - A -> Zero-shot은 예제 없이 수행 - B -> Chain-of-thought는 복잡한 추론 과정 안내용 - C -> One-shot은 단 하나의 예제만 제공, 형식 학습에는 불충분"
+      "answerText": "Few-shot prompting"
     },
     {
       "id": 217,
@@ -10323,8 +10418,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 217",
       "promptKo": "은행이 Amazon Bedrock에서 LLM을 파인튜닝하여 고객의 대출 질문을 지원하려 합니다.\n모델이 개인 정보(PII)를 유출하지 않도록 하려면 어떤 방법이 적합할까요?",
       "promptEn": "A bank is fine-tuning a large language model (LLM) on Amazon Bedrock to assist customers with questions about their loans. The bank wants to ensure that the model does not reveal any private customer data.\nWhich solution meets these requirements?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "개인정보가 포함되지 않은 데이터만 사용해야 안전하게 파인튜닝 가능"
+      ],
+      "wrongExplanations": [
+        "- A -> Guardrails는 출력 안전성 보장, 입력 데이터 보호 아님",
+        "- C -> Top-K는 생성 다양성 조절",
+        "- D -> 암호화만으로 파인튜닝 시 모델에 PII 학습될 수 있음"
+      ],
       "glossary": [
         "- PII(Personally Identifiable Information): 개인을 식별할 수 있는 정보",
         "- Fine-tuning: 사전 학습 모델을 특정 작업에 맞게 추가 학습"
@@ -10357,7 +10458,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM 이유: 개인정보가 포함되지 않은 데이터만 사용해야 안전하게 파인튜닝 가능 - 오답 풀이: - A -> Guardrails는 출력 안전성 보장, 입력 데이터 보호 아님 - C -> Top-K는 생성 다양성 조절 - D -> 암호화만으로 파인튜닝 시 모델에 PII 학습될 수 있음"
+      "answerText": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM"
     },
     {
       "id": 218,
@@ -10365,8 +10466,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 218",
       "promptKo": "한 식료품점에서 고객이 매장 내 제품을 찾도록 돕는 챗봇을 만들고자 합니다.\n챗봇은 재고를 실시간 확인하고 제품 위치를 안내해야 합니다.\n어떤 프롬프트 기법이 적합할까요?",
       "promptEn": "A grocery store wants to create a chatbot to help customers find products in the store. The chatbot must check the inventory in real time and provide the product location in the store.\nWhich prompt engineering technique should the store use to build the chatbot?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "ReAct는 모델이 추론 후 행동(예: 데이터베이스 질의)을 수행할 수 있어 실시간 정보 조회에 적합"
+      ],
+      "wrongExplanations": [
+        "- A -> Zero-shot은 추론 없이 바로 답변, 실시간 재고 처리에 부적합",
+        "- B -> Few-shot은 예제 기반, 실시간 연계 불가",
+        "- C -> Least-to-most는 복잡한 문제 해결 순서 안내용"
+      ],
       "glossary": [
         "- ReAct Prompting: Reasoning + Acting, 모델이 추론 후 외부 행동 수행 가능"
       ],
@@ -10398,7 +10505,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Reasoning and acting (ReAct) prompting 이유: ReAct는 모델이 추론 후 행동(예: 데이터베이스 질의)을 수행할 수 있어 실시간 정보 조회에 적합 - 오답 풀이: - A -> Zero-shot은 추론 없이 바로 답변, 실시간 재고 처리에 부적합 - B -> Few-shot은 예제 기반, 실시간 연계 불가 - C -> Least-to-most는 복잡한 문제 해결 순서 안내용"
+      "answerText": "Reasoning and acting (ReAct) prompting"
     },
     {
       "id": 219,
@@ -10406,8 +10513,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 219",
       "promptKo": "회사가 Amazon Bedrock에서 제3자 모델을 사용해 기밀 문서를 분석합니다.\n데이터 프라이버시가 우려됩니다.\nAmazon Bedrock이 데이터를 보호하는 방법으로 올바른 설명은 무엇인가요?",
       "promptEn": "A company uses a third-party model on Amazon Bedrock to analyze confidential documents. The company is concerned about data privacy.\nWhich statement describes how Amazon Bedrock protects data privacy?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "Bedrock은 고객 데이터(입력/출력)를 외부 모델 제공자와 공유하지 않아 데이터 프라이버시를 보호"
+      ],
+      "wrongExplanations": [
+        "- A -> Bedrock은 익명화 공유하지 않음",
+        "- C -> 출력 공유는 불가",
+        "- D -> 데이터 삭제 후 공유는 Bedrock 동작과 무관"
+      ],
       "glossary": [
         "- Amazon Bedrock: 관리형 AI 서비스, 고객 데이터 보호 기능 포함",
         "- Data privacy: 데이터가 외부에 노출되지 않도록 보호하는 특성"
@@ -10440,7 +10553,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "User inputs and model outputs are not shared with any third-party model providers. 이유: Bedrock은 고객 데이터(입력/출력)를 외부 모델 제공자와 공유하지 않아 데이터 프라이버시를 보호 - 오답 풀이: - A -> Bedrock은 익명화 공유하지 않음 - C -> 출력 공유는 불가 - D -> 데이터 삭제 후 공유는 Bedrock 동작과 무관"
+      "answerText": "User inputs and model outputs are not shared with any third-party model providers."
     },
     {
       "id": 220,
@@ -10448,8 +10561,14 @@ window.AWS_AI_QUIZ_DATA = {
       "title": "Question 220",
       "promptKo": "한 애니메이션 회사가 콘텐츠에 자막을 제공하고자 합니다.\n어떤 AWS 서비스가 적합할까요?",
       "promptEn": "An animation company wants to provide subtitles for its content.\nWhich AWS service meets this requirement?",
-      "explanation": [],
-      "wrongExplanations": [],
+      "explanation": [
+        "Transcribe는 음성을 텍스트로 변환, 자막 생성에 직접 사용 가능"
+      ],
+      "wrongExplanations": [
+        "- A -> Comprehend는 텍스트 분석, 감정 분석 등",
+        "- B -> Polly는 텍스트 -> 음성 변환",
+        "- D -> Translate는 번역, 음성 -> 텍스트와 직접 관련 없음"
+      ],
       "glossary": [
         "- Amazon Transcribe: 음성을 텍스트로 자동 변환 서비스",
         "- Subtitle: 영상 콘텐츠의 자막"
@@ -10482,7 +10601,7 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Transcribe 이유: Transcribe는 음성을 텍스트로 변환, 자막 생성에 직접 사용 가능 - 오답 풀이: - A -> Comprehend는 텍스트 분석, 감정 분석 등 - B -> Polly는 텍스트 -> 음성 변환 - D -> Translate는 번역, 음성 -> 텍스트와 직접 관련 없음"
+      "answerText": "Amazon Transcribe"
     },
     {
       "id": 221,

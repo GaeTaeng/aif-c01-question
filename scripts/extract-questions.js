@@ -100,6 +100,10 @@ function explodeLine(line) {
 
   const normalized = raw.replace(/^-\s*/, "");
 
+  if (/^정답\s+이유\s*[:：]/.test(normalized)) {
+    return [raw];
+  }
+
   for (const label of SECTION_LABELS) {
     if (normalized === label) {
       return [label];
