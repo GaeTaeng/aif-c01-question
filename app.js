@@ -592,7 +592,7 @@ function buildQuestionPaletteMarkup(kind = "sheet") {
       ]
         .filter(Boolean)
         .join(" ");
-      const label = `Q ${question.sourceNumber}`;
+      const label = String(question.sourceNumber);
       const ariaLabel = `문제 ${question.sourceNumber}, ${getQuestionStatusLabel(status)}`;
 
       if (kind === "overview") {
@@ -601,6 +601,7 @@ function buildQuestionPaletteMarkup(kind = "sheet") {
             class="${classes}"
             href="${escapeHtml(getQuestionRouteUrl(state.orderMode, question.id))}"
             aria-label="${escapeHtml(ariaLabel)}"
+            title="${escapeHtml(`Q ${question.sourceNumber}`)}"
           >
             ${escapeHtml(label)}
           </a>
@@ -614,6 +615,7 @@ function buildQuestionPaletteMarkup(kind = "sheet") {
           data-jump-question="${question.id}"
           data-close-sheet="true"
           aria-label="${escapeHtml(ariaLabel)}"
+          title="${escapeHtml(`Q ${question.sourceNumber}`)}"
         >
           ${escapeHtml(label)}
         </button>
