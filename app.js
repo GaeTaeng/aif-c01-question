@@ -1007,6 +1007,15 @@ function renderExamResultCard() {
   elements.examResultCard.classList.remove("is-hidden");
 }
 
+function setPrimaryActionButtonStyle(variant = "primary") {
+  if (!elements.checkAnswerButton) {
+    return;
+  }
+
+  elements.checkAnswerButton.classList.toggle("primary-button", variant === "primary");
+  elements.checkAnswerButton.classList.toggle("secondary-button", variant === "secondary");
+}
+
 function renderQuizProgress() {
   const correctCount = getCompletedIds().length;
   const wrongCount = getWrongIds().length;
@@ -1652,6 +1661,7 @@ function renderQuestion() {
       elements.optionsForm.innerHTML = "";
       elements.checkAnswerButton.textContent = "다음 문제";
       elements.checkAnswerButton.disabled = true;
+      setPrimaryActionButtonStyle("primary");
       return;
     }
 
@@ -1674,6 +1684,7 @@ function renderQuestion() {
     elements.optionsForm.innerHTML = renderOptionsMarkup(question);
     elements.checkAnswerButton.textContent = isLastQuestion ? "시험 제출" : "다음 문제";
     elements.checkAnswerButton.disabled = false;
+    setPrimaryActionButtonStyle("primary");
     return;
   }
 
@@ -1719,6 +1730,7 @@ function renderQuestion() {
       : "";
     elements.checkAnswerButton.textContent = "정답 확인";
     elements.checkAnswerButton.disabled = true;
+    setPrimaryActionButtonStyle("primary");
     elements.nextQuestionButton.disabled = true;
     elements.nextQuestionButton.classList.add("is-hidden");
     elements.feedbackCard.classList.add("is-hidden");
@@ -1742,8 +1754,14 @@ function renderQuestion() {
     !(question.promptEn && question.promptKo),
   );
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
-  elements.checkAnswerButton.textContent = state.answerChecked ? "다음" : "정답 확인";
+  const isComplete = isResponseComplete(question, state.response);
+  elements.checkAnswerButton.textContent = state.answerChecked
+    ? "다음"
+    : isComplete
+      ? "정답 확인"
+      : "건너뛰기";
   elements.checkAnswerButton.disabled = state.answerChecked ? !pool.length : false;
+  setPrimaryActionButtonStyle(state.answerChecked || isComplete ? "primary" : "secondary");
   elements.nextQuestionButton.disabled = !state.answerChecked || !pool.length;
   elements.nextQuestionButton.classList.toggle("is-hidden", !state.answerChecked);
   renderQuizProgress();
@@ -2213,6 +2231,10 @@ function checkAnswer() {
   renderFeedback(isCorrect);
 }
 
+function confirmSkipIncompleteQuestion() {
+  return window.confirm("아직 보기를 모두 고르지 않았습니다. 정말 넘어갈까요?");
+}
+
 function handlePrimaryAction() {
   const question = getCurrentQuestion();
   if (!question) {
@@ -2221,7 +2243,9 @@ function handlePrimaryAction() {
 
   if (isExamMode()) {
     if (!isResponseComplete(question, state.response)) {
-      window.alert("문제를 풀지 않았습니다.");
+      if (!confirmSkipIncompleteQuestion()) {
+        return;
+      }
     }
 
     goToNextQuestion();
@@ -2234,7 +2258,9 @@ function handlePrimaryAction() {
   }
 
   if (!isResponseComplete(question, state.response)) {
-    window.alert("문제를 풀지 않았습니다.");
+    if (!confirmSkipIncompleteQuestion()) {
+      return;
+    }
     goToNextQuestion();
     return;
   }
