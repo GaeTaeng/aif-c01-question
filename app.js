@@ -176,6 +176,7 @@ const elements = {
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
   domainBadge: document.getElementById("domain-badge"),
+  questionMetaCopy: document.getElementById("question-meta-copy"),
   quizProgress: document.getElementById("quiz-progress"),
   progressCompleted: document.getElementById("progress-completed"),
   progressCorrect: document.getElementById("progress-correct"),
@@ -1409,6 +1410,15 @@ function getQuestionSubtitle(question) {
   return `${getQuestionDomainLabel(question)} · ${prefix} · ${getQuestionTypeLabel(question)} · ${getOrderModeDescription()}`;
 }
 
+function renderQuestionMetaCopy(text = "") {
+  if (!elements.questionMetaCopy) {
+    return;
+  }
+
+  elements.questionMetaCopy.textContent = text;
+  elements.questionMetaCopy.classList.toggle("is-hidden", !text);
+}
+
 function renderQuestionDomainBadge(question) {
   if (!elements.domainBadge) {
     return;
@@ -1612,6 +1622,7 @@ function renderQuestion() {
 
     if (state.exam.completed) {
       renderQuestionDomainBadge(null);
+      renderQuestionMetaCopy("");
       elements.questionCard.classList.add("is-hidden");
       elements.optionsForm.classList.add("is-hidden");
       elements.actionRow.classList.add("is-hidden");
@@ -1625,10 +1636,12 @@ function renderQuestion() {
 
     if (!question) {
       renderQuestionDomainBadge(null);
+      renderQuestionMetaCopy("");
       elements.questionId.textContent = "시험 준비 중";
       elements.questionTitle.textContent = "모의시험을 준비하는 중입니다.";
       elements.questionSubtitle.textContent =
         "잠시만 기다리면 첫 문항을 바로 시작합니다.";
+      elements.questionSubtitle.classList.remove("is-hidden");
       elements.questionPrompt.textContent = "";
       elements.questionPromptSecondary.textContent = "";
       elements.questionPromptSecondary.classList.add("is-hidden");
@@ -1642,9 +1655,11 @@ function renderQuestion() {
     const isLastQuestion = state.exam.currentIndex === state.exam.questionIds.length - 1;
 
     renderQuestionDomainBadge(question);
+    renderQuestionMetaCopy(getQuestionSubtitle(question));
     elements.questionId.textContent = `${currentNumber} / ${getExamTotalQuestions()} · Q ${question.sourceNumber}`;
     elements.questionTitle.textContent = question.title;
-    elements.questionSubtitle.textContent = getQuestionSubtitle(question);
+    elements.questionSubtitle.textContent = "";
+    elements.questionSubtitle.classList.add("is-hidden");
     elements.questionPrompt.textContent = question.promptEn || question.promptKo;
     elements.questionPromptSecondary.textContent =
       question.promptEn && question.promptKo ? question.promptKo : "";
@@ -1666,6 +1681,7 @@ function renderQuestion() {
 
   if (!question) {
     renderQuestionDomainBadge(null);
+    renderQuestionMetaCopy("");
     elements.questionId.textContent = state.mode === "wrong" ? "오답 없음" : "Q -";
     const completedCount = getCompletedIds().length;
     const solvedAll = state.mode === "random" && completedCount === questions.length;
@@ -1679,6 +1695,7 @@ function renderQuestion() {
         : solvedAll
           ? "메인 화면의 '처음부터 다시 풀기'로 기록을 초기화할 수 있습니다."
           : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
+    elements.questionSubtitle.classList.remove("is-hidden");
     elements.questionPrompt.textContent =
       state.mode === "wrong"
         ? "문제를 틀리면 이곳에 자동으로 저장됩니다."
@@ -1708,9 +1725,11 @@ function renderQuestion() {
   }
 
   renderQuestionDomainBadge(question);
+  renderQuestionMetaCopy(getQuestionSubtitle(question));
   elements.questionId.textContent = `Q ${question.sourceNumber}`;
   elements.questionTitle.textContent = question.title;
-  elements.questionSubtitle.textContent = getQuestionSubtitle(question);
+  elements.questionSubtitle.textContent = "";
+  elements.questionSubtitle.classList.add("is-hidden");
   elements.questionPrompt.textContent = question.promptEn || question.promptKo;
   elements.questionPromptSecondary.textContent =
     question.promptEn && question.promptKo ? question.promptKo : "";
