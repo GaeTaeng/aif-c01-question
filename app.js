@@ -109,6 +109,7 @@ const elements = {
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
   progressCompleted: document.getElementById("progress-completed"),
+  progressCorrect: document.getElementById("progress-correct"),
   progressRemaining: document.getElementById("progress-remaining"),
   progressWrong: document.getElementById("progress-wrong"),
   openQuestionSheetButton: document.getElementById("open-question-sheet-button"),
@@ -564,12 +565,17 @@ function buildHeroStats() {
 }
 
 function renderQuizProgress() {
-  const completedCount = getCompletedIds().length;
-  const remainingCount = Math.max(0, questions.length - completedCount);
+  const correctCount = getCompletedIds().length;
   const wrongCount = getWrongIds().length;
+  const completedCount = correctCount + wrongCount;
+  const remainingCount = Math.max(0, questions.length - completedCount);
 
   if (elements.progressCompleted) {
     elements.progressCompleted.textContent = `완료 ${completedCount}문제`;
+  }
+
+  if (elements.progressCorrect) {
+    elements.progressCorrect.textContent = `정답 ${correctCount}문제`;
   }
 
   if (elements.progressRemaining) {

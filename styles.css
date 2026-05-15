@@ -410,6 +410,11 @@ select {
   color: var(--ink-soft);
 }
 
+.pill--success {
+  background: var(--success-wash);
+  color: var(--success);
+}
+
 .pill--danger {
   background: var(--danger-wash);
   color: var(--danger);
