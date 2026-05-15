@@ -56,6 +56,262 @@ const MATCHING_QUESTION_IDS = new Set([
   280, 283, 311,
 ]);
 
+const DOMAIN_DEFINITIONS = {
+  1: {
+    key: "ai-ml-fundamentals",
+    label: "AI 및 ML의 기초",
+    targetRatio: 0.2,
+    keywords: [
+      ["supervised learning", 8],
+      ["unsupervised learning", 8],
+      ["reinforcement learning", 8],
+      ["classification", 5],
+      ["regression", 5],
+      ["clustering", 5],
+      ["inference", 5],
+      ["batch inference", 6],
+      ["real-time", 3],
+      ["labeled data", 6],
+      ["labelled data", 6],
+      ["unlabeled data", 6],
+      ["computer vision", 7],
+      ["natural language processing", 7],
+      ["nlp", 6],
+      ["speech recognition", 6],
+      ["recommendation", 5],
+      ["fraud", 5],
+      ["forecast", 5],
+      ["accuracy", 6],
+      ["auc", 7],
+      ["f1", 7],
+      ["precision", 5],
+      ["recall", 5],
+      ["deep learning", 7],
+      ["neural network", 7],
+      ["overfitting", 8],
+      ["underfitting", 8],
+      ["mlops", 8],
+      ["feature store", 6],
+      ["data wrangler", 6],
+      ["model monitor", 4],
+      ["sagemaker", 2],
+      ["rekognition", 7],
+      ["transcribe", 7],
+      ["translate", 7],
+      ["comprehend", 7],
+      ["lex", 7],
+      ["polly", 7],
+      ["personalize", 7],
+      ["textract", 6],
+    ],
+  },
+  2: {
+    key: "genai-fundamentals",
+    label: "GenAI의 기초",
+    targetRatio: 0.24,
+    keywords: [
+      ["generative ai", 8],
+      ["genai", 8],
+      ["token", 5],
+      ["chunking", 6],
+      ["embedding", 4],
+      ["vector", 4],
+      ["transformer", 7],
+      ["multimodal", 7],
+      ["diffusion", 7],
+      ["hallucination", 6],
+      ["foundation model", 4],
+      ["large language model", 4],
+      ["llm", 4],
+      ["amazon q", 8],
+      ["partyrock", 8],
+      ["jumpstart", 6],
+      ["data automation", 8],
+      ["code generation", 6],
+      ["summarization", 5],
+      ["image generation", 5],
+      ["video generation", 5],
+      ["audio generation", 5],
+      ["assistant", 4],
+      ["token-based pricing", 6],
+      ["provisioned throughput", 5],
+      ["accessibility", 4],
+      ["time to market", 4],
+    ],
+  },
+  3: {
+    key: "foundation-model-applications",
+    label: "파운데이션 모델 적용",
+    targetRatio: 0.28,
+    keywords: [
+      ["prompt engineering", 9],
+      ["few-shot", 8],
+      ["zero-shot", 8],
+      ["single-shot", 7],
+      ["chain-of-thought", 8],
+      ["negative prompt", 8],
+      ["prompt routing", 8],
+      ["temperature", 7],
+      ["top-k", 7],
+      ["top p", 7],
+      ["top-p", 7],
+      ["context length", 7],
+      ["input/output length", 6],
+      ["rag", 10],
+      ["retrieval-augmented generation", 10],
+      ["knowledge base", 10],
+      ["knowledge bases", 10],
+      ["vector database", 8],
+      ["opensearch", 6],
+      ["aurora", 5],
+      ["neptune", 5],
+      ["rds for postgresql", 5],
+      ["agent", 7],
+      ["agents", 7],
+      ["model context protocol", 8],
+      ["fine-tuning", 9],
+      ["fine tuning", 9],
+      ["continued pretraining", 8],
+      ["continued pre-training", 8],
+      ["distillation", 8],
+      ["instruction tuning", 8],
+      ["transfer learning", 6],
+      ["model evaluation", 6],
+      ["bedrock model evaluation", 9],
+      ["bleu", 8],
+      ["rouge", 8],
+      ["bertscore", 8],
+      ["benchmark dataset", 7],
+      ["human evaluation", 7],
+      ["prompt caching", 7],
+      ["custom model", 6],
+      ["bedrock knowledge", 8],
+      ["amazon bedrock agents", 8],
+    ],
+  },
+  4: {
+    key: "responsible-ai-guidelines",
+    label: "책임 있는 AI 가이드라인",
+    targetRatio: 0.14,
+    keywords: [
+      ["responsible ai", 10],
+      ["fairness", 9],
+      ["bias", 9],
+      ["biased", 8],
+      ["inclusion", 7],
+      ["inclusive", 7],
+      ["robustness", 7],
+      ["safety", 6],
+      ["truthfulness", 7],
+      ["transparency", 9],
+      ["explainability", 9],
+      ["explainable", 9],
+      ["interpretable", 8],
+      ["guardrails", 10],
+      ["clarify", 10],
+      ["model cards", 9],
+      ["a2i", 8],
+      ["human review", 7],
+      ["subgroup analysis", 8],
+      ["label quality", 8],
+      ["demographic", 8],
+      ["intellectual property", 7],
+      ["customer trust", 6],
+      ["sustainability", 6],
+      ["environmental", 6],
+      ["hallucination", 4],
+    ],
+  },
+  5: {
+    key: "security-compliance-governance",
+    label: "보안, 규정 준수 및 거버넌스",
+    targetRatio: 0.14,
+    keywords: [
+      ["security", 9],
+      ["compliance", 9],
+      ["governance", 9],
+      ["privacy", 8],
+      ["pii", 10],
+      ["iam", 10],
+      ["policy", 6],
+      ["policies", 6],
+      ["role", 4],
+      ["roles", 4],
+      ["permission", 6],
+      ["permissions", 6],
+      ["encryption", 10],
+      ["private link", 9],
+      ["privatelink", 9],
+      ["macie", 9],
+      ["source citation", 7],
+      ["data lineage", 7],
+      ["data catalog", 7],
+      ["access control", 8],
+      ["data integrity", 8],
+      ["threat detection", 8],
+      ["vulnerability", 8],
+      ["prompt injection", 10],
+      ["encryption at rest", 8],
+      ["encryption in transit", 8],
+      ["cloudtrail", 9],
+      ["audit manager", 9],
+      ["artifact", 9],
+      ["trusted advisor", 8],
+      ["aws config", 9],
+      ["inspector", 9],
+      ["data residency", 9],
+      ["logging", 6],
+      ["retention", 6],
+      ["observability", 6],
+      ["shared responsibility", 9],
+      ["residency", 7],
+    ],
+  },
+};
+
+const DOMAIN_MANUAL_OVERRIDES = {
+  1: 4,
+  9: 5,
+  13: 5,
+  20: 5,
+  26: 5,
+  28: 5,
+  29: 5,
+  30: 5,
+  33: 3,
+  34: 5,
+  38: 3,
+  39: 4,
+  52: 4,
+  80: 3,
+  114: 3,
+  125: 3,
+  135: 4,
+  143: 3,
+  144: 3,
+  149: 5,
+  155: 3,
+  185: 3,
+  188: 3,
+  191: 3,
+  217: 5,
+  229: 1,
+  245: 4,
+  257: 3,
+  264: 3,
+  267: 3,
+  275: 3,
+  280: 3,
+  283: 1,
+  309: 3,
+  311: 3,
+  313: 3,
+  328: 3,
+  391: 4,
+  402: 5,
+  409: 3,
+};
+
 function decodeHtmlEntities(value = "") {
   return value
     .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
@@ -729,6 +985,159 @@ function buildManualStructuredQuestion(questionNumber, base) {
   };
 }
 
+function buildDomainSearchText(question = {}) {
+  const optionsText = Array.isArray(question.options)
+    ? question.options
+        .flatMap((option) => [option.textEn, option.textKo, option.text])
+        .filter(Boolean)
+        .join("\n")
+    : "";
+  const rowsText = Array.isArray(question.rows)
+    ? question.rows
+        .flatMap((row) => [row.prompt, row.answer])
+        .filter(Boolean)
+        .join("\n")
+    : "";
+  const sequenceText = Array.isArray(question.sequenceItems)
+    ? question.sequenceItems.join("\n")
+    : "";
+
+  return [
+    question.title,
+    question.promptEn,
+    question.promptKo,
+    ...(question.explanation || []),
+    ...(question.wrongExplanations || []),
+    ...(question.glossary || []),
+    optionsText,
+    rowsText,
+    sequenceText,
+  ]
+    .filter(Boolean)
+    .join("\n")
+    .toLowerCase();
+}
+
+function inferDomainFromQuestion(question) {
+  const manualDomainId = DOMAIN_MANUAL_OVERRIDES[question.sourceNumber];
+  if (manualDomainId && DOMAIN_DEFINITIONS[manualDomainId]) {
+    return {
+      domainId: manualDomainId,
+      domainKey: DOMAIN_DEFINITIONS[manualDomainId].key,
+      domainLabel: DOMAIN_DEFINITIONS[manualDomainId].label,
+    };
+  }
+
+  const haystack = buildDomainSearchText(question);
+  const domainScores = Object.fromEntries(
+    Object.keys(DOMAIN_DEFINITIONS).map((key) => [Number(key), 0]),
+  );
+
+  Object.entries(DOMAIN_DEFINITIONS).forEach(([domainId, definition]) => {
+    definition.keywords.forEach(([keyword, weight]) => {
+      if (haystack.includes(keyword)) {
+        domainScores[Number(domainId)] += weight;
+      }
+    });
+  });
+
+  if (haystack.includes("bedrock guardrails")) {
+    domainScores[4] += 12;
+  }
+
+  if (haystack.includes("knowledge base") || haystack.includes("knowledge bases")) {
+    domainScores[3] += 12;
+  }
+
+  if (haystack.includes("model card")) {
+    domainScores[4] += 10;
+  }
+
+  if (haystack.includes("prompt engineering")) {
+    domainScores[3] += 10;
+  }
+
+  if (haystack.includes("prompt injection")) {
+    domainScores[5] += 12;
+  }
+
+  if (haystack.includes("generative ai security scoping matrix")) {
+    domainScores[5] += 12;
+  }
+
+  if (haystack.includes("bedrock") && !haystack.includes("knowledge base")) {
+    domainScores[2] += 2;
+  }
+
+  if (haystack.includes("foundation model") && !haystack.includes("fine-tuning")) {
+    domainScores[2] += 2;
+  }
+
+  if (
+    haystack.includes("accuracy") ||
+    haystack.includes("f1") ||
+    haystack.includes("auc")
+  ) {
+    domainScores[1] += 3;
+  }
+
+  const sortedDomains = Object.entries(domainScores).sort((left, right) => {
+    if (right[1] === left[1]) {
+      return Number(left[0]) - Number(right[0]);
+    }
+    return right[1] - left[1];
+  });
+
+  const [bestDomainId, bestScore] = sortedDomains[0];
+  let domainId = Number(bestDomainId);
+
+  if (!bestScore) {
+    if (
+      haystack.includes("security") ||
+      haystack.includes("compliance") ||
+      haystack.includes("governance") ||
+      haystack.includes("iam")
+    ) {
+      domainId = 5;
+    } else if (
+      haystack.includes("bias") ||
+      haystack.includes("fairness") ||
+      haystack.includes("explainability") ||
+      haystack.includes("guardrails")
+    ) {
+      domainId = 4;
+    } else if (
+      haystack.includes("rag") ||
+      haystack.includes("knowledge base") ||
+      haystack.includes("prompt") ||
+      haystack.includes("fine-tuning")
+    ) {
+      domainId = 3;
+    } else if (
+      haystack.includes("generative ai") ||
+      haystack.includes("foundation model") ||
+      haystack.includes("llm")
+    ) {
+      domainId = 2;
+    } else {
+      domainId = 1;
+    }
+  }
+
+  return {
+    domainId,
+    domainKey: DOMAIN_DEFINITIONS[domainId].key,
+    domainLabel: DOMAIN_DEFINITIONS[domainId].label,
+  };
+}
+
+function withDomainMetadata(question) {
+  return {
+    ...question,
+    ...inferDomainFromQuestion(question),
+  };
+}
+
 function parseSegment(questionNumber, segment) {
   const lines = textify(segment)
     .split("\n")
@@ -801,13 +1210,13 @@ function parseSegment(questionNumber, segment) {
   const isKnownMatching = MATCHING_QUESTION_IDS.has(questionNumber);
 
   if (options.length && isKnownMultiSelect && multiAnswerKeys.length >= 2) {
-    return {
+    return withDomainMetadata({
       ...base,
       type: "multi-select",
       options,
       answerKeys: multiAnswerKeys,
       requiredSelections: multiAnswerKeys.length,
-    };
+    });
   }
 
   const promptLinesKo = extractQuestionBullets(sections.korean);
@@ -825,7 +1234,7 @@ function parseSegment(questionNumber, segment) {
     const orderingItems = extractOrderingItems(sections.answer, explanationLines);
     const orderingQuestion = buildOrderingQuestion(base, orderingItems);
     if (orderingQuestion) {
-      return orderingQuestion;
+      return withDomainMetadata(orderingQuestion);
     }
   }
 
@@ -855,7 +1264,7 @@ function parseSegment(questionNumber, segment) {
     ].filter(Boolean);
 
     if (matchingCandidates.length) {
-      return matchingCandidates[0];
+      return withDomainMetadata(matchingCandidates[0]);
     }
   }
 
@@ -890,19 +1299,19 @@ function parseSegment(questionNumber, segment) {
   }
 
   if (options.length >= 2 && options.length <= 5 && answerKey) {
-    return {
+    return withDomainMetadata({
       ...base,
       type: "single-choice",
       options,
       answerKey,
       answerText,
-    };
+    });
   }
 
-  return {
+  return withDomainMetadata({
     ...base,
     type: "unsupported",
-  };
+  });
 }
 
 const matches = [...html.matchAll(/Question\s+(\d+)/g)];
@@ -917,6 +1326,19 @@ const supportedQuestions = parsedQuestions.filter(
   (question) => question.type !== "unsupported",
 );
 
+const domainDistribution = supportedQuestions.reduce((accumulator, question) => {
+  const domainId = question.domainId || 1;
+  const current = accumulator[domainId] || {
+    domainId,
+    domainKey: DOMAIN_DEFINITIONS[domainId].key,
+    domainLabel: DOMAIN_DEFINITIONS[domainId].label,
+    count: 0,
+  };
+  current.count += 1;
+  accumulator[domainId] = current;
+  return accumulator;
+}, {});
+
 const payload = {
   generatedAt: new Date().toISOString(),
   source: {
@@ -925,6 +1347,9 @@ const payload = {
   },
   supportedCount: supportedQuestions.length,
   skippedCount: parsedQuestions.length - supportedQuestions.length,
+  domainDistribution: Object.values(domainDistribution).sort(
+    (left, right) => left.domainId - right.domainId,
+  ),
   questions: supportedQuestions,
 };
 

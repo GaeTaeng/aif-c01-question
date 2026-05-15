@@ -8,6 +8,13 @@ const EXAM_UNSCORED_QUESTIONS = 15;
 const EXAM_DURATION_MINUTES = 90;
 const EXAM_POINTS_PER_SCORED_QUESTION = 20;
 const EXAM_PASSING_SCORE = 700;
+const EXAM_DOMAIN_BLUEPRINT = [
+  { domainId: 1, count: 13 },
+  { domainId: 2, count: 16 },
+  { domainId: 3, count: 18 },
+  { domainId: 4, count: 9 },
+  { domainId: 5, count: 9 },
+];
 const PASSWORD_BASE_DATE = {
   year: 2026,
   month: 3,
@@ -30,6 +37,7 @@ const ORDER_MODE_LABELS = {
 const appData = window.AWS_AI_QUIZ_DATA || {
   supportedCount: 0,
   source: { totalQuestions: 0 },
+  domainDistribution: [],
   questions: [],
 };
 
@@ -401,11 +409,48 @@ function getExamScoredCount() {
   return Math.max(0, getExamTotalQuestions() - getExamUnscoredCount());
 }
 
+function getQuestionDomainId(question) {
+  return Number(question?.domainId || 1);
+}
+
+function pickExamQuestionIds() {
+  const selectedIds = [];
+  const usedIds = new Set();
+
+  EXAM_DOMAIN_BLUEPRINT.forEach(({ domainId, count }) => {
+    const domainPool = shuffleArray(
+      questions
+        .filter((question) => getQuestionDomainId(question) === domainId)
+        .map((question) => question.id)
+        .filter((questionId) => !usedIds.has(questionId)),
+    );
+
+    domainPool.slice(0, count).forEach((questionId) => {
+      usedIds.add(questionId);
+      selectedIds.push(questionId);
+    });
+  });
+
+  if (selectedIds.length < EXAM_TOTAL_QUESTIONS) {
+    const remainingPool = shuffleArray(
+      questions
+        .map((question) => question.id)
+        .filter((questionId) => !usedIds.has(questionId)),
+    );
+
+    remainingPool
+      .slice(0, EXAM_TOTAL_QUESTIONS - selectedIds.length)
+      .forEach((questionId) => {
+        usedIds.add(questionId);
+        selectedIds.push(questionId);
+      });
+  }
+
+  return shuffleArray(selectedIds).slice(0, Math.min(EXAM_TOTAL_QUESTIONS, questions.length));
+}
+
 function createExamSession() {
-  const questionIds = shuffleArray(questions.map((question) => question.id)).slice(
-    0,
-    Math.min(EXAM_TOTAL_QUESTIONS, questions.length),
-  );
+  const questionIds = pickExamQuestionIds();
   const unscoredIds = shuffleArray(questionIds).slice(
     0,
     Math.min(EXAM_UNSCORED_QUESTIONS, questionIds.length),

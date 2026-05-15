@@ -1,11 +1,43 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-15T02:13:45.489Z",
+  "generatedAt": "2026-05-15T05:49:01.667Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
   },
   "supportedCount": 409,
   "skippedCount": 0,
+  "domainDistribution": [
+    {
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초",
+      "count": 143
+    },
+    {
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초",
+      "count": 68
+    },
+    {
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용",
+      "count": 94
+    },
+    {
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인",
+      "count": 51
+    },
+    {
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스",
+      "count": 53
+    }
+  ],
   "questions": [
     {
       "id": 1,
@@ -50,7 +82,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Partial dependence plots (PDPs)"
+      "answerText": "Partial dependence plots (PDPs)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 2,
@@ -96,7 +131,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Develop a summarization chatbot"
+      "answerText": "Develop a summarization chatbot",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 3,
@@ -141,7 +179,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Decision trees"
+      "answerText": "Decision trees",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 4,
@@ -186,7 +227,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Accuracy"
+      "answerText": "Accuracy",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 5,
@@ -232,7 +276,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Adjust the prompt"
+      "answerText": "Adjust the prompt",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 6,
@@ -278,7 +325,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Real-time inference"
+      "answerText": "Real-time inference",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 7,
@@ -323,7 +373,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use transfer learning"
+      "answerText": "Use transfer learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 8,
@@ -368,7 +421,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus"
+      "answerText": "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 9,
@@ -414,7 +470,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct encryption key"
+      "answerText": "Ensure that the role that Amazon Bedrock assumes has permission to decrypt data with the correct encryption key",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 10,
@@ -459,7 +518,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Deploy optimized small language models (SLMs) on edge devices"
+      "answerText": "Deploy optimized small language models (SLMs) on edge devices",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 11,
@@ -508,7 +570,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Feature Store"
+      "answerText": "Amazon SageMaker Feature Store",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 12,
@@ -557,7 +622,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Create software snippets, reference tracking, and open source license tracking"
+      "answerText": "Create software snippets, reference tracking, and open source license tracking",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 13,
@@ -606,7 +674,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS PrivateLink"
+      "answerText": "AWS PrivateLink",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 14,
@@ -656,7 +727,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Use code that will calculate probability by using simple rules and computations"
+      "answerText": "Use code that will calculate probability by using simple rules and computations",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 15,
@@ -705,7 +779,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Average response time"
+      "answerText": "Average response time",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 16,
@@ -754,7 +831,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Transcribe call recordings by using Amazon Transcribe."
+      "answerText": "Transcribe call recordings by using Amazon Transcribe.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 17,
@@ -803,7 +883,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Unsupervised learning"
+      "answerText": "Unsupervised learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 18,
@@ -852,7 +935,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Multi-modal embedding model"
+      "answerText": "Multi-modal embedding model",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 19,
@@ -902,7 +988,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Provide labeled data with the prompt field and the completion field."
+      "answerText": "Provide labeled data with the prompt field and the completion field.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 20,
@@ -951,7 +1040,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Develop an anomaly detection system."
+      "answerText": "Develop an anomaly detection system.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 21,
@@ -1000,7 +1092,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Scalable index management and nearest neighbor search capability"
+      "answerText": "Scalable index management and nearest neighbor search capability",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 22,
@@ -1049,7 +1144,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Creating photorealistic images from text descriptions for digital marketing"
+      "answerText": "Creating photorealistic images from text descriptions for digital marketing",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 23,
@@ -1098,7 +1196,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Context window"
+      "answerText": "Context window",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 24,
@@ -1146,7 +1247,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Experiment and refine the prompt until the FM produces the desired responses."
+      "answerText": "Experiment and refine the prompt until the FM produces the desired responses.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 25,
@@ -1194,7 +1298,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified."
+      "answerText": "Provide examples of text passages with corresponding positive or negative labels in the prompt followed by the new text passage to be classified.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 26,
@@ -1242,7 +1349,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "AWS CloudTrail"
+      "answerText": "AWS CloudTrail",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 27,
@@ -1290,7 +1400,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use Amazon SageMaker Serverless Inference to deploy the model."
+      "answerText": "Use Amazon SageMaker Serverless Inference to deploy the model.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 28,
@@ -1338,7 +1451,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "AWS Artifact"
+      "answerText": "AWS Artifact",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 29,
@@ -1386,7 +1502,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Create a prompt template that teaches the LLM to detect attack patterns."
+      "answerText": "Create a prompt template that teaches the LLM to detect attack patterns.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 30,
@@ -1434,7 +1553,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Building and training a generative AI model from scratch by using specific data that a customer owns."
+      "answerText": "Building and training a generative AI model from scratch by using specific data that a customer owns.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 31,
@@ -1482,7 +1604,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Object detection"
+      "answerText": "Object detection",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 32,
@@ -1530,7 +1655,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "On-Demand"
+      "answerText": "On-Demand",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 33,
@@ -1578,7 +1706,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon SageMaker JumpStart"
+      "answerText": "Amazon SageMaker JumpStart",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 34,
@@ -1625,7 +1756,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access."
+      "answerText": "Design clear and specific prompts. Configure AWS Identity and Access Management (IAM) roles and policies by using least privilege access.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 35,
@@ -1674,7 +1808,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Generative pre-trained transformers (GPT)"
+      "answerText": "Generative pre-trained transformers (GPT)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 36,
@@ -1722,7 +1859,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Inference"
+      "answerText": "Inference",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 37,
@@ -1770,7 +1910,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Data augmentation for imbalanced classes"
+      "answerText": "Data augmentation for imbalanced classes",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 38,
@@ -1818,7 +1961,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Create an Amazon Bedrock knowledge base"
+      "answerText": "Create an Amazon Bedrock knowledge base",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 39,
@@ -1866,7 +2012,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify"
+      "answerText": "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 40,
@@ -1925,7 +2074,10 @@ window.AWS_AI_QUIZ_DATA = {
         "B",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 41,
@@ -1974,7 +2126,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Increase the epochs"
+      "answerText": "Increase the epochs",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 42,
@@ -2022,7 +2177,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Average call duration"
+      "answerText": "Average call duration",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 43,
@@ -2070,7 +2228,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Identifies potential bias during data preparation"
+      "answerText": "Identifies potential bias during data preparation",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 44,
@@ -2118,7 +2279,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Increase the volume of data that is used in training"
+      "answerText": "Increase the volume of data that is used in training",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 45,
@@ -2177,7 +2341,10 @@ window.AWS_AI_QUIZ_DATA = {
         "B",
         "D"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 46,
@@ -2232,7 +2399,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Upload PDF documents to an Amazon Bedrock knowledge base. Use the knowledge base to provide context when users submit prompts to Amazon Bedrock."
+      "answerText": "Upload PDF documents to an Amazon Bedrock knowledge base. Use the knowledge base to provide context when users submit prompts to Amazon Bedrock.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 47,
@@ -2287,7 +2457,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Benchmark datasets"
+      "answerText": "Benchmark datasets",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 48,
@@ -2340,7 +2513,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Create effective prompts that provide clear instructions and context to guide the model's generation."
+      "answerText": "Create effective prompts that provide clear instructions and context to guide the model's generation.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 49,
@@ -2398,7 +2574,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 50,
@@ -2452,7 +2631,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Grant access to the custom model in Amazon Bedrock."
+      "answerText": "Grant access to the custom model in Amazon Bedrock.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 51,
@@ -2507,7 +2689,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Evaluate the models by using a human workforce and custom prompt datasets."
+      "answerText": "Evaluate the models by using a human workforce and custom prompt datasets.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 52,
@@ -2562,7 +2747,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Plagiarism"
+      "answerText": "Plagiarism",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 53,
@@ -2614,7 +2802,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon EC2 Trn series"
+      "answerText": "Amazon EC2 Trn series",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 54,
@@ -2669,7 +2860,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Guardrails for Amazon Bedrock"
+      "answerText": "Guardrails for Amazon Bedrock",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 55,
@@ -2724,7 +2918,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Generative adversarial network (GAN)"
+      "answerText": "Generative adversarial network (GAN)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 56,
@@ -2778,7 +2975,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas."
+      "answerText": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 57,
@@ -2833,7 +3033,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Sampling bias"
+      "answerText": "Sampling bias",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 58,
@@ -2887,7 +3090,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Reinforcement learning with rewards for positive customer feedback"
+      "answerText": "Reinforcement learning with rewards for positive customer feedback",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 59,
@@ -2942,7 +3148,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Confusion matrix"
+      "answerText": "Confusion matrix",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 60,
@@ -2997,7 +3206,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Implement moderation APIs."
+      "answerText": "Implement moderation APIs.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 61,
@@ -3052,7 +3264,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Enable invocation logging in Amazon Bedrock."
+      "answerText": "Enable invocation logging in Amazon Bedrock.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 62,
@@ -3107,7 +3322,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Batch transform"
+      "answerText": "Batch transform",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 63,
@@ -3162,7 +3380,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Embeddings"
+      "answerText": "Embeddings",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 64,
@@ -3217,7 +3438,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use domain adaptation fine-tuning to adapt the FM to complex scientific terms."
+      "answerText": "Use domain adaptation fine-tuning to adapt the FM to complex scientific terms.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 65,
@@ -3271,7 +3495,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Decrease the temperature value."
+      "answerText": "Decrease the temperature value.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 66,
@@ -3326,7 +3553,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Create one Amazon Bedrock role that has full Amazon S3 access. Create IAM roles for each team that have access to only each team's customer folders."
+      "answerText": "Create one Amazon Bedrock role that has full Amazon S3 access. Create IAM roles for each team that have access to only each team's customer folders.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 67,
@@ -3375,7 +3605,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations."
+      "answerText": "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 68,
@@ -3423,7 +3656,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Textract"
+      "answerText": "Amazon Textract",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 69,
@@ -3472,7 +3708,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Add a role description to the prompt context that instructs the model of the age range that the response should target"
+      "answerText": "Add a role description to the prompt context that instructs the model of the age range that the response should target",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 70,
@@ -3520,7 +3759,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Measure the model's accuracy against a predefined benchmark dataset"
+      "answerText": "Measure the model's accuracy against a predefined benchmark dataset",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 71,
@@ -3578,7 +3820,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 72,
@@ -3626,7 +3871,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Exploratory data analysis"
+      "answerText": "Exploratory data analysis",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 73,
@@ -3674,7 +3922,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "BERT-based models"
+      "answerText": "BERT-based models",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 74,
@@ -3722,7 +3973,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Q in Amazon QuickSight"
+      "answerText": "Amazon Q in Amazon QuickSight",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 75,
@@ -3768,7 +4022,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Pairs of user messages and correct user intents"
+      "answerText": "Pairs of user messages and correct user intents",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 76,
@@ -3816,7 +4073,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Decrease the number of tokens in the prompt"
+      "answerText": "Decrease the number of tokens in the prompt",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 77,
@@ -3863,7 +4123,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Hallucination"
+      "answerText": "Hallucination",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 78,
@@ -3909,7 +4172,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Delete the custom model. Remove the confidential data from the training dataset. Retrain the custom model"
+      "answerText": "Delete the custom model. Remove the confidential data from the training dataset. Retrain the custom model",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 79,
@@ -3957,7 +4223,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Bilingual Evaluation Understudy (BLEU)"
+      "answerText": "Bilingual Evaluation Understudy (BLEU)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 80,
@@ -4008,7 +4277,10 @@ window.AWS_AI_QUIZ_DATA = {
         "B",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 81,
@@ -4055,7 +4327,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Improves model performance over time"
+      "answerText": "Improves model performance over time",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 82,
@@ -4103,7 +4378,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Tokens are the basic units of input and output that a generative AI model operates on, representing words, subwords, or other linguistic units."
+      "answerText": "Tokens are the basic units of input and output that a generative AI model operates on, representing words, subwords, or other linguistic units.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 83,
@@ -4150,7 +4428,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Number of tokens consumed"
+      "answerText": "Number of tokens consumed",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 84,
@@ -4196,7 +4477,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Configure SageMaker to use a VPC with an S3 endpoint"
+      "answerText": "Configure SageMaker to use a VPC with an S3 endpoint",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 85,
@@ -4244,7 +4528,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon S3"
+      "answerText": "Amazon S3",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 86,
@@ -4292,7 +4579,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Extracting the prompt template"
+      "answerText": "Extracting the prompt template",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 87,
@@ -4338,7 +4628,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Securing the company's data in transit and at rest"
+      "answerText": "Securing the company's data in transit and at rest",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 88,
@@ -4385,7 +4678,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Automatic model evaluation"
+      "answerText": "Automatic model evaluation",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 89,
@@ -4432,7 +4728,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Jailbreak"
+      "answerText": "Jailbreak",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 90,
@@ -4480,7 +4779,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Run SageMaker training and Inference by using network Isolation"
+      "answerText": "Run SageMaker training and Inference by using network Isolation",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 91,
@@ -4528,7 +4830,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Create Amazon SageMaker Model Cards with intended uses and training and inference details."
+      "answerText": "Create Amazon SageMaker Model Cards with intended uses and training and inference details.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 92,
@@ -4576,7 +4881,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Install code recommendation software in the company's developer tools."
+      "answerText": "Install code recommendation software in the company's developer tools.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 93,
@@ -4622,7 +4930,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Time series data"
+      "answerText": "Time series data",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 94,
@@ -4670,7 +4981,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Measure class imbalance on the training dataset. Adapt the training process accordingly."
+      "answerText": "Measure class imbalance on the training dataset. Adapt the training process accordingly.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 95,
@@ -4717,7 +5031,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Zero-shot prompting"
+      "answerText": "Zero-shot prompting",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 96,
@@ -4766,7 +5083,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "F1 score"
+      "answerText": "F1 score",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 97,
@@ -4814,7 +5134,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Increase the classifier-free guidance (CFG) scale."
+      "answerText": "Increase the classifier-free guidance (CFG) scale.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 98,
@@ -4861,7 +5184,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Implement Retrieval Augmented Generation (RAG) for in-context responses."
+      "answerText": "Implement Retrieval Augmented Generation (RAG) for in-context responses.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 99,
@@ -4907,7 +5233,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Q Developer"
+      "answerText": "Amazon Q Developer",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 100,
@@ -4955,7 +5284,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Fairness"
+      "answerText": "Fairness",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 101,
@@ -5002,7 +5334,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Clarify"
+      "answerText": "Amazon SageMaker Clarify",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 102,
@@ -5048,7 +5383,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "BERTScore"
+      "answerText": "BERTScore",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 103,
@@ -5095,7 +5433,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "K-nearest neighbors (k-NN)"
+      "answerText": "K-nearest neighbors (k-NN)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 104,
@@ -5142,7 +5483,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS Key Management Service (AWS KMS)"
+      "answerText": "AWS Key Management Service (AWS KMS)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 105,
@@ -5189,7 +5533,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Text generation"
+      "answerText": "Text generation",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 106,
@@ -5236,7 +5583,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score"
+      "answerText": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 107,
@@ -5283,7 +5633,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use negative prompts."
+      "answerText": "Use negative prompts.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 108,
@@ -5330,7 +5683,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Provide detailed, product-specific prompts to ensure precise and customized descriptions."
+      "answerText": "Provide detailed, product-specific prompts to ensure precise and customized descriptions.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 109,
@@ -5377,7 +5733,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Increase the regularization parameter to decrease model complexity."
+      "answerText": "Increase the regularization parameter to decrease model complexity.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 110,
@@ -5424,7 +5783,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Aurora PostgreSQL"
+      "answerText": "Amazon Aurora PostgreSQL",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 111,
@@ -5471,7 +5833,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Model complexity"
+      "answerText": "Model complexity",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 112,
@@ -5518,7 +5883,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Create medication review summaries by using Amazon Bedrock large language models (LLMs)."
+      "answerText": "Create medication review summaries by using Amazon Bedrock large language models (LLMs).",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 113,
@@ -5564,7 +5932,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Logistic regression model"
+      "answerText": "Logistic regression model",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 114,
@@ -5592,7 +5963,10 @@ window.AWS_AI_QUIZ_DATA = {
         "모델 학습",
         "모델 평가",
         "배포 및 모니터링"
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 115,
@@ -5639,7 +6013,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Assess the model's alignment with specific use cases."
+      "answerText": "Assess the model's alignment with specific use cases.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 116,
@@ -5686,7 +6063,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Supervised learning"
+      "answerText": "Supervised learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 117,
@@ -5733,7 +6113,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Business goal identification"
+      "answerText": "Business goal identification",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 118,
@@ -5780,7 +6163,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use Amazon SageMaker and iterate with newer data."
+      "answerText": "Use Amazon SageMaker and iterate with newer data.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 119,
@@ -5827,7 +6213,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Deploy the model by using an Amazon SageMaker endpoint."
+      "answerText": "Deploy the model by using an Amazon SageMaker endpoint.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 120,
@@ -5874,7 +6263,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application."
+      "answerText": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 121,
@@ -5921,7 +6313,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Computer vision"
+      "answerText": "Computer vision",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 122,
@@ -5968,7 +6363,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon SageMaker"
+      "answerText": "Amazon SageMaker",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 123,
@@ -6015,7 +6413,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Human-in-the-loop"
+      "answerText": "Human-in-the-loop",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 124,
@@ -6062,7 +6463,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Include more diverse training data. Fine-tune the model again by using the new data."
+      "answerText": "Include more diverse training data. Fine-tune the model again by using the new data.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 125,
@@ -6098,7 +6502,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "개발 및 테스트 목적",
           "answer": "배치 추론 (Batch inference)"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 126,
@@ -6155,7 +6562,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "D"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 127,
@@ -6202,7 +6612,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Personalize"
+      "answerText": "Amazon Personalize",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 128,
@@ -6249,7 +6662,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Data residency"
+      "answerText": "Data residency",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 129,
@@ -6296,7 +6712,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon CloudWatch"
+      "answerText": "Amazon CloudWatch",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 130,
@@ -6343,7 +6762,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Chain-of-thought prompting"
+      "answerText": "Chain-of-thought prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 131,
@@ -6399,7 +6821,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Bedrock)"
+      "answerText": "(Amazon Bedrock)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 132,
@@ -6452,7 +6877,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Use a deep learning neural network to perform speech recognition)"
+      "answerText": "(Use a deep learning neural network to perform speech recognition)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 133,
@@ -6499,7 +6927,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Chain-of-thought prompting)"
+      "answerText": "(Chain-of-thought prompting)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 134,
@@ -6546,7 +6977,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Continuous pre-training)"
+      "answerText": "(Continuous pre-training)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 135,
@@ -6588,7 +7022,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "API",
           "answer": "Real-time inference"
         }
-      ]
+      ],
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 136,
@@ -6635,7 +7072,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(정책 및 가이드라인 개발)"
+      "answerText": "(정책 및 가이드라인 개발)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 137,
@@ -6682,7 +7122,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(고객 대화당 비용)"
+      "answerText": "(고객 대화당 비용)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 138,
@@ -6729,7 +7172,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(K-means)"
+      "answerText": "(K-means)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 139,
@@ -6777,7 +7223,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(온도 파라미터 낮추기)"
+      "answerText": "(온도 파라미터 낮추기)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 140,
@@ -6825,7 +7274,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(이전 메시지를 프롬프트에 추가)"
+      "answerText": "(이전 메시지를 프롬프트에 추가)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 141,
@@ -6873,7 +7325,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Amazon Bedrock)"
+      "answerText": "(Amazon Bedrock)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 142,
@@ -6921,7 +7376,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon Macie 구성)"
+      "answerText": "(Amazon Macie 구성)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 143,
@@ -6966,7 +7424,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "\"[Question.] Think step by step...\"",
           "answer": "Chain-of-thought reasoning (단계별 사고 과정 요구)"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 144,
@@ -7016,7 +7477,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "출처에 근거 없는 정보 필터링",
           "answer": "Contextual grounding check"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 145,
@@ -7063,7 +7527,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Standardizing information about a model's purpose, performance, and limitations."
+      "answerText": "Standardizing information about a model's purpose, performance, and limitations.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 146,
@@ -7108,7 +7575,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Model precision and recall"
+      "answerText": "Model precision and recall",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 147,
@@ -7153,7 +7623,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(RAG 사용)"
+      "answerText": "(RAG 사용)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 148,
@@ -7198,7 +7671,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Fairness, 공정성)"
+      "answerText": "(Fairness, 공정성)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 149,
@@ -7255,7 +7731,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "B"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 150,
@@ -7300,7 +7779,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(프롬프트 엔지니어링 사용)"
+      "answerText": "(프롬프트 엔지니어링 사용)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 151,
@@ -7348,7 +7830,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Comprehend toxicity detection)"
+      "answerText": "(Amazon Comprehend toxicity detection)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 152,
@@ -7396,7 +7881,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon SageMaker Model Monitor)"
+      "answerText": "(Amazon SageMaker Model Monitor)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 153,
@@ -7443,7 +7931,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Model Cards)"
+      "answerText": "(Amazon SageMaker Model Cards)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 154,
@@ -7490,7 +7981,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon Translate)"
+      "answerText": "(Amazon Translate)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 155,
@@ -7532,7 +8026,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "Only unlabeled data is available",
           "answer": "Continued pre-training"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 156,
@@ -7579,7 +8076,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Model Cards)"
+      "answerText": "(Amazon SageMaker Model Cards)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 157,
@@ -7624,7 +8124,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Summarizing customer complaints)"
+      "answerText": "(Summarizing customer complaints)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 158,
@@ -7671,7 +8174,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries."
+      "answerText": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 159,
@@ -7714,7 +8220,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "A numerical method for data representation in a reduced dimensionality space"
+      "answerText": "A numerical method for data representation in a reduced dimensionality space",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 160,
@@ -7762,7 +8271,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "The input tokens exceed the model's context size."
+      "answerText": "The input tokens exceed the model's context size.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 161,
@@ -7809,7 +8321,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Bedrock의 RAG 에이전트 사용)"
+      "answerText": "(Amazon Bedrock의 RAG 에이전트 사용)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 162,
@@ -7852,7 +8367,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(텍스트를 작은 단위로 분할)"
+      "answerText": "(텍스트를 작은 단위로 분할)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 163,
@@ -7920,7 +8438,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Self-attention을 활용한 컨텍스트 이해)"
+      "answerText": "(Self-attention을 활용한 컨텍스트 이해)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 164,
@@ -7967,7 +8488,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(알고리즘 책임 관련 법률)"
+      "answerText": "(알고리즘 책임 관련 법률)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 165,
@@ -8021,7 +8545,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 166,
@@ -8068,7 +8595,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(프롬프트 인젝션 공격에 취약)"
+      "answerText": "(프롬프트 인젝션 공격에 취약)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 167,
@@ -8120,7 +8650,10 @@ window.AWS_AI_QUIZ_DATA = {
         "C",
         "A"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 168,
@@ -8163,7 +8696,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Prompt chaining)"
+      "answerText": "(Prompt chaining)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 169,
@@ -8206,7 +8742,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(RAG)"
+      "answerText": "(RAG)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 170,
@@ -8253,7 +8792,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Model Cards)"
+      "answerText": "(Model Cards)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 171,
@@ -8298,7 +8840,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon SageMaker Model Monitor)"
+      "answerText": "(Amazon SageMaker Model Monitor)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 172,
@@ -8342,7 +8887,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(컨텍스트 관련성 향상)"
+      "answerText": "(컨텍스트 관련성 향상)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 173,
@@ -8387,7 +8935,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(On-Demand Throughput)"
+      "answerText": "(On-Demand Throughput)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 174,
@@ -8432,7 +8983,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Denied topics)"
+      "answerText": "(Denied topics)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 175,
@@ -8477,7 +9031,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Precision)"
+      "answerText": "(Precision)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 176,
@@ -8522,7 +9079,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(참조 링크 제공)"
+      "answerText": "(참조 링크 제공)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 177,
@@ -8568,7 +9128,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Explainability)"
+      "answerText": "(Explainability)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 178,
@@ -8616,7 +9179,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(외부 지식 활용 가능)"
+      "answerText": "(외부 지식 활용 가능)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 179,
@@ -8660,7 +9226,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Provisioned Throughput)"
+      "answerText": "(Provisioned Throughput)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 180,
@@ -8707,7 +9276,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Fine-tuning)"
+      "answerText": "(Fine-tuning)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 181,
@@ -8754,7 +9326,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(프롬프트에 예시 포함)"
+      "answerText": "(프롬프트에 예시 포함)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 182,
@@ -8801,7 +9376,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(일관되고 확장 가능한 배포)"
+      "answerText": "(일관되고 확장 가능한 배포)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 183,
@@ -8845,7 +9423,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(질문-답변 쌍 생성)"
+      "answerText": "(질문-답변 쌍 생성)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 184,
@@ -8892,7 +9473,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Federated learning)"
+      "answerText": "(Federated learning)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 185,
@@ -8936,7 +9520,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "회사는 시간이 지남에 따라 더 많은 비라벨 데이터를 사용해 모델을 재학습하기 원합니다.",
           "answer": "지속적 사전학습"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 186,
@@ -8981,7 +9568,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(적응성)"
+      "answerText": "(적응성)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 187,
@@ -9027,7 +9617,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Binary Classification (이진 분류)"
+      "answerText": "Binary Classification (이진 분류)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 188,
@@ -9069,7 +9662,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "Amazon Bedrock Guardrails를 사용해 유해 출력 방지",
           "answer": "안전성"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 189,
@@ -9113,7 +9709,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(AWS HealthScribe)"
+      "answerText": "(AWS HealthScribe)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 190,
@@ -9160,7 +9759,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Regression)"
+      "answerText": "(Regression)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 191,
@@ -9206,7 +9808,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "사람의 개입으로 라벨링된 데이터셋 생성",
           "answer": "SageMaker Ground Truth"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 192,
@@ -9253,7 +9858,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Providing the ability to mathematically compare texts)"
+      "answerText": "(Providing the ability to mathematically compare texts)",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 193,
@@ -9310,7 +9918,10 @@ window.AWS_AI_QUIZ_DATA = {
         "B",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 194,
@@ -9357,7 +9968,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(AWS Artifact)"
+      "answerText": "(AWS Artifact)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 195,
@@ -9404,7 +10018,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Guardrails for Amazon Bedrock)"
+      "answerText": "(Guardrails for Amazon Bedrock)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 196,
@@ -9451,7 +10068,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Bilingual Evaluation Understudy, BLEU score)"
+      "answerText": "(Bilingual Evaluation Understudy, BLEU score)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 197,
@@ -9498,7 +10118,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Fine-tuning improves performance on a specific task)"
+      "answerText": "(Fine-tuning improves performance on a specific task)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 198,
@@ -9546,7 +10169,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon Bedrock fine-tuning job)"
+      "answerText": "(Amazon Bedrock fine-tuning job)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 199,
@@ -9593,7 +10219,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Prompt injection)"
+      "answerText": "(Prompt injection)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 200,
@@ -9640,7 +10269,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Block interactions related to predefined topics)"
+      "answerText": "(Block interactions related to predefined topics)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 201,
@@ -9689,7 +10321,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Large multi-modal language model"
+      "answerText": "Large multi-modal language model",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 202,
@@ -9737,7 +10372,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Evaluation"
+      "answerText": "Evaluation",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 203,
@@ -9785,7 +10423,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Embeddings represent data as high-dimensional vectors that capture semantic relationships."
+      "answerText": "Embeddings represent data as high-dimensional vectors that capture semantic relationships.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 204,
@@ -9832,7 +10473,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM."
+      "answerText": "Configure the application to automatically set the temperature parameter to 0 when submitting the prompt to the LLM.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 205,
@@ -9880,7 +10524,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Inference speed"
+      "answerText": "Inference speed",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 206,
@@ -9928,7 +10575,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Prompt"
+      "answerText": "Prompt",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 207,
@@ -9976,7 +10626,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Ensure that the data is balanced and collected from a diverse group."
+      "answerText": "Ensure that the data is balanced and collected from a diverse group.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 208,
@@ -10024,7 +10677,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "F1 score"
+      "answerText": "F1 score",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 209,
@@ -10073,7 +10729,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Accuracy"
+      "answerText": "Accuracy",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 210,
@@ -10123,7 +10782,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Batch inference"
+      "answerText": "Batch inference",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 211,
@@ -10171,7 +10833,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Model Monitor"
+      "answerText": "Amazon SageMaker Model Monitor",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 212,
@@ -10219,7 +10884,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use AWS Identity and Access Management (IAM) policies to restrict model access"
+      "answerText": "Use AWS Identity and Access Management (IAM) policies to restrict model access",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 213,
@@ -10267,7 +10935,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Supervised learning"
+      "answerText": "Supervised learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 214,
@@ -10315,7 +10986,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Top K"
+      "answerText": "Top K",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 215,
@@ -10363,7 +11037,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Text embeddings model"
+      "answerText": "Text embeddings model",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 216,
@@ -10410,7 +11087,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Few-shot prompting"
+      "answerText": "Few-shot prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 217,
@@ -10458,7 +11138,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM"
+      "answerText": "Remove personally identifiable information (PII) from the customer data before fine-tuning the LLM",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 218,
@@ -10505,7 +11188,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Reasoning and acting (ReAct) prompting"
+      "answerText": "Reasoning and acting (ReAct) prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 219,
@@ -10553,7 +11239,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "User inputs and model outputs are not shared with any third-party model providers."
+      "answerText": "User inputs and model outputs are not shared with any third-party model providers.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 220,
@@ -10601,7 +11290,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Transcribe"
+      "answerText": "Amazon Transcribe",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 221,
@@ -10646,7 +11338,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Clustering)"
+      "answerText": "(Clustering)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 222,
@@ -10691,7 +11386,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Configure Amazon SageMaker JumpStart to restrict discoverable FMs)"
+      "answerText": "(Configure Amazon SageMaker JumpStart to restrict discoverable FMs)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 223,
@@ -10735,7 +11433,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Use BLEU to estimate the relative translation quality)"
+      "answerText": "(Use BLEU to estimate the relative translation quality)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 224,
@@ -10780,7 +11481,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Increase the temperature value)"
+      "answerText": "(Increase the temperature value)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 225,
@@ -10824,7 +11528,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Ground Truth)"
+      "answerText": "(Amazon SageMaker Ground Truth)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 226,
@@ -10878,7 +11585,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "E"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 227,
@@ -10923,7 +11633,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(F1 score)"
+      "answerText": "(F1 score)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 228,
@@ -10968,7 +11681,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Use Amazon Bedrock Knowledge Bases)"
+      "answerText": "(Use Amazon Bedrock Knowledge Bases)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 229,
@@ -11010,7 +11726,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "Using the current model to make predictions",
           "answer": "SageMaker Serverless Inference"
         }
-      ]
+      ],
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 230,
@@ -11055,7 +11774,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Diversity)"
+      "answerText": "(Diversity)",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 231,
@@ -11100,7 +11822,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Use Retrieval Augmented Generation (RAG))"
+      "answerText": "(Use Retrieval Augmented Generation (RAG))",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 232,
@@ -11145,7 +11870,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(BERTScore)"
+      "answerText": "(BERTScore)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 233,
@@ -11190,7 +11918,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Natural language processing (NLP))"
+      "answerText": "(Natural language processing (NLP))",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 234,
@@ -11237,7 +11968,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Configure Amazon Bedrock Guardrails to evaluate user inputs and model responses."
+      "answerText": "Configure Amazon Bedrock Guardrails to evaluate user inputs and model responses.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 235,
@@ -11272,7 +12006,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "슬로건 생성",
           "answer": "Large Language Model (LLM)"
         }
-      ]
+      ],
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 236,
@@ -11319,7 +12056,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon SageMaker Model Registry"
+      "answerText": "Amazon SageMaker Model Registry",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 237,
@@ -11366,7 +12106,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Present the model Shapley values."
+      "answerText": "Present the model Shapley values.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 238,
@@ -11413,7 +12156,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Unsupervised learning"
+      "answerText": "Unsupervised learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 239,
@@ -11460,7 +12206,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use the Amazon Translate real-time translation feature."
+      "answerText": "Use the Amazon Translate real-time translation feature.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 240,
@@ -11507,7 +12256,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Few-shot prompting"
+      "answerText": "Few-shot prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 241,
@@ -11554,7 +12306,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Use AWS PrivateLink to connect the VPC and Amazon Bedrock."
+      "answerText": "Use AWS PrivateLink to connect the VPC and Amazon Bedrock.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 242,
@@ -11611,7 +12366,10 @@ window.AWS_AI_QUIZ_DATA = {
         "A",
         "C"
       ],
-      "requiredSelections": 2
+      "requiredSelections": 2,
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 243,
@@ -11658,7 +12416,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Create a Retrieval Augmented Generation (RAG) workflow by using Amazon Bedrock Knowledge Bases."
+      "answerText": "Create a Retrieval Augmented Generation (RAG) workflow by using Amazon Bedrock Knowledge Bases.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 244,
@@ -11705,7 +12466,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Fine-tuning"
+      "answerText": "Fine-tuning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 245,
@@ -11757,7 +12521,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "대출 신청자의 개인정보와 민감 정보를 보호한다",
           "answer": "개인정보 보호 (Privacy)"
         }
-      ]
+      ],
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 246,
@@ -11802,7 +12569,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Samples of pairs of input and output messages"
+      "answerText": "Samples of pairs of input and output messages",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 247,
@@ -11849,7 +12619,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Use a trained model to predict patient readmission."
+      "answerText": "Use a trained model to predict patient readmission.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 248,
@@ -11896,7 +12669,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Augmented AI (Amazon A2I)"
+      "answerText": "Amazon Augmented AI (Amazon A2I)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 249,
@@ -11943,7 +12719,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon Q Business"
+      "answerText": "Amazon Q Business",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 250,
@@ -11990,7 +12769,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Canvas"
+      "answerText": "Amazon SageMaker Canvas",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 251,
@@ -12035,7 +12817,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Generation step"
+      "answerText": "Generation step",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 252,
@@ -12080,7 +12865,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS PrivateLink"
+      "answerText": "AWS PrivateLink",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 253,
@@ -12125,7 +12913,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Bedrock Guardrails"
+      "answerText": "Amazon Bedrock Guardrails",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 254,
@@ -12169,7 +12960,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon SageMaker JumpStart"
+      "answerText": "Amazon SageMaker JumpStart",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 255,
@@ -12214,7 +13008,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Diverse conversations that use relevant terminology"
+      "answerText": "Diverse conversations that use relevant terminology",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 256,
@@ -12259,7 +13056,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Review the training data to check for biases. Include data from all demographics in the training data."
+      "answerText": "Review the training data to check for biases. Include data from all demographics in the training data.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 257,
@@ -12303,7 +13103,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "텍스트 추출",
           "answer": "Textract"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 258,
@@ -12348,7 +13151,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "SageMaker Canvas"
+      "answerText": "SageMaker Canvas",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 259,
@@ -12392,7 +13198,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Training on bias awareness and responsible AI"
+      "answerText": "Training on bias awareness and responsible AI",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 260,
@@ -12437,7 +13246,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Model interpretability"
+      "answerText": "Model interpretability",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 261,
@@ -12482,7 +13294,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "K-means"
+      "answerText": "K-means",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 262,
@@ -12527,7 +13342,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Temperature"
+      "answerText": "Temperature",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 263,
@@ -12572,7 +13390,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Use a negative prompt"
+      "answerText": "Use a negative prompt",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 264,
@@ -12610,7 +13431,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "강화 학습",
           "answer": "게임 또는 시뮬레이션 기반 최적화"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 265,
@@ -12655,7 +13479,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon SageMaker Ground Truth Plus"
+      "answerText": "Amazon SageMaker Ground Truth Plus",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 266,
@@ -12700,7 +13527,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon OpenSearch Service"
+      "answerText": "Amazon OpenSearch Service",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 267,
@@ -12744,7 +13574,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "모델 배포",
           "answer": "SageMaker Endpoint"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 268,
@@ -12789,7 +13622,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Continued pre-training"
+      "answerText": "Continued pre-training",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 269,
@@ -12834,7 +13670,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Re-train the model with fresh data"
+      "answerText": "Re-train the model with fresh data",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 270,
@@ -12879,7 +13718,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Apply explainable AI techniques to show customers which factors influenced the model's decision"
+      "answerText": "Apply explainable AI techniques to show customers which factors influenced the model's decision",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 271,
@@ -12923,7 +13765,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Retrain the model. Monitor model drift by using Amazon SageMaker Model Monitor."
+      "answerText": "Retrain the model. Monitor model drift by using Amazon SageMaker Model Monitor.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 272,
@@ -12967,7 +13812,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "A model that groups customers based on their purchase history"
+      "answerText": "A model that groups customers based on their purchase history",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 273,
@@ -13012,7 +13860,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)"
+      "answerText": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 274,
@@ -13057,7 +13908,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Use model evaluation on Amazon Bedrock"
+      "answerText": "Use model evaluation on Amazon Bedrock",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 275,
@@ -13089,7 +13943,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "사용자 참여",
           "answer": "클릭률(CTR), 세션 수, 재방문율 등"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 276,
@@ -13134,7 +13991,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon SageMaker Clarify"
+      "answerText": "Amazon SageMaker Clarify",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 277,
@@ -13179,7 +14039,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Natural language processing (NLP)"
+      "answerText": "Natural language processing (NLP)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 278,
@@ -13224,7 +14087,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Use AWS PrivateLink to configure a private connection between the company's VPC and Amazon Bedrock"
+      "answerText": "Use AWS PrivateLink to configure a private connection between the company's VPC and Amazon Bedrock",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 279,
@@ -13269,7 +14135,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use a large language model (LLM) to perform natural language processing (NLP) for sentiment analysis"
+      "answerText": "Use a large language model (LLM) to perform natural language processing (NLP) for sentiment analysis",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 280,
@@ -13313,7 +14182,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "Feature engineering",
           "answer": "입력 데이터 품질 향상"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 281,
@@ -13358,7 +14230,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Modality"
+      "answerText": "Modality",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 282,
@@ -13403,7 +14278,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Classification"
+      "answerText": "Classification",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 283,
@@ -13444,7 +14322,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "새로운 데이터를 생성하는 인공지능이다",
           "answer": "Generative AI"
         }
-      ]
+      ],
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 284,
@@ -13490,7 +14371,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Clustering data points into groups based on their similarity"
+      "answerText": "Clustering data points into groups based on their similarity",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 285,
@@ -13535,7 +14419,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Kendra"
+      "answerText": "Amazon Kendra",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 286,
@@ -13580,7 +14467,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon S3"
+      "answerText": "Amazon S3",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 287,
@@ -13625,7 +14515,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "AWS Lambda"
+      "answerText": "AWS Lambda",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 288,
@@ -13670,7 +14563,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon DynamoDB"
+      "answerText": "Amazon DynamoDB",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 289,
@@ -13715,7 +14611,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon CloudWatch"
+      "answerText": "Amazon CloudWatch",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 290,
@@ -13760,7 +14659,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon VPC"
+      "answerText": "Amazon VPC",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 291,
@@ -13805,7 +14707,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon EC2"
+      "answerText": "Amazon EC2",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 292,
@@ -13850,7 +14755,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon CloudFront"
+      "answerText": "Amazon CloudFront",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 293,
@@ -13895,7 +14803,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Route 53"
+      "answerText": "Amazon Route 53",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 294,
@@ -13940,7 +14851,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "AWS Elastic Beanstalk"
+      "answerText": "AWS Elastic Beanstalk",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 295,
@@ -13985,7 +14899,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "AWS CloudFormation"
+      "answerText": "AWS CloudFormation",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 296,
@@ -14030,7 +14947,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS Auto Scaling"
+      "answerText": "AWS Auto Scaling",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 297,
@@ -14075,7 +14995,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon ECS"
+      "answerText": "Amazon ECS",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 298,
@@ -14120,7 +15043,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon EKS"
+      "answerText": "Amazon EKS",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 299,
@@ -14165,7 +15091,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "AWS Fargate"
+      "answerText": "AWS Fargate",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 300,
@@ -14210,7 +15139,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "AWS IAM"
+      "answerText": "AWS IAM",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 301,
@@ -14255,7 +15187,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Bedrock Guardrails"
+      "answerText": "Amazon Bedrock Guardrails",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 302,
@@ -14300,7 +15235,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Nova Lite"
+      "answerText": "Nova Lite",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 303,
@@ -14345,7 +15283,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Use Amazon Bedrock Guardrails content filters and denied topics."
+      "answerText": "Use Amazon Bedrock Guardrails content filters and denied topics.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 304,
@@ -14390,7 +15331,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "The use of a trained model to make predictions or decisions on unseen data"
+      "answerText": "The use of a trained model to make predictions or decisions on unseen data",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 305,
@@ -14435,7 +15379,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Agents"
+      "answerText": "Agents",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 306,
@@ -14480,7 +15427,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Nondeterminism"
+      "answerText": "Nondeterminism",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 307,
@@ -14525,7 +15475,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Use Amazon Bedrock Stable Diffusion 3.5 Large to generate images based on text inputs."
+      "answerText": "Use Amazon Bedrock Stable Diffusion 3.5 Large to generate images based on text inputs.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 308,
@@ -14570,7 +15523,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Batch transform"
+      "answerText": "Batch transform",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 309,
@@ -14592,7 +15548,10 @@ window.AWS_AI_QUIZ_DATA = {
         "모델 학습 (Model Training)",
         "모델 평가 (Model Evaluation)",
         "배포 및 모니터링 (Deployment and Monitoring)"
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 310,
@@ -14634,7 +15593,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "The company's development framework is ISO certified."
+      "answerText": "The company's development framework is ISO certified.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 311,
@@ -14672,7 +15634,10 @@ window.AWS_AI_QUIZ_DATA = {
           "prompt": "단계별로 생각하도록 유도해 추론 과정을 끌어내는 방식",
           "answer": "Chain-of-thought prompting"
         }
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 312,
@@ -14714,7 +15679,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Supervised learning"
+      "answerText": "Supervised learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 313,
@@ -14738,7 +15706,10 @@ window.AWS_AI_QUIZ_DATA = {
         "전처리 (텍스트 및 이미지 추출)",
         "생성형 AI 모델 활용",
         "결과를 데이터베이스에 저장"
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 314,
@@ -14780,7 +15751,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Data retention"
+      "answerText": "Data retention",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 315,
@@ -14822,7 +15796,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Create an AWS Lambda function to perform the transformations."
+      "answerText": "Create an AWS Lambda function to perform the transformations.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 316,
@@ -14864,7 +15841,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Nondeterminism"
+      "answerText": "Nondeterminism",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 317,
@@ -14906,7 +15886,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "A transformer-based model"
+      "answerText": "A transformer-based model",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 318,
@@ -14948,7 +15931,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "The model is overfit."
+      "answerText": "The model is overfit.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 319,
@@ -14994,7 +15980,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "로지스틱 회귀 모델"
+      "answerText": "로지스틱 회귀 모델",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 320,
@@ -15040,7 +16029,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "데이터 레지던시(Data residency)"
+      "answerText": "데이터 레지던시(Data residency)",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 321,
@@ -15086,7 +16078,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "이해관계자 인터뷰 후 목표 설정"
+      "answerText": "이해관계자 인터뷰 후 목표 설정",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 322,
@@ -15132,7 +16127,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "데이터 전처리(Data preprocessing)"
+      "answerText": "데이터 전처리(Data preprocessing)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 323,
@@ -15178,7 +16176,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Few-shot prompting"
+      "answerText": "Few-shot prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 324,
@@ -15223,7 +16224,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "Amazon Bedrock"
+      "answerText": "Amazon Bedrock",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 325,
@@ -15269,7 +16273,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Continued pre-training"
+      "answerText": "Continued pre-training",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 326,
@@ -15315,7 +16322,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Pre-trained deep learning model + fine-tune"
+      "answerText": "Pre-trained deep learning model + fine-tune",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 327,
@@ -15360,7 +16370,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "JSON with labeled data"
+      "answerText": "JSON with labeled data",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 328,
@@ -15383,7 +16396,10 @@ window.AWS_AI_QUIZ_DATA = {
         "RAG",
         "Fine-tuning",
         "Full model training"
-      ]
+      ],
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 329,
@@ -15429,7 +16445,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Syntax, semantic understanding, code optimization capabilities"
+      "answerText": "Syntax, semantic understanding, code optimization capabilities",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 330,
@@ -15473,7 +16492,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Data anonymization"
+      "answerText": "Data anonymization",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 331,
@@ -15516,7 +16538,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Clarify"
+      "answerText": "Amazon SageMaker Clarify",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 332,
@@ -15559,7 +16584,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Implement guardrails and content filtering"
+      "answerText": "Implement guardrails and content filtering",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 333,
@@ -15602,7 +16630,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Ground Truth"
+      "answerText": "Amazon SageMaker Ground Truth",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 334,
@@ -15643,7 +16674,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "It creates new content such as text, images, or audio."
+      "answerText": "It creates new content such as text, images, or audio.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 335,
@@ -15686,7 +16720,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Bedrock"
+      "answerText": "Amazon Bedrock",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 336,
@@ -15729,7 +16766,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Few-shot prompting"
+      "answerText": "Few-shot prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 337,
@@ -15770,7 +16810,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Hallucination"
+      "answerText": "Hallucination",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 338,
@@ -15813,7 +16856,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Q (또는 D. Amazon Kendra - 컨텍스트에 따라 다를 수 있으나 현재 생성형 AI 시험에서는 Q가 핵심)"
+      "answerText": "Amazon Q (또는 D. Amazon Kendra - 컨텍스트에 따라 다를 수 있으나 현재 생성형 AI 시험에서는 Q가 핵심)",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 339,
@@ -15855,7 +16901,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Knowledge distillation"
+      "answerText": "Knowledge distillation",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 340,
@@ -15899,7 +16948,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Data anonymization"
+      "answerText": "Data anonymization",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 341,
@@ -15943,7 +16995,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Guardrails for Amazon Bedrock"
+      "answerText": "Guardrails for Amazon Bedrock",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 342,
@@ -15987,7 +17042,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Receiver Operating Characteristic (ROC) curve"
+      "answerText": "Receiver Operating Characteristic (ROC) curve",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 343,
@@ -16030,7 +17088,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Retrieval-Augmented Generation (RAG)"
+      "answerText": "Retrieval-Augmented Generation (RAG)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 344,
@@ -16074,7 +17135,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Data preprocessing"
+      "answerText": "Data preprocessing",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 345,
@@ -16115,7 +17179,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Bedrock Guardrails"
+      "answerText": "Bedrock Guardrails",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 346,
@@ -16158,7 +17225,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Systematic errors in a model that lead to unfair treatment of certain groups"
+      "answerText": "Systematic errors in a model that lead to unfair treatment of certain groups",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 347,
@@ -16199,7 +17269,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Bedrock"
+      "answerText": "Amazon Bedrock",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 348,
@@ -16240,7 +17313,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Overfitting Shutterstock 탐색"
+      "answerText": "Overfitting Shutterstock 탐색",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 349,
@@ -16284,7 +17360,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "To adjust the randomness and creativity of the model's output"
+      "answerText": "To adjust the randomness and creativity of the model's output",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 350,
@@ -16327,7 +17406,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Textract"
+      "answerText": "Amazon Textract",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 351,
@@ -16370,7 +17452,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Model bias"
+      "answerText": "Model bias",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 352,
@@ -16413,7 +17498,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Temperature"
+      "answerText": "Temperature",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 353,
@@ -16454,7 +17542,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Lex"
+      "answerText": "Amazon Lex",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 354,
@@ -16495,7 +17586,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Few-shot prompting"
+      "answerText": "Few-shot prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 355,
@@ -16536,7 +17630,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Comprehend"
+      "answerText": "Amazon Comprehend",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 356,
@@ -16577,7 +17674,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Personalize"
+      "answerText": "Amazon Personalize",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 357,
@@ -16618,7 +17718,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "It reduces hallucinations by grounding the model in external, up-to-date data."
+      "answerText": "It reduces hallucinations by grounding the model in external, up-to-date data.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 358,
@@ -16659,7 +17762,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Optimizing resource utilization by rightsizing instances"
+      "answerText": "Optimizing resource utilization by rightsizing instances",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 359,
@@ -16701,7 +17807,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Bedrock"
+      "answerText": "Amazon Bedrock",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 360,
@@ -16744,7 +17853,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Hallucination"
+      "answerText": "Hallucination",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 361,
@@ -16785,7 +17897,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "It can be adapted to a wide range of downstream tasks."
+      "answerText": "It can be adapted to a wide range of downstream tasks.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 362,
@@ -16826,7 +17941,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Quantization"
+      "answerText": "Quantization",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 363,
@@ -16867,7 +17985,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Rekognition"
+      "answerText": "Amazon Rekognition",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 364,
@@ -16908,7 +18029,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Cost Optimization"
+      "answerText": "Cost Optimization",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 365,
@@ -16949,7 +18073,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "To allow the model to focus on relevant parts of the input sequence."
+      "answerText": "To allow the model to focus on relevant parts of the input sequence.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 366,
@@ -16990,7 +18117,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Overfitting"
+      "answerText": "Overfitting",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 367,
@@ -17031,7 +18161,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Building conversational interfaces for chatbots."
+      "answerText": "Building conversational interfaces for chatbots.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 368,
@@ -17072,7 +18205,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Translate"
+      "answerText": "Amazon Translate",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 369,
@@ -17114,7 +18250,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "AWS"
+      "answerText": "AWS",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 370,
@@ -17155,7 +18294,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Regression"
+      "answerText": "Regression",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 371,
@@ -17196,7 +18338,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Comprehend"
+      "answerText": "Amazon Comprehend",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 372,
@@ -17237,7 +18382,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Automatic scaling and no infrastructure management"
+      "answerText": "Automatic scaling and no infrastructure management",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 373,
@@ -17278,7 +18426,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "To specify what the model should not include in its output."
+      "answerText": "To specify what the model should not include in its output.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 374,
@@ -17319,7 +18470,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Model Robustness"
+      "answerText": "Model Robustness",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 375,
@@ -17360,7 +18514,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Anthropic Claude"
+      "answerText": "Anthropic Claude",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 376,
@@ -17401,7 +18558,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Fine-tuning"
+      "answerText": "Fine-tuning",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 377,
@@ -17442,7 +18602,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Ensuring the model does not have a disproportionate adverse impact on specific groups."
+      "answerText": "Ensuring the model does not have a disproportionate adverse impact on specific groups.",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 378,
@@ -17483,7 +18646,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Retrieval-Augmented Generation (RAG)"
+      "answerText": "Retrieval-Augmented Generation (RAG)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 379,
@@ -17525,7 +18691,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Prompt Engineering"
+      "answerText": "Prompt Engineering",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 380,
@@ -17566,7 +18735,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Bedrock"
+      "answerText": "Amazon Bedrock",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 381,
@@ -17607,7 +18779,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "To provide the model with access to up-to-date or proprietary information."
+      "answerText": "To provide the model with access to up-to-date or proprietary information.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 382,
@@ -17648,7 +18823,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Comprehend"
+      "answerText": "Amazon Comprehend",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 383,
@@ -17689,7 +18867,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "The process of using a trained model to make predictions on new data."
+      "answerText": "The process of using a trained model to make predictions on new data.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 384,
@@ -17730,7 +18911,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "The customer"
+      "answerText": "The customer",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 385,
@@ -17771,7 +18955,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Polly"
+      "answerText": "Amazon Polly",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 386,
@@ -17812,7 +18999,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "To serve as the basic units of text that the model processes."
+      "answerText": "To serve as the basic units of text that the model processes.",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 387,
@@ -17853,7 +19043,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Generation of biased or harmful content"
+      "answerText": "Generation of biased or harmful content",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 388,
@@ -17894,7 +19087,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Kendra"
+      "answerText": "Amazon Kendra",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 389,
@@ -17935,7 +19131,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Chain-of-thought prompting"
+      "answerText": "Chain-of-thought prompting",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 390,
@@ -17976,7 +19175,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Retrieval-Augmented Generation (RAG)"
+      "answerText": "Retrieval-Augmented Generation (RAG)",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 391,
@@ -18017,7 +19219,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Guardrails for Amazon Bedrock"
+      "answerText": "Guardrails for Amazon Bedrock",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 392,
@@ -18058,7 +19263,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Model Interpretability"
+      "answerText": "Model Interpretability",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 393,
@@ -18099,7 +19307,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon SageMaker Clarify"
+      "answerText": "Amazon SageMaker Clarify",
+      "domainId": 4,
+      "domainKey": "responsible-ai-guidelines",
+      "domainLabel": "책임 있는 AI 가이드라인"
     },
     {
       "id": 394,
@@ -18140,7 +19351,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "To determine the strength of the connection between neurons."
+      "answerText": "To determine the strength of the connection between neurons.",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 395,
@@ -18181,7 +19395,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Lex"
+      "answerText": "Amazon Lex",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 396,
@@ -18222,7 +19439,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Transfer Learning"
+      "answerText": "Transfer Learning",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 397,
@@ -18263,7 +19483,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "The diversity of the output by selecting from a subset of tokens whose cumulative probability exceeds P."
+      "answerText": "The diversity of the output by selecting from a subset of tokens whose cumulative probability exceeds P.",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 398,
@@ -18304,7 +19527,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Translate"
+      "answerText": "Amazon Translate",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 399,
@@ -18345,7 +19571,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Reliability"
+      "answerText": "Reliability",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 400,
@@ -18386,7 +19615,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Diffusion Model"
+      "answerText": "Diffusion Model",
+      "domainId": 2,
+      "domainKey": "genai-fundamentals",
+      "domainLabel": "GenAI의 기초"
     },
     {
       "id": 401,
@@ -18427,7 +19659,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Data Drift"
+      "answerText": "Data Drift",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 402,
@@ -18468,7 +19703,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "The customer maintains full ownership of their data and the customized model."
+      "answerText": "The customer maintains full ownership of their data and the customized model.",
+      "domainId": 5,
+      "domainKey": "security-compliance-governance",
+      "domainLabel": "보안, 규정 준수 및 거버넌스"
     },
     {
       "id": 403,
@@ -18509,7 +19747,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Amazon Transcribe"
+      "answerText": "Amazon Transcribe",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 404,
@@ -18550,7 +19791,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "BLEU Score"
+      "answerText": "BLEU Score",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 405,
@@ -18591,7 +19835,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Operational Excellence"
+      "answerText": "Operational Excellence",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 406,
@@ -18632,7 +19879,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "Temperature"
+      "answerText": "Temperature",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     },
     {
       "id": 407,
@@ -18673,7 +19923,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Binary Classification"
+      "answerText": "Binary Classification",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 408,
@@ -18714,7 +19967,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Amazon Personalize"
+      "answerText": "Amazon Personalize",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 409,
@@ -18755,7 +20011,10 @@ window.AWS_AI_QUIZ_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "It connects foundation models to internal data sources to implement Retrieval-Augmented Generation (RAG)."
+      "answerText": "It connects foundation models to internal data sources to implement Retrieval-Augmented Generation (RAG).",
+      "domainId": 3,
+      "domainKey": "foundation-model-applications",
+      "domainLabel": "파운데이션 모델 적용"
     }
   ]
 };
