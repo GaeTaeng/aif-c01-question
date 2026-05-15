@@ -230,6 +230,49 @@ select {
   white-space: nowrap;
 }
 
+.exam-overview__summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.exam-overview__summary::-webkit-details-marker {
+  display: none;
+}
+
+.exam-overview__summary-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.exam-overview__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(31, 41, 55, 0.06);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.exam-overview[open] .exam-overview__toggle::before {
+  content: "접기";
+}
+
+.exam-overview:not([open]) .exam-overview__toggle::before {
+  content: "펼치기";
+}
+
+.exam-overview__content {
+  margin-top: 14px;
+}
+
 .exam-overview__purpose,
 .exam-domain-board {
   margin-top: 14px;
@@ -1351,6 +1394,10 @@ body.is-exam-mode #wrong-note-summary {
   .exam-domain-card__top {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .exam-overview__summary-side {
+    justify-content: flex-start;
   }
 
   .quiz-meta {
