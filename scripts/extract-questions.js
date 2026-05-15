@@ -18,6 +18,7 @@ const SECTION_LABELS = [
   "문제 번역",
   "번역",
   "정답",
+  "최종 정답",
   "해설 (한국어)",
   "해설",
   "오답 설명",
@@ -36,6 +37,7 @@ const SECTION_MAP = {
   "문제 번역": "korean",
   번역: "korean",
   정답: "answer",
+  "최종 정답": "answer",
   "해설 (한국어)": "explanation",
   해설: "explanation",
   "오답 설명": "wrong",
@@ -47,11 +49,11 @@ const MULTI_SELECT_QUESTION_IDS = new Set([
   40, 45, 49, 71, 80, 126, 149, 165, 167, 193, 226, 242,
 ]);
 
-const ORDERING_QUESTION_IDS = new Set([114, 309, 313]);
+const ORDERING_QUESTION_IDS = new Set([114, 309, 313, 328]);
 
 const MATCHING_QUESTION_IDS = new Set([
-  125, 135, 143, 144, 155, 185, 188, 191, 235, 245, 257, 264, 267, 275, 280,
-  283, 311,
+  125, 135, 143, 144, 155, 185, 188, 191, 229, 235, 245, 257, 264, 267, 275,
+  280, 283, 311,
 ]);
 
 function decodeHtmlEntities(value = "") {
@@ -340,6 +342,16 @@ function splitCsv(value = "") {
     .split(/\s*,\s*/)
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function extractChoicePoolFromWrongLines(lines) {
+  return uniqueStrings(
+    lines
+      .map((line) => stripBulletMarker(line))
+      .map((line) => line.match(/^([^:]+?)\s*:\s*(.+)$/) || line.match(/^([^:]+?)\s*->\s*(.+)$/))
+      .filter(Boolean)
+      .map((match) => match[1].trim()),
+  );
 }
 
 function extractAnswerOptionKeys(value = "") {
@@ -747,6 +759,7 @@ function parseSegment(questionNumber, segment) {
     sections[currentSection].push(line);
   }
 
+  const meta = parseBody(sections.meta);
   const english = parseBody(sections.english);
   const korean = parseBody(sections.korean);
   const explicitWrongLines = sections.wrong.filter(Boolean);
@@ -756,8 +769,8 @@ function parseSegment(questionNumber, segment) {
   const { explanationLines, wrongLines: derivedWrongLines } =
     splitExplanationAndWrongLines(explanationCandidates);
   const wrongLines = [...explicitWrongLines, ...derivedWrongLines];
-  const promptKo = korean.question || english.question;
-  const promptEn = english.question || korean.question;
+  const promptKo = korean.question || english.question || meta.question;
+  const promptEn = english.question || meta.question || korean.question;
 
   const base = {
     id: questionNumber,
@@ -770,7 +783,10 @@ function parseSegment(questionNumber, segment) {
     glossary: sections.glossary.filter(Boolean),
   };
 
-  let options = mergeBilingualOptions(english.options, korean.options);
+  let options = mergeBilingualOptions(
+    english.options.length ? english.options : meta.options,
+    korean.options,
+  );
   let { answerKey, answerText } = parseAnswer(
     sections.answer,
     sections.explanation,
@@ -798,7 +814,11 @@ function parseSegment(questionNumber, segment) {
   const promptLinesEn = extractQuestionBullets(sections.english);
   const choicePoolKo = extractChoicePool(sections.korean);
   const choicePoolEn = extractChoicePool(sections.english);
-  const choicePool = choicePoolKo.length ? choicePoolKo : choicePoolEn;
+  const wrongChoicePool = extractChoicePoolFromWrongLines(wrongLines);
+  const choicePool = uniqueStrings([
+    ...(choicePoolKo.length ? choicePoolKo : choicePoolEn),
+    ...wrongChoicePool,
+  ]);
   const questionText = [heading, promptEn, promptKo].join("\n");
 
   if (isKnownOrdering || /order|올바른 순서|순서를/i.test(questionText)) {

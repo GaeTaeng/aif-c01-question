@@ -1,5 +1,5 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-14T04:18:36.810Z",
+  "generatedAt": "2026-05-15T02:13:45.489Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -10975,17 +10975,14 @@ window.AWS_AI_QUIZ_DATA = {
       "sourceNumber": 229,
       "title": "Question 229",
       "promptKo": "한 회사가 Amazon SageMaker를 사용하여 AI 모델을 개발하고 있습니다.\nAI 모델 생애주기 워크플로의 각 단계에 대해 올바른 SageMaker 기능 또는 리소스를 다음 목록에서 선택하십시오. 각 SageMaker 기능 또는 리소스는 한 번만 선택하거나 선택하지 않아도 됩니다.",
-      "promptEn": "한 회사가 Amazon SageMaker를 사용하여 AI 모델을 개발하고 있습니다.\nAI 모델 생애주기 워크플로의 각 단계에 대해 올바른 SageMaker 기능 또는 리소스를 다음 목록에서 선택하십시오. 각 SageMaker 기능 또는 리소스는 한 번만 선택하거나 선택하지 않아도 됩니다.",
+      "promptEn": "A company is using Amazon SageMaker to develop AI models.\nSelect the correct SageMaker feature or resource from the following list for each step in the AI model lifecycle workflow. Each SageMaker feature or resource should be selected one time or not at all.",
       "explanation": [
         "- Managing different versions of the model",
         "-> 정답: SageMaker Model Registry",
         "SageMaker Model Registry는 모델 버전 관리를 포함하여 모델 등록, 승인, 추적을 위한 기능을 제공합니다.",
         "- Using the current model to make predictions",
         "-> 정답: SageMaker Serverless Inference",
-        "SageMaker Serverless Inference는 배포된 모델을 사용해 추론(predictions)을 수행하는 데 적합한 기능입니다. 서버 관리 없이 자동으로 확장되어 요청에 따라 추론 작업을 수행합니다.",
-        "최종 정답",
-        "- Managing different versions of the model: SageMaker Model Registry",
-        "- Using the current model to make predictions: SageMaker Serverless Inference"
+        "SageMaker Serverless Inference는 배포된 모델을 사용해 추론(predictions)을 수행하는 데 적합한 기능입니다. 서버 관리 없이 자동으로 확장되어 요청에 따라 추론 작업을 수행합니다."
       ],
       "wrongExplanations": [
         "- SageMaker Clarify: 이 기능은 모델의 편향성(Bias) 탐지와 설명 가능성(Explainability) 분석을 위한 도구로, 버전 관리나 예측과는 관련이 없습니다."
@@ -10995,23 +10992,25 @@ window.AWS_AI_QUIZ_DATA = {
         "&bull; SageMaker Serverless Inference: 서버리스 방식으로 모델을 배포하고 추론을 수행할 수 있는 기능",
         "&bull; SageMaker Clarify: AI 모델의 편향성 및 설명 가능성을 분석하는 기능"
       ],
-      "type": "single-choice",
-      "options": [
+      "type": "matching",
+      "choicePool": [
+        "SageMaker Clarify",
+        "SageMaker Model Registry",
+        "SageMaker Serverless Inference"
+      ],
+      "allowRepeat": false,
+      "rows": [
         {
-          "key": "A",
-          "textEn": "",
-          "textKo": "SageMaker Clarify",
-          "text": "SageMaker Clarify"
+          "id": "229-row-1",
+          "prompt": "Managing different versions of the model",
+          "answer": "SageMaker Model Registry"
         },
         {
-          "key": "B",
-          "textEn": "",
-          "textKo": "> 정답: SageMaker Model Registry",
-          "text": "> 정답: SageMaker Model Registry"
+          "id": "229-row-2",
+          "prompt": "Using the current model to make predictions",
+          "answer": "SageMaker Serverless Inference"
         }
-      ],
-      "answerKey": "B",
-      "answerText": "> 정답: SageMaker Model Registry"
+      ]
     },
     {
       "id": 230,
@@ -15378,23 +15377,13 @@ window.AWS_AI_QUIZ_DATA = {
         "순서가 뒤바르면 개발 비용과 시간 예측이 잘못된다."
       ],
       "glossary": [],
-      "type": "single-choice",
-      "options": [
-        {
-          "key": "A",
-          "textEn": "",
-          "textKo": "- Prompt engineering - RAG - Fine-tuning - Full model training",
-          "text": "- Prompt engineering - RAG - Fine-tuning - Full model training"
-        },
-        {
-          "key": "B",
-          "textEn": "",
-          "textKo": "순서가 뒤바르면 개발 비용과 시간 예측이 잘못된다.",
-          "text": "순서가 뒤바르면 개발 비용과 시간 예측이 잘못된다."
-        }
-      ],
-      "answerKey": "A",
-      "answerText": "- Prompt engineering - RAG - Fine-tuning - Full model training"
+      "type": "ordering",
+      "sequenceItems": [
+        "Prompt engineering",
+        "RAG",
+        "Fine-tuning",
+        "Full model training"
+      ]
     },
     {
       "id": 329,
