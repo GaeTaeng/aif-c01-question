@@ -1750,23 +1750,23 @@ function renderQuestion() {
 function parseWrongExplanations(question) {
   return (question.wrongExplanations || []).map((line) => {
     const clean = stripBullet(line);
-    const arrowMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.+)$/);
+    const arrowMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*->\s*(.+)$/);
 
     if (arrowMatch) {
       const body = arrowMatch[2].trim();
       const bodyMatch = body.match(/^([^:]+):\s*(.*)$/);
       return {
-        keys: arrowMatch[1].split(/\s*,\s*/),
+        keys: splitOptionKeys(arrowMatch[1]),
         label: bodyMatch ? bodyMatch[1].trim() : "",
         description: bodyMatch ? bodyMatch[2].trim() : body,
         raw: clean,
       };
     }
 
-    const colonKeyMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*:\s*(.*)$/);
+    const colonKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*:\s*(.*)$/);
     if (colonKeyMatch) {
       return {
-        keys: colonKeyMatch[1].split(/\s*,\s*/),
+        keys: splitOptionKeys(colonKeyMatch[1]),
         label: "",
         description: colonKeyMatch[2].trim(),
         raw: clean,
@@ -1774,21 +1774,21 @@ function parseWrongExplanations(question) {
     }
 
     const dottedBodyMatch = clean.match(
-      /^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*([^:]+?)\s*(?:[:：]|->)\s*(.*)$/,
+      /^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*([^:]+?)\s*(?:[:：]|->)\s*(.*)$/,
     );
     if (dottedBodyMatch) {
       return {
-        keys: dottedBodyMatch[1].split(/\s*,\s*/),
+        keys: splitOptionKeys(dottedBodyMatch[1]),
         label: dottedBodyMatch[2].trim(),
         description: dottedBodyMatch[3].trim(),
         raw: clean,
       };
     }
 
-    const dottedKeyMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*(.*)$/);
+    const dottedKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*(.*)$/);
     if (dottedKeyMatch) {
       return {
-        keys: dottedKeyMatch[1].split(/\s*,\s*/),
+        keys: splitOptionKeys(dottedKeyMatch[1]),
         label: "",
         description: dottedKeyMatch[2].trim(),
         raw: clean,
@@ -1876,21 +1876,28 @@ function getAnswerReason(question) {
   return firstAnswerLine || "문제 요구사항과 가장 직접적으로 맞는 답입니다.";
 }
 
+function splitOptionKeys(rawKeys = "") {
+  return rawKeys
+    .split(/[\s,\/]+/)
+    .map((key) => key.trim())
+    .filter(Boolean);
+}
+
 function parseKeyedExplanationLines(lines = []) {
   return lines
     .map((line) => stripBullet(line))
     .map((clean) => {
       const match =
-        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*[:：]\s*(.*)$/) ||
-        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.*)$/) ||
-        clean.match(/^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*(.*)$/);
+        clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*[:：]\s*(.*)$/) ||
+        clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*->\s*(.*)$/) ||
+        clean.match(/^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*(.*)$/);
 
       if (!match) {
         return null;
       }
 
       return {
-        keys: match[1].split(/\s*,\s*/),
+        keys: splitOptionKeys(match[1]),
         description: match[2].trim(),
         raw: clean,
       };
