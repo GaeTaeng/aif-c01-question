@@ -499,6 +499,11 @@ select {
   color: var(--ink-soft);
 }
 
+.pill--domain {
+  background: rgba(137, 94, 42, 0.1);
+  color: #895e2a;
+}
+
 .pill--success {
   background: var(--success-wash);
   color: var(--success);

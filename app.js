@@ -172,6 +172,7 @@ const elements = {
   glossaryView: document.getElementById("glossary-view"),
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
+  domainBadge: document.getElementById("domain-badge"),
   quizProgress: document.getElementById("quiz-progress"),
   progressCompleted: document.getElementById("progress-completed"),
   progressCorrect: document.getElementById("progress-correct"),
@@ -856,6 +857,14 @@ function getQuestionTypeLabel(question) {
   return QUESTION_TYPE_LABELS[question?.type] || "문항";
 }
 
+function getQuestionDomainLabel(question) {
+  return question?.domainLabel || "도메인 미분류";
+}
+
+function getQuestionDomainBadgeText(question) {
+  return question?.domainId ? `도메인 ${question.domainId}` : "도메인";
+}
+
 function getQuestionTypeHelper(question) {
   if (!question) {
     return "";
@@ -1377,7 +1386,7 @@ function getQuestionSubtitle(question) {
   }
 
   if (isExamMode()) {
-    return `실전 65문제 모의시험 · ${getQuestionTypeLabel(question)} · 정답과 해설은 종료 후에만 공개됩니다.`;
+    return `${getQuestionDomainLabel(question)} · 실전 65문제 모의시험 · ${getQuestionTypeLabel(question)} · 정답과 해설은 종료 후에만 공개됩니다.`;
   }
 
   const prefix =
@@ -1385,7 +1394,24 @@ function getQuestionSubtitle(question) {
       ? "오답 노트에 저장된 문제입니다."
       : `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
 
-  return `${prefix} · ${getQuestionTypeLabel(question)} · ${getOrderModeDescription()}`;
+  return `${getQuestionDomainLabel(question)} · ${prefix} · ${getQuestionTypeLabel(question)} · ${getOrderModeDescription()}`;
+}
+
+function renderQuestionDomainBadge(question) {
+  if (!elements.domainBadge) {
+    return;
+  }
+
+  if (!question) {
+    elements.domainBadge.classList.add("is-hidden");
+    elements.domainBadge.textContent = "도메인";
+    elements.domainBadge.removeAttribute("title");
+    return;
+  }
+
+  elements.domainBadge.textContent = getQuestionDomainBadgeText(question);
+  elements.domainBadge.setAttribute("title", getQuestionDomainLabel(question));
+  elements.domainBadge.classList.remove("is-hidden");
 }
 
 function buildChoiceOptionCard(question, option, inputType) {
@@ -1573,6 +1599,7 @@ function renderQuestion() {
     elements.nextQuestionButton.classList.add("is-hidden");
 
     if (state.exam.completed) {
+      renderQuestionDomainBadge(null);
       elements.questionCard.classList.add("is-hidden");
       elements.optionsForm.classList.add("is-hidden");
       elements.actionRow.classList.add("is-hidden");
@@ -1585,6 +1612,7 @@ function renderQuestion() {
     elements.examResultCard.classList.add("is-hidden");
 
     if (!question) {
+      renderQuestionDomainBadge(null);
       elements.questionId.textContent = "시험 준비 중";
       elements.questionTitle.textContent = "모의시험을 준비하는 중입니다.";
       elements.questionSubtitle.textContent =
@@ -1601,6 +1629,7 @@ function renderQuestion() {
     const currentNumber = Math.min(state.exam.currentIndex + 1, getExamTotalQuestions());
     const isLastQuestion = state.exam.currentIndex === state.exam.questionIds.length - 1;
 
+    renderQuestionDomainBadge(question);
     elements.questionId.textContent = `${currentNumber} / ${getExamTotalQuestions()} · Q ${question.sourceNumber}`;
     elements.questionTitle.textContent = question.title;
     elements.questionSubtitle.textContent = getQuestionSubtitle(question);
@@ -1624,6 +1653,7 @@ function renderQuestion() {
   elements.examResultCard.classList.add("is-hidden");
 
   if (!question) {
+    renderQuestionDomainBadge(null);
     elements.questionId.textContent = state.mode === "wrong" ? "오답 없음" : "Q -";
     const completedCount = getCompletedIds().length;
     const solvedAll = state.mode === "random" && completedCount === questions.length;
@@ -1665,6 +1695,7 @@ function renderQuestion() {
     return;
   }
 
+  renderQuestionDomainBadge(question);
   elements.questionId.textContent = `Q ${question.sourceNumber}`;
   elements.questionTitle.textContent = question.title;
   elements.questionSubtitle.textContent = getQuestionSubtitle(question);
