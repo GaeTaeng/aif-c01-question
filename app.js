@@ -108,6 +108,8 @@ const elements = {
   glossaryView: document.getElementById("glossary-view"),
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
+  progressCompleted: document.getElementById("progress-completed"),
+  progressRemaining: document.getElementById("progress-remaining"),
   openQuestionSheetButton: document.getElementById("open-question-sheet-button"),
   closeQuestionSheetButton: document.getElementById("close-question-sheet-button"),
   questionSheetBackdrop: document.getElementById("question-sheet-backdrop"),
@@ -558,6 +560,19 @@ function buildHeroStats() {
       `,
     )
     .join("");
+}
+
+function renderQuizProgress() {
+  const completedCount = getCompletedIds().length;
+  const remainingCount = Math.max(0, questions.length - completedCount);
+
+  if (elements.progressCompleted) {
+    elements.progressCompleted.textContent = `완료 ${completedCount}문제`;
+  }
+
+  if (elements.progressRemaining) {
+    elements.progressRemaining.textContent = `남음 ${remainingCount}문제`;
+  }
 }
 
 function buildQuestionStatusSummaryMarkup() {
@@ -1017,6 +1032,7 @@ function renderQuestion() {
     elements.nextQuestionButton.disabled = true;
     elements.nextQuestionButton.classList.add("is-hidden");
     elements.feedbackCard.classList.add("is-hidden");
+    renderQuizProgress();
     renderWrongNote();
     renderQuestionStatusViews();
     return;
@@ -1037,6 +1053,7 @@ function renderQuestion() {
   elements.checkAnswerButton.disabled = state.answerChecked ? !pool.length : false;
   elements.nextQuestionButton.disabled = !state.answerChecked || !pool.length;
   elements.nextQuestionButton.classList.toggle("is-hidden", !state.answerChecked);
+  renderQuizProgress();
   renderWrongNote();
   renderQuestionStatusViews();
 }

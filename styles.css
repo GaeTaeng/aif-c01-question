@@ -381,6 +381,18 @@ select {
   flex: 0 0 auto;
 }
 
+.quiz-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pill--progress {
+  min-height: 34px;
+  padding: 7px 12px;
+}
+
 .pill {
   display: inline-flex;
   align-items: center;
