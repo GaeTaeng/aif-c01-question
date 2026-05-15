@@ -1028,6 +1028,10 @@ function renderQuizProgress() {
   if (elements.progressWrong) {
     elements.progressWrong.textContent = `오답 ${wrongCount}문제`;
   }
+
+  if (elements.openQuestionSheetButton) {
+    elements.openQuestionSheetButton.textContent = `문제풀이 현황 ${completedCount}/${questions.length}`;
+  }
 }
 
 function buildQuestionStatusSummaryMarkup() {
