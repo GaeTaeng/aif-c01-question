@@ -1,5 +1,5 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-15T05:49:01.667Z",
+  "generatedAt": "2026-05-15T07:32:23.395Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -7001,26 +7001,24 @@ window.AWS_AI_QUIZ_DATA = {
       "type": "matching",
       "choicePool": [
         "Batch transform (배치 변환)",
-        "Real-time inference (실시간 추론)",
-        "Real-time inference",
-        "Batch transform"
+        "Real-time inference (실시간 추론)"
       ],
       "allowRepeat": true,
       "rows": [
         {
           "id": "135-row-1",
           "prompt": "챗봇",
-          "answer": "Real-time inference"
+          "answer": "Real-time inference (실시간 추론)"
         },
         {
           "id": "135-row-2",
           "prompt": "데이터 처리 작업",
-          "answer": "Batch transform"
+          "answer": "Batch transform (배치 변환)"
         },
         {
           "id": "135-row-3",
           "prompt": "API",
-          "answer": "Real-time inference"
+          "answer": "Real-time inference (실시간 추론)"
         }
       ],
       "domainId": 4,
@@ -7402,27 +7400,24 @@ window.AWS_AI_QUIZ_DATA = {
       "choicePool": [
         "Chain-of-thought reasoning",
         "Few-shot learning",
-        "Zero-shot learning",
-        "Zero-shot learning (예시 없이 분류 요청)",
-        "Few-shot learning (예시를 보여준 후 분류 요청)",
-        "Chain-of-thought reasoning (단계별 사고 과정 요구)"
+        "Zero-shot learning"
       ],
       "allowRepeat": false,
       "rows": [
         {
           "id": "143-row-1",
           "prompt": "\"Classify the following text...\"",
-          "answer": "Zero-shot learning (예시 없이 분류 요청)"
+          "answer": "Zero-shot learning"
         },
         {
           "id": "143-row-2",
           "prompt": "\"A [image 1], ...\"",
-          "answer": "Few-shot learning (예시를 보여준 후 분류 요청)"
+          "answer": "Few-shot learning"
         },
         {
           "id": "143-row-3",
           "prompt": "\"[Question.] Think step by step...\"",
-          "answer": "Chain-of-thought reasoning (단계별 사고 과정 요구)"
+          "answer": "Chain-of-thought reasoning"
         }
       ],
       "domainId": 3,

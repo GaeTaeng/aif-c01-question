@@ -600,6 +600,47 @@ function splitCsv(value = "") {
     .filter(Boolean);
 }
 
+function stripTrailingChoiceDecoration(value = "") {
+  return value.replace(/\s*\([^)]*\)\s*$/g, "").trim();
+}
+
+function normalizeChoiceSignature(value = "") {
+  return normalizeText(stripTrailingChoiceDecoration(value));
+}
+
+function scoreChoiceVariant(value = "") {
+  let score = 0;
+  if (!/\([^)]*\)\s*$/.test(value)) {
+    score += 20;
+  }
+  if (/^[\x00-\x7F\s\-./&]+$/.test(value)) {
+    score += 8;
+  }
+  score -= value.length / 100;
+  return score;
+}
+
+function collapseChoicePoolVariants(values = []) {
+  const groups = new Map();
+
+  values.map((item) => item.trim()).filter(Boolean).forEach((value) => {
+    const signature = normalizeChoiceSignature(value) || normalizeText(value);
+    if (!signature) {
+      return;
+    }
+
+    const existing = groups.get(signature) || [];
+    existing.push(value);
+    groups.set(signature, existing);
+  });
+
+  return [...groups.values()].map((variants) =>
+    variants
+      .slice()
+      .sort((left, right) => scoreChoiceVariant(right) - scoreChoiceVariant(left))[0],
+  );
+}
+
 function extractChoicePoolFromWrongLines(lines) {
   return uniqueStrings(
     lines
@@ -727,6 +768,14 @@ function extractChoicePool(lines) {
 }
 
 function resolveChoiceText(target, choicePool) {
+  const normalizedTargetSignature = normalizeChoiceSignature(target);
+  const signatureMatch = choicePool.find(
+    (choice) => normalizeChoiceSignature(choice) === normalizedTargetSignature,
+  );
+  if (signatureMatch) {
+    return signatureMatch;
+  }
+
   const normalizedTarget = normalizeText(target);
   const exact = choicePool.find((choice) => normalizeText(choice) === normalizedTarget);
   if (exact) {
@@ -856,10 +905,11 @@ function buildMatchingQuestion(base, pairs, choicePool, allowRepeat = true) {
     return null;
   }
 
-  const resolvedChoicePool = uniqueStrings([
-    ...choicePool,
-    ...pairs.map((pair) => pair.right),
-  ]);
+  const canonicalChoicePool = collapseChoicePoolVariants(uniqueStrings(choicePool));
+  const resolvedAnswers = pairs.map((pair) => resolveChoiceText(pair.right, canonicalChoicePool));
+  const resolvedChoicePool = collapseChoicePoolVariants(
+    uniqueStrings([...canonicalChoicePool, ...resolvedAnswers]),
+  );
 
   const rows = pairs.map((pair, index) => ({
     id: `${base.id}-row-${index + 1}`,
