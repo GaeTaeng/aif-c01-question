@@ -1,7 +1,13 @@
 const QUIZ_STORAGE_KEY = "aws-ai-practitioner-quiz-state-v1";
+const EXAM_STORAGE_KEY = "aws-ai-practitioner-exam-state-v1";
 const DAILY_AUTH_STORAGE_KEY = "aws-ai-practitioner-daily-auth-v1";
 const SEOUL_TIMEZONE = "Asia/Seoul";
 const PASSWORD_PREFIX = "260314";
+const EXAM_TOTAL_QUESTIONS = 65;
+const EXAM_UNSCORED_QUESTIONS = 15;
+const EXAM_DURATION_MINUTES = 90;
+const EXAM_POINTS_PER_SCORED_QUESTION = 20;
+const EXAM_PASSING_SCORE = 700;
 const PASSWORD_BASE_DATE = {
   year: 2026,
   month: 3,
@@ -35,6 +41,20 @@ function isQuestionRoute() {
   return /\/question\/?$/.test(normalizedPath);
 }
 
+function normalizeSessionMode(value = "") {
+  return value === "exam" ? "exam" : "practice";
+}
+
+function getSessionModeFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  return normalizeSessionMode(currentUrl.searchParams.get("session") || "");
+}
+
+function shouldStartFreshExamFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  return currentUrl.searchParams.get("fresh") === "1";
+}
+
 function normalizeOrderMode(value = "") {
   if (value === "sequence" || value === "reverse" || value === "random") {
     return value;
@@ -53,12 +73,30 @@ function getRequestedQuestionIdFromUrl() {
   return questionById.has(questionId) ? questionId : null;
 }
 
-function getQuestionRouteUrl(orderMode = "random", questionId = null) {
+function getQuestionRouteUrl(
+  orderMode = "random",
+  questionId = null,
+  sessionMode = "practice",
+  freshExam = false,
+) {
   const currentUrl = new URL(window.location.href);
   const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
+  const normalizedSessionMode = normalizeSessionMode(sessionMode);
 
   if (/\/question\/?$/.test(normalizedPath)) {
-    currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+    if (normalizedSessionMode === "exam") {
+      currentUrl.searchParams.set("session", "exam");
+      currentUrl.searchParams.delete("order");
+      if (freshExam) {
+        currentUrl.searchParams.set("fresh", "1");
+      } else {
+        currentUrl.searchParams.delete("fresh");
+      }
+    } else {
+      currentUrl.searchParams.delete("session");
+      currentUrl.searchParams.delete("fresh");
+      currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+    }
     if (questionId && questionById.has(questionId)) {
       currentUrl.searchParams.set("q", String(questionId));
     } else {
@@ -71,7 +109,14 @@ function getQuestionRouteUrl(orderMode = "random", questionId = null) {
     ? `${normalizedPath}question/`
     : `${normalizedPath}/question/`;
   currentUrl.search = "";
-  currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+  if (normalizedSessionMode === "exam") {
+    currentUrl.searchParams.set("session", "exam");
+    if (freshExam) {
+      currentUrl.searchParams.set("fresh", "1");
+    }
+  } else {
+    currentUrl.searchParams.set("order", normalizeOrderMode(orderMode));
+  }
   if (questionId && questionById.has(questionId)) {
     currentUrl.searchParams.set("q", String(questionId));
   }
@@ -85,12 +130,22 @@ function syncQuestionIdToUrl(questionId) {
   }
 
   const currentUrl = new URL(window.location.href);
+  currentUrl.searchParams.delete("fresh");
   if (questionId && questionById.has(questionId)) {
     currentUrl.searchParams.set("q", String(questionId));
   } else {
     currentUrl.searchParams.delete("q");
   }
   window.history.replaceState({}, "", currentUrl.toString());
+}
+
+function getHomeUrl() {
+  const currentUrl = new URL(window.location.href);
+  const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
+  currentUrl.pathname = normalizedPath.replace(/\/question\/?$/, "/");
+  currentUrl.search = "";
+  currentUrl.hash = "";
+  return currentUrl.toString();
 }
 
 const elements = {
@@ -103,11 +158,13 @@ const elements = {
   questionPaletteOverview: document.getElementById("question-palette-overview"),
   resetProgressButton: document.getElementById("reset-progress-button"),
   mainContent: document.getElementById("main-content"),
+  panelToolbar: document.querySelector(".panel__toolbar"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
   quizView: document.getElementById("quiz-view"),
   glossaryView: document.getElementById("glossary-view"),
   modeBadge: document.getElementById("mode-badge"),
   questionId: document.getElementById("question-id"),
+  quizProgress: document.getElementById("quiz-progress"),
   progressCompleted: document.getElementById("progress-completed"),
   progressCorrect: document.getElementById("progress-correct"),
   progressRemaining: document.getElementById("progress-remaining"),
@@ -118,14 +175,22 @@ const elements = {
   questionSheet: document.getElementById("question-sheet"),
   questionStatusSummarySheet: document.getElementById("question-status-summary-sheet"),
   questionPaletteSheet: document.getElementById("question-palette-sheet"),
+  examBanner: document.getElementById("exam-banner"),
+  examTimer: document.getElementById("exam-timer"),
+  examProgressIndex: document.getElementById("exam-progress-index"),
+  examProgressAnswered: document.getElementById("exam-progress-answered"),
+  examProgressRemainingTime: document.getElementById("exam-progress-remaining-time"),
+  questionCard: document.getElementById("question-card"),
   questionTitle: document.getElementById("question-title"),
   questionSubtitle: document.getElementById("question-subtitle"),
   questionPrompt: document.getElementById("question-prompt"),
   questionPromptSecondary: document.getElementById("question-prompt-english"),
   optionsForm: document.getElementById("options-form"),
+  actionRow: document.getElementById("action-row"),
   checkAnswerButton: document.getElementById("check-answer-button"),
   nextQuestionButton: document.getElementById("next-question-button"),
   feedbackCard: document.getElementById("feedback-card"),
+  examResultCard: document.getElementById("exam-result-card"),
   wrongNoteSummary: document.getElementById("wrong-note-summary"),
   wrongNoteList: document.getElementById("wrong-note-list"),
   removeCurrentWrongButton: document.getElementById("remove-current-wrong-button"),
@@ -136,6 +201,8 @@ const elements = {
 
 const state = {
   mode: "random",
+  sessionMode: getSessionModeFromUrl(),
+  startFreshExam: shouldStartFreshExamFromUrl(),
   orderMode: getOrderModeFromUrl(),
   requestedQuestionId: getRequestedQuestionIdFromUrl(),
   currentQuestionId: null,
@@ -144,7 +211,10 @@ const state = {
   questionSheetOpen: false,
   started: isQuestionRoute(),
   session: loadState(),
+  exam: loadExamState(),
 };
+
+let examTimerHandle = null;
 
 function loadState() {
   try {
@@ -166,6 +236,41 @@ function loadState() {
       wrongBook: {},
       completedBook: {},
     };
+  }
+}
+
+function createEmptyExamState() {
+  return {
+    active: false,
+    completed: false,
+    questionIds: [],
+    unscoredIds: [],
+    responses: {},
+    currentIndex: 0,
+    startedAt: "",
+    expiresAt: "",
+    endedAt: "",
+    endedReason: "",
+  };
+}
+
+function loadExamState() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(EXAM_STORAGE_KEY) || "{}");
+    return {
+      active: Boolean(parsed?.active),
+      completed: Boolean(parsed?.completed),
+      questionIds: Array.isArray(parsed?.questionIds) ? parsed.questionIds.map(Number) : [],
+      unscoredIds: Array.isArray(parsed?.unscoredIds) ? parsed.unscoredIds.map(Number) : [],
+      responses: parsed?.responses && typeof parsed.responses === "object" ? parsed.responses : {},
+      currentIndex: Number(parsed?.currentIndex || 0),
+      startedAt: parsed?.startedAt || "",
+      expiresAt: parsed?.expiresAt || "",
+      endedAt: parsed?.endedAt || "",
+      endedReason: parsed?.endedReason || "",
+    };
+  } catch (error) {
+    return createEmptyExamState();
   }
 }
 
@@ -268,6 +373,125 @@ function saveState() {
   localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(state.session));
 }
 
+function saveExamState() {
+  localStorage.setItem(EXAM_STORAGE_KEY, JSON.stringify(state.exam));
+}
+
+function cloneValue(value) {
+  if (value == null) {
+    return value;
+  }
+
+  return JSON.parse(JSON.stringify(value));
+}
+
+function isExamMode() {
+  return state.sessionMode === "exam";
+}
+
+function getExamTotalQuestions() {
+  return state.exam.questionIds.length || EXAM_TOTAL_QUESTIONS;
+}
+
+function getExamUnscoredCount() {
+  return state.exam.unscoredIds.length || EXAM_UNSCORED_QUESTIONS;
+}
+
+function getExamScoredCount() {
+  return Math.max(0, getExamTotalQuestions() - getExamUnscoredCount());
+}
+
+function createExamSession() {
+  const questionIds = shuffleArray(questions.map((question) => question.id)).slice(
+    0,
+    Math.min(EXAM_TOTAL_QUESTIONS, questions.length),
+  );
+  const unscoredIds = shuffleArray(questionIds).slice(
+    0,
+    Math.min(EXAM_UNSCORED_QUESTIONS, questionIds.length),
+  );
+  const startedAt = new Date();
+  const expiresAt = new Date(startedAt.getTime() + EXAM_DURATION_MINUTES * 60 * 1000);
+
+  return {
+    active: true,
+    completed: false,
+    questionIds,
+    unscoredIds,
+    responses: {},
+    currentIndex: 0,
+    startedAt: startedAt.toISOString(),
+    expiresAt: expiresAt.toISOString(),
+    endedAt: "",
+    endedReason: "",
+  };
+}
+
+function getExamTimeRemainingMs() {
+  if (!state.exam.expiresAt) {
+    return 0;
+  }
+
+  return Math.max(0, new Date(state.exam.expiresAt).getTime() - Date.now());
+}
+
+function formatDuration(ms) {
+  const totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
+function getExamElapsedMs() {
+  const startedAt = state.exam.startedAt ? new Date(state.exam.startedAt).getTime() : Date.now();
+  const endedAt = state.exam.endedAt ? new Date(state.exam.endedAt).getTime() : Date.now();
+  return Math.max(0, endedAt - startedAt);
+}
+
+function getExamCurrentQuestionId() {
+  return state.exam.questionIds[state.exam.currentIndex] || null;
+}
+
+function getExamStoredResponse(questionId) {
+  if (!questionId) {
+    return null;
+  }
+
+  return cloneValue(state.exam.responses[questionId]);
+}
+
+function setExamResponse(questionId, response) {
+  if (!questionId) {
+    return;
+  }
+
+  state.exam.responses[questionId] = cloneValue(response);
+  saveExamState();
+}
+
+function initializeExamSession() {
+  if (!isExamMode()) {
+    return;
+  }
+
+  if (state.startFreshExam && state.exam.active && !state.exam.completed) {
+    const confirmed = window.confirm(
+      "진행 중인 모의시험이 있습니다.\n새로 시작하면 기존 시험 기록이 사라집니다.",
+    );
+
+    if (!confirmed) {
+      state.startFreshExam = false;
+    }
+  }
+
+  if (state.startFreshExam || !state.exam.questionIds.length) {
+    state.exam = createExamSession();
+    saveExamState();
+  }
+
+  state.startFreshExam = false;
+}
+
 function stripBullet(line = "") {
   return line.replace(/^-+\s*/, "").trim();
 }
@@ -355,6 +579,72 @@ function getQuestionStatusCounts() {
       wrong: 0,
     },
   );
+}
+
+function getExamAnsweredCount() {
+  return state.exam.questionIds.filter((questionId) => {
+    const question = questionById.get(questionId);
+    return question && isResponseComplete(question, state.exam.responses[questionId]);
+  }).length;
+}
+
+function getExamResultSummary() {
+  const unscoredIdSet = new Set(state.exam.unscoredIds);
+  const summary = {
+    totalQuestions: state.exam.questionIds.length,
+    totalCorrect: 0,
+    totalWrong: 0,
+    unanswered: 0,
+    scoredQuestions: Math.max(0, state.exam.questionIds.length - state.exam.unscoredIds.length),
+    scoredCorrect: 0,
+    scoredWrong: 0,
+    unscoredQuestions: state.exam.unscoredIds.length,
+    unscoredCorrect: 0,
+    unscoredWrong: 0,
+  };
+
+  state.exam.questionIds.forEach((questionId) => {
+    const question = questionById.get(questionId);
+    if (!question) {
+      return;
+    }
+
+    const response = state.exam.responses[questionId];
+    const isAnswered = isResponseComplete(question, response);
+    const isUnscored = unscoredIdSet.has(questionId);
+
+    if (!isAnswered) {
+      summary.totalWrong += 1;
+      summary.unanswered += 1;
+      if (isUnscored) {
+        summary.unscoredWrong += 1;
+      } else {
+        summary.scoredWrong += 1;
+      }
+      return;
+    }
+
+    if (isAnswerCorrect(question, response)) {
+      summary.totalCorrect += 1;
+      if (isUnscored) {
+        summary.unscoredCorrect += 1;
+      } else {
+        summary.scoredCorrect += 1;
+      }
+      return;
+    }
+
+    summary.totalWrong += 1;
+    if (isUnscored) {
+      summary.unscoredWrong += 1;
+    } else {
+      summary.scoredWrong += 1;
+    }
+  });
+
+  summary.score = summary.scoredCorrect * EXAM_POINTS_PER_SCORED_QUESTION;
+  summary.passed = summary.score >= EXAM_PASSING_SCORE;
+  return summary;
 }
 
 function getQuestionStatusLabel(status) {
@@ -564,6 +854,95 @@ function buildHeroStats() {
     .join("");
 }
 
+function renderExamBanner() {
+  if (!elements.examBanner || !isExamMode()) {
+    return;
+  }
+
+  const totalQuestions = getExamTotalQuestions();
+  const currentNumber = state.exam.completed
+    ? totalQuestions
+    : Math.min(state.exam.currentIndex + 1, totalQuestions);
+  const answeredCount = getExamAnsweredCount();
+  const timeLeft = getExamTimeRemainingMs();
+
+  elements.examProgressIndex.textContent = `${currentNumber} / ${totalQuestions}`;
+  elements.examProgressAnswered.textContent = `응답 ${answeredCount}문제`;
+  elements.examProgressRemainingTime.textContent = `남은 ${formatDuration(timeLeft)}`;
+  elements.examTimer.textContent = formatDuration(timeLeft);
+  elements.examTimer.classList.toggle("is-expiring", timeLeft <= 10 * 60 * 1000);
+}
+
+function buildExamResultMarkup() {
+  const summary = getExamResultSummary();
+  const statusLabel =
+    state.exam.endedReason === "time-up" ? "시간 종료" : "모의시험 완료";
+  const elapsedTime = formatDuration(getExamElapsedMs());
+
+  const stats = [
+    { label: "전체 정답", value: `${summary.totalCorrect} / ${summary.totalQuestions}` },
+    { label: "전체 오답", value: `${summary.totalWrong} / ${summary.totalQuestions}` },
+    { label: "미응답", value: `${summary.unanswered}문제` },
+    { label: "채점 정답", value: `${summary.scoredCorrect} / ${summary.scoredQuestions}` },
+    { label: "채점 오답", value: `${summary.scoredWrong} / ${summary.scoredQuestions}` },
+    { label: "채점 제외 정답", value: `${summary.unscoredCorrect} / ${summary.unscoredQuestions}` },
+    { label: "채점 제외 오답", value: `${summary.unscoredWrong} / ${summary.unscoredQuestions}` },
+    { label: "최종 점수", value: `${summary.score} / 1000` },
+  ];
+
+  return `
+    <div class="exam-result-card__status ${summary.passed ? "is-pass" : "is-fail"}">
+      ${summary.passed ? "통과권" : "재도전 필요"} · ${escapeHtml(statusLabel)}
+    </div>
+    <h3 class="exam-result-card__title">실전 65문제 결과</h3>
+    <p class="exam-result-card__copy">
+      총 ${summary.totalQuestions}문항 중 ${summary.unscoredQuestions}문항은 비채점으로 제외했습니다.
+      채점 대상 ${summary.scoredQuestions}문항만 점수에 반영했고, 요청한 방식대로 1문항당
+      ${EXAM_POINTS_PER_SCORED_QUESTION}점으로 계산했습니다.
+    </p>
+    <div class="exam-result-card__grid">
+      ${stats
+        .map(
+          (item) => `
+            <article class="exam-result-stat">
+              <span class="exam-result-stat__label">${escapeHtml(item.label)}</span>
+              <strong class="exam-result-stat__value">${escapeHtml(item.value)}</strong>
+            </article>
+          `,
+        )
+        .join("")}
+    </div>
+    <p class="exam-result-card__note">
+      허수 15문항 중 정답 ${summary.unscoredCorrect}문제, 오답/미응답 ${summary.unscoredWrong}문제였습니다.
+      실제 AWS 점수는 scaled score(100~1000)라 완전히 같지는 않지만, 이 모의시험은 요청하신
+      방식대로 50문항 x 20점 기준으로 계산했습니다. 경과 시간은 ${elapsedTime}입니다.
+    </p>
+    <div class="exam-result-card__actions">
+      <button class="primary-button" data-start-exam="true" type="button">
+        새 실전 65문제 시작
+      </button>
+      <a class="secondary-button primary-link" href="${escapeHtml(getHomeUrl())}">
+        홈으로 돌아가기
+      </a>
+    </div>
+  `;
+}
+
+function renderExamResultCard() {
+  if (!elements.examResultCard) {
+    return;
+  }
+
+  if (!isExamMode() || !state.exam.completed) {
+    elements.examResultCard.classList.add("is-hidden");
+    elements.examResultCard.innerHTML = "";
+    return;
+  }
+
+  elements.examResultCard.innerHTML = buildExamResultMarkup();
+  elements.examResultCard.classList.remove("is-hidden");
+}
+
 function renderQuizProgress() {
   const correctCount = getCompletedIds().length;
   const wrongCount = getWrongIds().length;
@@ -687,17 +1066,27 @@ function setQuestionSheetOpen(isOpen) {
 }
 
 function renderMode() {
-  const isGlossary = state.mode === "glossary";
+  const examMode = isExamMode();
+  const isGlossary = !examMode && state.mode === "glossary";
   elements.quizView.classList.toggle("is-hidden", isGlossary);
   elements.glossaryView.classList.toggle("is-hidden", !isGlossary);
-  elements.nextQuestionButton.classList.toggle("is-hidden", isGlossary);
+  elements.nextQuestionButton.classList.toggle("is-hidden", examMode || isGlossary);
+  elements.panelToolbar?.classList.toggle("is-hidden", examMode);
+  elements.quizProgress?.classList.toggle("is-hidden", examMode);
+  elements.openQuestionSheetButton?.classList.toggle("is-hidden", examMode);
+  elements.examBanner?.classList.toggle("is-hidden", !examMode);
+  elements.body.classList.toggle("is-exam-mode", examMode);
+
+  if (examMode) {
+    setQuestionSheetOpen(false);
+  }
 
   elements.segmentedButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.mode === state.mode);
   });
 
   if (!isGlossary) {
-    elements.modeBadge.textContent = getModeBadgeLabel();
+    elements.modeBadge.textContent = examMode ? "실전 65문제" : getModeBadgeLabel();
   }
 }
 
@@ -709,7 +1098,70 @@ function renderAppPhase() {
 }
 
 function startQuiz() {
-  window.location.href = getQuestionRouteUrl(state.orderMode);
+  window.location.href = getQuestionRouteUrl(state.orderMode, null, "practice");
+}
+
+function clearExamTimer() {
+  if (examTimerHandle) {
+    window.clearInterval(examTimerHandle);
+    examTimerHandle = null;
+  }
+}
+
+function finishExam(reason = "completed") {
+  if (!isExamMode() || state.exam.completed) {
+    return;
+  }
+
+  if (state.currentQuestionId) {
+    setExamResponse(state.currentQuestionId, state.response);
+  }
+
+  state.exam.active = false;
+  state.exam.completed = true;
+  state.exam.currentIndex = state.exam.questionIds.length;
+  state.exam.endedAt = new Date().toISOString();
+  state.exam.endedReason = reason;
+  state.currentQuestionId = null;
+  state.response = null;
+  state.answerChecked = false;
+  elements.feedbackCard.classList.add("is-hidden");
+  saveExamState();
+  clearExamTimer();
+  renderMode();
+  renderQuestion();
+
+  if (reason === "time-up") {
+    window.alert("시험 시간이 끝났습니다. 끝끝!");
+  }
+}
+
+function startExamTimer() {
+  if (!isExamMode() || state.exam.completed || !state.exam.expiresAt) {
+    clearExamTimer();
+    return;
+  }
+
+  clearExamTimer();
+  renderExamBanner();
+  examTimerHandle = window.setInterval(() => {
+    const remaining = getExamTimeRemainingMs();
+    renderExamBanner();
+    if (remaining <= 0) {
+      finishExam("time-up");
+    }
+  }, 1000);
+}
+
+function startFreshExamSession() {
+  state.exam = createExamSession();
+  state.mode = "random";
+  state.currentQuestionId = null;
+  state.response = null;
+  state.answerChecked = false;
+  saveExamState();
+  renderMode();
+  ensureQuestionForMode();
 }
 
 function selectQuestion(questionId) {
@@ -725,14 +1177,48 @@ function selectQuestion(questionId) {
 
   const question = questionById.get(questionId);
   state.currentQuestionId = questionId;
-  state.response = createInitialResponse(question);
+  state.response = isExamMode()
+    ? getExamStoredResponse(questionId) ?? createInitialResponse(question)
+    : createInitialResponse(question);
   state.answerChecked = false;
   syncQuestionIdToUrl(questionId);
   elements.feedbackCard.classList.add("is-hidden");
   renderQuestion();
 }
 
+function ensureExamQuestion() {
+  initializeExamSession();
+
+  if (state.exam.completed) {
+    state.currentQuestionId = null;
+    state.response = null;
+    state.answerChecked = false;
+    clearExamTimer();
+    renderQuestion();
+    return;
+  }
+
+  if (getExamTimeRemainingMs() <= 0) {
+    finishExam("time-up");
+    return;
+  }
+
+  const questionId = getExamCurrentQuestionId();
+  if (!questionId) {
+    finishExam("completed");
+    return;
+  }
+
+  startExamTimer();
+  selectQuestion(questionId);
+}
+
 function ensureQuestionForMode() {
+  if (isExamMode()) {
+    ensureExamQuestion();
+    return;
+  }
+
   const pool = getQuestionPool();
 
   if (state.requestedQuestionId && questionById.has(state.requestedQuestionId)) {
@@ -759,7 +1245,30 @@ function ensureQuestionForMode() {
   renderQuestion();
 }
 
+function advanceExamQuestion() {
+  const question = getCurrentQuestion();
+
+  if (question) {
+    setExamResponse(question.id, state.response);
+  }
+
+  const lastIndex = state.exam.questionIds.length - 1;
+  if (state.exam.currentIndex >= lastIndex) {
+    finishExam("completed");
+    return;
+  }
+
+  state.exam.currentIndex += 1;
+  saveExamState();
+  selectQuestion(getExamCurrentQuestionId());
+}
+
 function goToNextQuestion() {
+  if (isExamMode()) {
+    advanceExamQuestion();
+    return;
+  }
+
   const pool = getQuestionPool();
   selectQuestion(getNextQuestionId(pool));
 }
@@ -820,6 +1329,10 @@ function isAnswerCorrect(question, response) {
 function getQuestionSubtitle(question) {
   if (!question) {
     return `원본 ${appData.source.totalQuestions}문항 전체를 유형별로 제공합니다.`;
+  }
+
+  if (isExamMode()) {
+    return `실전 65문제 모의시험 · ${getQuestionTypeLabel(question)} · 정답과 해설은 종료 후에만 공개됩니다.`;
   }
 
   const prefix =
@@ -1006,7 +1519,64 @@ function renderOptionsMarkup(question) {
 
 function renderQuestion() {
   const question = getCurrentQuestion();
+
+  if (isExamMode()) {
+    renderExamBanner();
+    renderExamResultCard();
+    elements.feedbackCard.classList.add("is-hidden");
+    elements.wrongNoteSummary.classList.add("is-hidden");
+    elements.nextQuestionButton.classList.add("is-hidden");
+
+    if (state.exam.completed) {
+      elements.questionCard.classList.add("is-hidden");
+      elements.optionsForm.classList.add("is-hidden");
+      elements.actionRow.classList.add("is-hidden");
+      return;
+    }
+
+    elements.questionCard.classList.remove("is-hidden");
+    elements.optionsForm.classList.remove("is-hidden");
+    elements.actionRow.classList.remove("is-hidden");
+    elements.examResultCard.classList.add("is-hidden");
+
+    if (!question) {
+      elements.questionId.textContent = "시험 준비 중";
+      elements.questionTitle.textContent = "모의시험을 준비하는 중입니다.";
+      elements.questionSubtitle.textContent =
+        "잠시만 기다리면 첫 문항을 바로 시작합니다.";
+      elements.questionPrompt.textContent = "";
+      elements.questionPromptSecondary.textContent = "";
+      elements.questionPromptSecondary.classList.add("is-hidden");
+      elements.optionsForm.innerHTML = "";
+      elements.checkAnswerButton.textContent = "다음 문제";
+      elements.checkAnswerButton.disabled = true;
+      return;
+    }
+
+    const currentNumber = Math.min(state.exam.currentIndex + 1, getExamTotalQuestions());
+    const isLastQuestion = state.exam.currentIndex === state.exam.questionIds.length - 1;
+
+    elements.questionId.textContent = `${currentNumber} / ${getExamTotalQuestions()} · Q ${question.sourceNumber}`;
+    elements.questionTitle.textContent = question.title;
+    elements.questionSubtitle.textContent = getQuestionSubtitle(question);
+    elements.questionPrompt.textContent = question.promptEn || question.promptKo;
+    elements.questionPromptSecondary.textContent =
+      question.promptEn && question.promptKo ? question.promptKo : "";
+    elements.questionPromptSecondary.classList.toggle(
+      "is-hidden",
+      !(question.promptEn && question.promptKo),
+    );
+    elements.optionsForm.innerHTML = renderOptionsMarkup(question);
+    elements.checkAnswerButton.textContent = isLastQuestion ? "시험 제출" : "다음 문제";
+    elements.checkAnswerButton.disabled = false;
+    return;
+  }
+
   const pool = getQuestionPool();
+  elements.questionCard.classList.remove("is-hidden");
+  elements.optionsForm.classList.remove("is-hidden");
+  elements.actionRow.classList.remove("is-hidden");
+  elements.examResultCard.classList.add("is-hidden");
 
   if (!question) {
     elements.questionId.textContent = state.mode === "wrong" ? "오답 없음" : "Q -";
@@ -1450,6 +2020,15 @@ function handlePrimaryAction() {
     return;
   }
 
+  if (isExamMode()) {
+    if (!isResponseComplete(question, state.response)) {
+      window.alert("문제를 풀지 않았습니다.");
+    }
+
+    goToNextQuestion();
+    return;
+  }
+
   if (state.answerChecked) {
     goToNextQuestion();
     return;
@@ -1465,6 +2044,11 @@ function handlePrimaryAction() {
 }
 
 function renderWrongNote() {
+  if (isExamMode()) {
+    elements.wrongNoteSummary.classList.add("is-hidden");
+    return;
+  }
+
   const wrongIds = getWrongIds();
   const currentQuestion = getCurrentQuestion();
   const isInWrongBook = currentQuestion && state.session.wrongBook[currentQuestion.id];
@@ -1609,6 +2193,13 @@ function renderGlossary() {
 }
 
 function setMode(mode) {
+  if (isExamMode()) {
+    state.mode = "random";
+    renderMode();
+    ensureQuestionForMode();
+    return;
+  }
+
   state.mode = mode;
   renderMode();
 
@@ -1685,6 +2276,9 @@ function removeCurrentQuestionFromWrongBook() {
 
 function updateResponseFromRadio(value) {
   state.response = value;
+  if (isExamMode() && state.currentQuestionId) {
+    setExamResponse(state.currentQuestionId, state.response);
+  }
 }
 
 function updateResponseFromCheckbox(question, value, checked) {
@@ -1703,6 +2297,9 @@ function updateResponseFromCheckbox(question, value, checked) {
   state.response = question.options
     .map((option) => option.key)
     .filter((key) => selectedKeys.has(key));
+  if (isExamMode() && state.currentQuestionId) {
+    setExamResponse(state.currentQuestionId, state.response);
+  }
   return true;
 }
 
@@ -1722,6 +2319,9 @@ function updateResponseFromSelect(question, rowId, value) {
     ...state.response,
     [rowId]: value,
   };
+  if (isExamMode() && state.currentQuestionId) {
+    setExamResponse(state.currentQuestionId, state.response);
+  }
   return true;
 }
 
@@ -1732,6 +2332,9 @@ function updateOrdering(question, action, index) {
   }
 
   state.response = moveItem(state.response, index, targetIndex);
+  if (isExamMode() && state.currentQuestionId) {
+    setExamResponse(state.currentQuestionId, state.response);
+  }
 }
 
 function attachEvents() {
@@ -1810,6 +2413,12 @@ function attachEvents() {
       return;
     }
 
+    const startExamButton = target.closest("[data-start-exam]");
+    if (startExamButton) {
+      startFreshExamSession();
+      return;
+    }
+
     const resetButton = target.closest("[data-reset-progress]");
     if (resetButton) {
       resetProgress();
@@ -1823,6 +2432,10 @@ function attachEvents() {
 
     const questionId = Number(jumpQuestionButton.dataset.jumpQuestion);
     if (!questionById.has(questionId)) {
+      return;
+    }
+
+    if (isExamMode()) {
       return;
     }
 
@@ -1845,6 +2458,10 @@ function attachEvents() {
 function init() {
   if (!requireDailyPassword()) {
     return;
+  }
+
+  if (isExamMode()) {
+    initializeExamSession();
   }
 
   buildHeroStats();

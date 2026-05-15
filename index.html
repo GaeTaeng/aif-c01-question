@@ -31,6 +31,19 @@
               역순 시작
             </a>
           </div>
+          <section class="exam-launch" aria-label="실전 65문제 모의시험">
+            <div class="exam-launch__copy">
+              <p class="exam-launch__eyebrow">실전 65문제</p>
+              <h2>90분 모의시험</h2>
+              <p class="exam-launch__desc">
+                랜덤 65문항으로 진행하고, 이 중 15문항은 비채점 허수 문항으로
+                처리합니다.
+              </p>
+            </div>
+            <a class="primary-button primary-link hero__start-button" href="./question/?session=exam&fresh=1">
+              실전 시작
+            </a>
+          </section>
           <button
             class="secondary-button hero__reset-button"
             id="reset-progress-button"
@@ -91,6 +104,24 @@
               <span class="pill pill--muted pill--progress" id="progress-remaining">남음 409문제</span>
               <span class="pill pill--danger pill--progress" id="progress-wrong">오답 0문제</span>
             </div>
+            <section class="exam-banner is-hidden" id="exam-banner">
+              <div class="exam-banner__top">
+                <div>
+                  <p class="exam-banner__eyebrow">실전 65문제</p>
+                  <h3 class="exam-banner__title">AIF-C01 모의시험</h3>
+                </div>
+                <div class="exam-timer" id="exam-timer">90:00</div>
+              </div>
+              <div class="exam-banner__pills">
+                <span class="pill pill--progress" id="exam-progress-index">1 / 65</span>
+                <span class="pill pill--muted pill--progress" id="exam-progress-answered">응답 0문제</span>
+                <span class="pill pill--danger pill--progress" id="exam-progress-remaining-time">남은 90:00</span>
+              </div>
+              <p class="exam-banner__copy">
+                총 65문항 중 15문항은 비채점입니다. 시험 중에는 어떤 문항이 허수인지
+                표시되지 않고, 정답과 해설은 종료 후에만 공개됩니다.
+              </p>
+            </section>
 
             <article class="question-card" id="question-card">
               <div class="question-card__header">
@@ -107,13 +138,14 @@
 
             <form class="options" id="options-form"></form>
 
-            <div class="action-row">
+            <div class="action-row" id="action-row">
               <button class="primary-button" id="check-answer-button" type="button" disabled>
                 정답 확인
               </button>
             </div>
 
             <section class="feedback-card is-hidden" id="feedback-card"></section>
+            <section class="exam-result-card is-hidden" id="exam-result-card"></section>
 
             <section class="wrong-note is-hidden" id="wrong-note-summary">
               <div class="wrong-note__header">
