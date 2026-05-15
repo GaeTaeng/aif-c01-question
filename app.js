@@ -110,6 +110,7 @@ const elements = {
   questionId: document.getElementById("question-id"),
   progressCompleted: document.getElementById("progress-completed"),
   progressRemaining: document.getElementById("progress-remaining"),
+  progressWrong: document.getElementById("progress-wrong"),
   openQuestionSheetButton: document.getElementById("open-question-sheet-button"),
   closeQuestionSheetButton: document.getElementById("close-question-sheet-button"),
   questionSheetBackdrop: document.getElementById("question-sheet-backdrop"),
@@ -565,6 +566,7 @@ function buildHeroStats() {
 function renderQuizProgress() {
   const completedCount = getCompletedIds().length;
   const remainingCount = Math.max(0, questions.length - completedCount);
+  const wrongCount = getWrongIds().length;
 
   if (elements.progressCompleted) {
     elements.progressCompleted.textContent = `완료 ${completedCount}문제`;
@@ -572,6 +574,10 @@ function renderQuizProgress() {
 
   if (elements.progressRemaining) {
     elements.progressRemaining.textContent = `남음 ${remainingCount}문제`;
+  }
+
+  if (elements.progressWrong) {
+    elements.progressWrong.textContent = `오답 ${wrongCount}문제`;
   }
 }
 

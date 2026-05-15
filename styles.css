@@ -410,6 +410,11 @@ select {
   color: var(--ink-soft);
 }
 
+.pill--danger {
+  background: var(--danger-wash);
+  color: var(--danger);
+}
+
 .question-card,
 .feedback-card,
 .wrong-note,
