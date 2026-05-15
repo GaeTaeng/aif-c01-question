@@ -165,6 +165,9 @@ const elements = {
   questionStatusSummaryOverview: document.getElementById("question-status-summary-overview"),
   questionPaletteOverview: document.getElementById("question-palette-overview"),
   resetProgressButton: document.getElementById("reset-progress-button"),
+  overviewSearchInput: document.getElementById("overview-search-input"),
+  overviewSearchSummary: document.getElementById("overview-search-summary"),
+  overviewSearchResults: document.getElementById("overview-search-results"),
   mainContent: document.getElementById("main-content"),
   panelToolbar: document.querySelector(".panel__toolbar"),
   segmentedButtons: document.querySelectorAll(".segmented__button"),
@@ -178,10 +181,15 @@ const elements = {
   progressCorrect: document.getElementById("progress-correct"),
   progressRemaining: document.getElementById("progress-remaining"),
   progressWrong: document.getElementById("progress-wrong"),
+  openQuestionSearchButton: document.getElementById("open-question-search-button"),
   openQuestionSheetButton: document.getElementById("open-question-sheet-button"),
   closeQuestionSheetButton: document.getElementById("close-question-sheet-button"),
   questionSheetBackdrop: document.getElementById("question-sheet-backdrop"),
   questionSheet: document.getElementById("question-sheet"),
+  questionSheetSearch: document.getElementById("question-sheet-search"),
+  sheetSearchInput: document.getElementById("sheet-search-input"),
+  sheetSearchSummary: document.getElementById("sheet-search-summary"),
+  sheetSearchResults: document.getElementById("sheet-search-results"),
   questionStatusSummarySheet: document.getElementById("question-status-summary-sheet"),
   questionPaletteSheet: document.getElementById("question-palette-sheet"),
   examBanner: document.getElementById("exam-banner"),
@@ -221,6 +229,7 @@ const state = {
   started: isQuestionRoute(),
   session: loadState(),
   exam: loadExamState(),
+  searchQuery: "",
 };
 
 let examTimerHandle = null;
@@ -1111,6 +1120,7 @@ function setQuestionSheetOpen(isOpen) {
 
   if (isOpen) {
     renderQuestionStatusViews();
+    renderSearchViews();
   }
 
   elements.questionSheet.classList.toggle("is-hidden", !isOpen);
@@ -1127,7 +1137,9 @@ function renderMode() {
   elements.nextQuestionButton.classList.toggle("is-hidden", examMode || isGlossary);
   elements.panelToolbar?.classList.toggle("is-hidden", examMode);
   elements.quizProgress?.classList.toggle("is-hidden", examMode);
+  elements.openQuestionSearchButton?.classList.toggle("is-hidden", examMode);
   elements.openQuestionSheetButton?.classList.toggle("is-hidden", examMode);
+  elements.questionSheetSearch?.classList.toggle("is-hidden", examMode);
   elements.examBanner?.classList.toggle("is-hidden", !examMode);
   elements.body.classList.toggle("is-exam-mode", examMode);
 
@@ -2222,6 +2234,144 @@ function buildGlossaryIndex() {
 
 const glossaryIndex = buildGlossaryIndex();
 
+function buildSearchCorpus(question) {
+  const optionText = Array.isArray(question.options)
+    ? question.options.flatMap((option) => [option.textEn, option.textKo, option.text]).join("\n")
+    : "";
+  const rowText = Array.isArray(question.rows)
+    ? question.rows.flatMap((row) => [row.prompt, row.answer]).join("\n")
+    : "";
+  const sequenceText = Array.isArray(question.sequenceItems) ? question.sequenceItems.join("\n") : "";
+
+  return [
+    question.title,
+    question.promptEn,
+    question.promptKo,
+    question.domainLabel,
+    ...(question.explanation || []),
+    ...(question.wrongExplanations || []),
+    ...(question.glossary || []),
+    optionText,
+    rowText,
+    sequenceText,
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+const questionSearchIndex = questions.map((question) => ({
+  question,
+  haystack: normalizeText(buildSearchCorpus(question)),
+}));
+
+function searchQuestions(rawQuery = "") {
+  const normalized = normalizeText(rawQuery);
+  if (!normalized) {
+    return [];
+  }
+
+  const tokens = normalized.split(" ").filter(Boolean);
+  return questionSearchIndex
+    .filter((entry) => tokens.every((token) => entry.haystack.includes(token)))
+    .map((entry) => entry.question)
+    .sort((left, right) => left.sourceNumber - right.sourceNumber);
+}
+
+function getSearchExcerpt(question) {
+  return (question.promptEn || question.promptKo || question.title || "")
+    .split("\n")
+    .filter(Boolean)
+    .slice(0, 2)
+    .join(" ");
+}
+
+function buildSearchResultMarkup(question, kind = "overview") {
+  const title = `Q ${question.sourceNumber}`;
+  const domainBadge = getQuestionDomainBadgeText(question);
+  const domainLabel = getQuestionDomainLabel(question);
+  const excerpt = getSearchExcerpt(question);
+
+  if (kind === "sheet") {
+    return `
+      <article class="search-result-item">
+        <div class="search-result-item__top">
+          <p class="search-result-item__title">${escapeHtml(title)}</p>
+          <span class="pill pill--domain">${escapeHtml(domainBadge)}</span>
+        </div>
+        <p class="search-result-item__excerpt">${escapeHtml(domainLabel)} · ${escapeHtml(excerpt)}</p>
+        <button
+          class="search-result-item__action"
+          type="button"
+          data-jump-question="${question.id}"
+          data-close-sheet="true"
+        >
+          이 문제 열기
+        </button>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="search-result-item">
+      <div class="search-result-item__top">
+        <p class="search-result-item__title">${escapeHtml(title)}</p>
+        <span class="pill pill--domain">${escapeHtml(domainBadge)}</span>
+      </div>
+      <p class="search-result-item__excerpt">${escapeHtml(domainLabel)} · ${escapeHtml(excerpt)}</p>
+      <a
+        class="search-result-item__action"
+        href="${escapeHtml(getQuestionRouteUrl(state.orderMode, question.id, "practice"))}"
+      >
+        문제로 이동
+      </a>
+    </article>
+  `;
+}
+
+function renderSearchResults(container, summaryElement, kind = "overview") {
+  if (!container || !summaryElement) {
+    return;
+  }
+
+  const query = state.searchQuery.trim();
+  if (!query) {
+    summaryElement.textContent = "검색어를 입력하면 관련 문제 목록이 나옵니다.";
+    container.innerHTML = "";
+    return;
+  }
+
+  const results = searchQuestions(query);
+  summaryElement.textContent = `"${query}" 검색 결과 ${results.length}문제`;
+
+  if (!results.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        검색 결과가 없습니다.<br />
+        다른 단어 또는 문장으로 다시 찾아보세요.
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = results.map((question) => buildSearchResultMarkup(question, kind)).join("");
+}
+
+function syncSearchInputs() {
+  if (elements.overviewSearchInput && elements.overviewSearchInput.value !== state.searchQuery) {
+    elements.overviewSearchInput.value = state.searchQuery;
+  }
+
+  if (elements.sheetSearchInput && elements.sheetSearchInput.value !== state.searchQuery) {
+    elements.sheetSearchInput.value = state.searchQuery;
+  }
+}
+
+function renderSearchViews() {
+  syncSearchInputs();
+  renderSearchResults(elements.overviewSearchResults, elements.overviewSearchSummary, "overview");
+  renderSearchResults(elements.sheetSearchResults, elements.sheetSearchSummary, "sheet");
+}
+
 function renderGlossary() {
   const keyword = normalizeText(elements.glossarySearch.value || "");
   const list = glossaryIndex.filter((entry) => {
@@ -2415,6 +2565,10 @@ function updateOrdering(question, action, index) {
 
 function attachEvents() {
   elements.resetProgressButton?.addEventListener("click", resetProgress);
+  elements.openQuestionSearchButton?.addEventListener("click", () => {
+    setQuestionSheetOpen(true);
+    window.requestAnimationFrame(() => elements.sheetSearchInput?.focus());
+  });
   elements.openQuestionSheetButton?.addEventListener("click", () => setQuestionSheetOpen(true));
   elements.closeQuestionSheetButton?.addEventListener("click", () => setQuestionSheetOpen(false));
   elements.questionSheetBackdrop?.addEventListener("click", () => setQuestionSheetOpen(false));
@@ -2480,6 +2634,14 @@ function attachEvents() {
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
 
   elements.glossarySearch.addEventListener("input", renderGlossary);
+  elements.overviewSearchInput?.addEventListener("input", (event) => {
+    state.searchQuery = event.target.value || "";
+    renderSearchViews();
+  });
+  elements.sheetSearchInput?.addEventListener("input", (event) => {
+    state.searchQuery = event.target.value || "";
+    renderSearchViews();
+  });
   elements.clearWrongButton.addEventListener("click", clearWrongBook);
   elements.removeCurrentWrongButton.addEventListener("click", removeCurrentQuestionFromWrongBook);
 
@@ -2545,6 +2707,7 @@ function init() {
   renderAppPhase();
   renderMode();
   renderGlossary();
+  renderSearchViews();
   ensureQuestionForMode();
 }
 

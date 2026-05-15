@@ -72,6 +72,30 @@
         <div class="question-palette question-palette--overview" id="question-palette-overview"></div>
       </section>
 
+      <section class="overview-board overview-board--search" id="search-board">
+        <div class="overview-board__header">
+          <div>
+            <p class="overview-board__eyebrow">문제 검색</p>
+            <h2>단어 또는 문장으로 찾기</h2>
+          </div>
+        </div>
+        <p class="overview-board__copy">
+          문제 본문, 보기, 해설, 용어정리 안에 들어 있는 단어를 기준으로 검색합니다.
+        </p>
+        <label class="search-field">
+          <span>검색어</span>
+          <input
+            id="overview-search-input"
+            type="search"
+            placeholder="예: Guardrails, RAG, bias, prompt injection"
+          />
+        </label>
+        <div class="search-result-summary" id="overview-search-summary">
+          검색어를 입력하면 관련 문제 목록이 나옵니다.
+        </div>
+        <div class="search-result-list" id="overview-search-results"></div>
+      </section>
+
       <main class="main-content is-hidden" id="main-content">
         <section class="panel panel--quiz is-active" id="quiz-panel">
           <div class="panel__toolbar">
@@ -95,9 +119,14 @@
                 <span class="pill pill--muted" id="question-id">Q 1</span>
                 <span class="pill pill--domain is-hidden" id="domain-badge">도메인 1</span>
               </div>
-              <button class="ghost-button quiz-meta__list-button" id="open-question-sheet-button" type="button">
-                문제 풀이 현황
-              </button>
+              <div class="quiz-meta__actions">
+                <button class="ghost-button quiz-meta__list-button" id="open-question-search-button" type="button">
+                  문제 검색
+                </button>
+                <button class="ghost-button quiz-meta__list-button" id="open-question-sheet-button" type="button">
+                  문제 풀이 현황
+                </button>
+              </div>
             </div>
             <div class="quiz-progress" id="quiz-progress">
               <span class="pill pill--progress" id="progress-completed">완료 0문제</span>
@@ -202,6 +231,20 @@
             닫기
           </button>
         </div>
+        <section class="question-sheet__search" id="question-sheet-search">
+          <label class="search-field">
+            <span>문제 검색</span>
+            <input
+              id="sheet-search-input"
+              type="search"
+              placeholder="예: temperature, fairness, Kendra"
+            />
+          </label>
+          <div class="search-result-summary" id="sheet-search-summary">
+            검색어를 입력하면 관련 문제 목록이 나옵니다.
+          </div>
+          <div class="search-result-list search-result-list--sheet" id="sheet-search-results"></div>
+        </section>
         <div class="question-status-summary" id="question-status-summary-sheet"></div>
         <div class="question-palette" id="question-palette-sheet"></div>
       </section>
