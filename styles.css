@@ -226,6 +226,121 @@ select {
   font-size: 0.94rem;
 }
 
+.exam-overview__level {
+  white-space: nowrap;
+}
+
+.exam-overview__purpose,
+.exam-domain-board {
+  margin-top: 14px;
+}
+
+.exam-overview__section-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.exam-overview__purpose-copy {
+  margin-top: 8px;
+}
+
+.exam-overview__grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.exam-info-card,
+.exam-domain-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.exam-info-card {
+  padding: 14px;
+}
+
+.exam-info-card__label {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.exam-info-card__value {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.exam-info-card__meta,
+.exam-domain-board__copy,
+.exam-domain-card p {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.exam-domain-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.exam-domain-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+}
+
+.exam-domain-card__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: var(--accent-wash);
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.exam-domain-card__body {
+  min-width: 0;
+}
+
+.exam-domain-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.exam-domain-card h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.exam-domain-card__weight {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(31, 41, 55, 0.06);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .question-status-summary {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1201,6 +1316,10 @@ body.is-exam-mode #wrong-note-summary {
     align-items: center;
   }
 
+  .exam-overview__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .glossary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1221,7 +1340,8 @@ body.is-exam-mode #wrong-note-summary {
   .question-card__header,
   .wrong-note__header,
   .glossary-toolbar,
-  .exam-banner__top {
+  .exam-banner__top,
+  .exam-domain-card__top {
     flex-direction: column;
     align-items: stretch;
   }
