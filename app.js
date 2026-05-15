@@ -646,6 +646,7 @@ function getExamAnsweredCount() {
 
 function getExamResultSummary() {
   const unscoredIdSet = new Set(state.exam.unscoredIds);
+  const domainMap = new Map();
   const summary = {
     totalQuestions: state.exam.questionIds.length,
     totalCorrect: 0,
@@ -657,6 +658,7 @@ function getExamResultSummary() {
     unscoredQuestions: state.exam.unscoredIds.length,
     unscoredCorrect: 0,
     unscoredWrong: 0,
+    domainSummaries: [],
   };
 
   state.exam.questionIds.forEach((questionId) => {
@@ -668,38 +670,74 @@ function getExamResultSummary() {
     const response = state.exam.responses[questionId];
     const isAnswered = isResponseComplete(question, response);
     const isUnscored = unscoredIdSet.has(questionId);
+    const domainId = question.domainId || 0;
+    const domainEntry = domainMap.get(domainId) || {
+      domainId,
+      label: getQuestionDomainLabel(question),
+      total: 0,
+      correct: 0,
+      wrong: 0,
+      unanswered: 0,
+      scoredTotal: 0,
+      scoredCorrect: 0,
+      scoredWrong: 0,
+    };
+
+    domainEntry.total += 1;
+    if (!isUnscored) {
+      domainEntry.scoredTotal += 1;
+    }
 
     if (!isAnswered) {
       summary.totalWrong += 1;
       summary.unanswered += 1;
+      domainEntry.wrong += 1;
+      domainEntry.unanswered += 1;
       if (isUnscored) {
         summary.unscoredWrong += 1;
       } else {
         summary.scoredWrong += 1;
+        domainEntry.scoredWrong += 1;
       }
+      domainMap.set(domainId, domainEntry);
       return;
     }
 
     if (isAnswerCorrect(question, response)) {
       summary.totalCorrect += 1;
+      domainEntry.correct += 1;
       if (isUnscored) {
         summary.unscoredCorrect += 1;
       } else {
         summary.scoredCorrect += 1;
+        domainEntry.scoredCorrect += 1;
       }
+      domainMap.set(domainId, domainEntry);
       return;
     }
 
     summary.totalWrong += 1;
+    domainEntry.wrong += 1;
     if (isUnscored) {
       summary.unscoredWrong += 1;
     } else {
       summary.scoredWrong += 1;
+      domainEntry.scoredWrong += 1;
     }
+    domainMap.set(domainId, domainEntry);
   });
 
   summary.score = summary.scoredCorrect * EXAM_POINTS_PER_SCORED_QUESTION;
   summary.passed = summary.score >= EXAM_PASSING_SCORE;
+  summary.domainSummaries = [...domainMap.values()]
+    .sort((left, right) => left.domainId - right.domainId)
+    .map((entry) => ({
+      ...entry,
+      accuracy: entry.total ? Math.round((entry.correct / entry.total) * 100) : 0,
+      scoredAccuracy: entry.scoredTotal
+        ? Math.round((entry.scoredCorrect / entry.scoredTotal) * 100)
+        : 0,
+    }));
   return summary;
 }
 
@@ -953,6 +991,35 @@ function buildExamResultMarkup() {
     { label: "채점 제외 오답", value: `${summary.unscoredWrong} / ${summary.unscoredQuestions}` },
     { label: "최종 점수", value: `${summary.score} / 1000` },
   ];
+  const domainPerformanceMarkup = summary.domainSummaries.length
+    ? `
+      <section class="exam-domain-performance">
+        <div class="exam-domain-performance__header">
+          <h4 class="exam-domain-performance__title">도메인별 정답률</h4>
+          <p class="exam-domain-performance__copy">
+            65문항 전체 기준입니다. 정답률이 낮은 도메인부터 우선 복습하면 됩니다.
+          </p>
+        </div>
+        <div class="exam-domain-performance__grid">
+          ${summary.domainSummaries
+            .map(
+              (domain) => `
+                <article class="exam-domain-performance__item">
+                  <div class="exam-domain-performance__top">
+                    <span class="exam-domain-performance__name">${escapeHtml(domain.label)}</span>
+                    <span class="exam-domain-performance__rate">${domain.accuracy}%</span>
+                  </div>
+                  <p class="exam-domain-performance__meta">
+                    정답 ${domain.correct}/${domain.total} · 오답 ${domain.wrong}/${domain.total}
+                  </p>
+                </article>
+              `,
+            )
+            .join("")}
+        </div>
+      </section>
+    `
+    : "";
 
   return `
     <div class="exam-result-card__status ${summary.passed ? "is-pass" : "is-fail"}">
@@ -976,6 +1043,7 @@ function buildExamResultMarkup() {
         )
         .join("")}
     </div>
+    ${domainPerformanceMarkup}
     <p class="exam-result-card__note">
       허수 15문항 중 정답 ${summary.unscoredCorrect}문제, 오답/미응답 ${summary.unscoredWrong}문제였습니다.
       실제 AWS 점수는 scaled score(100~1000)라 완전히 같지는 않지만, 이 모의시험은 요청하신
