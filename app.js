@@ -1747,71 +1747,129 @@ function renderQuestion() {
   renderQuestionStatusViews();
 }
 
-function parseWrongExplanations(question) {
-  return (question.wrongExplanations || []).map((line) => {
-    const clean = stripBullet(line);
-    const arrowMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*->\s*(.+)$/);
+function getOptionTextCandidates(question, optionKey) {
+  const option = getOption(question, optionKey);
+  return [option?.textEn, option?.textKo, option?.text]
+    .filter(Boolean)
+    .map((value) => normalizeText(value));
+}
 
-    if (arrowMatch) {
-      const body = arrowMatch[2].trim();
-      const bodyMatch = body.match(/^([^:]+):\s*(.*)$/);
-      return {
-        keys: splitOptionKeys(arrowMatch[1]),
-        label: bodyMatch ? bodyMatch[1].trim() : "",
-        description: bodyMatch ? bodyMatch[2].trim() : body,
-        raw: clean,
-      };
-    }
+function isOptionTextMatch(question, keys = [], text = "") {
+  if (keys.length !== 1 || !text) {
+    return false;
+  }
 
-    const colonKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*:\s*(.*)$/);
-    if (colonKeyMatch) {
-      return {
-        keys: splitOptionKeys(colonKeyMatch[1]),
-        label: "",
-        description: colonKeyMatch[2].trim(),
-        raw: clean,
-      };
-    }
+  return getOptionTextCandidates(question, keys[0]).includes(normalizeText(text));
+}
 
-    const dottedBodyMatch = clean.match(
-      /^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*([^:]+?)\s*(?:[:：]|->)\s*(.*)$/,
-    );
-    if (dottedBodyMatch) {
-      return {
-        keys: splitOptionKeys(dottedBodyMatch[1]),
-        label: dottedBodyMatch[2].trim(),
-        description: dottedBodyMatch[3].trim(),
-        raw: clean,
-      };
-    }
+function appendDescriptionSegment(base = "", extra = "") {
+  if (!extra) {
+    return base;
+  }
 
-    const dottedKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*(.*)$/);
-    if (dottedKeyMatch) {
-      return {
-        keys: splitOptionKeys(dottedKeyMatch[1]),
-        label: "",
-        description: dottedKeyMatch[2].trim(),
-        raw: clean,
-      };
-    }
+  if (!base) {
+    return extra;
+  }
 
-    const namedMatch = clean.match(/^([^:]+):\s*(.*)$/);
-    if (namedMatch) {
-      return {
-        keys: [],
-        label: namedMatch[1].trim(),
-        description: namedMatch[2].trim(),
-        raw: clean,
-      };
-    }
+  return `${base} ${extra}`.trim();
+}
 
+function parseWrongExplanationLine(question, clean) {
+  const arrowMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*->\s*(.+)$/);
+
+  if (arrowMatch) {
+    const body = arrowMatch[2].trim();
+    const bodyMatch = body.match(/^([^:]+):\s*(.*)$/);
     return {
-      keys: [],
-      label: "",
-      description: clean,
+      keys: splitOptionKeys(arrowMatch[1]),
+      label: bodyMatch ? bodyMatch[1].trim() : "",
+      description: bodyMatch ? bodyMatch[2].trim() : body,
       raw: clean,
     };
-  });
+  }
+
+  const colonKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)\s*:\s*(.*)$/);
+  if (colonKeyMatch) {
+    return {
+      keys: splitOptionKeys(colonKeyMatch[1]),
+      label: "",
+      description: colonKeyMatch[2].trim(),
+      raw: clean,
+    };
+  }
+
+  const dottedBodyMatch = clean.match(
+    /^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*([^:]+?)\s*(?:[:：]|->)\s*(.*)$/,
+  );
+  if (dottedBodyMatch) {
+    return {
+      keys: splitOptionKeys(dottedBodyMatch[1]),
+      label: dottedBodyMatch[2].trim(),
+      description: dottedBodyMatch[3].trim(),
+      raw: clean,
+    };
+  }
+
+  const dottedKeyMatch = clean.match(/^([A-E](?:[\s,\/]+[A-E])*)[\.\)]\s*(.*)$/);
+  if (dottedKeyMatch) {
+    const keys = splitOptionKeys(dottedKeyMatch[1]);
+    const body = dottedKeyMatch[2].trim();
+    return {
+      keys,
+      label: isOptionTextMatch(question, keys, body) ? body : "",
+      description: isOptionTextMatch(question, keys, body) ? "" : body,
+      raw: clean,
+    };
+  }
+
+  const namedMatch = clean.match(/^([^:]+):\s*(.*)$/);
+  if (namedMatch) {
+    return {
+      keys: [],
+      label: namedMatch[1].trim(),
+      description: namedMatch[2].trim(),
+      raw: clean,
+    };
+  }
+
+  return {
+    keys: [],
+    label: "",
+    description: clean.replace(/^->\s*/, "").trim(),
+    raw: clean,
+  };
+}
+
+function parseWrongExplanations(question) {
+  const items = [];
+  let currentKeyedItem = null;
+
+  for (const line of question.wrongExplanations || []) {
+    const parsed = parseWrongExplanationLine(question, stripBullet(line));
+
+    if (parsed.keys.length) {
+      currentKeyedItem = { ...parsed };
+      items.push(currentKeyedItem);
+      continue;
+    }
+
+    if (currentKeyedItem && parsed.description) {
+      currentKeyedItem.description = appendDescriptionSegment(
+        currentKeyedItem.description,
+        parsed.description,
+      );
+      currentKeyedItem.raw = appendDescriptionSegment(currentKeyedItem.raw, parsed.raw);
+      if (!currentKeyedItem.label && parsed.label) {
+        currentKeyedItem.label = parsed.label;
+      }
+      continue;
+    }
+
+    currentKeyedItem = null;
+    items.push(parsed);
+  }
+
+  return items;
 }
 
 function findWrongDetailForSelection(question, optionKey, optionText = "") {
