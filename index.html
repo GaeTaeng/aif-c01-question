@@ -59,17 +59,17 @@
       </header>
 
       <details class="overview-board exam-overview" id="exam-overview">
-        <summary class="overview-board__header exam-overview__summary">
+        <summary class="overview-board__header overview-board__summary">
           <div>
             <p class="overview-board__eyebrow">시험 정보</p>
             <h2>AWS Certified AI Practitioner 시험 개요</h2>
           </div>
-          <div class="exam-overview__summary-side">
+          <div class="overview-board__summary-side">
             <span class="pill pill--muted exam-overview__level">입문 수준</span>
-            <span class="exam-overview__toggle" aria-hidden="true"></span>
+            <span class="overview-board__toggle" aria-hidden="true"></span>
           </div>
         </summary>
-        <div class="exam-overview__content">
+        <div class="overview-board__content exam-overview__content">
           <div class="exam-overview__purpose">
           <p class="exam-overview__section-title">목적</p>
           <p class="overview-board__copy exam-overview__purpose-copy">
@@ -163,19 +163,24 @@
         </div>
       </details>
 
-      <section class="overview-board" id="overview-board">
-        <div class="overview-board__header">
+      <details class="overview-board" id="overview-board">
+        <summary class="overview-board__header overview-board__summary">
           <div>
             <p class="overview-board__eyebrow">문제 상태</p>
             <h2>전체 문제 목록</h2>
           </div>
+          <div class="overview-board__summary-side">
+            <span class="overview-board__toggle" aria-hidden="true"></span>
+          </div>
+        </summary>
+        <div class="overview-board__content">
+          <p class="overview-board__copy">
+            회색은 아직 안 푼 문제, 초록은 맞춘 문제, 빨강은 틀린 문제입니다.
+          </p>
+          <div class="question-status-summary" id="question-status-summary-overview"></div>
+          <div class="question-palette question-palette--overview" id="question-palette-overview"></div>
         </div>
-        <p class="overview-board__copy">
-          회색은 아직 안 푼 문제, 초록은 맞춘 문제, 빨강은 틀린 문제입니다.
-        </p>
-        <div class="question-status-summary" id="question-status-summary-overview"></div>
-        <div class="question-palette question-palette--overview" id="question-palette-overview"></div>
-      </section>
+      </details>
 
       <section class="overview-board overview-board--search" id="search-board">
         <div class="overview-board__header">

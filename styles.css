@@ -230,16 +230,16 @@ select {
   white-space: nowrap;
 }
 
-.exam-overview__summary {
+.overview-board__summary {
   cursor: pointer;
   list-style: none;
 }
 
-.exam-overview__summary::-webkit-details-marker {
+.overview-board__summary::-webkit-details-marker {
   display: none;
 }
 
-.exam-overview__summary-side {
+.overview-board__summary-side {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -247,29 +247,30 @@ select {
   justify-content: flex-end;
 }
 
-.exam-overview__toggle {
+.overview-board__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 34px;
   padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(31, 41, 55, 0.06);
-  color: var(--ink-soft);
+  background: linear-gradient(135deg, var(--accent), #ff9454);
+  color: white;
   font-size: 0.78rem;
   font-weight: 800;
   white-space: nowrap;
+  box-shadow: 0 12px 20px rgba(255, 107, 44, 0.18);
 }
 
-.exam-overview[open] .exam-overview__toggle::before {
+.overview-board[open] .overview-board__toggle::before {
   content: "접기";
 }
 
-.exam-overview:not([open]) .exam-overview__toggle::before {
+.overview-board:not([open]) .overview-board__toggle::before {
   content: "펼치기";
 }
 
-.exam-overview__content {
+.overview-board__content {
   margin-top: 14px;
 }
 
@@ -1396,7 +1397,7 @@ body.is-exam-mode #wrong-note-summary {
     align-items: stretch;
   }
 
-  .exam-overview__summary-side {
+  .overview-board__summary-side {
     justify-content: flex-start;
   }
 
