@@ -732,6 +732,11 @@ function ensureQuestionForMode() {
   renderQuestion();
 }
 
+function goToNextQuestion() {
+  const pool = getQuestionPool();
+  selectQuestion(getNextQuestionId(pool));
+}
+
 function isResponseComplete(question, response) {
   if (!question) {
     return false;
@@ -1007,8 +1012,10 @@ function renderQuestion() {
         </button>
       `
       : "";
+    elements.checkAnswerButton.textContent = "정답 확인";
     elements.checkAnswerButton.disabled = true;
-    elements.nextQuestionButton.disabled = !pool.length;
+    elements.nextQuestionButton.disabled = true;
+    elements.nextQuestionButton.classList.add("is-hidden");
     elements.feedbackCard.classList.add("is-hidden");
     renderWrongNote();
     renderQuestionStatusViews();
@@ -1026,9 +1033,10 @@ function renderQuestion() {
     !(question.promptEn && question.promptKo),
   );
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
-  elements.checkAnswerButton.disabled =
-    !isResponseComplete(question, state.response) || state.answerChecked;
-  elements.nextQuestionButton.disabled = !pool.length;
+  elements.checkAnswerButton.textContent = state.answerChecked ? "다음" : "정답 확인";
+  elements.checkAnswerButton.disabled = state.answerChecked ? !pool.length : false;
+  elements.nextQuestionButton.disabled = !state.answerChecked || !pool.length;
+  elements.nextQuestionButton.classList.toggle("is-hidden", !state.answerChecked);
   renderWrongNote();
   renderQuestionStatusViews();
 }
@@ -1407,6 +1415,26 @@ function checkAnswer() {
   renderFeedback(isCorrect);
 }
 
+function handlePrimaryAction() {
+  const question = getCurrentQuestion();
+  if (!question) {
+    return;
+  }
+
+  if (state.answerChecked) {
+    goToNextQuestion();
+    return;
+  }
+
+  if (!isResponseComplete(question, state.response)) {
+    window.alert("문제를 풀지 않았습니다.");
+    goToNextQuestion();
+    return;
+  }
+
+  checkAnswer();
+}
+
 function renderWrongNote() {
   const wrongIds = getWrongIds();
   const currentQuestion = getCurrentQuestion();
@@ -1739,12 +1767,9 @@ function attachEvents() {
     renderQuestion();
   });
 
-  elements.checkAnswerButton.addEventListener("click", checkAnswer);
+  elements.checkAnswerButton.addEventListener("click", handlePrimaryAction);
 
-  elements.nextQuestionButton.addEventListener("click", () => {
-    const pool = getQuestionPool();
-    selectQuestion(getNextQuestionId(pool));
-  });
+  elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
 
   elements.glossarySearch.addEventListener("input", renderGlossary);
   elements.clearWrongButton.addEventListener("click", clearWrongBook);
