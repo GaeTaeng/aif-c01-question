@@ -1773,6 +1773,28 @@ function parseWrongExplanations(question) {
       };
     }
 
+    const dottedBodyMatch = clean.match(
+      /^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*([^:]+?)\s*(?:[:：]|->)\s*(.*)$/,
+    );
+    if (dottedBodyMatch) {
+      return {
+        keys: dottedBodyMatch[1].split(/\s*,\s*/),
+        label: dottedBodyMatch[2].trim(),
+        description: dottedBodyMatch[3].trim(),
+        raw: clean,
+      };
+    }
+
+    const dottedKeyMatch = clean.match(/^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*(.*)$/);
+    if (dottedKeyMatch) {
+      return {
+        keys: dottedKeyMatch[1].split(/\s*,\s*/),
+        label: "",
+        description: dottedKeyMatch[2].trim(),
+        raw: clean,
+      };
+    }
+
     const namedMatch = clean.match(/^([^:]+):\s*(.*)$/);
     if (namedMatch) {
       return {
@@ -1860,7 +1882,8 @@ function parseKeyedExplanationLines(lines = []) {
     .map((clean) => {
       const match =
         clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*[:：]\s*(.*)$/) ||
-        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.*)$/);
+        clean.match(/^([A-E](?:\s*,\s*[A-E])*)\s*->\s*(.*)$/) ||
+        clean.match(/^([A-E](?:\s*,\s*[A-E])*)[\.\)]\s*(.*)$/);
 
       if (!match) {
         return null;
