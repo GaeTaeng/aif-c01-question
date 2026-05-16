@@ -205,6 +205,7 @@ const elements = {
   questionPromptSecondary: document.getElementById("question-prompt-english"),
   optionsForm: document.getElementById("options-form"),
   actionRow: document.getElementById("action-row"),
+  previousQuestionButton: document.getElementById("previous-question-button"),
   checkAnswerButton: document.getElementById("check-answer-button"),
   nextQuestionButton: document.getElementById("next-question-button"),
   feedbackCard: document.getElementById("feedback-card"),
@@ -623,6 +624,16 @@ function getQuestionStatus(questionId) {
 }
 
 function getQuestionStatusCounts() {
+  if (isExamMode()) {
+    const answered = getExamAnsweredCount();
+    const total = getExamTotalQuestions();
+    return {
+      total,
+      answered,
+      pending: Math.max(0, total - answered),
+    };
+  }
+
   return questions.reduce(
     (counts, question) => {
       const status = getQuestionStatus(question.id);
@@ -742,6 +753,10 @@ function getExamResultSummary() {
 }
 
 function getQuestionStatusLabel(status) {
+  if (status === "answered") {
+    return "응답";
+  }
+
   if (status === "correct") {
     return "정답";
   }
@@ -833,6 +848,37 @@ function getModeBadgeLabel() {
 
 function getCurrentQuestion() {
   return questionById.get(state.currentQuestionId) || null;
+}
+
+function getExamQuestionIndex(questionId) {
+  return state.exam.questionIds.indexOf(questionId);
+}
+
+function canGoToPreviousExamQuestion() {
+  return isExamMode() && state.exam.currentIndex > 0;
+}
+
+function goToExamQuestionByIndex(index) {
+  if (!isExamMode() || index < 0 || index >= state.exam.questionIds.length) {
+    return;
+  }
+
+  const currentQuestion = getCurrentQuestion();
+  if (currentQuestion) {
+    setExamResponse(currentQuestion.id, state.response);
+  }
+
+  state.exam.currentIndex = index;
+  saveExamState();
+  selectQuestion(getExamCurrentQuestionId());
+}
+
+function goToPreviousQuestion() {
+  if (!canGoToPreviousExamQuestion()) {
+    return;
+  }
+
+  goToExamQuestionByIndex(state.exam.currentIndex - 1);
 }
 
 function getOption(question, optionKey) {
@@ -973,6 +1019,10 @@ function renderExamBanner() {
   elements.examProgressRemainingTime.textContent = `남은 ${formatDuration(timeLeft)}`;
   elements.examTimer.textContent = formatDuration(timeLeft);
   elements.examTimer.classList.toggle("is-expiring", timeLeft <= 10 * 60 * 1000);
+
+  if (elements.openQuestionSheetButton) {
+    elements.openQuestionSheetButton.textContent = `문항 현황 ${answeredCount}/${totalQuestions}`;
+  }
 }
 
 function buildExamResultMarkup() {
@@ -1112,6 +1162,26 @@ function renderQuizProgress() {
 }
 
 function buildQuestionStatusSummaryMarkup() {
+  if (isExamMode()) {
+    const counts = getQuestionStatusCounts();
+    const entries = [
+      { key: "all", label: "전체", value: counts.total },
+      { key: "answered", label: "응답", value: counts.answered },
+      { key: "pending", label: "미응답", value: counts.pending },
+    ];
+
+    return entries
+      .map(
+        (entry) => `
+          <article class="status-card status-card--${entry.key}">
+            <span class="status-card__label">${escapeHtml(entry.label)}</span>
+            <strong class="status-card__value">${entry.value}</strong>
+          </article>
+        `,
+      )
+      .join("");
+  }
+
   const counts = getQuestionStatusCounts();
   const entries = [
     { key: "pending", label: "미풀이", value: counts.pending },
@@ -1132,9 +1202,19 @@ function buildQuestionStatusSummaryMarkup() {
 }
 
 function buildQuestionPaletteMarkup(kind = "sheet") {
-  return questions
+  const list = isExamMode()
+    ? state.exam.questionIds
+        .map((questionId) => questionById.get(questionId))
+        .filter(Boolean)
+    : questions;
+
+  return list
     .map((question) => {
-      const status = getQuestionStatus(question.id);
+      const status = isExamMode()
+        ? isResponseComplete(question, state.exam.responses[question.id])
+          ? "answered"
+          : "pending"
+        : getQuestionStatus(question.id);
       const isCurrent = kind === "sheet" && question.id === state.currentQuestionId;
       const classes = [
         "question-palette__item",
@@ -1177,11 +1257,13 @@ function buildQuestionPaletteMarkup(kind = "sheet") {
 
 function renderQuestionStatusViews() {
   if (elements.questionStatusSummaryOverview) {
-    elements.questionStatusSummaryOverview.innerHTML = buildQuestionStatusSummaryMarkup();
+    elements.questionStatusSummaryOverview.innerHTML = isExamMode()
+      ? ""
+      : buildQuestionStatusSummaryMarkup();
   }
 
   if (elements.questionPaletteOverview) {
-    elements.questionPaletteOverview.innerHTML = buildQuestionPaletteMarkup("overview");
+    elements.questionPaletteOverview.innerHTML = isExamMode() ? "" : buildQuestionPaletteMarkup("overview");
   }
 
   if (elements.questionStatusSummarySheet) {
@@ -1220,7 +1302,6 @@ function renderMode() {
   elements.panelToolbar?.classList.toggle("is-hidden", examMode);
   elements.quizProgress?.classList.toggle("is-hidden", examMode);
   elements.openQuestionSearchButton?.classList.toggle("is-hidden", examMode);
-  elements.openQuestionSheetButton?.classList.toggle("is-hidden", examMode);
   elements.questionSheetSearch?.classList.toggle("is-hidden", examMode);
   elements.examBanner?.classList.toggle("is-hidden", !examMode);
   elements.body.classList.toggle("is-exam-mode", examMode);
@@ -1700,10 +1781,12 @@ function renderQuestion() {
     elements.feedbackCard.classList.add("is-hidden");
     elements.wrongNoteSummary.classList.add("is-hidden");
     elements.nextQuestionButton.classList.add("is-hidden");
+    elements.actionRow.classList.add("action-row--exam");
 
     if (state.exam.completed) {
       renderQuestionDomainBadge(null);
       renderQuestionMetaCopy("");
+      elements.previousQuestionButton?.classList.add("is-hidden");
       elements.questionCard.classList.add("is-hidden");
       elements.optionsForm.classList.add("is-hidden");
       elements.actionRow.classList.add("is-hidden");
@@ -1727,6 +1810,8 @@ function renderQuestion() {
       elements.questionPromptSecondary.textContent = "";
       elements.questionPromptSecondary.classList.add("is-hidden");
       elements.optionsForm.innerHTML = "";
+      elements.previousQuestionButton?.classList.remove("is-hidden");
+      elements.previousQuestionButton.disabled = true;
       elements.checkAnswerButton.textContent = "다음 문제";
       elements.checkAnswerButton.disabled = true;
       setPrimaryActionButtonStyle("primary");
@@ -1750,13 +1835,17 @@ function renderQuestion() {
       !(question.promptEn && question.promptKo),
     );
     elements.optionsForm.innerHTML = renderOptionsMarkup(question);
-    elements.checkAnswerButton.textContent = isLastQuestion ? "시험 제출" : "다음 문제";
+    elements.previousQuestionButton?.classList.remove("is-hidden");
+    elements.previousQuestionButton.disabled = !canGoToPreviousExamQuestion();
+    elements.checkAnswerButton.textContent = isLastQuestion ? "채점하기" : "다음";
     elements.checkAnswerButton.disabled = false;
     setPrimaryActionButtonStyle("primary");
+    renderQuestionStatusViews();
     return;
   }
 
   const pool = getQuestionPool();
+  elements.actionRow.classList.remove("action-row--exam");
   elements.questionCard.classList.remove("is-hidden");
   elements.optionsForm.classList.remove("is-hidden");
   elements.actionRow.classList.remove("is-hidden");
@@ -1799,6 +1888,7 @@ function renderQuestion() {
     elements.checkAnswerButton.textContent = "정답 확인";
     elements.checkAnswerButton.disabled = true;
     setPrimaryActionButtonStyle("primary");
+    elements.previousQuestionButton?.classList.add("is-hidden");
     elements.nextQuestionButton.disabled = true;
     elements.nextQuestionButton.classList.add("is-hidden");
     elements.feedbackCard.classList.add("is-hidden");
@@ -1822,6 +1912,7 @@ function renderQuestion() {
     !(question.promptEn && question.promptKo),
   );
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
+  elements.previousQuestionButton?.classList.add("is-hidden");
   const isComplete = isResponseComplete(question, state.response);
   elements.checkAnswerButton.textContent = state.answerChecked
     ? "다음"
@@ -2303,6 +2394,12 @@ function confirmSkipIncompleteQuestion() {
   return window.confirm("아직 보기를 모두 고르지 않았습니다. 정말 넘어갈까요?");
 }
 
+function confirmFinishExamWithUnanswered(unansweredCount) {
+  return window.confirm(
+    `아직 미응답 ${unansweredCount}문제가 있습니다. 그래도 채점할까요?`,
+  );
+}
+
 function handlePrimaryAction() {
   const question = getCurrentQuestion();
   if (!question) {
@@ -2310,6 +2407,18 @@ function handlePrimaryAction() {
   }
 
   if (isExamMode()) {
+    const isLastQuestion = state.exam.currentIndex === state.exam.questionIds.length - 1;
+    const unansweredCount = Math.max(0, getExamTotalQuestions() - getExamAnsweredCount());
+
+    if (isLastQuestion) {
+      if (unansweredCount && !confirmFinishExamWithUnanswered(unansweredCount)) {
+        return;
+      }
+
+      finishExam("completed");
+      return;
+    }
+
     if (!isResponseComplete(question, state.response)) {
       if (!confirmSkipIncompleteQuestion()) {
         return;
@@ -2835,6 +2944,7 @@ function attachEvents() {
   });
 
   elements.checkAnswerButton.addEventListener("click", handlePrimaryAction);
+  elements.previousQuestionButton?.addEventListener("click", goToPreviousQuestion);
 
   elements.nextQuestionButton.addEventListener("click", goToNextQuestion);
 
@@ -2879,6 +2989,14 @@ function attachEvents() {
     }
 
     if (isExamMode()) {
+      if (jumpQuestionButton.dataset.closeSheet === "true") {
+        setQuestionSheetOpen(false);
+      }
+
+      const examQuestionIndex = getExamQuestionIndex(questionId);
+      if (examQuestionIndex >= 0) {
+        goToExamQuestionByIndex(examQuestionIndex);
+      }
       return;
     }
 

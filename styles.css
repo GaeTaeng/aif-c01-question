@@ -404,6 +404,15 @@ select {
   background: rgba(31, 41, 55, 0.05);
 }
 
+.status-card--all {
+  background: rgba(31, 41, 55, 0.05);
+}
+
+.status-card--answered {
+  background: var(--accent-wash);
+  border-color: rgba(255, 107, 44, 0.24);
+}
+
 .status-card--correct {
   background: var(--success-wash);
   border-color: rgba(31, 138, 82, 0.24);
@@ -460,6 +469,11 @@ select {
 .question-palette__item--pending {
   background: rgba(31, 41, 55, 0.06);
   color: var(--ink-soft);
+}
+
+.question-palette__item--answered {
+  background: var(--accent-wash);
+  color: var(--accent-strong);
 }
 
 .question-palette__item--correct {
@@ -1400,7 +1414,6 @@ select {
 
 body.is-exam-mode .panel__toolbar,
 body.is-exam-mode #quiz-progress,
-body.is-exam-mode #open-question-sheet-button,
 body.is-exam-mode #next-question-button,
 body.is-exam-mode #wrong-note-summary {
   display: none !important;
@@ -1456,7 +1469,6 @@ body.is-exam-mode #wrong-note-summary {
 
   .overview-board__header,
   .question-sheet__header,
-  .action-row,
   .question-card__header,
   .wrong-note__header,
   .glossary-toolbar,
@@ -1486,6 +1498,15 @@ body.is-exam-mode #wrong-note-summary {
 
   .floating-actions {
     right: 16px;
+  }
+
+  .action-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-row--exam {
+    flex-direction: row;
   }
 
   .question-palette {
