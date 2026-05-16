@@ -1,6 +1,9 @@
-# AWS AI Practitioner Quiz
+# exam-practice
 
-Mobile-first static quiz app generated from the provided AWS AI Practitioner HTML notes.
+Mobile-first static quiz app for certification-style practice sets.
+
+The current bundled dataset and UI flow are configured for AWS AI Practitioner, but the project
+name and structure are broad enough to expand into other exams later.
 
 ## Local files
 

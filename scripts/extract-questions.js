@@ -1533,7 +1533,7 @@ const payload = {
   questions: supportedQuestions,
 };
 
-const fileContents = `window.AWS_AI_QUIZ_DATA = ${JSON.stringify(
+const fileContents = `window.EXAM_PRACTICE_DATA = ${JSON.stringify(
   payload,
   null,
   2,

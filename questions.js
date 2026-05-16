@@ -1,5 +1,5 @@
-window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-16T03:44:56.160Z",
+window.EXAM_PRACTICE_DATA = {
+  "generatedAt": "2026-05-16T03:56:47.559Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409

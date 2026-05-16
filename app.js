@@ -1,6 +1,9 @@
-const QUIZ_STORAGE_KEY = "aws-ai-practitioner-quiz-state-v1";
-const EXAM_STORAGE_KEY = "aws-ai-practitioner-exam-state-v1";
-const DAILY_AUTH_STORAGE_KEY = "aws-ai-practitioner-daily-auth-v1";
+const QUIZ_STORAGE_KEY = "exam-practice-quiz-state-v1";
+const EXAM_STORAGE_KEY = "exam-practice-exam-state-v1";
+const DAILY_AUTH_STORAGE_KEY = "exam-practice-daily-auth-v1";
+const LEGACY_QUIZ_STORAGE_KEY = "aws-ai-practitioner-quiz-state-v1";
+const LEGACY_EXAM_STORAGE_KEY = "aws-ai-practitioner-exam-state-v1";
+const LEGACY_DAILY_AUTH_STORAGE_KEY = "aws-ai-practitioner-daily-auth-v1";
 const SEOUL_TIMEZONE = "Asia/Seoul";
 const PASSWORD_PREFIX = "260314";
 const EXAM_TOTAL_QUESTIONS = 65;
@@ -34,7 +37,7 @@ const ORDER_MODE_LABELS = {
   reverse: "역순",
 };
 
-const appData = window.AWS_AI_QUIZ_DATA || {
+const appData = window.EXAM_PRACTICE_DATA || window.AWS_AI_QUIZ_DATA || {
   supportedCount: 0,
   source: { totalQuestions: 0 },
   domainDistribution: [],
@@ -241,7 +244,9 @@ let examTimerHandle = null;
 
 function loadState() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY) || "{}");
+    const raw =
+      localStorage.getItem(QUIZ_STORAGE_KEY) || localStorage.getItem(LEGACY_QUIZ_STORAGE_KEY) || "{}";
+    const parsed = JSON.parse(raw);
     return {
       totals: {
         solved: Number(parsed?.totals?.solved || 0),
@@ -279,7 +284,9 @@ function createEmptyExamState() {
 
 function loadExamState() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(EXAM_STORAGE_KEY) || "{}");
+    const raw =
+      localStorage.getItem(EXAM_STORAGE_KEY) || localStorage.getItem(LEGACY_EXAM_STORAGE_KEY) || "{}";
+    const parsed = JSON.parse(raw);
     return {
       active: Boolean(parsed?.active),
       completed: Boolean(parsed?.completed),
@@ -338,7 +345,11 @@ function getExpectedDailyPassword(date = new Date()) {
 
 function loadDailyAuth() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(DAILY_AUTH_STORAGE_KEY) || "{}");
+    const raw =
+      localStorage.getItem(DAILY_AUTH_STORAGE_KEY) ||
+      localStorage.getItem(LEGACY_DAILY_AUTH_STORAGE_KEY) ||
+      "{}";
+    const parsed = JSON.parse(raw);
     return parsed && typeof parsed === "object" ? parsed : {};
   } catch (error) {
     return {};
