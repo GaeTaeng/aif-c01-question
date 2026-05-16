@@ -1,5 +1,5 @@
 window.EXAM_PRACTICE_DATA = {
-  "generatedAt": "2026-05-16T03:56:47.559Z",
+  "generatedAt": "2026-05-16T05:30:19.467Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -1670,9 +1670,9 @@ window.EXAM_PRACTICE_DATA = {
         "- SageMaker JumpStart: 사전 구축된 모델을 빠르게 배포 가능 -> VPC 내 사용 가능."
       ],
       "wrongExplanations": [
-        "- A -> Personalize: 추천 시스템 구축용, FM 배포와 직접 관련 없음.",
-        "- C -> PartyRock: 실제 서비스 존재하지 않음.",
-        "- D -> SageMaker Endpoints: 배포용이지만, FM 사용을 바로 지원하는 JumpStart보다 초기 설정 필요."
+        "- A -> Personalize: 추천 시스템 구축용으로, FM을 팀 VPC 안에서 빠르게 배포하는 용도와 다릅니다.",
+        "- C -> PartyRock: 공식 AWS 플레이그라운드이지만 웹 기반 실험 환경이라 팀 VPC 안에서 FM을 배포·소비하는 요구사항과 맞지 않습니다.",
+        "- D -> SageMaker Endpoints: 배포용이지만, FM을 빠르게 시작하는 관점에서는 JumpStart보다 초기 설정 부담이 큽니다."
       ],
       "glossary": [
         "- SageMaker JumpStart: 미리 준비된 ML 모델과 솔루션 템플릿을 제공하여 빠른 배포 가능.",
@@ -12912,45 +12912,52 @@ window.EXAM_PRACTICE_DATA = {
       "id": 254,
       "sourceNumber": 254,
       "title": "Question 254",
-      "promptKo": "한 회사가 실험 환경에서 생성 AI 애플리케이션을 학습하고 싶다.\n가장 비용 효율적인 솔루션은 무엇인가?",
-      "promptEn": "A company wants to learn about generative AI applications in an experimental environment.",
+      "promptKo": "한 회사가 실험 환경에서 생성형 AI 애플리케이션을 학습하고 싶습니다.\n가장 비용 효율적인 솔루션은 무엇입니까?",
+      "promptEn": "A company wants to learn about generative AI applications in an experimental environment.\nWhat is the most cost-effective solution?",
       "explanation": [
-        "SageMaker JumpStart는 사전 학습된 AI 모델과 예제 프로젝트를 제공하여, 실험 환경에서 빠르게 비용 효율적으로 테스트할 수 있다."
+        "PartyRock is an official Amazon Bedrock playground for hands-on experimentation with generative AI applications.",
+        "PartyRock는 생성형 AI 앱을 실험하고 학습할 수 있도록 설계된 공식 Amazon Bedrock 플레이그라운드입니다.",
+        "웹 기반으로 바로 시작할 수 있고, 실험·학습 목적에 맞춰 가볍게 사용하기 좋습니다."
       ],
       "wrongExplanations": [
-        "- A, D: Amazon Q Developer/Business는 질의응답용이며 비용 효율적 실험 환경 제공에 최적화되어 있지 않다.",
-        "- C: PartyRock는 실제 서비스 이름이 아니며 존재하지 않는다."
+        "- A -> Amazon Q Developer: 개발 생산성 지원용 AI 어시스턴트로, 생성형 AI 앱을 실험하는 플레이그라운드와는 목적이 다릅니다.",
+        "- B -> Amazon SageMaker JumpStart: 사전 구축 모델과 솔루션을 빠르게 활용하는 데 적합하지만, PartyRock보다 설정과 운영 맥락이 더 큽니다.",
+        "- D -> Amazon Q Business: 기업 내부 데이터 기반 AI 어시스턴트를 구축하는 서비스로, 실험용 플레이그라운드와는 다릅니다."
       ],
-      "glossary": [],
+      "glossary": [
+        "- PartyRock: Amazon Bedrock 기반의 생성형 AI 앱 빌딩 플레이그라운드",
+        "- Amazon Q Developer: 개발자 생산성 향상을 위한 생성형 AI 어시스턴트",
+        "- Amazon Q Business: 기업 내부 데이터를 활용하는 생성형 AI 비즈니스 어시스턴트"
+      ],
       "type": "single-choice",
       "options": [
         {
           "key": "A",
           "textEn": "Amazon Q Developer",
-          "textKo": "",
+          "textKo": "Amazon Q Developer",
           "text": "Amazon Q Developer"
         },
         {
           "key": "B",
           "textEn": "Amazon SageMaker JumpStart",
-          "textKo": "",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "C",
-          "textEn": "Amazon Bedrock PartyRock",
-          "textKo": "",
-          "text": "Amazon Bedrock PartyRock"
+          "textEn": "PartyRock, an Amazon Bedrock Playground",
+          "textKo": "PartyRock (Amazon Bedrock Playground)",
+          "text": "PartyRock, an Amazon Bedrock Playground"
         },
         {
           "key": "D",
           "textEn": "Amazon Q Business",
-          "textKo": "",
+          "textKo": "Amazon Q Business",
           "text": "Amazon Q Business"
         }
       ],
-      "answerKey": "B",
-      "answerText": "Amazon SageMaker JumpStart",
+      "answerKey": "C",
+      "answerText": "PartyRock, an Amazon Bedrock Playground",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -16812,9 +16819,8 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "회사의 내부 데이터를 사용하여 질문에 답변하는 검색 기반 경험을 제공하는 AWS 관리형 서비스는 무엇입니까?",
       "promptEn": "Which of the following is an AWS-managed service that provides a search-based experience to answer questions using a company's internal data?",
       "explanation": [
-        "(AIF 기준)",
-        "- Amazon Q는 기업용 생성형 AI 비서로, 기업 내부 문서를 연결하여 질문에 답변하고 콘텐츠를 생성하는 데 최적화되어 있습니다.",
-        "- (참고) Amazon Kendra는 지능형 검색 서비스로, Q의 답변 성능을 뒷받침하는 기술로 사용되기도 합니다. 최신 문제 경향상 생성형 AI 기반 답변은 'Amazon Q'가 정답일 확률이 높습니다."
+        "Amazon Q Business는 기업 내부 데이터를 연결해 질문에 답하고 요약·생성까지 수행하는 완전관리형 생성형 AI 어시스턴트입니다.",
+        "Amazon Kendra는 지능형 검색 서비스이며, Amazon Q Business가 내부 데이터에 답변할 때 연계될 수 있습니다."
       ],
       "wrongExplanations": [],
       "glossary": [],
@@ -16822,9 +16828,9 @@ window.EXAM_PRACTICE_DATA = {
       "options": [
         {
           "key": "A",
-          "textEn": "Amazon Q (formerly Amazon Q Business)",
-          "textKo": "Amazon Q (구 Amazon Q Business)",
-          "text": "Amazon Q (formerly Amazon Q Business)"
+          "textEn": "Amazon Q Business",
+          "textKo": "Amazon Q Business",
+          "text": "Amazon Q Business"
         },
         {
           "key": "B",
@@ -16846,7 +16852,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "Amazon Q (또는 D. Amazon Kendra - 컨텍스트에 따라 다를 수 있으나 현재 생성형 AI 시험에서는 Q가 핵심)",
+      "answerText": "Amazon Q Business",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"

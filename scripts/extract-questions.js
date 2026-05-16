@@ -1431,6 +1431,17 @@ const parsedQuestions = matches.map((match, index) => {
 });
 
 function applyQuestionOverrides(question) {
+  if (question.sourceNumber === 33) {
+    return withDomainMetadata({
+      ...question,
+      wrongExplanations: [
+        "- A -> Personalize: 추천 시스템 구축용으로, FM을 팀 VPC 안에서 빠르게 배포하는 용도와 다릅니다.",
+        "- C -> PartyRock: 공식 AWS 플레이그라운드이지만 웹 기반 실험 환경이라 팀 VPC 안에서 FM을 배포·소비하는 요구사항과 맞지 않습니다.",
+        "- D -> SageMaker Endpoints: 배포용이지만, FM을 빠르게 시작하는 관점에서는 JumpStart보다 초기 설정 부담이 큽니다.",
+      ],
+    });
+  }
+
   if (question.sourceNumber === 185) {
     return withDomainMetadata({
       ...question,
@@ -1496,6 +1507,81 @@ function applyQuestionOverrides(question) {
           answer: "Safety",
         },
       ],
+    });
+  }
+
+  if (question.sourceNumber === 254) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company wants to learn about generative AI applications in an experimental environment.\nWhat is the most cost-effective solution?",
+      promptKo:
+        "한 회사가 실험 환경에서 생성형 AI 애플리케이션을 학습하고 싶습니다.\n가장 비용 효율적인 솔루션은 무엇입니까?",
+      explanation: [
+        "PartyRock is an official Amazon Bedrock playground for hands-on experimentation with generative AI applications.",
+        "PartyRock는 생성형 AI 앱을 실험하고 학습할 수 있도록 설계된 공식 Amazon Bedrock 플레이그라운드입니다.",
+        "웹 기반으로 바로 시작할 수 있고, 실험·학습 목적에 맞춰 가볍게 사용하기 좋습니다.",
+      ],
+      wrongExplanations: [
+        "- A -> Amazon Q Developer: 개발 생산성 지원용 AI 어시스턴트로, 생성형 AI 앱을 실험하는 플레이그라운드와는 목적이 다릅니다.",
+        "- B -> Amazon SageMaker JumpStart: 사전 구축 모델과 솔루션을 빠르게 활용하는 데 적합하지만, PartyRock보다 설정과 운영 맥락이 더 큽니다.",
+        "- D -> Amazon Q Business: 기업 내부 데이터 기반 AI 어시스턴트를 구축하는 서비스로, 실험용 플레이그라운드와는 다릅니다.",
+      ],
+      glossary: [
+        "- PartyRock: Amazon Bedrock 기반의 생성형 AI 앱 빌딩 플레이그라운드",
+        "- Amazon Q Developer: 개발자 생산성 향상을 위한 생성형 AI 어시스턴트",
+        "- Amazon Q Business: 기업 내부 데이터를 활용하는 생성형 AI 비즈니스 어시스턴트",
+      ],
+      type: "single-choice",
+      options: [
+        {
+          key: "A",
+          textEn: "Amazon Q Developer",
+          textKo: "Amazon Q Developer",
+          text: "Amazon Q Developer",
+        },
+        {
+          key: "B",
+          textEn: "Amazon SageMaker JumpStart",
+          textKo: "Amazon SageMaker JumpStart",
+          text: "Amazon SageMaker JumpStart",
+        },
+        {
+          key: "C",
+          textEn: "PartyRock, an Amazon Bedrock Playground",
+          textKo: "PartyRock (Amazon Bedrock Playground)",
+          text: "PartyRock, an Amazon Bedrock Playground",
+        },
+        {
+          key: "D",
+          textEn: "Amazon Q Business",
+          textKo: "Amazon Q Business",
+          text: "Amazon Q Business",
+        },
+      ],
+      answerKey: "C",
+      answerText: "PartyRock, an Amazon Bedrock Playground",
+    });
+  }
+
+  if (question.sourceNumber === 338) {
+    return withDomainMetadata({
+      ...question,
+      explanation: [
+        "Amazon Q Business는 기업 내부 데이터를 연결해 질문에 답하고 요약·생성까지 수행하는 완전관리형 생성형 AI 어시스턴트입니다.",
+        "Amazon Kendra는 지능형 검색 서비스이며, Amazon Q Business가 내부 데이터에 답변할 때 연계될 수 있습니다.",
+      ],
+      options: question.options.map((option) =>
+        option.key === "A"
+          ? {
+              ...option,
+              textEn: "Amazon Q Business",
+              textKo: "Amazon Q Business",
+              text: "Amazon Q Business",
+            }
+          : option,
+      ),
+      answerText: "Amazon Q Business",
     });
   }
 
