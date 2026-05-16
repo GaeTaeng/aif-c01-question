@@ -232,6 +232,9 @@ const state = {
   session: loadState(),
   exam: loadExamState(),
   searchQuery: "",
+  practiceHistory: [],
+  practiceHistoryIndex: -1,
+  practiceReviewBook: {},
 };
 
 let examTimerHandle = null;
@@ -403,6 +406,41 @@ function cloneValue(value) {
   }
 
   return JSON.parse(JSON.stringify(value));
+}
+
+function getStoredPracticeReview(questionId) {
+  if (!questionId) {
+    return null;
+  }
+
+  return state.practiceReviewBook[questionId] || null;
+}
+
+function syncPracticeReview(questionId = state.currentQuestionId) {
+  if (isExamMode() || !questionId || !questionById.has(questionId)) {
+    return;
+  }
+
+  state.practiceReviewBook[questionId] = {
+    response: cloneValue(state.response),
+    answerChecked: Boolean(state.answerChecked),
+  };
+}
+
+function pushPracticeHistory(questionId) {
+  if (isExamMode() || !questionId) {
+    return;
+  }
+
+  const currentHistoryQuestionId = state.practiceHistory[state.practiceHistoryIndex];
+  if (currentHistoryQuestionId === questionId) {
+    return;
+  }
+
+  const nextHistory = state.practiceHistory.slice(0, state.practiceHistoryIndex + 1);
+  nextHistory.push(questionId);
+  state.practiceHistory = nextHistory;
+  state.practiceHistoryIndex = nextHistory.length - 1;
 }
 
 function isExamMode() {
@@ -854,8 +892,12 @@ function getExamQuestionIndex(questionId) {
   return state.exam.questionIds.indexOf(questionId);
 }
 
-function canGoToPreviousExamQuestion() {
-  return isExamMode() && state.exam.currentIndex > 0;
+function canGoToPreviousQuestion() {
+  if (isExamMode()) {
+    return state.exam.currentIndex > 0;
+  }
+
+  return state.practiceHistoryIndex > 0;
 }
 
 function goToExamQuestionByIndex(index) {
@@ -874,11 +916,20 @@ function goToExamQuestionByIndex(index) {
 }
 
 function goToPreviousQuestion() {
-  if (!canGoToPreviousExamQuestion()) {
+  if (!canGoToPreviousQuestion()) {
     return;
   }
 
-  goToExamQuestionByIndex(state.exam.currentIndex - 1);
+  if (isExamMode()) {
+    goToExamQuestionByIndex(state.exam.currentIndex - 1);
+    return;
+  }
+
+  syncPracticeReview();
+  const previousIndex = state.practiceHistoryIndex - 1;
+  const previousQuestionId = state.practiceHistory[previousIndex];
+  state.practiceHistoryIndex = previousIndex;
+  selectQuestion(previousQuestionId, { fromHistory: true });
 }
 
 function getOption(question, optionKey) {
@@ -1393,7 +1444,9 @@ function startFreshExamSession() {
   ensureQuestionForMode();
 }
 
-function selectQuestion(questionId) {
+function selectQuestion(questionId, options = {}) {
+  const { fromHistory = false } = options;
+
   if (!questionId) {
     state.currentQuestionId = null;
     state.response = null;
@@ -1406,13 +1459,28 @@ function selectQuestion(questionId) {
 
   const question = questionById.get(questionId);
   state.currentQuestionId = questionId;
-  state.response = isExamMode()
-    ? getExamStoredResponse(questionId) ?? createInitialResponse(question)
-    : createInitialResponse(question);
-  state.answerChecked = false;
+  if (isExamMode()) {
+    state.response = getExamStoredResponse(questionId) ?? createInitialResponse(question);
+    state.answerChecked = false;
+  } else {
+    const storedReview = getStoredPracticeReview(questionId);
+    state.response =
+      storedReview && Object.prototype.hasOwnProperty.call(storedReview, "response")
+        ? cloneValue(storedReview.response)
+        : createInitialResponse(question);
+    state.answerChecked = Boolean(storedReview?.answerChecked);
+
+    if (!fromHistory) {
+      pushPracticeHistory(questionId);
+    }
+  }
   syncQuestionIdToUrl(questionId);
   elements.feedbackCard.classList.add("is-hidden");
   renderQuestion();
+
+  if (!isExamMode() && state.answerChecked) {
+    renderFeedback(isAnswerCorrect(question, state.response));
+  }
 }
 
 function ensureExamQuestion() {
@@ -1836,7 +1904,7 @@ function renderQuestion() {
     );
     elements.optionsForm.innerHTML = renderOptionsMarkup(question);
     elements.previousQuestionButton?.classList.remove("is-hidden");
-    elements.previousQuestionButton.disabled = !canGoToPreviousExamQuestion();
+    elements.previousQuestionButton.disabled = !canGoToPreviousQuestion();
     elements.checkAnswerButton.textContent = isLastQuestion ? "채점하기" : "다음";
     elements.checkAnswerButton.disabled = false;
     setPrimaryActionButtonStyle("primary");
@@ -1888,7 +1956,13 @@ function renderQuestion() {
     elements.checkAnswerButton.textContent = "정답 확인";
     elements.checkAnswerButton.disabled = true;
     setPrimaryActionButtonStyle("primary");
-    elements.previousQuestionButton?.classList.add("is-hidden");
+    elements.previousQuestionButton?.classList.toggle(
+      "is-hidden",
+      state.practiceHistoryIndex <= 0,
+    );
+    if (elements.previousQuestionButton) {
+      elements.previousQuestionButton.disabled = state.practiceHistoryIndex <= 0;
+    }
     elements.nextQuestionButton.disabled = true;
     elements.nextQuestionButton.classList.add("is-hidden");
     elements.feedbackCard.classList.add("is-hidden");
@@ -1912,7 +1986,13 @@ function renderQuestion() {
     !(question.promptEn && question.promptKo),
   );
   elements.optionsForm.innerHTML = renderOptionsMarkup(question);
-  elements.previousQuestionButton?.classList.add("is-hidden");
+  elements.previousQuestionButton?.classList.toggle(
+    "is-hidden",
+    state.practiceHistoryIndex <= 0,
+  );
+  if (elements.previousQuestionButton) {
+    elements.previousQuestionButton.disabled = state.practiceHistoryIndex <= 0;
+  }
   const isComplete = isResponseComplete(question, state.response);
   elements.checkAnswerButton.textContent = state.answerChecked
     ? "다음"
@@ -2384,6 +2464,7 @@ function checkAnswer() {
   }
 
   updateWrongBook(question, isCorrect);
+  syncPracticeReview();
   saveState();
   buildHeroStats();
   renderQuestion();
@@ -2784,6 +2865,9 @@ function resetProgress() {
     wrongBook: {},
     completedBook: {},
   };
+  state.practiceHistory = [];
+  state.practiceHistoryIndex = -1;
+  state.practiceReviewBook = {};
   state.mode = "random";
   state.requestedQuestionId = null;
   state.currentQuestionId = null;
@@ -2818,7 +2902,10 @@ function updateResponseFromRadio(value) {
   state.response = value;
   if (isExamMode() && state.currentQuestionId) {
     setExamResponse(state.currentQuestionId, state.response);
+    return;
   }
+
+  syncPracticeReview();
 }
 
 function updateResponseFromCheckbox(question, value, checked) {
@@ -2839,7 +2926,10 @@ function updateResponseFromCheckbox(question, value, checked) {
     .filter((key) => selectedKeys.has(key));
   if (isExamMode() && state.currentQuestionId) {
     setExamResponse(state.currentQuestionId, state.response);
+    return true;
   }
+
+  syncPracticeReview();
   return true;
 }
 
@@ -2861,7 +2951,10 @@ function updateResponseFromSelect(question, rowId, value) {
   };
   if (isExamMode() && state.currentQuestionId) {
     setExamResponse(state.currentQuestionId, state.response);
+    return true;
   }
+
+  syncPracticeReview();
   return true;
 }
 
@@ -2874,7 +2967,10 @@ function updateOrdering(question, action, index) {
   state.response = moveItem(state.response, index, targetIndex);
   if (isExamMode() && state.currentQuestionId) {
     setExamResponse(state.currentQuestionId, state.response);
+    return;
   }
+
+  syncPracticeReview();
 }
 
 function attachEvents() {
