@@ -1,5 +1,5 @@
 window.AWS_AI_QUIZ_DATA = {
-  "generatedAt": "2026-05-15T07:32:23.395Z",
+  "generatedAt": "2026-05-16T03:44:56.160Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -9477,43 +9477,38 @@ window.AWS_AI_QUIZ_DATA = {
       "id": 185,
       "sourceNumber": 185,
       "title": "Question 185",
-      "promptKo": "한 회사가 Amazon Bedrock에 호스팅된 베이스 모델을 맞춤화해야 합니다.\n다음 회사 요구사항에 맞는 모델 커스터마이징 방법을 선택하십시오. 각 방법은 하나 이상 선택할 수 있습니다.\n요구사항\n|\n| 정답\n|\n회사는 특정 작업과 예시에 대한 모델 성능 향상을 원합니다.\n|\n| 파인튜닝\n|\n회사는 특정 문서를 제공하여 도메인 지식 향상을 원합니다.\n|\n| 지속적 사전학습\n|\n회사는 시간이 지남에 따라 더 많은 비라벨 데이터를 사용해 모델을 재학습하기 원합니다.\n|\n| 지속적 사전학습\n|",
-      "promptEn": "- A company needs to customize a base model that is hosted on Amazon Bedrock.\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.\nRequirement\n| Options\n| 정답\n|\nThe company wants to improve the model's performance on specific tasks and examples.\n| Continued pre-training, Fine-tuning\n| Fine-tuning\n|\nThe company wants to improve the model's domain knowledge by providing specific documents.\n| Continued pre-training, Fine-tuning\n| Continued pre-training\n|\nThe company wants to retrain the model by using more unlabeled data over time.\n| Continued pre-training, Fine-tuning\n| Continued pre-training\n|",
+      "promptKo": "한 회사가 Amazon Bedrock에 호스팅된 베이스 모델을 맞춤화해야 합니다.\n다음 회사 요구사항에 맞는 모델 커스터마이징 방법을 선택하십시오. 각 방법은 하나 이상 선택할 수 있습니다.",
+      "promptEn": "A company needs to customize a base model that is hosted on Amazon Bedrock.\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.",
       "explanation": [
-        "- Fine-tuning은 특정 작업/예제에 대한 성능 개선에 사용됩니다.",
-        "- Continued pre-training은 도메인 지식 강화나 비식별 데이터로 추가 학습에 적합합니다."
+        "Fine-tuning은 특정 작업/예제에 대한 성능 개선에 사용됩니다.",
+        "Continued pre-training은 도메인 지식 강화나 비식별 데이터로 추가 학습에 적합합니다."
       ],
       "wrongExplanations": [],
       "glossary": [
-        "- Fine-tuning: 라벨된 데이터로 특정 작업에 맞게 모델을 조정",
-        "- Continued pre-training: 도메인 관련 데이터로 사전 학습을 이어감",
-        "|",
-        "|",
-        "|"
+        "Fine-tuning: 라벨된 데이터로 특정 작업에 맞게 모델을 조정",
+        "Continued pre-training: 도메인 관련 데이터로 사전 학습을 이어감"
       ],
       "type": "matching",
+      "allowRepeat": true,
       "choicePool": [
         "Continued pre-training",
-        "Fine-tuning",
-        "파인튜닝",
-        "지속적 사전학습"
+        "Fine-tuning"
       ],
-      "allowRepeat": true,
       "rows": [
         {
           "id": "185-row-1",
-          "prompt": "회사는 특정 작업과 예시에 대한 모델 성능 향상을 원합니다.",
-          "answer": "파인튜닝"
+          "prompt": "The company wants to improve the model's performance on specific tasks and examples.",
+          "answer": "Fine-tuning"
         },
         {
           "id": "185-row-2",
-          "prompt": "회사는 특정 문서를 제공하여 도메인 지식 향상을 원합니다.",
-          "answer": "지속적 사전학습"
+          "prompt": "The company wants to improve the model's domain knowledge by providing specific documents.",
+          "answer": "Continued pre-training"
         },
         {
           "id": "185-row-3",
-          "prompt": "회사는 시간이 지남에 따라 더 많은 비라벨 데이터를 사용해 모델을 재학습하기 원합니다.",
-          "answer": "지속적 사전학습"
+          "prompt": "The company wants to retrain the model by using more unlabeled data over time.",
+          "answer": "Continued pre-training"
         }
       ],
       "domainId": 3,
@@ -9621,8 +9616,8 @@ window.AWS_AI_QUIZ_DATA = {
       "id": 188,
       "sourceNumber": 188,
       "title": "Question 188",
-      "promptKo": "회사는 Fine-tuning된 LLM을 사용해 고객 서비스 챗봇을 설계하고 있으며, 책임 있는 AI 특성을 반영하려 합니다.\n각 설계 활동에 대해 올바른 Responsible AI 특성을 선택하세요. 각 특성은 한 번만 선택하거나 선택하지 않을 수 있습니다.\n설계 활동\n| 선택지: 거버넌스, 개인정보 보호 및 보안, 안전성, 투명성\n| 정답\n|\n학습 데이터 준비 시 개인 정보를 익명화한다\n| 거버넌스, 개인정보 보호 및 보안, 안전성, 투명성\n| 개인정보 보호 및 보안\n|\n고객 서비스 챗봇이 설명 가능한 결정을 제공하도록 설계한다\n| 거버넌스, 개인정보 보호 및 보안, 안전성, 투명성\n| 투명성\n|\nAmazon Bedrock Guardrails를 사용해 유해 출력 방지\n| 거버넌스, 개인정보 보호 및 보안, 안전성, 투명성\n| 안전성\n|",
-      "promptEn": "A company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.\nApplication Design Action\n| Options: Governance, Privacy and security, Safety, Transparency\n| 정답\n|\nAnonymize personal information during training data preparation\n| Governance, Privacy and security, Safety, Transparency\n| Privacy and security\n|\nDesign the customer service chatbot to provide explainable decisions\n| Governance, Privacy and security, Safety, Transparency\n| Transparency\n|\nUse Amazon Bedrock Guardrails to prevent harmful output and misuse of the chatbot\n| Governance, Privacy and security, Safety, Transparency\n| Safety\n|",
+      "promptKo": "회사는 Fine-tuning된 LLM을 사용해 고객 서비스 챗봇을 설계하고 있으며, 책임 있는 AI 특성을 반영하려 합니다.\n각 설계 활동에 대해 올바른 Responsible AI 특성을 선택하세요. 각 특성은 한 번만 선택하거나 선택하지 않을 수 있습니다.",
+      "promptEn": "A company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.",
       "explanation": [
         "- Privacy and security: 데이터 준비 시 개인 정보 익명화",
         "- Transparency: 챗봇의 결정에 대한 설명 가능성",
@@ -9634,28 +9629,28 @@ window.AWS_AI_QUIZ_DATA = {
         "- Guardrails: Amazon Bedrock에서 유해하거나 부적절한 출력을 제어하는 설정"
       ],
       "type": "matching",
-      "choicePool": [
-        "거버넌스",
-        "개인정보 보호 및 보안",
-        "안전성",
-        "투명성"
-      ],
       "allowRepeat": false,
+      "choicePool": [
+        "Governance",
+        "Privacy and security",
+        "Safety",
+        "Transparency"
+      ],
       "rows": [
         {
           "id": "188-row-1",
-          "prompt": "학습 데이터 준비 시 개인 정보를 익명화한다",
-          "answer": "개인정보 보호 및 보안"
+          "prompt": "Anonymize personal information during training data preparation",
+          "answer": "Privacy and security"
         },
         {
           "id": "188-row-2",
-          "prompt": "고객 서비스 챗봇이 설명 가능한 결정을 제공하도록 설계한다",
-          "answer": "투명성"
+          "prompt": "Design the customer service chatbot to provide explainable decisions",
+          "answer": "Transparency"
         },
         {
           "id": "188-row-3",
-          "prompt": "Amazon Bedrock Guardrails를 사용해 유해 출력 방지",
-          "answer": "안전성"
+          "prompt": "Use Amazon Bedrock Guardrails to prevent harmful output and misuse of the chatbot",
+          "answer": "Safety"
         }
       ],
       "domainId": 3,

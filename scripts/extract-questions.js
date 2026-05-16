@@ -940,6 +940,60 @@ function buildOrderingQuestion(base, items) {
 
 function buildManualStructuredQuestion(questionNumber, base) {
   const manual = {
+    185: {
+      promptEn:
+        "A company needs to customize a base model that is hosted on Amazon Bedrock.\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.",
+      promptKo:
+        "한 회사가 Amazon Bedrock에 호스팅된 베이스 모델을 맞춤화해야 합니다.\n다음 회사 요구사항에 맞는 모델 커스터마이징 방법을 선택하십시오. 각 방법은 하나 이상 선택할 수 있습니다.",
+      explanation: [
+        "Fine-tuning은 특정 작업/예제에 대한 성능 개선에 사용됩니다.",
+        "Continued pre-training은 도메인 지식 강화나 비식별 데이터로 추가 학습에 적합합니다.",
+      ],
+      glossary: [
+        "Fine-tuning: 라벨된 데이터로 특정 작업에 맞게 모델을 조정",
+        "Continued pre-training: 도메인 관련 데이터로 사전 학습을 이어감",
+      ],
+      type: "matching",
+      allowRepeat: true,
+      choicePool: ["Continued pre-training", "Fine-tuning"],
+      rows: [
+        {
+          prompt: "The company wants to improve the model's performance on specific tasks and examples.",
+          answer: "Fine-tuning",
+        },
+        {
+          prompt: "The company wants to improve the model's domain knowledge by providing specific documents.",
+          answer: "Continued pre-training",
+        },
+        {
+          prompt: "The company wants to retrain the model by using more unlabeled data over time.",
+          answer: "Continued pre-training",
+        },
+      ],
+    },
+    188: {
+      promptEn:
+        "A company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.",
+      promptKo:
+        "회사는 Fine-tuning된 LLM을 사용해 고객 서비스 챗봇을 설계하고 있으며, 책임 있는 AI 특성을 반영하려 합니다.\n각 설계 활동에 대해 올바른 Responsible AI 특성을 선택하세요. 각 특성은 한 번만 선택하거나 선택하지 않을 수 있습니다.",
+      type: "matching",
+      allowRepeat: false,
+      choicePool: ["Governance", "Privacy and security", "Safety", "Transparency"],
+      rows: [
+        {
+          prompt: "Anonymize personal information during training data preparation",
+          answer: "Privacy and security",
+        },
+        {
+          prompt: "Design the customer service chatbot to provide explainable decisions",
+          answer: "Transparency",
+        },
+        {
+          prompt: "Use Amazon Bedrock Guardrails to prevent harmful output and misuse of the chatbot",
+          answer: "Safety",
+        },
+      ],
+    },
     245: {
       type: "matching",
       allowRepeat: false,
@@ -1298,6 +1352,11 @@ function parseSegment(questionNumber, segment) {
   const allowRepeat = /one or more times|하나 이상 선택/i.test(questionText);
 
   if (isKnownMatching) {
+    const manualStructuredQuestion = buildManualStructuredQuestion(questionNumber, base);
+    if (manualStructuredQuestion) {
+      return withDomainMetadata(manualStructuredQuestion);
+    }
+
     const matchingCandidates = [
       buildMatchingQuestion(base, answerArrowPairs, choicePool, allowRepeat),
       buildMatchingQuestion(base, explanationArrowPairs, choicePool, allowRepeat),
@@ -1310,7 +1369,6 @@ function parseSegment(questionNumber, segment) {
         allowRepeat,
       ),
       buildMatchingQuestion(base, answerColonPairs, choicePool, allowRepeat),
-      buildManualStructuredQuestion(questionNumber, base),
     ].filter(Boolean);
 
     if (matchingCandidates.length) {
@@ -1372,9 +1430,81 @@ const parsedQuestions = matches.map((match, index) => {
   return parseSegment(questionNumber, html.slice(start, end));
 });
 
+function applyQuestionOverrides(question) {
+  if (question.sourceNumber === 185) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company needs to customize a base model that is hosted on Amazon Bedrock.\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.",
+      promptKo:
+        "한 회사가 Amazon Bedrock에 호스팅된 베이스 모델을 맞춤화해야 합니다.\n다음 회사 요구사항에 맞는 모델 커스터마이징 방법을 선택하십시오. 각 방법은 하나 이상 선택할 수 있습니다.",
+      explanation: [
+        "Fine-tuning은 특정 작업/예제에 대한 성능 개선에 사용됩니다.",
+        "Continued pre-training은 도메인 지식 강화나 비식별 데이터로 추가 학습에 적합합니다.",
+      ],
+      glossary: [
+        "Fine-tuning: 라벨된 데이터로 특정 작업에 맞게 모델을 조정",
+        "Continued pre-training: 도메인 관련 데이터로 사전 학습을 이어감",
+      ],
+      type: "matching",
+      choicePool: ["Continued pre-training", "Fine-tuning"],
+      allowRepeat: true,
+      rows: [
+        {
+          id: "185-row-1",
+          prompt: "The company wants to improve the model's performance on specific tasks and examples.",
+          answer: "Fine-tuning",
+        },
+        {
+          id: "185-row-2",
+          prompt: "The company wants to improve the model's domain knowledge by providing specific documents.",
+          answer: "Continued pre-training",
+        },
+        {
+          id: "185-row-3",
+          prompt: "The company wants to retrain the model by using more unlabeled data over time.",
+          answer: "Continued pre-training",
+        },
+      ],
+    });
+  }
+
+  if (question.sourceNumber === 188) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.",
+      promptKo:
+        "회사는 Fine-tuning된 LLM을 사용해 고객 서비스 챗봇을 설계하고 있으며, 책임 있는 AI 특성을 반영하려 합니다.\n각 설계 활동에 대해 올바른 Responsible AI 특성을 선택하세요. 각 특성은 한 번만 선택하거나 선택하지 않을 수 있습니다.",
+      type: "matching",
+      choicePool: ["Governance", "Privacy and security", "Safety", "Transparency"],
+      allowRepeat: false,
+      rows: [
+        {
+          id: "188-row-1",
+          prompt: "Anonymize personal information during training data preparation",
+          answer: "Privacy and security",
+        },
+        {
+          id: "188-row-2",
+          prompt: "Design the customer service chatbot to provide explainable decisions",
+          answer: "Transparency",
+        },
+        {
+          id: "188-row-3",
+          prompt: "Use Amazon Bedrock Guardrails to prevent harmful output and misuse of the chatbot",
+          answer: "Safety",
+        },
+      ],
+    });
+  }
+
+  return question;
+}
+
 const supportedQuestions = parsedQuestions.filter(
   (question) => question.type !== "unsupported",
-);
+).map(applyQuestionOverrides);
 
 const domainDistribution = supportedQuestions.reduce((accumulator, question) => {
   const domainId = question.domainId || 1;
