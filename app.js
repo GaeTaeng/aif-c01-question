@@ -2515,6 +2515,21 @@ function findExplanationDetailForSelection(question, optionKey) {
   );
 }
 
+function getGenericWrongOptionSummary(question, optionKey) {
+  if (question.type === "single-choice") {
+    const correctLine = formatOptionLine(question, question.answerKey);
+    const answerReason = getAnswerReason(question);
+    return `${correctLine}가 요구사항에 직접 맞습니다. ${answerReason}`;
+  }
+
+  if (question.type === "multi-select") {
+    const correctLines = question.answerKeys.map((key) => formatOptionLine(question, key)).join(", ");
+    return `정답 조합은 ${correctLines}이며, 이 보기는 정답 조합에 포함되지 않습니다.`;
+  }
+
+  return "문제 요구사항과 직접 맞지 않는 보기입니다.";
+}
+
 function getChoiceOptionReviewLines(question) {
   if (!["single-choice", "multi-select"].includes(question.type)) {
     return [];
@@ -2535,7 +2550,7 @@ function getChoiceOptionReviewLines(question) {
       ? explanationDetail?.description || getAnswerReason(question)
       : wrongDetail?.description ||
         explanationDetail?.description ||
-        "문제 요구사항과 직접 맞지 않는 보기입니다.";
+        getGenericWrongOptionSummary(question, option.key);
 
     return `${formatOptionLine(question, option.key)}: ${summary}`;
   });

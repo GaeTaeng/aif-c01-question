@@ -1,5 +1,5 @@
 window.EXAM_PRACTICE_DATA = {
-  "generatedAt": "2026-05-16T05:30:19.467Z",
+  "generatedAt": "2026-05-19T10:37:30.493Z",
   "source": {
     "file": "/Users/gimtaehunegimtaehune/Downloads/AWS AI Prectitioner 정리/AWSAIPrectitioner.html",
     "totalQuestions": 409
@@ -11,7 +11,7 @@ window.EXAM_PRACTICE_DATA = {
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초",
-      "count": 143
+      "count": 144
     },
     {
       "domainId": 2,
@@ -23,7 +23,7 @@ window.EXAM_PRACTICE_DATA = {
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용",
-      "count": 94
+      "count": 93
     },
     {
       "domainId": 4,
@@ -2024,13 +2024,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "회사가 고객 질문에 답하는 대화형 챗봇을 배포하려고 합니다.\n챗봇은 SageMaker JumpStart 파인튜닝 모델 기반이며, 애플리케이션은 여러 규제 프레임워크를 준수해야 합니다.\n어떤 기능에서 규제 준수를 증명할 수 있습니까? (두 가지 선택)",
       "promptEn": "A company wants to deploy a conversational chatbot to answer customer questions. The chatbot is based on a fine-tuned Amazon SageMaker JumpStart model. The application must comply with multiple regulatory frameworks.\nWhich capabilities can the company show compliance for? (Choose two.)",
       "explanation": [
-        "- B: Threat detection -> 보안 규제 준수 가능.",
-        "- C: Data protection -> 개인정보/데이터 보호 규제 준수 가능."
+        "- B: Threat detection -> 보안 규제 준수 가능."
       ],
       "wrongExplanations": [
         "- A -> Auto scaling: 성능 향상, 규제 준수 아님.",
         "- D -> 비용 최적화: 경제적 효율성, 규제 준수와 직접 관련 없음.",
-        "- E -> 마이크로서비스 아키텍처: 설계/유연성 관련, 규제 준수 아님."
+        "- E -> 마이크로서비스 아키텍처: 설계/유연성 관련, 규제 준수 아님.",
+        "- C: Data protection -> 개인정보/데이터 보호 규제 준수 가능."
       ],
       "glossary": [
         "- Threat Detection: 시스템 내 악성 행위/위협 탐지.",
@@ -2291,13 +2291,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "전자상거래 회사가 상품에 대한 고객 리뷰를 기반으로 고객 감정을 분석하는 솔루션을 구축하고자 합니다.\n이 요구사항을 충족하는 AWS 서비스는 무엇입니까? (2개 선택)",
       "promptEn": "An ecommerce company wants to build a solution to determine customer sentiments based on written customer reviews of products.\nWhich AWS services meet these requirements? (Choose two.)",
       "explanation": [
-        "- B -> Amazon Comprehend: 텍스트 기반 감정 분석, 자연어 처리(NLP) 기능 제공.",
-        "- D -> Amazon Bedrock: LLM/AI 모델 사용 가능, 맞춤형 감정 분석 모델 구현 가능."
+        "- B -> Amazon Comprehend: 텍스트 기반 감정 분석, 자연어 처리(NLP) 기능 제공."
       ],
       "wrongExplanations": [
         "- A -> Lex: 대화형 챗봇 구축용, 감정 분석 전용 아님.",
         "- C -> Polly: 텍스트를 음성으로 변환, 감정 분석 기능 없음.",
-        "- E -> Rekognition: 이미지/영상 분석, 텍스트 감정 분석 불가."
+        "- E -> Rekognition: 이미지/영상 분석, 텍스트 감정 분석 불가.",
+        "- D -> Amazon Bedrock: LLM/AI 모델 사용 가능, 맞춤형 감정 분석 모델 구현 가능."
       ],
       "glossary": [
         "- Sentiment Analysis(감정 분석): 텍스트에서 긍정, 부정, 중립 등의 감정을 식별하는 기술.",
@@ -2525,10 +2525,10 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "대출 회사가 생성형 AI를 이용해 신규 신청자에게 비즈니스 기준에 따른 할인 혜택을 제공하고자 합니다.\n편향 최소화 및 책임 있는 AI 사용을 위해 어떤 조치를 취해야 합니까? (2개 선택)",
       "promptEn": "A loan company is building a generative AI-based solution to offer new applicants discounts based on specific business criteria. The company wants to build and use an AI model responsibly to minimize bias that could negatively affect some customers.\nWhich actions should the company take to meet these requirements? (Choose two.)",
       "explanation": [
-        "- A -> 데이터 불균형/격차 감지 -> 편향 최소화",
-        "- C -> 모델 평가 -> 투명성 확보"
+        "- A -> 데이터 불균형/격차 감지 -> 편향 최소화"
       ],
       "wrongExplanations": [
+        "- C -> 모델 평가 -> 투명성 확보",
         "- B -> 실행 빈도 -> 편향과 직접 관련 없음",
         "- D -> ROUGE -> 텍스트 요약 평가용, 정확도 100% 불가",
         "- E -> 추론 시간 -> 성능 기준, 편향과 무관"
@@ -2958,13 +2958,13 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "C",
           "textEn": "Import the data into Amazon SageMaker Data Wrangler. Build ML models and demand forecast predictions by using an Amazon Personalize Trending-Now recipe.",
-          "textKo": "Data Wrangler -> Amazon Personalize Trending-Now 사용",
+          "textKo": "Data Wrangler",
           "text": "Import the data into Amazon SageMaker Data Wrangler. Build ML models and demand forecast predictions by using an Amazon Personalize Trending-Now recipe."
         },
         {
           "key": "D",
           "textEn": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas.",
-          "textKo": "SageMaker Canvas -> 데이터 선택하여 모델 구축",
+          "textKo": "SageMaker Canvas",
           "text": "Import the data into Amazon SageMaker Canvas. Build ML models and demand forecast predictions by selecting the values in the data from SageMaker Canvas."
         },
         {
@@ -3771,13 +3771,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "회계 회사가 문서 처리를 자동화하기 위해 대형 언어 모델(LLM)을 구현하고자 합니다\n잠재적 위험을 피하기 위해 책임감 있게 진행해야 합니다\nLLM을 개발하고 배포할 때 무엇을 해야 합니까 (2개 선택)",
       "promptEn": "An accounting firm wants to implement a large language model (LLM) to automate document processing. The firm must proceed responsibly to avoid potential harms.\nWhat should the firm do when developing and deploying the LLM? (Choose two.)",
       "explanation": [
-        "- A -> 공정성 지표를 포함하면 모델 편향 및 위험 평가 가능",
-        "- C -> 학습 데이터 수정으로 편향 완화 가능"
+        "- A -> 공정성 지표를 포함하면 모델 편향 및 위험 평가 가능"
       ],
       "wrongExplanations": [
         "- B -> 온도 파라미터는 생성 다양성 조절용, 책임감 있는 배포와 직접 관련 없음",
         "- D -> 과적합 방지는 성능 관련, 책임 배포와 직접 관련 없음",
-        "- E -> 프롬프트 엔지니어링은 성능 향상용, 편향/책임 관련 아님"
+        "- E -> 프롬프트 엔지니어링은 성능 향상용, 편향/책임 관련 아님",
+        "- C -> 학습 데이터 수정으로 편향 완화 가능"
       ],
       "glossary": [
         "- Fairness Metric: 모델이 특정 그룹에 불공정하지 않음을 평가하는 지표",
@@ -4235,12 +4235,12 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "대형 소매업체는 매일 수천 건의 고객 지원 문의를 받습니다\n고객 지원 문의를 신속하게 처리하고 응답해야 합니다\n회사는 Amazon Bedrock용 Agents를 구현하고자 합니다\n이 소매업체에 도움이 될 Amazon Bedrock Agents의 주요 장점은 무엇입니까",
       "promptEn": "A large retailer receives thousands of customer support inquiries about products every day. The customer support inquiries need to be processed and responded to quickly. The company wants to implement Agents for Amazon Bedrock.\nWhat are the key benefits of using Amazon Bedrock agents that could help this retailer?",
       "explanation": [
-        "- B -> 반복적인 작업 자동화 및 복잡한 워크플로 조정 가능",
-        "- C -> 여러 FM 호출 및 결과 통합으로 신속 대응 가능"
+        "- B -> 반복적인 작업 자동화 및 복잡한 워크플로 조정 가능"
       ],
       "wrongExplanations": [
         "- A -> FM 생성은 Agents의 기능 아님",
-        "- D -> FM 선택은 Agents의 핵심 장점과 직접 관련 없음"
+        "- D -> FM 선택은 Agents의 핵심 장점과 직접 관련 없음",
+        "- C -> 여러 FM 호출 및 결과 통합으로 신속 대응 가능"
       ],
       "glossary": [
         "- Agent for Amazon Bedrock: FM 호출 및 워크플로 자동화를 수행하는 에이전트",
@@ -6821,7 +6821,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Bedrock)",
+      "answerText": "Amazon Bedrock",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -6877,7 +6877,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Use a deep learning neural network to perform speech recognition)",
+      "answerText": "Use a deep learning neural network to perform speech recognition.",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -6927,7 +6927,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Chain-of-thought prompting)",
+      "answerText": "Chain-of-thought prompting",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -6977,7 +6977,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Continuous pre-training)",
+      "answerText": "Continuous pre-training",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -7070,7 +7070,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(정책 및 가이드라인 개발)",
+      "answerText": "Developing policies and guidelines for data, transparency, responsible AI, and compliance",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -7120,7 +7120,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(고객 대화당 비용)",
+      "answerText": "Cost for each customer conversation",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -7170,7 +7170,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(K-means)",
+      "answerText": "K-means",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -7221,7 +7221,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(온도 파라미터 낮추기)",
+      "answerText": "Decrease the temperature inference parameter for the model.",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -7272,7 +7272,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(이전 메시지를 프롬프트에 추가)",
+      "answerText": "Add messages to the model prompt.",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -7300,30 +7300,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Amazon Macie",
-          "textKo": "Amazon Macie -> 데이터 보안 및 개인정보 보호 서비스",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         },
         {
           "key": "B",
           "textEn": "Amazon Transcribe",
-          "textKo": "Amazon Transcribe -> 음성을 텍스트로 변환하는 서비스",
+          "textKo": "Amazon Transcribe",
           "text": "Amazon Transcribe"
         },
         {
           "key": "C",
           "textEn": "Amazon Bedrock",
-          "textKo": "Amazon Bedrock -> Foundation Model을 API로 활용할 수 있는 서비스",
+          "textKo": "Amazon Bedrock",
           "text": "Amazon Bedrock"
         },
         {
           "key": "D",
           "textEn": "Amazon Textract",
-          "textKo": "Amazon Textract -> 문서에서 텍스트를 추출하는 서비스",
+          "textKo": "Amazon Textract",
           "text": "Amazon Textract"
         }
       ],
       "answerKey": "C",
-      "answerText": "(Amazon Bedrock)",
+      "answerText": "Amazon Bedrock",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -7374,7 +7374,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon Macie 구성)",
+      "answerText": "Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -7618,7 +7618,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(RAG 사용)",
+      "answerText": "Use Retrieval Augmented Generation (RAG) with prompt engineering techniques.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -7666,7 +7666,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Fairness, 공정성)",
+      "answerText": "Fairness",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -7774,7 +7774,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(프롬프트 엔지니어링 사용)",
+      "answerText": "Use prompt engineering.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -7825,7 +7825,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Comprehend toxicity detection)",
+      "answerText": "Use Amazon Comprehend toxicity detection.",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -7876,7 +7876,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon SageMaker Model Monitor)",
+      "answerText": "Amazon SageMaker Model Monitor",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -7926,7 +7926,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Model Cards)",
+      "answerText": "Amazon SageMaker Model Cards",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -7976,7 +7976,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon Translate)",
+      "answerText": "Amazon Translate",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -8071,7 +8071,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Model Cards)",
+      "answerText": "Amazon SageMaker Model Cards",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -8119,7 +8119,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Summarizing customer complaints)",
+      "answerText": "Summarizing customer complaints",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -8146,25 +8146,25 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
-          "textKo": "Amazon Comprehend Medical -> 의료 개체/관계 추출 후 요약",
+          "textKo": "Amazon Comprehend Medical",
           "text": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries."
         },
         {
           "key": "B",
           "textEn": "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.",
-          "textKo": "Amazon Personalize -> 환자 패턴 분석 및 추천",
+          "textKo": "Amazon Personalize",
           "text": "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool."
         },
         {
           "key": "C",
           "textEn": "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.",
-          "textKo": "Amazon Textract -> 스캔 문서 텍스트화",
+          "textKo": "Amazon Textract",
           "text": "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries."
         },
         {
           "key": "D",
           "textEn": "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.",
-          "textKo": "Amazon Kendra -> 검색 인덱스 구축",
+          "textKo": "Amazon Kendra",
           "text": "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries."
         }
       ],
@@ -8293,30 +8293,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Train models on Amazon SageMaker Autopilot",
-          "textKo": "Amazon SageMaker Autopilot -> 자동 ML 모델 생성 서비스",
+          "textKo": "Amazon SageMaker Autopilot",
           "text": "Train models on Amazon SageMaker Autopilot"
         },
         {
           "key": "B",
           "textEn": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock",
-          "textKo": "Amazon Bedrock의 RAG 에이전트 -> 검색 + 생성 기반 챗봇 구성",
+          "textKo": "Amazon Bedrock의 RAG 에이전트",
           "text": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock"
         },
         {
           "key": "C",
           "textEn": "Create a Python application by using Amazon Q Developer",
-          "textKo": "Amazon Q Developer -> 개발 지원 AI 도구",
+          "textKo": "Amazon Q Developer",
           "text": "Create a Python application by using Amazon Q Developer"
         },
         {
           "key": "D",
           "textEn": "Fine-tune models on Amazon SageMaker Jumpstart",
-          "textKo": "Amazon SageMaker JumpStart -> 사전 학습 모델 활용 서비스",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Fine-tune models on Amazon SageMaker Jumpstart"
         }
       ],
       "answerKey": "B",
-      "answerText": "(Amazon Bedrock의 RAG 에이전트 사용)",
+      "answerText": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -8362,7 +8362,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(텍스트를 작은 단위로 분할)",
+      "answerText": "To break text into smaller units for processing",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -8433,7 +8433,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Self-attention을 활용한 컨텍스트 이해)",
+      "answerText": "Use self-attention mechanisms to capture contextual relationships",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -8483,7 +8483,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(알고리즘 책임 관련 법률)",
+      "answerText": "Local algorithm accountability laws",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -8590,7 +8590,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(프롬프트 인젝션 공격에 취약)",
+      "answerText": "Vulnerability to prompt injection attacks",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -8691,7 +8691,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Prompt chaining)",
+      "answerText": "Prompt chaining",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -8737,7 +8737,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(RAG)",
+      "answerText": "Retrieval Augmented Generation (RAG)",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -8747,7 +8747,7 @@ window.EXAM_PRACTICE_DATA = {
       "sourceNumber": 170,
       "title": "Question 170",
       "promptKo": "모델 버전 기록 및 개발 문서를 표준화하려는 경우, 어떤 도구가 적절합니까?",
-      "promptEn": "A company wants to track AI 모델 개발 이력 및 버전 정보를 문서화하려 합니다.\n어떤 솔루션이 적합합니까?",
+      "promptEn": "A company wants to document AI model development history and version information.\nWhich solution is most appropriate?",
       "explanation": [
         "Model Cards는 모델 메타데이터 및 책임성 관련 정보를 문서화하는 AWS 기능입니다."
       ],
@@ -8764,30 +8764,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Git",
-          "textKo": "Git -> 코드 버전 관리 시스템",
+          "textKo": "Git",
           "text": "Git"
         },
         {
           "key": "B",
           "textEn": "Amazon Fraud Detector",
-          "textKo": "Amazon Fraud Detector -> 이상 거래 탐지 서비스",
+          "textKo": "Amazon Fraud Detector",
           "text": "Amazon Fraud Detector"
         },
         {
           "key": "C",
           "textEn": "Amazon SageMaker Model Cards",
-          "textKo": "Amazon SageMaker Model Cards -> 모델 문서화 기능",
+          "textKo": "Amazon SageMaker Model Cards",
           "text": "Amazon SageMaker Model Cards"
         },
         {
           "key": "D",
           "textEn": "Amazon Comprehend",
-          "textKo": "Amazon Comprehend -> NLP 서비스",
+          "textKo": "Amazon Comprehend",
           "text": "Amazon Comprehend"
         }
       ],
       "answerKey": "C",
-      "answerText": "(Model Cards)",
+      "answerText": "Amazon SageMaker Model Cards",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -8812,30 +8812,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Amazon SageMaker JumpStart",
-          "textKo": "Amazon SageMaker JumpStart -> 사전 학습 모델 제공",
+          "textKo": "Amazon SageMaker JumpStart",
           "text": "Amazon SageMaker JumpStart"
         },
         {
           "key": "B",
           "textEn": "Amazon SageMaker HyperPod",
-          "textKo": "Amazon SageMaker HyperPod -> 대규모 학습 인프라",
+          "textKo": "Amazon SageMaker HyperPod",
           "text": "Amazon SageMaker HyperPod"
         },
         {
           "key": "C",
           "textEn": "Amazon SageMaker Data Wrangler",
-          "textKo": "Amazon SageMaker Data Wrangler -> 데이터 전처리 도구",
+          "textKo": "Amazon SageMaker Data Wrangler",
           "text": "Amazon SageMaker Data Wrangler"
         },
         {
           "key": "D",
           "textEn": "Amazon SageMaker Model Monitor",
-          "textKo": "Amazon SageMaker Model Monitor -> 모델 성능 모니터링",
+          "textKo": "Amazon SageMaker Model Monitor",
           "text": "Amazon SageMaker Model Monitor"
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon SageMaker Model Monitor)",
+      "answerText": "Amazon SageMaker Model Monitor",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -8882,7 +8882,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(컨텍스트 관련성 향상)",
+      "answerText": "To improve the contextual relevancy of results retrieved from the vector index",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -8930,7 +8930,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(On-Demand Throughput)",
+      "answerText": "Amazon Bedrock with On-Demand Throughput",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -8978,7 +8978,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Denied topics)",
+      "answerText": "Denied topics",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9026,7 +9026,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Precision)",
+      "answerText": "Precision",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -9074,7 +9074,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(참조 링크 제공)",
+      "answerText": "Include links to product manuals",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9088,12 +9088,13 @@ window.EXAM_PRACTICE_DATA = {
       "explanation": [
         "설명 가능성은 사용자와 전문가가 AI의 결정을 이해하고 신뢰하도록 돕습니다.",
         "의료처럼 고위험(high-stakes) 분야에서는 단순한 답변보다, \"왜 이런 결론에 도달했는지\" 설명이 반드시 필요합니다.",
-        "설명이 없으면 사용자는 AI의 결정을 불신하거나 무작정 의존할 수 있어 위험합니다.",
+        "설명이 없으면 사용자는 AI의 결정을 불신하거나 무작정 의존할 수 있어 위험합니다."
+      ],
+      "wrongExplanations": [
         "- B. Privacy and security -> 데이터 보호 관련 원칙이지, 설명 제공과 직접적인 관련 없음.",
         "- C. Fairness -> 공정성은 차별 없는 의사결정을 의미. 설명성과는 다른 개념.",
         "- D. Data governance -> 데이터 관리 및 품질 보장 원칙. 설명과 무관."
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9123,7 +9124,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Explainability)",
+      "answerText": "Explainability",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -9139,12 +9140,13 @@ window.EXAM_PRACTICE_DATA = {
         "장점:",
         "- 최신 정보 반영 가능 (LLM이 오래된 학습 데이터만 알 때 보완 가능)",
         "- 도메인 특화 지식 반영 가능",
-        "- 모델 크기나 파라미터 수를 늘리지 않고도 정확도 향상 가능",
+        "- 모델 크기나 파라미터 수를 늘리지 않고도 정확도 향상 가능"
+      ],
+      "wrongExplanations": [
         "B. Speeds up model training -> RAG는 학습 속도와 무관.",
         "C. For speech recognition -> RAG는 NLP 답변 생성, 음성 인식과 무관.",
         "D. For data augmentation in vision -> 비전 분야 증강 기법은 RAG와 무관."
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9174,7 +9176,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(외부 지식 활용 가능)",
+      "answerText": "Uses external knowledge for better answers",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9186,12 +9188,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "Fine-tuning된 모델이 꾸준한 요청을 처리해야 할 때, 가장 비용 효율적인 배포 방식은?",
       "promptEn": "Company fine-tuned an LLM and expects steady traffic.\nWants cost-effective deployment.\nBest option?",
       "explanation": [
-        "일정한 트래픽이 예상될 경우 Provisioned Throughput은 예측 가능한 성능과 낮은 단가를 제공합니다.",
+        "일정한 트래픽이 예상될 경우 Provisioned Throughput은 예측 가능한 성능과 낮은 단가를 제공합니다."
+      ],
+      "wrongExplanations": [
         "A. Amazon EC2 -> 모델 호스팅 가능하나, 직접 인프라 관리 필요 -> 유지보수 부담&uarr;, 비용 효율&darr;.",
         "B. On-demand throughput -> 변동 트래픽에 적합. 꾸준한 트래픽에는 비용이 더 나옴.",
         "C. S3 + Lambda -> 서버리스 워크로드에는 적합하지만, LLM 서빙에는 부적절."
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9221,7 +9224,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Provisioned Throughput)",
+      "answerText": "Provisioned Throughput on Bedrock",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -9236,12 +9239,13 @@ window.EXAM_PRACTICE_DATA = {
         "Fine-tuning은 기존 모델을 도메인 특화 데이터로 재학습시켜 특정 요구에 최적화합니다.",
         "예:",
         "- 일반 LLM -> \"환자 chart\"를 단순히 \"표(chart)\"로 해석",
-        "- 의료 도메인 fine-tuned LLM -> \"chart\"를 \"환자 진료 기록\"으로 정확히 이해",
+        "- 의료 도메인 fine-tuned LLM -> \"chart\"를 \"환자 진료 기록\"으로 정확히 이해"
+      ],
+      "wrongExplanations": [
         "A. Data augmentation -> 데이터 수를 늘리는 기법이지, 모델을 도메인 특화시키는 방법 아님.",
         "C. Model quantization -> 모델을 압축해 효율성을 높이는 기법, 학습 적응과 무관.",
         "D. Continuous pre-training -> 라벨 없는 대규모 데이터로 추가 학습하는 방식. 산업별 라벨 데이터 적응과는 다름."
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9271,7 +9275,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Fine-tuning)",
+      "answerText": "Fine-tuning",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9283,12 +9287,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "한 회사가 Amazon Bedrock Agents를 사용해 애플리케이션용 에이전트를 만들고 있습니다. 에이전트가 잘 작동하지만, 구체적인 예시를 제공해 정확도를 개선하려고 합니다. 어떤 해결책이 이 요구사항을 충족합니까?",
       "promptEn": "A company is creating an agent for its application by using Amazon Bedrock Agents. The agent is performing well, but the company wants to improve the agent's accuracy by providing some specific examples. Which solution meets these requirements?",
       "explanation": [
-        "고급 프롬프트에 구체적인 예시를 포함하면 에이전트가 더 정확하게 동작하도록 유도할 수 있습니다.",
+        "고급 프롬프트에 구체적인 예시를 포함하면 에이전트가 더 정확하게 동작하도록 유도할 수 있습니다."
+      ],
+      "wrongExplanations": [
         "B: 가드레일은 안전성&middot;적절성 제어용",
         "C: Ground Truth는 데이터 라벨링용, 프롬프트 개선과 직접 관련 없음",
         "D: Lambda로 데이터셋 수정은 Bedrock Agents 즉시 학습과 관련 없음"
       ],
-      "wrongExplanations": [],
       "glossary": [
         "- Amazon Bedrock Agents: 관리형 LLM 기반 에이전트 서비스",
         "- Prompt Engineering: 프롬프트 설계를 통해 모델 출력을 개선하는 기술"
@@ -9321,7 +9326,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(프롬프트에 예시 포함)",
+      "answerText": "Modify the advanced prompts for the agent to include the examples.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9333,12 +9338,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "머신러닝 운영(MLOps)에서 인프라를 코드로 관리(IaC)하는 이점은 무엇입니까?",
       "promptEn": "Which option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
       "explanation": [
-        "IaC를 사용하면 클라우드 환경에서 확장 가능하고 일관된 머신러닝 워크로드를 자동으로 배포할 수 있어 운영 효율성이 높아집니다.",
+        "IaC를 사용하면 클라우드 환경에서 확장 가능하고 일관된 머신러닝 워크로드를 자동으로 배포할 수 있어 운영 효율성이 높아집니다."
+      ],
+      "wrongExplanations": [
         "A: 하이퍼파라미터 튜닝과 관련 없음",
         "B: IaC는 인스턴스 유형 지정 가능, 항상 강력한 인스턴스는 아님",
         "D: 비용 절감과 직접 연결되지 않음"
       ],
-      "wrongExplanations": [],
       "glossary": [
         "- IaC (Infrastructure as Code): 코드로 인프라를 정의하고 관리하는 방법",
         "- MLOps: 머신러닝 모델 운영 및 배포를 위한 DevOps 접근 방식"
@@ -9371,7 +9377,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(일관되고 확장 가능한 배포)",
+      "answerText": "IaC streamlines the deployment of scalable and consistent ML workloads in cloud environments.",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -9383,12 +9389,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "한 회사가 특정 도메인에 대한 질문에 답하기 위해 파운데이션 모델(FM)을 instruction 기반으로 fine-tuning 하려 합니다. 학습 데이터를 어떻게 준비해야 합니까?",
       "promptEn": "A company wants to fine-tune a foundation model (FM) to answer questions for a specific domain. The company wants to use instruction-based fine-tuning. How should the company prepare the training data?",
       "explanation": [
-        "instruction-based fine-tuning에는 도메인 관련 질문과 답변 쌍을 만들어 모델이 정확히 학습할 수 있도록 해야 합니다.",
+        "instruction-based fine-tuning에는 도메인 관련 질문과 답변 쌍을 만들어 모델이 정확히 학습할 수 있도록 해야 합니다."
+      ],
+      "wrongExplanations": [
         "A: 단순 문서 병합은 학습 형식 불충분",
         "B: 감정 분류와 관련",
         "D: few-shot 프롬프트는 프롬프트 기반 학습용"
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9418,7 +9425,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(질문-답변 쌍 생성)",
+      "answerText": "Create pairs of questions and answers that specifically address topics related to the company's industry domain.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -9430,12 +9437,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "AWS에서 AI 모델을 학습할 때 데이터 준수 및 프라이버시를 보장하는 머신러닝 기법은 무엇입니까?",
       "promptEn": "Which ML technique ensures data compliance and privacy when training AI models on AWS?",
       "explanation": [
-        "Federated learning은 데이터 소유권을 유지하면서 여러 위치에서 분산 학습을 수행해 데이터 프라이버시와 컴플라이언스를 보장합니다.",
+        "Federated learning은 데이터 소유권을 유지하면서 여러 위치에서 분산 학습을 수행해 데이터 프라이버시와 컴플라이언스를 보장합니다."
+      ],
+      "wrongExplanations": [
         "A: 강화 학습은 정책 최적화용",
         "B: 전이 학습은 기존 모델 활용",
         "D: 비지도 학습은 라벨 없는 데이터 학습"
       ],
-      "wrongExplanations": [],
       "glossary": [
         "- Federated Learning: 데이터가 중앙 서버로 이동하지 않고 분산 학습 수행",
         "- Data Compliance: 데이터 보호 관련 법규 및 정책 준수"
@@ -9468,7 +9476,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Federated learning)",
+      "answerText": "Federated learning",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -9523,12 +9531,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptEn": "A manufacturing company has an application that ingests consumer complaints from publicly available sources. The application uses complex hard-coded logic to process the complaints. The company wants to scale this logic across markets and product lines. Which advantage do generative AI models offer for this scenario?",
       "explanation": [
         "생성형 AI 모델은 사전에 모든 경우의 수를 하드코딩할 필요 없이, 다양한 입력 패턴에 맞게 유연하게 적응할 수 있습니다.",
-        "시장/제품별 불만 유형이 다르더라도, 생성형 모델은 패턴을 일반화해 처리할 수 있으므로 확장성에 유리합니다.",
+        "시장/제품별 불만 유형이 다르더라도, 생성형 모델은 패턴을 일반화해 처리할 수 있으므로 확장성에 유리합니다."
+      ],
+      "wrongExplanations": [
         "A. 출력의 예측 가능성 -> 생성형 모델은 출력이 확률적이므로 항상 동일하지 않음.",
         "C. 입력 변화에 덜 민감함 -> 실제로는 입력 변화에 민감할 수 있음.",
         "D. 설명 가능성 -> 모델이 왜 그런 출력을 했는지 설명하는 원칙이지, 문제 상황의 핵심 이점은 아님."
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9558,7 +9567,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(적응성)",
+      "answerText": "Adaptability",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -9570,12 +9579,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "금융회사가 거래 데이터를 기반으로 모든 신용카드 활동을 사기 가능성과 비사기로 구분하고자 합니다. 어떤 유형의 ML 모델이 이 요구사항에 적합합니까?",
       "promptEn": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data. Which type of ML model meets these requirements?",
       "explanation": [
-        "사기 탐지는 일반적으로 이진 분류 문제이므로 Binary Classification 모델이 적합합니다.",
+        "사기 탐지는 일반적으로 이진 분류 문제이므로 Binary Classification 모델이 적합합니다."
+      ],
+      "wrongExplanations": [
         "A. Regression (회귀) -> 연속적인 숫자 값 예측용으로 사용되며, 사기 탐지처럼 범주(사기/비사기)를 분류하는 문제에는 적합하지 않습니다.",
         "B. Diffusion (확산) -> 주로 생성 모델과 관련된 기술이며, 분류 문제와는 직접 관련이 없습니다.",
         "D. Multi-class classification (다중 클래스 분류) -> 다중 클래스 문제(세 가지 이상 범주)용이며, 이진(사기/비사기) 문제에는 과도합니다."
       ],
-      "wrongExplanations": [],
       "glossary": [
         "- 이진 분류(Binary Classification): 두 가지 범주 중 하나를 예측하는 ML 모델"
       ],
@@ -9664,12 +9674,13 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "병원이 임상 기록을 받아쓰는 직원의 역량 향상을 위해 음성-텍스트 기능이 있는 생성형 AI 솔루션을 도입하려 합니다. 어떤 AWS 서비스가 적합합니까?",
       "promptEn": "A hospital wants to use a generative AI solution with speech-to-text functionality to help improve employee skills in dictating clinical notes. Which AWS service meets these requirements?",
       "explanation": [
-        "HealthScribe는 의료 환경에 특화된 음성-텍스트 변환 및 기록 작성 서비스를 제공합니다.",
+        "HealthScribe는 의료 환경에 특화된 음성-텍스트 변환 및 기록 작성 서비스를 제공합니다."
+      ],
+      "wrongExplanations": [
         "A: 개발용 일반 서비스, 음성-텍스트 기능 없음",
         "B: 음성 합성 서비스, 텍스트 입력용",
         "C: 이미지/영상 분석 서비스, 음성 처리 아님"
       ],
-      "wrongExplanations": [],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -9699,7 +9710,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(AWS HealthScribe)",
+      "answerText": "AWS HealthScribe",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -9726,30 +9737,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Diffusion",
-          "textKo": "Diffusion -> 생성 모델",
+          "textKo": "Diffusion",
           "text": "Diffusion"
         },
         {
           "key": "B",
           "textEn": "Regression",
-          "textKo": "Regression -> 회귀 모델",
+          "textKo": "Regression",
           "text": "Regression"
         },
         {
           "key": "C",
           "textEn": "Transformer",
-          "textKo": "Transformer -> 구조 유형",
+          "textKo": "Transformer",
           "text": "Transformer"
         },
         {
           "key": "D",
           "textEn": "Multi-modal",
-          "textKo": "Multi-modal -> 여러 데이터 유형 처리",
+          "textKo": "Multi-modal",
           "text": "Multi-modal"
         }
       ],
       "answerKey": "B",
-      "answerText": "(Regression)",
+      "answerText": "Regression",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -9848,7 +9859,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Providing the ability to mathematically compare texts)",
+      "answerText": "Providing the ability to mathematically compare texts",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -9860,12 +9871,12 @@ window.EXAM_PRACTICE_DATA = {
       "promptKo": "회사가 AWS 서비스를 사용해 파운데이션 모델(FM)을 파인튜닝하려고 합니다. 데이터가 저장된 AWS 리전 내에서 데이터가 안전하고 프라이빗하게 유지되어야 합니다.\n가장 비용 효율적으로 요구사항을 충족하는 방법 두 가지를 고르세요.",
       "promptEn": "A company wants to fine-tune a foundation model (FM) by using AWS services. The company needs to ensure that its data stays private, safe, and secure in the source AWS Region where the data is stored.\nWhich combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
       "explanation": [
-        "- B: Amazon Bedrock API 사용은 관리형 서비스로 안전한 모델 파인튜닝 가능",
-        "- C: AWS PrivateLink와 VPC를 사용하면 데이터가 AWS 네트워크 내부에서 안전하게 전송됨"
+        "- B: Amazon Bedrock API 사용은 관리형 서비스로 안전한 모델 파인튜닝 가능"
       ],
       "wrongExplanations": [
         "- A, D: 온프레미스 호스팅은 비용과 관리가 부담됨",
-        "- E: CloudWatch는 모니터링용, 보안과 프라이버시 직접 해결 안 함"
+        "- E: CloudWatch는 모니터링용, 보안과 프라이버시 직접 해결 안 함",
+        "- C: AWS PrivateLink와 VPC를 사용하면 데이터가 AWS 네트워크 내부에서 안전하게 전송됨"
       ],
       "glossary": [
         "- AWS PrivateLink: VPC 내에서 프라이빗 네트워크 통신 보장",
@@ -9935,30 +9946,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Amazon Macie",
-          "textKo": "Amazon Macie -> 데이터 보안",
+          "textKo": "Amazon Macie",
           "text": "Amazon Macie"
         },
         {
           "key": "B",
           "textEn": "AWS Artifact",
-          "textKo": "AWS Artifact -> 컴플라이언스 보고서",
+          "textKo": "AWS Artifact",
           "text": "AWS Artifact"
         },
         {
           "key": "C",
           "textEn": "AWS Secrets Manager",
-          "textKo": "Secrets Manager -> 비밀 정보 관리",
+          "textKo": "Secrets Manager",
           "text": "AWS Secrets Manager"
         },
         {
           "key": "D",
           "textEn": "AWS Config",
-          "textKo": "Config -> 리소스 변경 모니터링",
+          "textKo": "Config",
           "text": "AWS Config"
         }
       ],
       "answerKey": "B",
-      "answerText": "(AWS Artifact)",
+      "answerText": "AWS Artifact",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -9985,30 +9996,30 @@ window.EXAM_PRACTICE_DATA = {
         {
           "key": "A",
           "textEn": "Guardrails for Amazon Bedrock",
-          "textKo": "Guardrails for Amazon Bedrock -> 출력 제어",
+          "textKo": "Guardrails for Amazon Bedrock",
           "text": "Guardrails for Amazon Bedrock"
         },
         {
           "key": "B",
           "textEn": "Amazon Inspector",
-          "textKo": "Amazon Inspector -> 보안 취약점 검사",
+          "textKo": "Amazon Inspector",
           "text": "Amazon Inspector"
         },
         {
           "key": "C",
           "textEn": "Amazon Rekognition",
-          "textKo": "Amazon Rekognition -> 이미지/영상 분석",
+          "textKo": "Amazon Rekognition",
           "text": "Amazon Rekognition"
         },
         {
           "key": "D",
           "textEn": "AWS Trusted Advisor",
-          "textKo": "AWS Trusted Advisor -> 클라우드 최적화",
+          "textKo": "AWS Trusted Advisor",
           "text": "AWS Trusted Advisor"
         }
       ],
       "answerKey": "A",
-      "answerText": "(Guardrails for Amazon Bedrock)",
+      "answerText": "Guardrails for Amazon Bedrock",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -10058,7 +10069,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Bilingual Evaluation Understudy, BLEU score)",
+      "answerText": "Bilingual Evaluation Understudy (BLEU) score",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -10108,7 +10119,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Fine-tuning improves performance on a specific task)",
+      "answerText": "Fine-tuning improves the performance of the FM on a specific task by further training the FM on new labeled data.",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -10159,7 +10170,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "D",
-      "answerText": "(Amazon Bedrock fine-tuning job)",
+      "answerText": "Create an Amazon Bedrock fine-tuning job.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -10209,7 +10220,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Prompt injection)",
+      "answerText": "Prompt injection",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -10259,7 +10270,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Block interactions related to predefined topics)",
+      "answerText": "Block interactions related to predefined topics.",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -11328,7 +11339,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Clustering)",
+      "answerText": "Clustering",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -11376,7 +11387,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(Configure Amazon SageMaker JumpStart to restrict discoverable FMs)",
+      "answerText": "Configure Amazon SageMaker JumpStart to restrict discoverable FMs.",
       "domainId": 5,
       "domainKey": "security-compliance-governance",
       "domainLabel": "보안, 규정 준수 및 거버넌스"
@@ -11423,7 +11434,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Use BLEU to estimate the relative translation quality)",
+      "answerText": "Use the Bilingual Evaluation Understudy (BLEU) score to estimate the relative translation quality of the two methods.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -11471,7 +11482,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Increase the temperature value)",
+      "answerText": "Increase the temperature value.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -11518,7 +11529,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Amazon SageMaker Ground Truth)",
+      "answerText": "Amazon SageMaker Ground Truth",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -11623,7 +11634,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "C",
-      "answerText": "(F1 score)",
+      "answerText": "F1 score",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -11671,7 +11682,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "(Use Amazon Bedrock Knowledge Bases)",
+      "answerText": "Use Amazon Bedrock Knowledge Bases.",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -11764,7 +11775,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(Diversity)",
+      "answerText": "Diversity",
       "domainId": 4,
       "domainKey": "responsible-ai-guidelines",
       "domainLabel": "책임 있는 AI 가이드라인"
@@ -11860,7 +11871,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "(BERTScore)",
+      "answerText": "BERTScore",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -16075,7 +16086,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "이해관계자 인터뷰 후 목표 설정",
+      "answerText": "Conduct stakeholder interviews to refine use cases and set measurable goals",
       "domainId": 2,
       "domainKey": "genai-fundamentals",
       "domainLabel": "GenAI의 기초"
@@ -16183,7 +16194,7 @@ window.EXAM_PRACTICE_DATA = {
       "sourceNumber": 324,
       "title": "Question 324",
       "promptKo": "웹사이트 호텔 설명을 일관된 스타일로 생성하려면?",
-      "promptEn": "Website에서 호텔 설명 생성, 일관된 스타일 필요.",
+      "promptEn": "A company wants to generate hotel descriptions for its website with a consistent writing style.\nWhich AWS service should the company use?",
       "explanation": [
         "Bedrock은 생성형 FM 제공 -> 일관된 문장/스타일 생성 가능."
       ],
@@ -16231,7 +16242,7 @@ window.EXAM_PRACTICE_DATA = {
       "sourceNumber": 325,
       "title": "Question 325",
       "promptKo": "사전학습 LLM이 특정 도메인 지식 부족.\n라벨 없는 데이터 사용 시 최적 fine-tuning 방법?",
-      "promptEn": "Pre-trained LLM -> 도메인 지식 부족. Unlabeled data 사용하여 fine-tune 필요.",
+      "promptEn": "A pre-trained LLM lacks domain knowledge.\nThe company wants to use unlabeled domain data to adapt the model.\nWhich approach is most appropriate?",
       "explanation": [
         "라벨 없는 데이터로 도메인 지식을 학습하려면 사전학습을 계속 진행하는 방식이 적합하다.",
         "모델의 기반 구조를 유지하면서 도메인 특화 지식 습득 가능."
@@ -16280,7 +16291,7 @@ window.EXAM_PRACTICE_DATA = {
       "sourceNumber": 326,
       "title": "Question 326",
       "promptKo": "커스텀 특성 기반 이미지 분류, 개발 노력 최소화 방법?",
-      "promptEn": "Custom features 기반 이미지 분류, 최소 개발 노력?",
+      "promptEn": "A company needs an image classification solution with the least development effort.\nWhich approach should the company choose?",
       "explanation": [
         "사전 학습 모델을 활용하면 개발 노력 최소화 + 성능 확보 가능.",
         "이미 학습된 특성을 재활용하고, 필요한 데이터셋만으로 fine-tuning 하면 된다."
@@ -16319,10 +16330,10 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Pre-trained deep learning model + fine-tune",
-      "domainId": 3,
-      "domainKey": "foundation-model-applications",
-      "domainLabel": "파운데이션 모델 적용"
+      "answerText": "Pre-trained deep learning + fine-tune",
+      "domainId": 1,
+      "domainKey": "ai-ml-fundamentals",
+      "domainLabel": "AI 및 ML의 기초"
     },
     {
       "id": 327,
@@ -16367,7 +16378,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "A",
-      "answerText": "JSON with labeled data",
+      "answerText": "JSON labeled",
       "domainId": 3,
       "domainKey": "foundation-model-applications",
       "domainLabel": "파운데이션 모델 적용"
@@ -16377,7 +16388,7 @@ window.EXAM_PRACTICE_DATA = {
       "sourceNumber": 328,
       "title": "Question 328",
       "promptKo": "Bedrock 기반 생성형 AI 개발, 개발 노력 최소 -> 최대 순서로 나열.\n선택: Prompt engineering, RAG, Fine-tuning, Full model training",
-      "promptEn": "Bedrock generative AI 개발 방법, 최소 -> 최대 개발 노력 순서 선택",
+      "promptEn": "Select the development approaches for generative AI on Amazon Bedrock in order from least effort to most effort.",
       "explanation": [
         "프롬프트 엔지니어링은 개발 노력 최소,",
         "RAG/파인튜닝은 점점 더 많은 데이터/구현 필요,",
@@ -16822,7 +16833,11 @@ window.EXAM_PRACTICE_DATA = {
         "Amazon Q Business는 기업 내부 데이터를 연결해 질문에 답하고 요약·생성까지 수행하는 완전관리형 생성형 AI 어시스턴트입니다.",
         "Amazon Kendra는 지능형 검색 서비스이며, Amazon Q Business가 내부 데이터에 답변할 때 연계될 수 있습니다."
       ],
-      "wrongExplanations": [],
+      "wrongExplanations": [
+        "- B -> Amazon Lex: 대화형 챗봇 인터페이스 구축 서비스이지만, 내부 문서를 검색 기반으로 답변하는 서비스 자체는 아닙니다.",
+        "- C -> Amazon Polly: 텍스트를 음성으로 변환하는 서비스입니다.",
+        "- D -> Amazon Kendra: 지능형 검색 서비스이지만, 현재 생성형 AI 기반 질의응답 경험 관점에서는 Amazon Q Business가 더 직접적인 답입니다."
+      ],
       "glossary": [],
       "type": "single-choice",
       "options": [
@@ -17309,7 +17324,7 @@ window.EXAM_PRACTICE_DATA = {
         }
       ],
       "answerKey": "B",
-      "answerText": "Overfitting Shutterstock 탐색",
+      "answerText": "Overfitting",
       "domainId": 1,
       "domainKey": "ai-ml-fundamentals",
       "domainLabel": "AI 및 ML의 기초"
@@ -19185,7 +19200,11 @@ window.EXAM_PRACTICE_DATA = {
       "explanation": [
         "- Guardrails for Amazon Bedrock은 부적절한 콘텐츠를 필터링하고 사용자 정의 정책을 적용하여 안전한 AI 상호작용을 보장하는 전용 기능입니다."
       ],
-      "wrongExplanations": [],
+      "wrongExplanations": [
+        "- A -> Amazon SageMaker Clarify: 편향 탐지와 설명 가능성 분석 도구이며, LLM 가드레일 생성 서비스는 아닙니다.",
+        "- C -> Amazon Rekognition: 이미지와 비디오 분석 서비스입니다.",
+        "- D -> AWS HealthImaging: 의료 영상 데이터 저장·분석용 서비스입니다."
+      ],
       "glossary": [],
       "type": "single-choice",
       "options": [

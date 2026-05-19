@@ -384,6 +384,16 @@ function normalizeText(value = "") {
     .trim();
 }
 
+function sanitizeOptionDisplayText(value = "", { stripArrow = false } = {}) {
+  let next = value.trim();
+
+  if (stripArrow) {
+    next = next.replace(/\s*->\s*.*$/, "").trim();
+  }
+
+  return next.replace(/\s{2,}/g, " ").trim();
+}
+
 function uniqueOptions(options) {
   const seen = new Set();
   const result = [];
@@ -459,13 +469,13 @@ function mergeBilingualOptions(englishOptions = [], koreanOptions = []) {
 
   for (const option of englishOptions) {
     const existing = optionMap.get(option.key) || { key: option.key };
-    existing.textEn = option.text;
+    existing.textEn = sanitizeOptionDisplayText(option.text);
     optionMap.set(option.key, existing);
   }
 
   for (const option of koreanOptions) {
     const existing = optionMap.get(option.key) || { key: option.key };
-    existing.textKo = option.text;
+    existing.textKo = sanitizeOptionDisplayText(option.text, { stripArrow: true });
     optionMap.set(option.key, existing);
   }
 
@@ -562,6 +572,14 @@ function splitExplanationAndWrongLines(lines) {
       continue;
     }
 
+    if (
+      !inWrongSection &&
+      explanationLines.length &&
+      /^([A-E](?:[\s,\/]+[A-E])*)\s*(?:->|[:：]|[.)])\s*/.test(clean)
+    ) {
+      inWrongSection = true;
+    }
+
     if (inWrongSection) {
       wrongLines.push(line);
       continue;
@@ -571,6 +589,22 @@ function splitExplanationAndWrongLines(lines) {
   }
 
   return { explanationLines, wrongLines };
+}
+
+function doesOptionMatchAnswerText(option, answerText = "") {
+  if (!option || !answerText) {
+    return false;
+  }
+
+  const normalizedAnswer = normalizeText(answerText);
+  return getOptionSearchTexts(option).some((candidate) => {
+    const normalizedCandidate = normalizeText(candidate);
+    return (
+      normalizedCandidate === normalizedAnswer ||
+      normalizedCandidate.includes(normalizedAnswer) ||
+      normalizedAnswer.includes(normalizedCandidate)
+    );
+  });
 }
 
 function stripBulletMarker(line = "") {
@@ -1247,7 +1281,8 @@ function parseSegment(questionNumber, segment) {
     .split("\n")
     .flatMap(explodeLine)
     .map((line) => line.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter((line) => !/^(Shutterstock|탐색)$/.test(line));
 
   const heading = lines[0] || `Question ${questionNumber}`;
   const sections = {
@@ -1389,6 +1424,20 @@ function parseSegment(questionNumber, segment) {
     answerText = matchedOption?.textEn || matchedOption?.textKo || matchedOption?.text || "";
   }
 
+  if (answerKey && options.length) {
+    const matchedOption = options.find((option) => option.key === answerKey);
+    const isWrapperAnswerText =
+      /^\([^()]+\)$/.test((answerText || "").trim()) ||
+      /^\([^()]+\)\s*$/.test((answerText || "").trim());
+
+    if (
+      matchedOption &&
+      (isWrapperAnswerText || !doesOptionMatchAnswerText(matchedOption, answerText))
+    ) {
+      answerText = matchedOption.textEn || matchedOption.textKo || matchedOption.text || answerText;
+    }
+  }
+
   if (!answerKey && answerText && options.length) {
     const matchedOption = options.find((option) => {
       const normalizedAnswer = normalizeText(answerText);
@@ -1439,6 +1488,15 @@ function applyQuestionOverrides(question) {
         "- C -> PartyRock: 공식 AWS 플레이그라운드이지만 웹 기반 실험 환경이라 팀 VPC 안에서 FM을 배포·소비하는 요구사항과 맞지 않습니다.",
         "- D -> SageMaker Endpoints: 배포용이지만, FM을 빠르게 시작하는 관점에서는 JumpStart보다 초기 설정 부담이 큽니다.",
       ],
+    });
+  }
+
+  if (question.sourceNumber === 170) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company wants to document AI model development history and version information.\nWhich solution is most appropriate?",
+      answerText: "Amazon SageMaker Model Cards",
     });
   }
 
@@ -1564,12 +1622,49 @@ function applyQuestionOverrides(question) {
     });
   }
 
+  if (question.sourceNumber === 324) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company wants to generate hotel descriptions for its website with a consistent writing style.\nWhich AWS service should the company use?",
+    });
+  }
+
+  if (question.sourceNumber === 325) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A pre-trained LLM lacks domain knowledge.\nThe company wants to use unlabeled domain data to adapt the model.\nWhich approach is most appropriate?",
+    });
+  }
+
+  if (question.sourceNumber === 326) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "A company needs an image classification solution with the least development effort.\nWhich approach should the company choose?",
+    });
+  }
+
+  if (question.sourceNumber === 328) {
+    return withDomainMetadata({
+      ...question,
+      promptEn:
+        "Select the development approaches for generative AI on Amazon Bedrock in order from least effort to most effort.",
+    });
+  }
+
   if (question.sourceNumber === 338) {
     return withDomainMetadata({
       ...question,
       explanation: [
         "Amazon Q Business는 기업 내부 데이터를 연결해 질문에 답하고 요약·생성까지 수행하는 완전관리형 생성형 AI 어시스턴트입니다.",
         "Amazon Kendra는 지능형 검색 서비스이며, Amazon Q Business가 내부 데이터에 답변할 때 연계될 수 있습니다.",
+      ],
+      wrongExplanations: [
+        "- B -> Amazon Lex: 대화형 챗봇 인터페이스 구축 서비스이지만, 내부 문서를 검색 기반으로 답변하는 서비스 자체는 아닙니다.",
+        "- C -> Amazon Polly: 텍스트를 음성으로 변환하는 서비스입니다.",
+        "- D -> Amazon Kendra: 지능형 검색 서비스이지만, 현재 생성형 AI 기반 질의응답 경험 관점에서는 Amazon Q Business가 더 직접적인 답입니다.",
       ],
       options: question.options.map((option) =>
         option.key === "A"
@@ -1582,6 +1677,17 @@ function applyQuestionOverrides(question) {
           : option,
       ),
       answerText: "Amazon Q Business",
+    });
+  }
+
+  if (question.sourceNumber === 391) {
+    return withDomainMetadata({
+      ...question,
+      wrongExplanations: [
+        "- A -> Amazon SageMaker Clarify: 편향 탐지와 설명 가능성 분석 도구이며, LLM 가드레일 생성 서비스는 아닙니다.",
+        "- C -> Amazon Rekognition: 이미지와 비디오 분석 서비스입니다.",
+        "- D -> AWS HealthImaging: 의료 영상 데이터 저장·분석용 서비스입니다.",
+      ],
     });
   }
 
