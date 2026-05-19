@@ -24,6 +24,36 @@ const PASSWORD_BASE_DATE = {
   day: 14,
 };
 
+const appData = window.EXAM_PRACTICE_DATA || window.AWS_AI_QUIZ_DATA || {
+  supportedCount: 0,
+  source: { totalQuestions: 0 },
+  domainDistribution: [],
+  questions: [],
+};
+
+const questions = appData.questions || [];
+const questionById = new Map(questions.map((question) => [question.id, question]));
+
+const EXAM_DEFINITIONS = {
+  "aif-c01": {
+    id: "aif-c01",
+    code: "AIF-C01",
+    shortTitle: "AWS AI Practitioner",
+    title: "AWS Certified AI Practitioner",
+    description:
+      "AWS AI Practitioner 시험 대비 문제 세트입니다. 선택 후 비밀번호를 입력하면 진입할 수 있습니다.",
+    provider: "AWS",
+    level: "입문 수준",
+    supportedCount: appData.supportedCount || questions.length || 409,
+    totalQuestions:
+      appData.source?.totalQuestions || appData.supportedCount || questions.length || 409,
+    mockQuestions: EXAM_TOTAL_QUESTIONS,
+    domainCount: EXAM_DOMAIN_BLUEPRINT.length,
+  },
+};
+
+const DEFAULT_EXAM_ID = Object.keys(EXAM_DEFINITIONS)[0] || "aif-c01";
+
 const QUESTION_TYPE_LABELS = {
   "single-choice": "단일 선택형",
   "multi-select": "복수 선택형",
@@ -37,16 +67,6 @@ const ORDER_MODE_LABELS = {
   reverse: "역순",
 };
 
-const appData = window.EXAM_PRACTICE_DATA || window.AWS_AI_QUIZ_DATA || {
-  supportedCount: 0,
-  source: { totalQuestions: 0 },
-  domainDistribution: [],
-  questions: [],
-};
-
-const questions = appData.questions || [];
-const questionById = new Map(questions.map((question) => [question.id, question]));
-
 function isQuestionRoute() {
   const normalizedPath = window.location.pathname.replace(/index\.html$/, "");
   return /\/question\/?$/.test(normalizedPath);
@@ -55,6 +75,34 @@ function isQuestionRoute() {
 function normalizeSessionMode(value = "") {
   return value === "exam" ? "exam" : "practice";
 }
+
+function normalizeExamId(value = "") {
+  return EXAM_DEFINITIONS[value] ? value : "";
+}
+
+function getExamIdFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  return normalizeExamId(currentUrl.searchParams.get("exam") || "");
+}
+
+function getInitialExamId() {
+  return getExamIdFromUrl() || DEFAULT_EXAM_ID;
+}
+
+function hasExplicitExamSelection() {
+  return Boolean(getExamIdFromUrl()) || isQuestionRoute();
+}
+
+function getActiveExam(examId = state?.examId || DEFAULT_EXAM_ID) {
+  return EXAM_DEFINITIONS[examId] || EXAM_DEFINITIONS[DEFAULT_EXAM_ID];
+}
+
+function getScopedStorageKey(baseKey, examId = state?.examId || DEFAULT_EXAM_ID) {
+  return `${baseKey}:${examId}`;
+}
+
+const INITIAL_EXAM_ID = getInitialExamId();
+const INITIAL_HAS_EXAM_SELECTION = hasExplicitExamSelection();
 
 function getSessionModeFromUrl() {
   const currentUrl = new URL(window.location.href);
@@ -89,12 +137,15 @@ function getQuestionRouteUrl(
   questionId = null,
   sessionMode = "practice",
   freshExam = false,
+  examId = state?.examId || DEFAULT_EXAM_ID,
 ) {
   const currentUrl = new URL(window.location.href);
   const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
   const normalizedSessionMode = normalizeSessionMode(sessionMode);
+  const normalizedExamId = normalizeExamId(examId) || DEFAULT_EXAM_ID;
 
   if (/\/question\/?$/.test(normalizedPath)) {
+    currentUrl.searchParams.set("exam", normalizedExamId);
     if (normalizedSessionMode === "exam") {
       currentUrl.searchParams.set("session", "exam");
       currentUrl.searchParams.delete("order");
@@ -120,6 +171,7 @@ function getQuestionRouteUrl(
     ? `${normalizedPath}question/`
     : `${normalizedPath}/question/`;
   currentUrl.search = "";
+  currentUrl.searchParams.set("exam", normalizedExamId);
   if (normalizedSessionMode === "exam") {
     currentUrl.searchParams.set("session", "exam");
     if (freshExam) {
@@ -150,11 +202,14 @@ function syncQuestionIdToUrl(questionId) {
   window.history.replaceState({}, "", currentUrl.toString());
 }
 
-function getHomeUrl() {
+function getHomeUrl(examId = null) {
   const currentUrl = new URL(window.location.href);
   const normalizedPath = currentUrl.pathname.replace(/index\.html$/, "");
   currentUrl.pathname = normalizedPath.replace(/\/question\/?$/, "/");
   currentUrl.search = "";
+  if (examId) {
+    currentUrl.searchParams.set("exam", normalizeExamId(examId) || DEFAULT_EXAM_ID);
+  }
   currentUrl.hash = "";
   return currentUrl.toString();
 }
@@ -162,9 +217,15 @@ function getHomeUrl() {
 const elements = {
   body: document.body,
   appShell: document.querySelector(".app-shell"),
+  examCatalog: document.getElementById("exam-catalog"),
+  examCatalogList: document.getElementById("exam-catalog-list"),
   hero: document.getElementById("hero"),
+  heroTitle: document.getElementById("hero-title"),
+  heroCopy: document.getElementById("hero-copy"),
   heroStats: document.getElementById("hero-stats"),
+  examOverview: document.getElementById("exam-overview"),
   overviewBoard: document.getElementById("overview-board"),
+  searchBoard: document.getElementById("search-board"),
   questionStatusSummaryOverview: document.getElementById("question-status-summary-overview"),
   questionPaletteOverview: document.getElementById("question-palette-overview"),
   resetProgressButton: document.getElementById("reset-progress-button"),
@@ -219,9 +280,14 @@ const elements = {
   clearWrongButton: document.getElementById("clear-wrong-button"),
   glossarySearch: document.getElementById("glossary-search"),
   glossaryGrid: document.getElementById("glossary-grid"),
+  practiceStartLinks: document.querySelectorAll("[data-start-order]"),
+  examStartLinks: document.querySelectorAll("[data-start-session='exam']"),
+  homeLinks: document.querySelectorAll("[data-home-link]"),
 };
 
 const state = {
+  examId: INITIAL_EXAM_ID,
+  hasExamSelection: INITIAL_HAS_EXAM_SELECTION,
   mode: "random",
   sessionMode: getSessionModeFromUrl(),
   startFreshExam: shouldStartFreshExamFromUrl(),
@@ -232,8 +298,8 @@ const state = {
   answerChecked: false,
   questionSheetOpen: false,
   started: isQuestionRoute(),
-  session: loadState(),
-  exam: loadExamState(),
+  session: loadState(INITIAL_EXAM_ID),
+  exam: loadExamState(INITIAL_EXAM_ID),
   searchQuery: "",
   practiceHistory: [],
   practiceHistoryIndex: -1,
@@ -242,10 +308,75 @@ const state = {
 
 let examTimerHandle = null;
 
-function loadState() {
+function getLegacyStorageKey(baseKey) {
+  if (baseKey === QUIZ_STORAGE_KEY) {
+    return LEGACY_QUIZ_STORAGE_KEY;
+  }
+
+  if (baseKey === EXAM_STORAGE_KEY) {
+    return LEGACY_EXAM_STORAGE_KEY;
+  }
+
+  if (baseKey === DAILY_AUTH_STORAGE_KEY) {
+    return LEGACY_DAILY_AUTH_STORAGE_KEY;
+  }
+
+  return "";
+}
+
+function readScopedStorageValue(baseKey, examId = state?.examId || DEFAULT_EXAM_ID) {
+  const scopedKey = getScopedStorageKey(baseKey, examId);
+  const legacyScopedKey = getScopedStorageKey(getLegacyStorageKey(baseKey), examId);
+  const directValue = localStorage.getItem(scopedKey);
+
+  if (directValue != null) {
+    return directValue;
+  }
+
+  if (legacyScopedKey && legacyScopedKey !== scopedKey) {
+    const legacyScopedValue = localStorage.getItem(legacyScopedKey);
+    if (legacyScopedValue != null) {
+      return legacyScopedValue;
+    }
+  }
+
+  if (examId === DEFAULT_EXAM_ID) {
+    const unscopedValue = localStorage.getItem(baseKey);
+    if (unscopedValue != null) {
+      return unscopedValue;
+    }
+
+    const legacyValue = localStorage.getItem(getLegacyStorageKey(baseKey));
+    if (legacyValue != null) {
+      return legacyValue;
+    }
+  }
+
+  return null;
+}
+
+function writeScopedStorageValue(baseKey, value, examId = state?.examId || DEFAULT_EXAM_ID) {
+  localStorage.setItem(getScopedStorageKey(baseKey, examId), value);
+}
+
+function clearScopedStorageValue(baseKey, examId = state?.examId || DEFAULT_EXAM_ID) {
+  localStorage.removeItem(getScopedStorageKey(baseKey, examId));
+  const legacyKey = getLegacyStorageKey(baseKey);
+  if (legacyKey) {
+    localStorage.removeItem(getScopedStorageKey(legacyKey, examId));
+  }
+
+  if (examId === DEFAULT_EXAM_ID) {
+    localStorage.removeItem(baseKey);
+    if (legacyKey) {
+      localStorage.removeItem(legacyKey);
+    }
+  }
+}
+
+function loadState(examId = state?.examId || DEFAULT_EXAM_ID) {
   try {
-    const raw =
-      localStorage.getItem(QUIZ_STORAGE_KEY) || localStorage.getItem(LEGACY_QUIZ_STORAGE_KEY) || "{}";
+    const raw = readScopedStorageValue(QUIZ_STORAGE_KEY, examId) || "{}";
     const parsed = JSON.parse(raw);
     return {
       totals: {
@@ -282,10 +413,9 @@ function createEmptyExamState() {
   };
 }
 
-function loadExamState() {
+function loadExamState(examId = state?.examId || DEFAULT_EXAM_ID) {
   try {
-    const raw =
-      localStorage.getItem(EXAM_STORAGE_KEY) || localStorage.getItem(LEGACY_EXAM_STORAGE_KEY) || "{}";
+    const raw = readScopedStorageValue(EXAM_STORAGE_KEY, examId) || "{}";
     const parsed = JSON.parse(raw);
     return {
       active: Boolean(parsed?.active),
@@ -343,12 +473,9 @@ function getExpectedDailyPassword(date = new Date()) {
   };
 }
 
-function loadDailyAuth() {
+function loadDailyAuth(examId = state?.examId || DEFAULT_EXAM_ID) {
   try {
-    const raw =
-      localStorage.getItem(DAILY_AUTH_STORAGE_KEY) ||
-      localStorage.getItem(LEGACY_DAILY_AUTH_STORAGE_KEY) ||
-      "{}";
+    const raw = readScopedStorageValue(DAILY_AUTH_STORAGE_KEY, examId) || "{}";
     const parsed = JSON.parse(raw);
     return parsed && typeof parsed === "object" ? parsed : {};
   } catch (error) {
@@ -356,18 +483,19 @@ function loadDailyAuth() {
   }
 }
 
-function saveDailyAuth(dayKey) {
-  localStorage.setItem(
+function saveDailyAuth(dayKey, examId = state?.examId || DEFAULT_EXAM_ID) {
+  writeScopedStorageValue(
     DAILY_AUTH_STORAGE_KEY,
     JSON.stringify({
       dayKey,
       verifiedAt: new Date().toISOString(),
     }),
+    examId,
   );
 }
 
-function clearDailyAuth() {
-  localStorage.removeItem(DAILY_AUTH_STORAGE_KEY);
+function clearDailyAuth(examId = state?.examId || DEFAULT_EXAM_ID) {
+  clearScopedStorageValue(DAILY_AUTH_STORAGE_KEY, examId);
 }
 
 function ejectFromPage() {
@@ -375,18 +503,29 @@ function ejectFromPage() {
   window.location.replace("about:blank");
 }
 
-function requireDailyPassword() {
+function hasValidDailyAuth(examId = state?.examId || DEFAULT_EXAM_ID) {
+  const { dayKey } = getExpectedDailyPassword();
+  const savedAuth = loadDailyAuth(examId);
+
+  return savedAuth.dayKey === dayKey;
+}
+
+function requestDailyPassword(
+  examId = state?.examId || DEFAULT_EXAM_ID,
+  { onFailure = "home" } = {},
+) {
   const { dayKey, password } = getExpectedDailyPassword();
-  const savedAuth = loadDailyAuth();
+  const savedAuth = loadDailyAuth(examId);
 
   if (savedAuth.dayKey === dayKey) {
     return true;
   }
 
-  clearDailyAuth();
+  clearDailyAuth(examId);
+  const exam = getActiveExam(examId);
 
   const message = [
-    "비밀번호를 입력하세요.",
+    `${exam.shortTitle} 비밀번호를 입력하세요.`,
     "힌트: 우리가 만난날 + 우리가 만난날로부터 몇일?",
     "예: 94062623 같은 형태",
     "인증은 Asia/Seoul 기준 오늘 23:59:59까지만 유효합니다.",
@@ -394,21 +533,35 @@ function requireDailyPassword() {
   const enteredPassword = window.prompt(message, "");
 
   if (enteredPassword === password) {
-    saveDailyAuth(dayKey);
+    saveDailyAuth(dayKey, examId);
     return true;
   }
 
-  window.alert("비밀번호가 올바르지 않아 페이지를 종료합니다.");
-  ejectFromPage();
+  window.alert("비밀번호가 올바르지 않습니다.");
+  if (onFailure === "stay") {
+    return false;
+  }
+
+  window.location.replace(getHomeUrl());
   return false;
 }
 
+function ensureExamAccess() {
+  if (!state.hasExamSelection && !isQuestionRoute()) {
+    return true;
+  }
+
+  return requestDailyPassword(state.examId, {
+    onFailure: isQuestionRoute() ? "home" : "home",
+  });
+}
+
 function saveState() {
-  localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(state.session));
+  writeScopedStorageValue(QUIZ_STORAGE_KEY, JSON.stringify(state.session));
 }
 
 function saveExamState() {
-  localStorage.setItem(EXAM_STORAGE_KEY, JSON.stringify(state.exam));
+  writeScopedStorageValue(EXAM_STORAGE_KEY, JSON.stringify(state.exam));
 }
 
 function cloneValue(value) {
@@ -1046,11 +1199,16 @@ function getQuestionTypeHelper(question) {
 }
 
 function buildHeroStats() {
+  const activeExam = getActiveExam();
   const stats = [
-    { label: "지원 문항", value: `${appData.supportedCount}문제` },
+    { label: "지원 문항", value: `${activeExam.supportedCount}문제` },
     { label: "누적 정답률", value: getAccuracy() },
     { label: "오답 노트", value: `${getWrongIds().length}문제` },
   ];
+
+  if (!elements.heroStats) {
+    return;
+  }
 
   elements.heroStats.innerHTML = stats
     .map(
@@ -1062,6 +1220,103 @@ function buildHeroStats() {
       `,
     )
     .join("");
+}
+
+function buildExamCatalogMarkup() {
+  return Object.values(EXAM_DEFINITIONS)
+    .map((exam) => {
+      const isCurrent = state.hasExamSelection && state.examId === exam.id;
+      const isUnlocked = hasValidDailyAuth(exam.id);
+      const statusLabel = isUnlocked ? "오늘 인증됨" : "비밀번호 필요";
+      const actionLabel = isCurrent ? "이 시험 이어서 보기" : "이 시험 열기";
+
+      return `
+        <article class="exam-card ${isCurrent ? "is-current" : ""}">
+          <div class="exam-card__top">
+            <span class="exam-card__provider">${escapeHtml(exam.provider)}</span>
+            <span class="pill pill--muted">${escapeHtml(exam.code)}</span>
+            <span class="pill ${isUnlocked ? "pill--success" : "pill--muted"}">
+              ${escapeHtml(statusLabel)}
+            </span>
+          </div>
+          <div>
+            <h3 class="exam-card__title">${escapeHtml(exam.title)}</h3>
+            <p class="exam-card__desc">${escapeHtml(exam.description)}</p>
+          </div>
+          <div class="exam-card__meta">
+            <span class="exam-card__metric">지원 문항<strong>${exam.supportedCount}</strong></span>
+            <span class="exam-card__metric">모의시험<strong>${exam.mockQuestions}</strong></span>
+            <span class="exam-card__metric">도메인<strong>${exam.domainCount}</strong></span>
+            <span class="exam-card__metric">난이도<strong>${escapeHtml(exam.level)}</strong></span>
+          </div>
+          <div class="exam-card__actions">
+            <button
+              class="primary-button exam-card__button"
+              data-select-exam="${escapeHtml(exam.id)}"
+              type="button"
+            >
+              ${escapeHtml(actionLabel)}
+            </button>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function updatePracticeLinks() {
+  const activeExam = getActiveExam();
+
+  elements.practiceStartLinks.forEach((link) => {
+    const orderMode = normalizeOrderMode(link.dataset.startOrder || "random");
+    link.href = getQuestionRouteUrl(orderMode, null, "practice", false, activeExam.id);
+  });
+
+  elements.examStartLinks.forEach((link) => {
+    link.href = getQuestionRouteUrl("random", null, "exam", true, activeExam.id);
+  });
+
+  elements.homeLinks.forEach((link) => {
+    link.href = getHomeUrl(activeExam.id);
+  });
+}
+
+function updateDocumentTitle() {
+  if (!state.hasExamSelection && !isQuestionRoute()) {
+    document.title = "exam-practice | 시험 목록";
+    return;
+  }
+
+  const activeExam = getActiveExam();
+  document.title = `exam-practice | ${activeExam.shortTitle}`;
+}
+
+function renderExamCatalog() {
+  if (!elements.examCatalogList) {
+    return;
+  }
+
+  elements.examCatalogList.innerHTML = buildExamCatalogMarkup();
+}
+
+function renderSelectedExamHomeContext() {
+  const activeExam = getActiveExam();
+
+  if (elements.heroTitle) {
+    elements.heroTitle.textContent = `${activeExam.shortTitle} 문제 연습장`;
+  }
+
+  if (elements.heroCopy) {
+    elements.heroCopy.textContent = `${activeExam.title} 대비 문제를 모바일에서 빠르게 풀고, 정답 이유와 오답 포인트를 바로 확인할 수 있게 구성했습니다.`;
+  }
+
+  const examOverviewTitle = document.querySelector("#exam-overview h2");
+  if (examOverviewTitle) {
+    examOverviewTitle.textContent = `${activeExam.title} 시험 개요`;
+  }
+
+  updatePracticeLinks();
+  updateDocumentTitle();
 }
 
 function renderExamBanner() {
@@ -1165,7 +1420,7 @@ function buildExamResultMarkup() {
       <button class="primary-button" data-start-exam="true" type="button">
         새 실전 65문제 시작
       </button>
-      <a class="secondary-button primary-link" href="${escapeHtml(getHomeUrl())}">
+      <a class="secondary-button primary-link" href="${escapeHtml(getHomeUrl(state.examId))}">
         홈으로 돌아가기
       </a>
     </div>
@@ -1383,13 +1638,32 @@ function renderMode() {
 
 function renderAppPhase() {
   const hasStarted = state.started;
-  elements.hero.classList.toggle("is-hidden", hasStarted);
+  const showSelectedExamHome = !hasStarted && state.hasExamSelection;
+
+  elements.hero.classList.toggle("is-hidden", !showSelectedExamHome);
+  elements.examOverview?.classList.toggle("is-hidden", !showSelectedExamHome);
+  elements.overviewBoard?.classList.toggle("is-hidden", !showSelectedExamHome);
+  elements.searchBoard?.classList.toggle("is-hidden", !showSelectedExamHome);
   elements.mainContent.classList.toggle("is-hidden", !hasStarted);
   elements.appShell.classList.toggle("app-shell--started", hasStarted);
 }
 
 function startQuiz() {
   window.location.href = getQuestionRouteUrl(state.orderMode, null, "practice");
+}
+
+function handleExamSelection(examId) {
+  const normalizedExamId = normalizeExamId(examId);
+  if (!normalizedExamId) {
+    return;
+  }
+
+  const authorized = requestDailyPassword(normalizedExamId, { onFailure: "stay" });
+  if (!authorized) {
+    return;
+  }
+
+  window.location.href = getHomeUrl(normalizedExamId);
 }
 
 function clearExamTimer() {
@@ -3073,6 +3347,12 @@ function attachEvents() {
       return;
     }
 
+    const examSelectButton = target.closest("[data-select-exam]");
+    if (examSelectButton instanceof HTMLElement) {
+      handleExamSelection(examSelectButton.dataset.selectExam || "");
+      return;
+    }
+
     const startExamButton = target.closest("[data-start-exam]");
     if (startExamButton) {
       startFreshExamSession();
@@ -3124,9 +3404,12 @@ function attachEvents() {
 }
 
 function init() {
-  if (!requireDailyPassword()) {
+  if (!ensureExamAccess()) {
     return;
   }
+
+  renderExamCatalog();
+  renderSelectedExamHomeContext();
 
   if (isExamMode()) {
     initializeExamSession();

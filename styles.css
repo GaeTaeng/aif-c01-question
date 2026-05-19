@@ -186,6 +186,96 @@ select {
   line-height: 1.5;
 }
 
+.exam-catalog__toggle {
+  cursor: default;
+}
+
+.exam-catalog__list {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.exam-card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 247, 236, 0.94)),
+    rgba(255, 255, 255, 0.7);
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.exam-card.is-current {
+  border-color: rgba(255, 107, 44, 0.28);
+  box-shadow: 0 14px 24px rgba(255, 107, 44, 0.12);
+}
+
+.exam-card__top,
+.exam-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exam-card__provider {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.exam-card__title {
+  margin: 0;
+  font-size: 1.16rem;
+  line-height: 1.3;
+}
+
+.exam-card__desc {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.exam-card__metric {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.exam-card__metric strong {
+  margin-left: 6px;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.exam-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exam-card__button {
+  width: 100%;
+}
+
 .overview-board {
   margin-top: 16px;
   padding: 18px;
