@@ -2640,10 +2640,92 @@ function getGlossaryLines(question) {
   return [`${fallbackTerm}: ${getAnswerReason(question)}`];
 }
 
+function splitFeedbackDefinitionLine(line) {
+  const clean = stripBullet(line).trim();
+  const match = clean.match(/^(.{1,180}?):\s+(.+)$/);
+  if (!match) {
+    return null;
+  }
+
+  return {
+    label: match[1].trim(),
+    detail: match[2].trim(),
+  };
+}
+
+function renderFeedbackList(lines, variant = "default") {
+  if (!lines.length) {
+    return "";
+  }
+
+  const listClass =
+    variant === "choice"
+      ? "feedback-list feedback-list--choice"
+      : variant === "definition"
+        ? "feedback-list feedback-list--definition"
+        : "feedback-list";
+
+  const itemsHtml = lines
+    .map((line) => stripBullet(line).trim())
+    .filter(Boolean)
+    .map((line) => {
+      if (variant === "definition") {
+        const parts = splitFeedbackDefinitionLine(line);
+        if (parts) {
+          return `
+            <li>
+              <span class="feedback-item__label">${escapeHtml(parts.label)}</span>
+              <span class="feedback-item__detail">${escapeHtml(parts.detail)}</span>
+            </li>
+          `;
+        }
+      }
+
+      if (variant === "choice") {
+        return `
+          <li>
+            <span class="feedback-item__choice">${escapeHtml(line)}</span>
+          </li>
+        `;
+      }
+
+      return `
+        <li>
+          <span class="feedback-item__detail">${escapeHtml(line)}</span>
+        </li>
+      `;
+    })
+    .join("");
+
+  return `<ul class="${listClass}">${itemsHtml}</ul>`;
+}
+
+function renderFeedbackPanel(title, bodyHtml, modifier = "") {
+  if (!bodyHtml) {
+    return "";
+  }
+
+  const panelClass = modifier
+    ? `feedback-card__panel feedback-card__panel--${modifier}`
+    : "feedback-card__panel";
+
+  return `
+    <section class="${panelClass}">
+      <h3 class="feedback-card__title">${escapeHtml(title)}</h3>
+      ${bodyHtml}
+    </section>
+  `;
+}
+
 function renderFeedback(isCorrect) {
   const question = getCurrentQuestion();
   const selectedLines = getSelectedResponseLines(question, state.response);
   const correctLines = getCorrectResponseLines(question);
+  const explanationLines = question.explanation.map((line) => stripBullet(line)).filter(Boolean);
+  const answerReason = getAnswerReason(question);
+  const detailExplanationLines = explanationLines.filter(
+    (line, index) => index > 0 || line !== answerReason,
+  );
   const wrongReviewLines = isCorrect ? [] : getWrongReviewLines(question, state.response);
   const optionReviewLines = getChoiceOptionReviewLines(question);
   const wrongSummaryLines = optionReviewLines.length
@@ -2658,60 +2740,49 @@ function renderFeedback(isCorrect) {
   const glossaryLines = getGlossaryLines(question);
 
   const feedbackHtml = `
-    <div class="feedback-card__status ${isCorrect ? "is-correct" : "is-wrong"}">
-      ${isCorrect ? "정답입니다" : "오답입니다"}
+    <div class="feedback-card__hero ${isCorrect ? "is-correct" : "is-wrong"}">
+      <div class="feedback-card__status ${isCorrect ? "is-correct" : "is-wrong"}">
+        ${isCorrect ? "정답입니다" : "오답입니다"}
+      </div>
+      <p class="feedback-card__hero-copy">
+        <span class="feedback-card__eyebrow">핵심 이유</span>
+        <span class="feedback-card__hero-body">${escapeHtml(answerReason)}</span>
+      </p>
     </div>
-    <h3 class="feedback-card__title">정답</h3>
-    <ul class="feedback-list">
-      ${correctLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-    </ul>
-    <h3 class="feedback-card__title">정답 이유</h3>
-    <p class="feedback-card__line">${escapeHtml(getAnswerReason(question))}</p>
-    ${
-      !isCorrect
-        ? `
-          <h3 class="feedback-card__title">내 선택</h3>
-          <ul class="feedback-list">
-            ${selectedLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-          </ul>
-        `
-        : ""
-    }
-    <h3 class="feedback-card__title">해설</h3>
-    <ul class="feedback-list">
-      ${question.explanation.map((line) => `<li>${escapeHtml(stripBullet(line))}</li>`).join("")}
-    </ul>
-    ${
-      optionReviewLines.length
-        ? `
-          <h3 class="feedback-card__title">보기별 해설</h3>
-          <ul class="feedback-list">
-            ${optionReviewLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-          </ul>
-        `
-        : ""
-    }
-    ${
-      isCorrect
-        ? wrongSummaryLines.length
-          ? `
-            <h3 class="feedback-card__title">오답 포인트</h3>
-            <ul class="feedback-list">
-              ${wrongSummaryLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-            </ul>
-          `
+    <div class="feedback-card__compare-grid">
+      ${renderFeedbackPanel("정답", renderFeedbackList(correctLines, "choice"), "correct")}
+      ${
+        !isCorrect
+          ? renderFeedbackPanel("내 선택", renderFeedbackList(selectedLines, "choice"), "selected")
           : ""
-        : `
-          <h3 class="feedback-card__title">오답 풀이</h3>
-          <ul class="feedback-list">
-            ${wrongReviewLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-          </ul>
-        `
-    }
-    <h3 class="feedback-card__title">용어 정리</h3>
-    <ul class="feedback-list">
-      ${glossaryLines.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}
-    </ul>
+      }
+    </div>
+    <div class="feedback-card__stack">
+      ${renderFeedbackPanel("정답 해설", renderFeedbackList(detailExplanationLines), "neutral")}
+      ${
+        optionReviewLines.length
+          ? renderFeedbackPanel(
+              "보기별 해설",
+              renderFeedbackList(optionReviewLines, "definition"),
+              "neutral",
+            )
+          : ""
+      }
+      ${
+        isCorrect
+          ? renderFeedbackPanel(
+              "오답 포인트",
+              renderFeedbackList(wrongSummaryLines, "definition"),
+              "caution",
+            )
+          : renderFeedbackPanel(
+              "오답 풀이",
+              renderFeedbackList(wrongReviewLines, "definition"),
+              "danger",
+            )
+      }
+      ${renderFeedbackPanel("용어 정리", renderFeedbackList(glossaryLines, "definition"), "glossary")}
+    </div>
   `;
 
   elements.feedbackCard.innerHTML = feedbackHtml;
